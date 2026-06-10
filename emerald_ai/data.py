@@ -17,14 +17,21 @@ def load_raw() -> pd.DataFrame:
     return pd.read_excel(C.RAW_DATA, sheet_name=C.RAW_SHEET)
 
 
-def build_target(df: pd.DataFrame, scheme: str = "paidoff_only") -> pd.DataFrame:
+def build_target(df: pd.DataFrame, scheme: str = "paidoff_only", clean: bool = True) -> pd.DataFrame:
     """Return a copy with a binary ``y`` column (1 = delinquency event) for the given scheme.
 
     Rows whose ``Deal Status`` is unlabelled (NaN) are always dropped. Under ``paidoff_only``
     the censored ``current`` rows are also dropped. The function never imputes a label.
+
+    ``clean=True`` (default) applies the rule-based, leakage-safe impossible-value correction from
+    :mod:`emerald_ai.clean` first. Pass ``clean=False`` for the raw-data sensitivity comparison.
     """
     if scheme not in {"paidoff_only", "all_favourable"}:
         raise ValueError(f"unknown scheme: {scheme!r}")
+
+    if clean:
+        from . import clean as _clean  # lazy import: clean.py imports this module
+        df, _ = _clean.clean(df)
 
     status = df[C.LABEL_COL]
     non_event = C.FAVOURABLE_PAIDOFF if scheme == "paidoff_only" else C.FAVOURABLE_ALL
