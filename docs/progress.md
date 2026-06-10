@@ -17,6 +17,14 @@ Updated as work lands; this is the answer to "what's going on in this project?".
 | Phase 7 — write-up + release | ⬜ |
 
 ## Done (most recent first)
+- **2026-06-10 — Evidence-grounded methodology audit.** Rule 1: `docs/methods_citations.md`
+  (every imbalance choice → paper); 3 gaps (PR-vs-ROC, repeated CV, EPV/small-n) closed by
+  patching crawler seeds and re-crawling (179→292 papers; Saito&Rehmsmeier 2015, Peduzzi 1996,
+  Riley 2020, Krstajić 2014, Kapoor&Narayanan 2023). Rule 2: `emerald_ai/validation.py` +
+  `python -m emerald_ai evidence` → `reports/learning_evidence.md`. **Permutation test p=0.010
+  (real beats 100% of nulls); stable across seeds (0.091±0.002); plateaus by 75% (supports LR).
+  HONEST LIMITATION: Brier 0.124 ≫ base-rate 0.0127 — class-weighted probs miscalibrated → Phase 4.**
+  Gap report: `docs/gap_report.md`. ⏳ curated promotion to index.yaml AWAITS user sign-off.
 - **2026-06-10 — Visual story.** `python -m emerald_ai figures` → `reports/visual_story.md` + 6
   figures: imbalance, censoring, CV-resampling schematic, PR-AUC fold boxes vs floor, **cumulative
   gains (top 10% catches 64% of defaults — the usefulness proof)**, minority calibration.

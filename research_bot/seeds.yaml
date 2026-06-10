@@ -26,3 +26,13 @@ queries:
   tabular_models:
     - "gradient boosting credit default tabular"
     - "deep learning tabular credit scoring benchmark"
+  # Added 2026-06-10 to close methodology-justification gaps (D2/D3/D4/D7) found in the audit.
+  methodology_justification:
+    - "resampling within cross-validation folds data leakage"          # D2
+    - "cross-validation imbalanced data overfitting overoptimism"      # D2
+    - "precision recall curve imbalanced classification evaluation"    # D3
+    - "ROC versus precision recall imbalanced datasets"               # D3
+    - "evaluation metrics credit scoring imbalanced"                  # D3
+    - "repeated stratified k-fold cross-validation variance"          # D4
+    - "events per variable logistic regression"                       # D7
+    - "minimum sample size clinical prediction model"                 # D7

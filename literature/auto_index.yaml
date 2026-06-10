@@ -3714,3 +3714,2456 @@
   source_query: deep learning tabular credit scoring benchmark
   discovered_at: '2026-06-10T00:03:48Z'
   origin: auto
+- id: W3010655531
+  doi: https://doi.org/10.1016/j.eij.2020.02.007
+  title: 'A predictive machine learning application in agriculture: Cassava disease
+    detection and classification with imbalanced dataset using convolutional neural
+    networks'
+  year: 2020
+  cited_by_count: 328
+  venue: Egyptian Informatics Journal
+  authors:
+  - G. Sambasivam
+  - Geoffrey Duncan Opiyo
+  concepts:
+  - Artificial intelligence
+  - Convolutional neural network
+  - Computer science
+  - Machine learning
+  - Agriculture
+  - Categorization
+  source_query: class imbalance credit scoring
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W3047926930
+  doi: https://doi.org/10.1016/j.artmed.2020.101935
+  title: 'Handling imbalanced medical image data: A deep-learning-based one-class
+    classification approach'
+  year: 2020
+  cited_by_count: 148
+  venue: Artificial Intelligence in Medicine
+  authors:
+  - Long Gao
+  - Lei Zhang
+  - Chang Liu
+  - Shandong Wu
+  concepts:
+  - Computer science
+  - Artificial intelligence
+  - Outlier
+  - Feature (linguistics)
+  - Machine learning
+  - Class (philosophy)
+  source_query: imbalanced classification rare events
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W2593875029
+  doi: https://doi.org/10.1007/s40747-017-0037-9
+  title: 'An insight into imbalanced Big Data classification: outcomes and challenges'
+  year: 2017
+  cited_by_count: 228
+  venue: Complex & Intelligent Systems
+  authors:
+  - Alberto Fernández
+  - Sara del Río
+  - Nitesh V. Chawla
+  - Francisco Herrera
+  concepts:
+  - Computational intelligence
+  - Big data
+  - Data science
+  - Computer science
+  - Artificial intelligence
+  - Data mining
+  source_query: imbalanced classification rare events
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W4353090637
+  doi: https://doi.org/10.3390/app13064006
+  title: Effective Class-Imbalance Learning Based on SMOTE and Convolutional Neural
+    Networks
+  year: 2023
+  cited_by_count: 151
+  venue: Applied Sciences
+  authors:
+  - Javad Hassannataj Joloudari
+  - Abdolreza Marefat
+  - Mohammad Ali Nematollahi
+  - Solomon Sunday Oyelere
+  - Sadiq Hussain
+  concepts:
+  - Oversampling
+  - Computer science
+  - Undersampling
+  - Machine learning
+  - Artificial intelligence
+  - Normalization (sociology)
+  source_query: SMOTE credit scoring oversampling
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W2165369389
+  doi: https://doi.org/10.1093/qje/qju002
+  title: Agricultural Decisions after Relaxing Credit and Risk Constraints *
+  year: 2014
+  cited_by_count: 1001
+  venue: The Quarterly Journal of Economics
+  authors:
+  - Dean Karlan
+  - Robert Osei
+  - Isaac Osei‐Akoto
+  - Christopher Udry
+  concepts:
+  - Receipt
+  - Investment (military)
+  - Index (typography)
+  - Economics
+  - Actuarial science
+  - Investment decisions
+  source_query: cost-sensitive learning credit default
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W4310175873
+  doi: https://doi.org/10.1109/icai55857.2022.9960023
+  title: Evaluation of cost-sensitive machine learning methods for default credit
+    prediction
+  year: 2022
+  cited_by_count: 5
+  venue: null
+  authors:
+  - Yanka Aleksandrova
+  - Mariya Armianova
+  concepts:
+  - Computer science
+  - Loan
+  - Machine learning
+  - Profit (economics)
+  - Decision tree
+  - Artificial intelligence
+  source_query: cost-sensitive learning credit default
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W3015551372
+  doi: https://doi.org/10.3390/cells9040931
+  title: Mouse Models of Inherited Retinal Degeneration with Photoreceptor Cell Loss
+  year: 2020
+  cited_by_count: 100
+  venue: Cells
+  authors:
+  - Gayle B. Collin
+  - Navdeep Gogna
+  - Bo Chang
+  - Nattaya Damkham
+  - Jai Pinkney
+  - Lillian F. Hyde
+  - Lisa Stone
+  - Jürgen Κ. Naggert
+  concepts:
+  - Biology
+  - Loss function
+  - Retinal degeneration
+  - Gene
+  - Model organism
+  - Genetics
+  source_query: focal loss imbalanced tabular
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W2044540757
+  doi: https://doi.org/10.1371/journal.pone.0036944
+  title: 'arrayMap: A Reference Resource for Genomic Copy Number Imbalances in Human
+    Malignancies'
+  year: 2012
+  cited_by_count: 38
+  venue: PLoS ONE
+  authors:
+  - Haoyang Cai
+  - Nitin Kumar
+  - Michael Baudis
+  concepts:
+  - Computational biology
+  - Genome
+  - Visualization
+  - Data integration
+  - Biology
+  - Computer science
+  source_query: focal loss imbalanced tabular
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W2905367344
+  doi: https://doi.org/10.1109/access.2018.2886583
+  title: Multi-Agent-Based Unsupervised Detection of Energy Consumption Anomalies
+    on Smart Campus
+  year: 2018
+  cited_by_count: 112
+  venue: IEEE Access
+  authors:
+  - Yu Weng
+  - Ning Zhang
+  - Chunlei Xia
+  concepts:
+  - Computer science
+  - Anomaly detection
+  - Artificial intelligence
+  - Context (archaeology)
+  - Machine learning
+  - Energy consumption
+  source_query: anomaly detection rare default prediction
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W4226060502
+  doi: https://doi.org/10.1109/tkde.2022.3159580
+  title: 'ECOD: Unsupervised Outlier Detection Using Empirical Cumulative Distribution
+    Functions'
+  year: 2022
+  cited_by_count: 393
+  venue: IEEE Transactions on Knowledge and Data Engineering
+  authors:
+  - Zheng Li
+  - Yue Zhao
+  - Xiyang Hu
+  - Nicola Botta
+  - Cezar Ionescu
+  - George H. Chen
+  concepts:
+  - Computer science
+  - Outlier
+  - Anomaly detection
+  - Cumulative distribution function
+  - Data mining
+  - Empirical distribution function
+  source_query: anomaly detection rare default prediction
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W2163504005
+  doi: https://doi.org/10.1016/s1042-9573(03)00040-8
+  title: A risk-factor model foundation for ratings-based bank capital rules
+  year: 2003
+  cited_by_count: 891
+  venue: Journal of Financial Intermediation
+  authors:
+  - Michael B. Gordy
+  concepts:
+  - Risk-adjusted return on capital
+  - Portfolio
+  - Economics
+  - Econometrics
+  - Systematic risk
+  - Actuarial science
+  source_query: probability calibration credit risk
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W4214818772
+  doi: https://doi.org/10.1093/rof/rfac013
+  title: Climate Change Risk and the Cost of Mortgage Credit
+  year: 2022
+  cited_by_count: 221
+  venue: European Finance Review
+  authors:
+  - Duc Duy Nguyen
+  - Steven Ongena
+  - Shusen Qi
+  - Vathunyoo Sila
+  concepts:
+  - Climate change
+  - Mortgage underwriting
+  - Term (time)
+  - Default risk
+  - Business
+  - Salient
+  source_query: probability calibration credit risk
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W2788414579
+  doi: null
+  title: Credit Scoring and the Equal Credit Opportunity Act
+  year: 1978
+  cited_by_count: 52
+  venue: Hastings law journal
+  authors:
+  - David C. Hsia
+  concepts:
+  - Business
+  - Actuarial science
+  - Financial system
+  source_query: conformal prediction credit scoring
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W3088162569
+  doi: https://doi.org/10.1109/jstars.2020.3026724
+  title: 'Support Vector Machine Versus Random Forest for Remote Sensing Image Classification:
+    A Meta-Analysis and Systematic Review'
+  year: 2020
+  cited_by_count: 1048
+  venue: IEEE Journal of Selected Topics in Applied Earth Observations and Remote
+    Sensing
+  authors:
+  - Mohammadreza Sheykhmousa
+  - Masoud Mahdianpari
+  - Hamid Ghanbari
+  - Fariba Mohammadimanesh
+  - Pedram Ghamisi
+  - Saeid Homayouni
+  concepts:
+  - Random forest
+  - Support vector machine
+  - Computer science
+  - Contextual image classification
+  - Remote sensing
+  - Artificial intelligence
+  source_query: uncertainty quantification imbalanced classification
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W3090679658
+  doi: https://doi.org/10.5194/essd-13-2753-2021
+  title: 'GLC_FCS30: global land-cover product with fine classification system at
+    30 m using time-series Landsat imagery'
+  year: 2021
+  cited_by_count: 996
+  venue: Earth system science data
+  authors:
+  - Xiao Zhang
+  - Liangyun Liu
+  - Xidong Chen
+  - Yuan Gao
+  - Shuai Xie
+  - Mi Jun
+  concepts:
+  - Land cover
+  - Remote sensing
+  - Cohen's kappa
+  - Environmental science
+  - Cover (algebra)
+  - Spectral bands
+  source_query: uncertainty quantification imbalanced classification
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W4388451421
+  doi: https://doi.org/10.3390/data8110169
+  title: 'Machine Learning for Credit Risk Prediction: A Systematic Literature Review'
+  year: 2023
+  cited_by_count: 67
+  venue: Data
+  authors:
+  - Jomark Noriega
+  - Luis Rivera
+  - José Herrera
+  concepts:
+  - Machine learning
+  - Credit risk
+  - Computer science
+  - Artificial intelligence
+  - Multicollinearity
+  - Predictive modelling
+  source_query: green loan credit risk machine learning
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W2591997260
+  doi: https://doi.org/10.1016/j.desal.2017.03.009
+  title: Energy-water-environment nexus underpinning future desalination sustainability
+  year: 2017
+  cited_by_count: 766
+  venue: Desalination
+  authors:
+  - Muhammad Wakil Shahzad
+  - Muhammad Burhan
+  - Ang Li
+  - Kim Choon Ng
+  concepts:
+  - Underpinning
+  - Desalination
+  - Nexus (standard)
+  - Sustainability
+  - Water desalination
+  - Water-energy nexus
+  source_query: sustainable finance default prediction
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W2967478895
+  doi: https://doi.org/10.1016/j.worlddev.2020.105131
+  title: The impact of climate vulnerability on firms’ cost of capital and access
+    to finance
+  year: 2020
+  cited_by_count: 385
+  venue: World Development
+  authors:
+  - Gerhard Kling
+  - Ulrich Volz
+  - Victor Murinde
+  - Sibel Ayas
+  concepts:
+  - Vulnerability (computing)
+  - Access to finance
+  - Business
+  - Climate Finance
+  - Capital (architecture)
+  - Finance
+  source_query: sustainable finance default prediction
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W4377237940
+  doi: https://doi.org/10.37497/sdgs.v11i1.242
+  title: A machine learning based approach to identify key drivers for improving corporate’s
+    esg ratings
+  year: 2023
+  cited_by_count: 42
+  venue: Journal of Law and Sustainable Development
+  authors:
+  - Dwijendra Nath Dwivedi
+  - Saurabh Batra
+  - Yogesh Kumar Pathak
+  concepts:
+  - Key (lock)
+  - Portfolio
+  - Machine learning
+  - Reliability (semiconductor)
+  - Process (computing)
+  - Computer science
+  source_query: ESG credit scoring machine learning
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W4386996261
+  doi: https://doi.org/10.3390/su151914106
+  title: Empirical Study of ESG Score Prediction through Machine Learning—A Case of
+    Non-Financial Companies in Taiwan
+  year: 2023
+  cited_by_count: 35
+  venue: Sustainability
+  authors:
+  - Hsio-Yi Lin
+  - Bin-Wei Hsu
+  concepts:
+  - Random forest
+  - Support vector machine
+  - Machine learning
+  - Artificial intelligence
+  - Corporate governance
+  - Gradient boosting
+  source_query: ESG credit scoring machine learning
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W4294559022
+  doi: https://doi.org/10.1145/3561048
+  title: 'Explainable AI (XAI): Core Ideas, Techniques, and Solutions'
+  year: 2022
+  cited_by_count: 1158
+  venue: ACM Computing Surveys
+  authors:
+  - Rudresh Dwivedi
+  - Devam Dave
+  - Het Naik
+  - Smiti Singhal
+  - Omer Rana
+  - Pankesh Patel
+  - Bin Qian
+  - Zhenyu Wen
+  concepts:
+  - Computer science
+  - Taxonomy (biology)
+  - Process (computing)
+  - Software
+  - Artificial intelligence
+  - Suite
+  source_query: SHAP explainability credit scoring
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W3101981467
+  doi: https://doi.org/10.1613/jair.1.12228
+  title: A Survey on the Explainability of Supervised Machine Learning
+  year: 2021
+  cited_by_count: 959
+  venue: Journal of Artificial Intelligence Research
+  authors:
+  - Nadia Burkart
+  - Marco F. Huber
+  concepts:
+  - Computer science
+  - Machine learning
+  - Artificial intelligence
+  - Supervised learning
+  - Artificial neural network
+  source_query: SHAP explainability credit scoring
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W3214404698
+  doi: https://doi.org/10.1016/j.inffus.2021.11.003
+  title: 'Counterfactuals and causability in explainable artificial intelligence:
+    Theory, algorithms, and applications'
+  year: 2021
+  cited_by_count: 259
+  venue: Information Fusion
+  authors:
+  - Yu-Liang Chou
+  - Catarina Moreira
+  - Peter Bruza
+  - Chun Ouyang
+  - Joaquim Jorge
+  concepts:
+  - Counterfactual conditional
+  - Computer science
+  - Counterfactual thinking
+  - Artificial intelligence
+  - Machine learning
+  - Spurious relationship
+  source_query: counterfactual explanation credit decision
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W2788651580
+  doi: https://doi.org/10.1609/aaai.v32i1.11564
+  title: Fairness in Decision-Making — The Causal Explanation Formula
+  year: 2018
+  cited_by_count: 199
+  venue: Proceedings of the AAAI Conference on Artificial Intelligence
+  authors:
+  - Junzhe Zhang
+  - Elias Bareinboim
+  concepts:
+  - Counterfactual thinking
+  - Spurious relationship
+  - Causality (physics)
+  - Computer science
+  - Task (project management)
+  - Risk analysis (engineering)
+  source_query: counterfactual explanation credit decision
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W1956343362
+  doi: https://doi.org/10.48550/arxiv.1511.00830
+  title: The Variational Fair Autoencoder
+  year: 2015
+  cited_by_count: 186
+  venue: UvA-DARE (University of Amsterdam)
+  authors:
+  - Christos Louizos
+  - Kevin Swersky
+  - Yujia Li
+  - Max Welling
+  - Richard S. Zemel
+  concepts:
+  - Autoencoder
+  - Medicine
+  - Mathematics
+  - Computer science
+  - Artificial intelligence
+  - Artificial neural network
+  source_query: fairness credit scoring imbalanced
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W4281263276
+  doi: https://doi.org/10.1016/j.ins.2022.05.067
+  title: Reject inference in credit scoring using a three-way decision and safe semi-supervised
+    support vector machine
+  year: 2022
+  cited_by_count: 36
+  venue: Information Sciences
+  authors:
+  - Feng Shen
+  - Zhiyuan Yang
+  - Xingchao Zhao
+  - Dao Lan
+  concepts:
+  - Inference
+  - Support vector machine
+  - Sample (material)
+  - Computer science
+  - Artificial intelligence
+  - Machine learning
+  source_query: reject inference credit scoring
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W2129542896
+  doi: https://doi.org/10.1111/1467-9868.00055
+  title: Inference for Non-random Samples
+  year: 1997
+  cited_by_count: 400
+  venue: Journal of the Royal Statistical Society Series B (Statistical Methodology)
+  authors:
+  - J. B. Copas
+  - H. G. Li
+  concepts:
+  - Inference
+  - Observational study
+  - Randomized experiment
+  - Randomness
+  - Statistics
+  - Statistical inference
+  source_query: sample selection bias accepted applicants credit
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W1496649249
+  doi: https://doi.org/10.17016/bulletin.1996.82-7
+  title: Credit Risk, Credit Scoring, and the Performance of Home Mortgages
+  year: 1996
+  cited_by_count: 178
+  venue: Federal Reserve Bulletin
+  authors:
+  - Robert B. Avery
+  - Raphael W. Bostic
+  - Paul S. Calem
+  - Glenn B. Canner
+  concepts:
+  - Business
+  - Credit risk
+  - Financial system
+  - Actuarial science
+  source_query: sample selection bias accepted applicants credit
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W2976426989
+  doi: https://doi.org/10.1109/access.2023.3271515
+  title: Sequential Training of Neural Networks With Gradient Boosting
+  year: 2023
+  cited_by_count: 30
+  venue: IEEE Access
+  authors:
+  - Seyedsaman Emami
+  - Gonzalo Martínez-Muñoz
+  concepts:
+  - Computer science
+  - Artificial neural network
+  - Gradient descent
+  - Boosting (machine learning)
+  - Artificial intelligence
+  - Activation function
+  source_query: gradient boosting credit default tabular
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W4321503229
+  doi: https://doi.org/10.1016/j.knosys.2023.110414
+  title: Soft reordering one-dimensional convolutional neural network for credit scoring
+  year: 2023
+  cited_by_count: 38
+  venue: Knowledge-Based Systems
+  authors:
+  - Hongyi Qian
+  - Ping Ma
+  - Songfeng Gao
+  - You Song
+  concepts:
+  - Computer science
+  - Convolutional neural network
+  - Artificial intelligence
+  - Benchmark (surveying)
+  - Kernel (algebra)
+  - Deep learning
+  source_query: deep learning tabular credit scoring benchmark
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W2952152744
+  doi: https://doi.org/10.1186/s13059-017-1299-7
+  title: Comprehensive benchmarking and ensemble approaches for metagenomic classifiers
+  year: 2017
+  cited_by_count: 383
+  venue: Genome biology
+  authors:
+  - Alexa B. R. McIntyre
+  - Rachid Ounit
+  - Ebrahim Afshinnekoo
+  - Robert J. Prill
+  - Elizabeth Hénaff
+  - Noah Alexander
+  - Samuel S. Minot
+  - David Danko
+  concepts:
+  - Metagenomics
+  - False positive paradox
+  - Biology
+  - Identification (biology)
+  - Benchmarking
+  - Set (abstract data type)
+  source_query: deep learning tabular credit scoring benchmark
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W3216225969
+  doi: https://doi.org/10.1007/978-3-030-85292-4_3
+  title: 'Foundations of Machine Learning-Based Clinical Prediction Modeling: Part
+    II—Generalization and Overfitting'
+  year: 2021
+  cited_by_count: 176
+  venue: Acta neurochirurgica. Supplementum
+  authors:
+  - Julius M. Kernbach
+  - Victor E. Staartjes
+  concepts:
+  - Overfitting
+  - Artificial intelligence
+  - Machine learning
+  - Regularization (linguistics)
+  - Computer science
+  - Resampling
+  source_query: resampling within cross-validation folds data leakage
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W4392232009
+  doi: https://doi.org/10.1038/s41467-024-46150-w
+  title: Data leakage inflates prediction performance in connectome-based machine
+    learning models
+  year: 2024
+  cited_by_count: 145
+  venue: Nature Communications
+  authors:
+  - Matthew Rosenblatt
+  - Link Tejavibulya
+  - Rongtao Jiang
+  - Stephanie Noble
+  - Dustin Scheinost
+  concepts:
+  - Generalizability theory
+  - Connectome
+  - Leakage (economics)
+  - Computer science
+  - Machine learning
+  - Covariate
+  source_query: resampling within cross-validation folds data leakage
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W4389883512
+  doi: https://doi.org/10.2196/49023
+  title: 'Practical Considerations and Applied Examples of Cross-Validation for Model
+    Development and Evaluation in Health Care: Tutorial'
+  year: 2023
+  cited_by_count: 133
+  venue: JMIR AI
+  authors:
+  - Drew Wilimitis
+  - Colin G. Walsh
+  concepts:
+  - Cross-validation
+  - Computer science
+  - Model validation
+  - Set (abstract data type)
+  - Data science
+  - Health care
+  source_query: resampling within cross-validation folds data leakage
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W4398171328
+  doi: https://doi.org/10.1038/s41598-024-62585-z
+  title: Applying oversampling before cross-validation will lead to high bias in radiomics
+  year: 2024
+  cited_by_count: 38
+  venue: Scientific Reports
+  authors:
+  - Aydın Demircioğlu
+  concepts:
+  - Oversampling
+  - Radiomics
+  - Lead (geology)
+  - Computer science
+  - Cross-validation
+  - Computational biology
+  source_query: resampling within cross-validation folds data leakage
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W2950120067
+  doi: https://doi.org/10.1371/journal.pone.0184661
+  title: 'MRIQC: Advancing the automatic prediction of image quality in MRI from unseen
+    sites'
+  year: 2017
+  cited_by_count: 994
+  venue: PLoS ONE
+  authors:
+  - Oscar Estéban
+  - Daniel Birman
+  - Marie Schaer
+  - Oluwasanmi Koyejo
+  - Russell A. Poldrack
+  - Krzysztof J. Gorgolewski
+  concepts:
+  - Computer science
+  - Artificial intelligence
+  - Classifier (UML)
+  - Normalization (sociology)
+  - Machine learning
+  - Pattern recognition (psychology)
+  source_query: resampling within cross-validation folds data leakage
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W3183421885
+  doi: https://doi.org/10.1016/j.cmpb.2021.106288
+  title: The importance of being external. methodological insights for the external
+    validation of machine learning models in medicine
+  year: 2021
+  cited_by_count: 251
+  venue: Computer Methods and Programs in Biomedicine
+  authors:
+  - Federico Cabitza
+  - Andrea Campagner
+  - Felipe Soares
+  - Luis García de Guadiana‐Romualdo
+  - Feyissa Challa
+  - Adela Sulejmani
+  - Michela Seghezzi
+  - Anna Carobene
+  concepts:
+  - Computer science
+  - Similarity (geometry)
+  - Machine learning
+  - Reliability (semiconductor)
+  - Data mining
+  - Artificial intelligence
+  source_query: resampling within cross-validation folds data leakage
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W4410548191
+  doi: https://doi.org/10.3390/computation13050127
+  title: 'Assessing the Validity of k-Fold Cross-Validation for Model Selection: Evidence
+    from Bankruptcy Prediction Using Random Forest and XGBoost'
+  year: 2025
+  cited_by_count: 47
+  venue: Computation
+  authors:
+  - Vlad Teodorescu
+  - Laura Obreja Brașoveanu
+  concepts:
+  - Cross-validation
+  - Fold (higher-order function)
+  - Random forest
+  - Model selection
+  - Selection (genetic algorithm)
+  - Statistics
+  source_query: resampling within cross-validation folds data leakage
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W4409076245
+  doi: https://doi.org/10.1002/cem.70026
+  title: Being Aware of Data Leakage and Cross‐Validation Scaling in Chemometric Model
+    Validation
+  year: 2025
+  cited_by_count: 13
+  venue: Journal of Chemometrics
+  authors:
+  - Péter Király
+  - Gergely Tóth
+  concepts:
+  - Model validation
+  - Scaling
+  - Leakage (economics)
+  - Chemometrics
+  - Cross-validation
+  - Data mining
+  source_query: resampling within cross-validation folds data leakage
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W4296794216
+  doi: https://doi.org/10.1038/s41597-022-01618-6
+  title: Inflation of test accuracy due to data leakage in deep learning-based classification
+    of OCT images
+  year: 2022
+  cited_by_count: 71
+  venue: arXiv (Cornell University)
+  authors:
+  - Iulian Emil Tampu
+  - Anders Eklund
+  - Neda Haj‐Hosseini
+  concepts:
+  - Computer science
+  - Optical coherence tomography
+  - Deep learning
+  - Artificial intelligence
+  - Pearson product-moment correlation coefficient
+  - Test data
+  source_query: resampling within cross-validation folds data leakage
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W4392401953
+  doi: https://doi.org/10.1007/s10462-024-10724-3
+  title: 'Resampling strategies for imbalanced regression: a survey and empirical
+    analysis'
+  year: 2024
+  cited_by_count: 43
+  venue: Artificial Intelligence Review
+  authors:
+  - Juscimara Gomes Avelino
+  - George D. C. Cavalcanti
+  - Rafael M. O. Cruz
+  concepts:
+  - Resampling
+  - Computer science
+  - Regression
+  - Regression analysis
+  - Statistics
+  - Machine learning
+  source_query: resampling within cross-validation folds data leakage
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W4378901723
+  doi: https://doi.org/10.1093/jamiaopen/ooad033
+  title: 'Implications of resampling data to address the class imbalance problem (IRCIP):
+    an evaluation of impact on performance between classification algorithms in medical
+    data'
+  year: 2023
+  cited_by_count: 31
+  venue: JAMIA Open
+  authors:
+  - Koen Welvaars
+  - Jacobien H. F. Oosterhoff
+  - Michel P. J. van den Bekerom
+  - Job N. Doornberg
+  - Ernst P. van Haarst
+  - Jill A. van der Zee
+  - G A van Andel
+  - Brunolf W. Lagerveld
+  concepts:
+  - Brier score
+  - Resampling
+  - Oversampling
+  - Algorithm
+  - Computer science
+  - Undersampling
+  source_query: resampling within cross-validation folds data leakage
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W3113493652
+  doi: https://doi.org/10.1002/mp.14678
+  title: Risks of feature leakage and sample size dependencies in deep feature extraction
+    for breast mass classification
+  year: 2020
+  cited_by_count: 33
+  venue: Medical Physics
+  authors:
+  - Ravi K. Samala
+  - Heang‐Ping Chan
+  - Lubomir M. Hadjiiski
+  - Mark A. Helvie
+  concepts:
+  - Artificial intelligence
+  - Computer science
+  - Feature extraction
+  - Pattern recognition (psychology)
+  - Test set
+  - Feature selection
+  source_query: resampling within cross-validation folds data leakage
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W4377989430
+  doi: https://doi.org/10.1148/ryai.220232
+  title: A Guide to Cross-Validation for Artificial Intelligence in Medical Imaging
+  year: 2023
+  cited_by_count: 203
+  venue: Radiology Artificial Intelligence
+  authors:
+  - Tyler Bradshaw
+  - Zachary Huemann
+  - Junjie Hu
+  - Arman Rahmim
+  concepts:
+  - Hyperparameter
+  - Convolutional neural network
+  - Artificial intelligence
+  - Machine learning
+  - Field (mathematics)
+  - Artificial neural network
+  source_query: cross-validation imbalanced data overfitting overoptimism
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W4385576721
+  doi: https://doi.org/10.1016/j.patter.2023.100804
+  title: Leakage and the reproducibility crisis in machine-learning-based science
+  year: 2023
+  cited_by_count: 638
+  venue: Patterns
+  authors:
+  - Sayash Kapoor
+  - Arvind Narayanan
+  concepts:
+  - Reproducibility
+  - Leakage (economics)
+  - Computer science
+  - Logistic regression
+  - Regression
+  - Artificial intelligence
+  source_query: cross-validation imbalanced data overfitting overoptimism
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W4385252239
+  doi: https://doi.org/10.1186/s12911-023-02238-9
+  title: XGBoost-SHAP-based interpretable diagnostic framework for alzheimer’s disease
+  year: 2023
+  cited_by_count: 157
+  venue: BMC Medical Informatics and Decision Making
+  authors:
+  - Fuliang Yi
+  - Hui Yang
+  - Durong Chen
+  - Yao Qin
+  - Hongjuan Han
+  - Jing Cui
+  - Wenlin Bai
+  - Yifei Ma
+  concepts:
+  - Random forest
+  - Artificial intelligence
+  - Machine learning
+  - AdaBoost
+  - Computer science
+  - Naive Bayes classifier
+  source_query: cross-validation imbalanced data overfitting overoptimism
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W1999180000
+  doi: https://doi.org/10.1016/j.pmrj.2013.07.007
+  title: 'Multivariate Regression: The Pitfalls of Automated Variable Selection'
+  year: 2013
+  cited_by_count: 41
+  venue: PM&R
+  authors:
+  - Kristin L. Sainani
+  concepts:
+  - Computer science
+  - Stepwise regression
+  - Selection (genetic algorithm)
+  - Regression analysis
+  - Set (abstract data type)
+  - Feature selection
+  source_query: cross-validation imbalanced data overfitting overoptimism
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W4297207068
+  doi: https://doi.org/10.1093/advances/nmac103
+  title: Machine Learning in Nutrition Research
+  year: 2022
+  cited_by_count: 161
+  venue: Advances in Nutrition
+  authors:
+  - Daniel Kirk
+  - E.J. Kok
+  - Michele Tufano
+  - Bedir Teki̇nerdoğan
+  - Edith J. M. Feskens
+  - Guido Camps
+  concepts:
+  - Computer science
+  - Bridge (graph theory)
+  - Field (mathematics)
+  - Resource (disambiguation)
+  - Data science
+  - Key (lock)
+  source_query: cross-validation imbalanced data overfitting overoptimism
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W2782738121
+  doi: https://doi.org/10.1002/cjp2.87
+  title: Histological scoring of immune and stromal features in breast and axillary
+    lymph nodes is prognostic for distant metastasis in lymph node‐positive breast
+    cancers
+  year: 2018
+  cited_by_count: 36
+  venue: The Journal of Pathology Clinical Research
+  authors:
+  - Anita Grigoriadis
+  - Patrycja Gazińska
+  - Trupti Pai
+  - Sheeba Irhsad
+  - Yin Wu
+  - Rosemary R. Millis
+  - Kalnisha Naidoo
+  - Julie Owen
+  concepts:
+  - Medicine
+  - Breast cancer
+  - Lymph node
+  - Oncology
+  - Pathology
+  - Axillary lymph nodes
+  source_query: cross-validation imbalanced data overfitting overoptimism
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W4221048006
+  doi: https://doi.org/10.1002/bimj.202000393
+  title: Missing data imputation in clinical trials using recurrent neural network
+    facilitated by clustering and oversampling
+  year: 2022
+  cited_by_count: 12
+  venue: Biometrical Journal
+  authors:
+  - Halimu N. Haliduola
+  - Frank Bretz
+  - Ulrich Mansmann
+  concepts:
+  - Missing data
+  - Oversampling
+  - Imputation (statistics)
+  - Computer science
+  - Cluster analysis
+  - Artificial intelligence
+  source_query: cross-validation imbalanced data overfitting overoptimism
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W4396541948
+  doi: https://doi.org/10.1126/sciadv.adk3452
+  title: 'REFORMS: Consensus-based Recommendations for Machine-learning-based Science'
+  year: 2024
+  cited_by_count: 83
+  venue: Science Advances
+  authors:
+  - Sayash Kapoor
+  - Emily M. Cantrell
+  - Kenny Peng
+  - Thanh Hien Pham
+  - Christopher A. Bail
+  - Odd Erik Gundersen
+  - Jake M. Hofman
+  - Jessica Hullman
+  concepts:
+  - Generalizability theory
+  - Credibility
+  - Transparency (behavior)
+  - Checklist
+  - Computer science
+  - Set (abstract data type)
+  source_query: cross-validation imbalanced data overfitting overoptimism
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W4318918835
+  doi: https://doi.org/10.2196/42045
+  title: 'Methodological and Quality Flaws in the Use of Artificial Intelligence in
+    Mental Health Research: Systematic Review'
+  year: 2023
+  cited_by_count: 94
+  venue: JMIR Mental Health
+  authors:
+  - Roberto Tornero-Costa
+  - Antonio Martínez-Millana
+  - Natasha Azzopardi‐Muscat
+  - Ledia Lazëri
+  - Vicente Traver
+  - David Novillo-Ortiz
+  concepts:
+  - Mental health
+  - Systematic review
+  - Population
+  - Critical appraisal
+  - Guideline
+  - Scopus
+  source_query: cross-validation imbalanced data overfitting overoptimism
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W4404340986
+  doi: https://doi.org/10.48550/arxiv.2410.21640
+  title: 'A Tutorial on Clinical Speech AI Development: From Data Collection to Model
+    Validation'
+  year: 2024
+  cited_by_count: 1
+  venue: arXiv (Cornell University)
+  authors:
+  - Si-Ioi Ng
+  - Lingfeng Xu
+  - Ingo Siegert
+  - Nicholas Cummins
+  - Nina R. Benway
+  - Julie Liss
+  - Visar Berisha
+  concepts:
+  - Data collection
+  - Computer science
+  - Data science
+  - Artificial intelligence
+  - Natural language processing
+  - Statistics
+  source_query: cross-validation imbalanced data overfitting overoptimism
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W4385890281
+  doi: https://doi.org/10.48550/arxiv.2308.07832
+  title: 'REFORMS: Reporting Standards for Machine Learning Based Science'
+  year: 2023
+  cited_by_count: 19
+  venue: arXiv (Cornell University)
+  authors:
+  - Sayash Kapoor
+  - Emily M. Cantrell
+  - Kenny Peng
+  - Thanh Hien Pham
+  - Christopher A. Bail
+  - Odd Erik Gundersen
+  - Jake M. Hofman
+  - Jessica Hullman
+  concepts:
+  - Credibility
+  - Generalizability theory
+  - Transparency (behavior)
+  - Checklist
+  - Computer science
+  - Set (abstract data type)
+  source_query: cross-validation imbalanced data overfitting overoptimism
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W1966716734
+  doi: https://doi.org/10.1371/journal.pone.0118432
+  title: The Precision-Recall Plot Is More Informative than the ROC Plot When Evaluating
+    Binary Classifiers on Imbalanced Datasets
+  year: 2015
+  cited_by_count: 4578
+  venue: PLoS ONE
+  authors:
+  - Takaya Saito
+  - Marc Rehmsmeier
+  concepts:
+  - Interpretability
+  - Receiver operating characteristic
+  - False positive paradox
+  - Plot (graphics)
+  - Binary classification
+  - Artificial intelligence
+  source_query: precision recall curve imbalanced classification evaluation
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W2888728157
+  doi: https://doi.org/10.1016/j.aci.2018.08.003
+  title: Classification assessment methods
+  year: 2018
+  cited_by_count: 2296
+  venue: Applied Computing and Informatics
+  authors:
+  - Alaa Tharwat
+  concepts:
+  - Computer science
+  - Preprocessor
+  - Confusion matrix
+  - Metric (unit)
+  - Binary classification
+  - Data mining
+  source_query: precision recall curve imbalanced classification evaluation
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W2999309192
+  doi: https://doi.org/10.1186/s12864-019-6413-7
+  title: The advantages of the Matthews correlation coefficient (MCC) over F1 score
+    and accuracy in binary classification evaluation
+  year: 2020
+  cited_by_count: 5762
+  venue: BMC Genomics
+  authors:
+  - Davide Chicco
+  - Giuseppe Jurman
+  concepts:
+  - Binary classification
+  - False positive paradox
+  - Binary number
+  - False positives and false negatives
+  - Correlation
+  - Confusion matrix
+  source_query: precision recall curve imbalanced classification evaluation
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W2330219538
+  doi: https://doi.org/10.5121/ijdkp.2015.5201
+  title: A Review on Evaluation Metrics for Data Classification Evaluations
+  year: 2015
+  cited_by_count: 2661
+  venue: International Journal of Data Mining & Knowledge Management Process
+  authors:
+  - Md Ekrim Hossin
+  - Sulaiman M.N
+  concepts:
+  - Discriminator
+  - Computer science
+  - Classifier (UML)
+  - Optimal distinctiveness theory
+  - Machine learning
+  - Artificial intelligence
+  source_query: precision recall curve imbalanced classification evaluation
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W3102927640
+  doi: https://doi.org/10.18653/v1/2020.eval4nlp-1.9
+  title: Probabilistic Extension of Precision, Recall, and F1 Score for More Thorough
+    Evaluation of Classification Models
+  year: 2020
+  cited_by_count: 723
+  venue: null
+  authors:
+  - Reda Yacouby
+  - Dustin Axman
+  concepts:
+  - Computer science
+  - Probabilistic logic
+  - Artificial intelligence
+  - Precision and recall
+  - Machine learning
+  - Recall
+  source_query: precision recall curve imbalanced classification evaluation
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W2108564850
+  doi: https://doi.org/10.1016/j.dss.2009.07.011
+  title: 'On strategies for imbalanced text classification using SVM: A comparative
+    study'
+  year: 2009
+  cited_by_count: 260
+  venue: Decision Support Systems
+  authors:
+  - Aixin Sun
+  - Ee‐Peng Lim
+  - Ying Liu
+  concepts:
+  - Support vector machine
+  - Computer science
+  - Artificial intelligence
+  - Machine learning
+  - Classifier (UML)
+  - Weighting
+  source_query: precision recall curve imbalanced classification evaluation
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W2138776277
+  doi: https://doi.org/10.1109/tkde.2009.187
+  title: Combating the Small Sample Class Imbalance Problem Using Feature Selection
+  year: 2009
+  cited_by_count: 389
+  venue: IEEE Transactions on Knowledge and Data Engineering
+  authors:
+  - Mike Wasikowski
+  - Xuewen Chen
+  concepts:
+  - Feature selection
+  - Computer science
+  - Artificial intelligence
+  - Performance metric
+  - Machine learning
+  - Feature (linguistics)
+  source_query: precision recall curve imbalanced classification evaluation
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W4399212077
+  doi: https://doi.org/10.1016/j.patter.2024.100994
+  title: The receiver operating characteristic curve accurately assesses imbalanced
+    datasets
+  year: 2024
+  cited_by_count: 162
+  venue: Patterns
+  authors:
+  - Eve Richardson
+  - Raphael Trevizani
+  - Jason Greenbaum
+  - Hannah Carter
+  - Morten Nielsen
+  - Bjoern Peters
+  concepts:
+  - Receiver operating characteristic
+  - Computer science
+  - Remote sensing
+  - Statistics
+  - Mathematics
+  - Geology
+  source_query: precision recall curve imbalanced classification evaluation
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W2620760558
+  doi: https://doi.org/10.1371/journal.pone.0177678
+  title: Optimal classifier for imbalanced data using Matthews Correlation Coefficient
+    metric
+  year: 2017
+  cited_by_count: 1231
+  venue: PLoS ONE
+  authors:
+  - Sabri Boughorbel
+  - Fethi Jarray
+  - Mohammed Elanbari
+  concepts:
+  - Artificial intelligence
+  - Classifier (UML)
+  - Computer science
+  - Support vector machine
+  - Matthews correlation coefficient
+  - Binary classification
+  source_query: precision recall curve imbalanced classification evaluation
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W2196215201
+  doi: https://doi.org/10.5555/2969239.2969333
+  title: 'Precision-Recall-Gain curves: PR analysis done right'
+  year: 2015
+  cited_by_count: 264
+  venue: Bristol Research (University of Bristol)
+  authors:
+  - Peter Flach
+  - Meelis Kull
+  concepts:
+  - Receiver operating characteristic
+  - Precision and recall
+  - Convex hull
+  - Harmonic mean
+  - Artificial intelligence
+  - Computer science
+  source_query: precision recall curve imbalanced classification evaluation
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W3182952703
+  doi: https://doi.org/10.14569/ijacsa.2021.0120670
+  title: Classification Model Evaluation Metrics
+  year: 2021
+  cited_by_count: 586
+  venue: International Journal of Advanced Computer Science and Applications
+  authors:
+  - Željko Vujović
+  concepts:
+  - Computer science
+  - Metric (unit)
+  - Data mining
+  - Set (abstract data type)
+  - Class (philosophy)
+  - Data set
+  source_query: precision recall curve imbalanced classification evaluation
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W2904542630
+  doi: https://doi.org/10.1609/aaai.v33i01.33014039
+  title: Precision-Recall versus Accuracy and the Role of Large Data Sets
+  year: 2019
+  cited_by_count: 305
+  venue: Proceedings of the AAAI Conference on Artificial Intelligence
+  authors:
+  - Brendan Juba
+  - Hai Son Le
+  concepts:
+  - Precision and recall
+  - Corollary
+  - Computer science
+  - Classifier (UML)
+  - Recall
+  - Artificial intelligence
+  source_query: ROC versus precision recall imbalanced datasets
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W2594183968
+  doi: https://doi.org/10.1039/c7sc02664a
+  title: 'MoleculeNet: a benchmark for molecular machine learning'
+  year: 2017
+  cited_by_count: 2924
+  venue: Chemical Science
+  authors:
+  - Zhenqin Wu
+  - Bharath Ramsundar
+  - Evan N. Feinberg
+  - Joseph Gomes
+  - Caleb Geniesse
+  - Aneesh Pappu
+  - Karl Leswing
+  - Vijay S. Pande
+  concepts:
+  - Benchmark (surveying)
+  - Computer science
+  - Machine learning
+  - Artificial intelligence
+  - Scale (ratio)
+  - Physics
+  source_query: ROC versus precision recall imbalanced datasets
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W3082059448
+  doi: https://doi.org/10.1186/s40537-020-00349-y
+  title: 'Boosting methods for multi-class imbalanced data classification: an experimental
+    review'
+  year: 2020
+  cited_by_count: 426
+  venue: Journal Of Big Data
+  authors:
+  - Jafar Tanha
+  - Yousef Abdi
+  - Negin Samadi
+  - Nazila Razzaghi
+  - Mohammad Asadpour
+  concepts:
+  - Boosting (machine learning)
+  - Machine learning
+  - Computer science
+  - Artificial intelligence
+  - Ensemble learning
+  - Gradient boosting
+  source_query: ROC versus precision recall imbalanced datasets
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W2995979568
+  doi: https://doi.org/10.1016/j.patcog.2019.107146
+  title: 'F-measure curves: A tool to visualize classifier performance under imbalance'
+  year: 2019
+  cited_by_count: 77
+  venue: Pattern Recognition
+  authors:
+  - Roghayeh Soleymani
+  - Éric Granger
+  - Giorgio Fumera
+  concepts:
+  - Classifier (UML)
+  - Skew
+  - Artificial intelligence
+  - Computer science
+  - Machine learning
+  - Measure (data warehouse)
+  source_query: ROC versus precision recall imbalanced datasets
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W3118600296
+  doi: https://doi.org/10.1007/s11263-020-01400-4
+  title: 'The MVTec Anomaly Detection Dataset: A Comprehensive Real-World Dataset
+    for Unsupervised Anomaly Detection'
+  year: 2021
+  cited_by_count: 498
+  venue: International Journal of Computer Vision
+  authors:
+  - Paul Bergmann
+  - Kilian Batzner
+  - Michael Fauser
+  - David Sattlegger
+  - Carsten Steger
+  concepts:
+  - Anomaly detection
+  - Computer science
+  - Artificial intelligence
+  - Pattern recognition (psychology)
+  - Convolutional neural network
+  - Leverage (statistics)
+  source_query: ROC versus precision recall imbalanced datasets
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W4210494925
+  doi: https://doi.org/10.1109/tpami.2022.3145392
+  title: Deep ROC Analysis and AUC as Balanced Average Accuracy, for Improved Classifier
+    Selection, Audit and Explanation
+  year: 2022
+  cited_by_count: 284
+  venue: IEEE Transactions on Pattern Analysis and Machine Intelligence
+  authors:
+  - Andre M. Carrington
+  - Douglas G. Manuel
+  - Paul W. Fieguth
+  - Tim Ramsay
+  - Venet Osmani
+  - Bernhard Wernly
+  - Carol Bennett
+  - Steven Hawken
+  concepts:
+  - Receiver operating characteristic
+  - Artificial intelligence
+  - Mathematics
+  - Statistics
+  - Precision and recall
+  - Binary classification
+  source_query: ROC versus precision recall imbalanced datasets
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W3140854437
+  doi: https://doi.org/10.1186/s40537-021-00444-8
+  title: 'Review of deep learning: concepts, CNN architectures, challenges, applications,
+    future directions'
+  year: 2021
+  cited_by_count: 7491
+  venue: Journal Of Big Data
+  authors:
+  - Laith Alzubaidi
+  - Jinglan Zhang
+  - Amjad J. Humaidi
+  - Ayad Q. Al-Dujaili
+  - Ye Duan
+  - Omran Al-Shamma
+  - José Santamaría
+  - Mohammed A. Fadhel
+  concepts:
+  - Computer science
+  - Artificial intelligence
+  - Field (mathematics)
+  - Deep learning
+  - Convolutional neural network
+  - Machine learning
+  source_query: ROC versus precision recall imbalanced datasets
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W2604756720
+  doi: https://doi.org/10.1109/tnnls.2017.2771290
+  title: A Systematic Study of Online Class Imbalance Learning With Concept Drift
+  year: 2018
+  cited_by_count: 327
+  venue: IEEE Transactions on Neural Networks and Learning Systems
+  authors:
+  - Shuo Wang
+  - Leandro L. Minku
+  - Xin Yao
+  concepts:
+  - Concept drift
+  - Class (philosophy)
+  - Computer science
+  - Field (mathematics)
+  - Data science
+  - Data stream mining
+  source_query: ROC versus precision recall imbalanced datasets
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W4390547231
+  doi: https://doi.org/10.3390/bdcc8010006
+  title: 'Enhancing Credit Card Fraud Detection: An Ensemble Machine Learning Approach'
+  year: 2024
+  cited_by_count: 173
+  venue: Big Data and Cognitive Computing
+  authors:
+  - Abdul Rehman Khalid
+  - Nsikak Owoh
+  - Omair Uthmani
+  - Moses Ashawa
+  - Jude Osamor
+  - John Adejoh
+  concepts:
+  - Credit card fraud
+  - Computer science
+  - Machine learning
+  - Ensemble learning
+  - Artificial intelligence
+  - Support vector machine
+  source_query: evaluation metrics credit scoring imbalanced
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W3173725123
+  doi: https://doi.org/10.1016/j.ejor.2021.06.053
+  title: 'Machine learning for credit scoring: Improving logistic regression with
+    non-linear decision-tree effects'
+  year: 2021
+  cited_by_count: 384
+  venue: European Journal of Operational Research
+  authors:
+  - Elena Dumitrescu
+  - Sullivan Hué
+  - Christophe Hurlin
+  - Sessi Tokpavi
+  concepts:
+  - Logistic regression
+  - Interpretability
+  - Logistic model tree
+  - Random forest
+  - Decision tree
+  - Machine learning
+  source_query: evaluation metrics credit scoring imbalanced
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W4382196087
+  doi: https://doi.org/10.1016/j.neuroimage.2023.120253
+  title: 'Class imbalance should not throw you off balance: Choosing the right classifiers
+    and performance metrics for brain decoding with imbalanced data'
+  year: 2023
+  cited_by_count: 191
+  venue: NeuroImage
+  authors:
+  - Philipp Thölke
+  - Yorguin-José Mantilla-Ramos
+  - Hamza Abdelhedi
+  - Charlotte Maschke
+  - Arthur Dehgan
+  - Yann Harel
+  - Anirudha Kemtur
+  - Loubna Mekki Berrada
+  concepts:
+  - Magnetoencephalography
+  - Computer science
+  - Robustness (evolution)
+  - Metric (unit)
+  - Artificial intelligence
+  - Binary classification
+  source_query: evaluation metrics credit scoring imbalanced
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W4381542508
+  doi: https://doi.org/10.1186/s40537-023-00738-z
+  title: Threshold optimization and random undersampling for imbalanced credit card
+    data
+  year: 2023
+  cited_by_count: 46
+  venue: Journal Of Big Data
+  authors:
+  - Joffrey L. Leevy
+  - Justin Johnson
+  - John Hancock
+  - Taghi M. Khoshgoftaar
+  concepts:
+  - Undersampling
+  - Computer science
+  - Thresholding
+  - Random forest
+  - Credit card
+  - Class (philosophy)
+  source_query: evaluation metrics credit scoring imbalanced
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W3096733902
+  doi: https://doi.org/10.1155/2020/8885269
+  title: Facilitating User Authorization from Imbalanced Data Logs of Credit Cards
+    Using Artificial Intelligence
+  year: 2020
+  cited_by_count: 57
+  venue: Mobile Information Systems
+  authors:
+  - Vinay Arora
+  - Rohan Singh Leekha
+  - Kyungroul Lee
+  - Aman Kataria
+  concepts:
+  - Computer science
+  - Machine learning
+  - Credit card
+  - Artificial intelligence
+  - Random forest
+  - Naive Bayes classifier
+  source_query: evaluation metrics credit scoring imbalanced
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W2930363294
+  doi: https://doi.org/10.1016/j.eswa.2019.03.042
+  title: 'Champion-challenger analysis for credit card fraud detection: Hybrid ensemble
+    and deep learning'
+  year: 2019
+  cited_by_count: 146
+  venue: Expert Systems with Applications
+  authors:
+  - Eunji Kim
+  - Jehyuk Lee
+  - Hunsik Shin
+  - Hoseong Yang
+  - Sungzoon Cho
+  - Seung-kwan Nam
+  - Youngmi Song
+  - Jeong-a Yoon
+  concepts:
+  - Credit card fraud
+  - Champion
+  - Computer science
+  - Credit card
+  - Ensemble learning
+  - Artificial intelligence
+  source_query: evaluation metrics credit scoring imbalanced
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W1981552604
+  doi: https://doi.org/10.1214/09-ss054
+  title: A survey of cross-validation procedures for model selection
+  year: 2010
+  cited_by_count: 3251
+  venue: Statistics Surveys
+  authors:
+  - Sylvain Arlot
+  - Alain Celisse
+  concepts:
+  - Selection (genetic algorithm)
+  - Model selection
+  - Computer science
+  - Simplicity
+  - Estimator
+  - Econometrics
+  source_query: repeated stratified k-fold cross-validation variance
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W2154290668
+  doi: https://doi.org/10.1186/1758-2946-6-10
+  title: Cross-validation pitfalls when selecting and assessing regression and classification
+    models
+  year: 2014
+  cited_by_count: 1057
+  venue: Journal of Cheminformatics
+  authors:
+  - Damjan Krstajić
+  - Ljubomir Buturović
+  - David E. Leahy
+  - Simon Thomas
+  concepts:
+  - Computer science
+  - Data mining
+  - Regression
+  - Cross-validation
+  - Model validation
+  - Regression analysis
+  source_query: repeated stratified k-fold cross-validation variance
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W4403658285
+  doi: https://doi.org/10.11648/j.ajtas.20241305.13
+  title: 'Comparative Analysis of Cross-Validation Techniques: LOOCV, K-folds Cross-Validation,
+    and Repeated K-folds Cross-Validation in Machine Learning Models'
+  year: 2024
+  cited_by_count: 107
+  venue: American Journal of Theoretical and Applied Statistics
+  authors:
+  - Victor Lumumba
+  - Dennis Kiprotich
+  - Mary Lemasulani Mpaine
+  - Njoka Grace Makena
+  - Musyimi Daniel Kavita
+  concepts:
+  - Cross-validation
+  - Computer science
+  - Artificial intelligence
+  - Model validation
+  - Pattern recognition (psychology)
+  - Data science
+  source_query: repeated stratified k-fold cross-validation variance
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W2110298216
+  doi: https://doi.org/10.1093/bioinformatics/btg419
+  title: Is cross-validation valid for small-sample microarray classification?
+  year: 2004
+  cited_by_count: 596
+  venue: Bioinformatics
+  authors:
+  - Ulisses Braga-Neto
+  - Edward R. Dougherty
+  concepts:
+  - Estimator
+  - Statistics
+  - Cross-validation
+  - Replicate
+  - Computer science
+  - Outlier
+  source_query: repeated stratified k-fold cross-validation variance
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W2910355480
+  doi: https://doi.org/10.3390/rs11020185
+  title: Evaluation of Sampling and Cross-Validation Tuning Strategies for Regional-Scale
+    Machine Learning Classification
+  year: 2019
+  cited_by_count: 307
+  venue: Remote Sensing
+  authors:
+  - Christopher A. Ramezan
+  - Timothy A. Warner
+  - Aaron E. Maxwell
+  concepts:
+  - Computer science
+  - Support vector machine
+  - Scale (ratio)
+  - Random forest
+  - Sampling (signal processing)
+  - Sample (material)
+  source_query: repeated stratified k-fold cross-validation variance
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W2051954214
+  doi: https://doi.org/10.1016/j.jaci.2010.02.008
+  title: Analyses of asthma severity phenotypes and inflammatory proteins in subjects
+    stratified by sputum granulocytes
+  year: 2010
+  cited_by_count: 471
+  venue: Journal of Allergy and Clinical Immunology
+  authors:
+  - Annette T. Hastie
+  - Wendy C. Moore
+  - Deborah A. Meyers
+  - Penny L. Vestal
+  - Huashi Li
+  - Stephen P. Peters
+  - Eugene R. Bleecker
+  concepts:
+  - Sputum
+  - Medicine
+  - Asthma
+  - Immunology
+  - Eosinophil
+  - Exhaled nitric oxide
+  source_query: repeated stratified k-fold cross-validation variance
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W1740027447
+  doi: https://doi.org/10.1080/1369118x.2015.1078834
+  title: Development and validation of the Internet Skills Scale (ISS)
+  year: 2015
+  cited_by_count: 483
+  venue: Information Communication & Society
+  authors:
+  - Alexander Johannes Aloysius Maria van Deursen
+  - Ellen Helsper
+  - Rebecca Eynon
+  concepts:
+  - The Internet
+  - CLARITY
+  - Scale (ratio)
+  - Sample (material)
+  - Applied psychology
+  - Cognitive skill
+  source_query: repeated stratified k-fold cross-validation variance
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W2105981176
+  doi: https://doi.org/10.1093/bioinformatics/bti499
+  title: 'Prediction error estimation: a comparison of resampling methods'
+  year: 2005
+  cited_by_count: 1339
+  venue: Bioinformatics
+  authors:
+  - Annette M. Molinaro
+  - Richard Simon
+  - Ruth M. Pfeiffer
+  concepts:
+  - Resampling
+  - Estimation
+  - Computer science
+  - Jackknife resampling
+  - Statistics
+  - Artificial intelligence
+  source_query: repeated stratified k-fold cross-validation variance
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W2131372757
+  doi: https://doi.org/10.5194/bg-6-2001-2009
+  title: 'Towards global empirical upscaling of FLUXNET eddy covariance observations:
+    validation of a model tree ensemble approach using a biosphere model'
+  year: 2009
+  cited_by_count: 727
+  venue: Biogeosciences
+  authors:
+  - Martin Jung
+  - Markus Reichstein
+  - Alberte Bondeau
+  concepts:
+  - FluxNet
+  - Biosphere
+  - Eddy covariance
+  - Extrapolation
+  - Environmental science
+  - Covariance
+  source_query: repeated stratified k-fold cross-validation variance
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W2524624025
+  doi: null
+  title: On estimating model accuracy with repeated cross-validation
+  year: 2012
+  cited_by_count: 66
+  venue: Lirias (KU Leuven)
+  authors:
+  - Gitte Vanwinckelen
+  - Hendrik Blockeel
+  concepts:
+  - Computer science
+  - Statistics
+  - Econometrics
+  - Mathematics
+  source_query: repeated stratified k-fold cross-validation variance
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W3195075407
+  doi: https://doi.org/10.3390/electronics10161973
+  title: 'Greed Is Good: Rapid Hyperparameter Optimization and Model Selection Using
+    Greedy k-Fold Cross Validation'
+  year: 2021
+  cited_by_count: 85
+  venue: Electronics
+  authors:
+  - Daniel S. Soper
+  concepts:
+  - Hyperparameter
+  - Cross-validation
+  - Hyperparameter optimization
+  - Computer science
+  - Greedy algorithm
+  - Set (abstract data type)
+  source_query: repeated stratified k-fold cross-validation variance
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W2037668591
+  doi: https://doi.org/10.1016/s0895-4356(96)00236-3
+  title: A simulation study of the number of events per variable in logistic regression
+    analysis
+  year: 1996
+  cited_by_count: 8954
+  venue: Journal of Clinical Epidemiology
+  authors:
+  - Peter Peduzzi
+  - John Concato
+  - Elizabeth Kemper
+  - Theodore R. Holford
+  - Alvan R. Feinstein
+  concepts:
+  - Logistic regression
+  - Statistics
+  - Mathematics
+  - Statistic
+  - Regression analysis
+  - Sample size determination
+  source_query: events per variable logistic regression
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W2130373985
+  doi: https://doi.org/10.1093/aje/kwk052
+  title: Relaxing the Rule of Ten Events per Variable in Logistic and Cox Regression
+  year: 2006
+  cited_by_count: 4100
+  venue: American Journal of Epidemiology
+  authors:
+  - Eric Vittinghoff
+  - Charles E. McCulloch
+  concepts:
+  - Logistic regression
+  - Rule of thumb
+  - Statistics
+  - Confounding
+  - Confidence interval
+  - Econometrics
+  source_query: events per variable logistic regression
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W2553734051
+  doi: https://doi.org/10.1186/s12874-016-0267-3
+  title: No rationale for 1 variable per 10 events criterion for binary logistic regression
+    analysis
+  year: 2016
+  cited_by_count: 554
+  venue: BMC Medical Research Methodology
+  authors:
+  - Maarten van Smeden
+  - Joris A. H. de Groot
+  - Karel G. M. Moons
+  - Gary S. Collins
+  - Douglas G. Altman
+  - Marinus J.C. Eijkemans
+  - Johannes B. Reitsma
+  concepts:
+  - Logistic regression
+  - Statistics
+  - Logit
+  - Firth
+  - Sample size determination
+  - Regression analysis
+  source_query: events per variable logistic regression
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W2100697007
+  doi: https://doi.org/10.1177/0962280214558972
+  title: Events per variable (EPV) and the relative performance of different strategies
+    for estimating the out-of-sample validity of logistic regression models
+  year: 2014
+  cited_by_count: 480
+  venue: Statistical Methods in Medical Research
+  authors:
+  - Peter C. Austin
+  - Ewout W. Steyerberg
+  concepts:
+  - Statistics
+  - Sample size determination
+  - Logistic regression
+  - Sample (material)
+  - Mathematics
+  - Regression analysis
+  source_query: events per variable logistic regression
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W2072500831
+  doi: https://doi.org/10.3758/brm.41.4.1149
+  title: 'Statistical power analyses using G*Power 3.1: Tests for correlation and
+    regression analyses'
+  year: 2009
+  cited_by_count: 35736
+  venue: Behavior Research Methods
+  authors:
+  - Franz Faul
+  - Edgar Erdfelder
+  - Axel Buchner
+  - Albert-Georg Lang
+  concepts:
+  - Statistics
+  - Bivariate analysis
+  - Linear regression
+  - Logistic regression
+  - Regression analysis
+  - Regression diagnostic
+  source_query: events per variable logistic regression
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W2134732827
+  doi: https://doi.org/10.1186/1751-0473-3-17
+  title: Purposeful selection of variables in logistic regression
+  year: 2008
+  cited_by_count: 3905
+  venue: Source Code for Biology and Medicine
+  authors:
+  - Zoran Bursac
+  - C. Heath Gauss
+  - David Williams
+  - David W. Hosmer
+  concepts:
+  - Covariate
+  - Logistic regression
+  - Computer science
+  - Confounding
+  - Feature selection
+  - Selection (genetic algorithm)
+  source_query: events per variable logistic regression
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W1985231403
+  doi: https://doi.org/10.1016/j.jclinepi.2010.11.012
+  title: 'Performance of logistic regression modeling: beyond the number of events
+    per variable, the role of data structure'
+  year: 2011
+  cited_by_count: 312
+  venue: Journal of Clinical Epidemiology
+  authors:
+  - Delphine S. Courvoisier
+  - Christophe Combescure
+  - Thomas Agoritsas
+  - Angèle Gayet‐Ageron
+  - Thomas Perneger
+  concepts:
+  - Logistic regression
+  - Statistics
+  - Estimation
+  - Mathematics
+  - Regression analysis
+  - Sample size determination
+  source_query: events per variable logistic regression
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W1723129825
+  doi: https://doi.org/10.1111/j.1553-2712.2011.01185.x
+  title: 'Logistic Regression: A Brief Primer'
+  year: 2011
+  cited_by_count: 1273
+  venue: Academic Emergency Medicine
+  authors:
+  - Jill Stoltzfus
+  concepts:
+  - Multicollinearity
+  - Logistic regression
+  - Statistics
+  - Covariate
+  - Variables
+  - Regression diagnostic
+  source_query: events per variable logistic regression
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W2809949684
+  doi: https://doi.org/10.1177/0962280218784726
+  title: 'Sample size for binary logistic prediction models: Beyond events per variable
+    criteria'
+  year: 2018
+  cited_by_count: 746
+  venue: Statistical Methods in Medical Research
+  authors:
+  - Maarten van Smeden
+  - Karel G. M. Moons
+  - Joris A. H. de Groot
+  - Gary S. Collins
+  - Douglas G. Altman
+  - Marinus J.C. Eijkemans
+  - Johannes B. Reitsma
+  concepts:
+  - Sample size determination
+  - Logistic regression
+  - Statistics
+  - Sample (material)
+  - Binary number
+  - Predictive modelling
+  source_query: events per variable logistic regression
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W2103647733
+  doi: https://doi.org/10.11613/bm.2014.003
+  title: Understanding logistic regression analysis
+  year: 2014
+  cited_by_count: 1369
+  venue: Biochemia Medica
+  authors:
+  - Sandro Sperandei
+  concepts:
+  - Binomial regression
+  - Logistic regression
+  - Statistics
+  - Regression diagnostic
+  - Variable (mathematics)
+  - Regression analysis
+  source_query: events per variable logistic regression
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W2017732332
+  doi: https://doi.org/10.1016/j.jclinepi.2011.06.016
+  title: 'Logistic regression modeling and the number of events per variable: selection
+    bias dominates'
+  year: 2011
+  cited_by_count: 72
+  venue: Journal of Clinical Epidemiology
+  authors:
+  - Ewout W. Steyerberg
+  - M. Schemper
+  - Frank E. Harrell
+  concepts:
+  - Logistic regression
+  - Statistics
+  - Selection bias
+  - Regression analysis
+  - Selection (genetic algorithm)
+  - Regression
+  source_query: events per variable logistic regression
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W1602443498
+  doi: https://doi.org/10.1016/s0895-4356(01)00372-9
+  title: 'Logistic regression in the medical literature:'
+  year: 2001
+  cited_by_count: 615
+  venue: Journal of Clinical Epidemiology
+  authors:
+  - Steven C. Bagley
+  - Halbert White
+  - Beatrice A. Golomb
+  concepts:
+  - Logistic regression
+  - MEDLINE
+  - Regression analysis
+  - Medical literature
+  - Statistics
+  - Medicine
+  source_query: events per variable logistic regression
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W4238788310
+  doi: https://doi.org/10.1002/sim.9025
+  title: Minimum sample size for external validation of a clinical prediction model
+    with a binary outcome
+  year: 2021
+  cited_by_count: 327
+  venue: Statistics in Medicine
+  authors:
+  - Richard D Riley
+  - Thomas P. A. Debray
+  - Gary S. Collins
+  - Lucinda Archer
+  - Joie Ensor
+  - Maarten van Smeden
+  - Kym I E Snell
+  concepts:
+  - Sample size determination
+  - Calibration
+  - Statistics
+  - Statistic
+  - Outcome (game theory)
+  - Computer science
+  source_query: minimum sample size clinical prediction model
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W3012413426
+  doi: https://doi.org/10.1136/bmj.m441
+  title: Calculating the sample size required for developing a clinical prediction
+    model
+  year: 2020
+  cited_by_count: 2481
+  venue: BMJ
+  authors:
+  - Richard D Riley
+  - Joie Ensor
+  - Kym I E Snell
+  - Frank E. Harrell
+  - Glen P. Martin
+  - Johannes B. Reitsma
+  - Karel G.M. Moons
+  - Gary S. Collins
+  concepts:
+  - Sample size determination
+  - Computer science
+  - Sample (material)
+  - Outcome (game theory)
+  - Predictive modelling
+  - Health care
+  source_query: minimum sample size clinical prediction model
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W3094834023
+  doi: https://doi.org/10.1002/sim.8766
+  title: Minimum sample size for external validation of a clinical prediction model
+    with a continuous outcome
+  year: 2020
+  cited_by_count: 198
+  venue: Statistics in Medicine
+  authors:
+  - Lucinda Archer
+  - Kym I E Snell
+  - Joie Ensor
+  - Mohammed T Hudda
+  - Gary S. Collins
+  - Richard D Riley
+  concepts:
+  - Sample size determination
+  - Variance (accounting)
+  - Statistics
+  - Outcome (game theory)
+  - Calibration
+  - Sample (material)
+  source_query: minimum sample size clinical prediction model
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W4200283820
+  doi: https://doi.org/10.1002/sim.9275
+  title: Minimum sample size calculations for external validation of a clinical prediction
+    model with a time‐to‐event outcome
+  year: 2021
+  cited_by_count: 110
+  venue: Statistics in Medicine
+  authors:
+  - Richard D Riley
+  - Gary S. Collins
+  - Joie Ensor
+  - Lucinda Archer
+  - Sarah Booth
+  - Sarwar Islam Mozumder
+  - Mark J. Rutherford
+  - Maarten van Smeden
+  concepts:
+  - Censoring (clinical trials)
+  - Sample size determination
+  - Statistics
+  - Computer science
+  - Prediction interval
+  - Statistic
+  source_query: minimum sample size clinical prediction model
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W2898559532
+  doi: https://doi.org/10.1002/sim.7992
+  title: 'Minimum sample size for developing a multivariable prediction model: PART
+    II ‐ binary and time‐to‐event outcomes'
+  year: 2018
+  cited_by_count: 1131
+  venue: Statistics in Medicine
+  authors:
+  - Richard D Riley
+  - Kym I E Snell
+  - Joie Ensor
+  - Danielle Burke
+  - Frank E. Harrell
+  - Karel G.M. Moons
+  - Gary S. Collins
+  concepts:
+  - Statistics
+  - Sample size determination
+  - Categorical variable
+  - Mathematics
+  - Econometrics
+  - Event (particle physics)
+  source_query: minimum sample size clinical prediction model
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W3115592149
+  doi: https://doi.org/10.11613/bm.2021.010502
+  title: 'Sample size, power and effect size revisited: simplified and practical approaches
+    in pre-clinical, clinical and laboratory studies'
+  year: 2020
+  cited_by_count: 1501
+  venue: Biochemia Medica
+  authors:
+  - Ceyhan Ceran Serdar
+  - Murat Cihan
+  - Doğan Yücel
+  - Muhittin A. Serdar
+  concepts:
+  - Sample size determination
+  - Sample (material)
+  - Computer science
+  - Statistical power
+  - Statistics
+  - Mathematics
+  source_query: minimum sample size clinical prediction model
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W4394857110
+  doi: https://doi.org/10.1136/bmj-2023-078378
+  title: 'TRIPOD+AI statement: updated guidance for reporting clinical prediction
+    models that use regression or machine learning methods'
+  year: 2024
+  cited_by_count: 2020
+  venue: BMJ
+  authors:
+  - Gary S. Collins
+  - Karel G.M. Moons
+  - Paula Dhiman
+  - Richard D Riley
+  - Andrew L. Beam
+  - Ben Van Calster
+  - Marzyeh Ghassemi
+  - Xiaoxuan Liu
+  concepts:
+  - Tripod (photography)
+  - Checklist
+  - Machine learning
+  - Computer science
+  - Artificial intelligence
+  - Engineering
+  source_query: minimum sample size clinical prediction model
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W2006940889
+  doi: https://doi.org/10.1038/bjc.2014.639
+  title: 'Transparent reporting of a multivariable prediction model for individual
+    prognosis or diagnosis (TRIPOD): The TRIPOD statement'
+  year: 2015
+  cited_by_count: 3348
+  venue: British Journal of Cancer
+  authors:
+  - Gary S. Collins
+  - Johannes B. Reitsma
+  - Douglas G. Altman
+  - Karel G.M. Moons
+  concepts:
+  - Tripod (photography)
+  - Checklist
+  - Statement (logic)
+  - Medicine
+  - Computer science
+  - Psychology
+  source_query: minimum sample size clinical prediction model
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W2296761362
+  doi: https://doi.org/10.1016/j.jclinepi.2016.02.031
+  title: Adequate sample size for developing prediction models is not simply related
+    to events per variable
+  year: 2016
+  cited_by_count: 519
+  venue: Journal of Clinical Epidemiology
+  authors:
+  - Emmanuel Ogundimu
+  - Douglas G. Altman
+  - Gary S. Collins
+  concepts:
+  - Sample size determination
+  - Statistics
+  - Variable (mathematics)
+  - Sample (material)
+  - Econometrics
+  - Medicine
+  source_query: minimum sample size clinical prediction model
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W4220832516
+  doi: https://doi.org/10.1525/collabra.33267
+  title: Sample Size Justification
+  year: 2022
+  cited_by_count: 1519
+  venue: Collabra Psychology
+  authors:
+  - Daniël Lakens
+  concepts:
+  - Sample size determination
+  - Sample (material)
+  - Heuristics
+  - Statistics
+  - Population size
+  - Computer science
+  source_query: minimum sample size clinical prediction model
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
+- id: W2078271269
+  doi: https://doi.org/10.7326/m14-0697
+  title: 'Transparent Reporting of a multivariable prediction model for Individual
+    Prognosis Or Diagnosis (TRIPOD): The TRIPOD Statement'
+  year: 2015
+  cited_by_count: 2852
+  venue: Annals of Internal Medicine
+  authors:
+  - Gary S. Collins
+  - Johannes B. Reitsma
+  - Douglas G. Altman
+  - Karel G.M. Moons
+  concepts:
+  - Tripod (photography)
+  - Medicine
+  - Checklist
+  - Statement (logic)
+  - Psychology
+  - Cognitive psychology
+  source_query: minimum sample size clinical prediction model
+  discovered_at: '2026-06-10T12:01:03Z'
+  origin: auto
