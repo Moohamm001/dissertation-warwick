@@ -1,0 +1,140 @@
+"""Phase 2a — target-leakage audit / feature catalogue.
+
+Operationalises proposal §5.2. The stance is **default-deny**: a column is FORBIDDEN unless it
+appears on a vetted, hand-reasoned pre-funding allowlist. Anything determined at or after the
+funding decision (offer terms, outcomes, progression timestamps, post-hoc admin fields) cannot be
+an input to a model that is supposed to score an applicant *before* funding — including it would
+leak the label.
+
+Generates ``data/governance/feature_catalogue.yaml`` + ``feature_audit_summary.md`` and is the
+single source of truth for which columns the preprocessing pipeline is allowed to touch.
+"""
+from __future__ import annotations
+
+import pandas as pd
+
+from . import config as C
+from . import data as D
+
+# --- The vetted pre-funding predictor allowlist (the ONLY model inputs) ----
+# Each is known at application time, before any funding/offer decision. Conservative on purpose:
+# fewer clean features beats more leaky ones at viva.
+PERMITTED: dict[str, str] = {
+    "Credit Score": "pre-funding applicant",
+    "Amount Sought": "pre-funding application",
+    "Revenue": "pre-funding applicant (monthly revenue)",
+    "Average Monthly Sales": "pre-funding applicant",
+    "Time In Business": "pre-funding applicant",
+    "Days Since Last Opportunity": "pre-funding behavioural",
+    "Online App Completed": "pre-funding application channel",
+    "Is Borrower Renewal": "pre-funding relationship",
+    "Current Tier": "pre-funding risk tier",
+    "Mktg Tier": "pre-funding marketing tier",
+    "Industry": "pre-funding applicant",
+    "Loan Purpose": "pre-funding application",
+    "Borrower State": "pre-funding applicant geography",
+    "Deal Type": "pre-funding (new/renewal known at application)",
+    "Renewal Type": "pre-funding relationship",
+    "Channel": "pre-funding origination channel",
+    "Medium": "pre-funding origination channel",
+}
+
+# Named load-bearing leakage columns — must NEVER be permitted (asserted in tests).
+KNOWN_LEAKAGE = {
+    "Deal Status", "Term Complete Percentage", "Percent Paid", "Amount Funded",
+    "APR", "Factor", "Term", "Payback", "Is Offer Accepted", "Is Closed",
+    "Max Offer Received $", "Payment Amount", "Closed Max Term",
+}
+
+_OFFER_TERMS = {
+    "Amount Funded", "Max Offer Received $", "Closed Max Term", "Term", "APR", "Factor",
+    "Payback", "Commission", "Points", "Payment Amount", "Payment Frequency", "Tier",
+    "Product", "Prod Type", "Prod Id", "Prod Rank", "Lender", "Lender Identifier",
+    "Offer Id", "Search Term",
+}
+
+
+def _forbid_reason(name: str, miss: float, dtype: str) -> str:
+    if miss >= 1.0:
+        return "empty (100% missing)"
+    if name in {"Stage", "Status", "Disposition"}:
+        return "post-hoc status field"
+    if dtype.startswith("datetime"):
+        return "progression timestamp"
+    if name.endswith(" Id") or name.startswith("Unnamed") or name in {"Borrower Zip"}:
+        return "identifier"
+    if name in _OFFER_TERMS:
+        return "offer/contract term (set at funding)"
+    if any(t in name for t in ("Closed", "Percent Paid", "Term Complete", "Is Offer", "Is App", "Month Closed", "End")):
+        return "outcome / post-funding"
+    if name.startswith("Marketing "):
+        return "redundant marketing snapshot"
+    if miss > 0.40:
+        return "high missingness (>40%)"
+    return "administrative / free-text / ops"
+
+
+def classify() -> pd.DataFrame:
+    """Return a per-column catalogue: name, role (label/permitted/forbidden), category, missingness."""
+    df = D.load_raw()
+    rows = []
+    for name in df.columns:
+        miss = float(df[name].isna().mean())
+        dtype = str(df[name].dtype)
+        if name == C.LABEL_COL:
+            role, cat = "label", "defines Y"
+        elif name in PERMITTED:
+            role, cat = "permitted", PERMITTED[name]
+        else:
+            role, cat = "forbidden", _forbid_reason(name, miss, dtype)
+        rows.append({"column": name, "role": role, "category": cat, "pct_missing": round(miss * 100, 1)})
+    return pd.DataFrame(rows)
+
+
+def permitted_columns() -> list[str]:
+    """The authoritative model-input allowlist (validated against the raw header)."""
+    return list(PERMITTED.keys())
+
+
+def write_catalogue() -> str:
+    """Write the YAML catalogue + a Markdown summary; return the summary path."""
+    import yaml
+
+    C.ensure_dirs()
+    cat = classify()
+    counts = cat["role"].value_counts().to_dict()
+
+    catalogue = {
+        "label": C.LABEL_COL,
+        "permitted": [{"column": k, "category": v} for k, v in PERMITTED.items()],
+        "forbidden": [
+            {"column": r.column, "reason": r.category, "pct_missing": r.pct_missing}
+            for r in cat[cat.role == "forbidden"].itertuples()
+        ],
+    }
+    (C.GOVERNANCE_DIR / "feature_catalogue.yaml").write_text(
+        yaml.safe_dump(catalogue, sort_keys=False, allow_unicode=True), encoding="utf-8"
+    )
+
+    lines = [
+        "# Feature Audit Summary (target-leakage)",
+        "",
+        f"*Generated by `python -m emerald_ai audit`. Default-deny: {counts.get('permitted', 0)} "
+        f"permitted, {counts.get('forbidden', 0)} forbidden, 1 label, of {len(cat)} columns.*",
+        "",
+        "## Permitted model inputs (pre-funding only)",
+        "| column | category |",
+        "| --- | --- |",
+        *[f"| {k} | {v} |" for k, v in PERMITTED.items()],
+        "",
+        "## Forbidden (reason counts)",
+        "| reason | n |",
+        "| --- | --- |",
+        *[f"| {reason} | {n} |"
+          for reason, n in cat[cat.role == "forbidden"]["category"].value_counts().items()],
+        "",
+        "Load-bearing exclusions verified: " + ", ".join(sorted(KNOWN_LEAKAGE)) + ".",
+    ]
+    out = C.GOVERNANCE_DIR / "feature_audit_summary.md"
+    out.write_text("\n".join(lines), encoding="utf-8")
+    return str(out)

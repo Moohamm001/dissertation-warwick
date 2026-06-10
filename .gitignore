@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+*.egg-info/
+
+# Research-bot response cache (regenerable; not source)
+literature/.cache/
+
+# Scratch / temp dumps
+_*.txt
+_*.json
+
+# OS
+Thumbs.db
+.DS_Store

@@ -1,0 +1,3716 @@
+- id: W2956745160
+  doi: https://doi.org/10.1007/s00521-019-04335-1
+  title: Generative adversarial fusion network for class imbalance credit scoring
+  year: 2019
+  cited_by_count: 43
+  venue: Neural Computing and Applications
+  authors:
+  - Kai Lei
+  - Yuexiang Xie
+  - Shangru Zhong
+  - Jingchao Dai
+  - Min Yang
+  - Ying Shen
+  concepts:
+  - Computer science
+  - Class (philosophy)
+  - Machine learning
+  - Artificial intelligence
+  - Adversarial system
+  - Generative grammar
+  source_query: class imbalance credit scoring
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W1998736688
+  doi: https://doi.org/10.1057/jors.2012.120
+  title: On the suitability of resampling techniques for the class imbalance problem
+    in credit scoring
+  year: 2012
+  cited_by_count: 151
+  venue: Journal of the Operational Research Society
+  authors:
+  - Ana I. Marqués
+  - Vicente García
+  - J. Salvador Sánchez
+  concepts:
+  - Resampling
+  - Christian ministry
+  - Computer science
+  - Class (philosophy)
+  - Machine learning
+  - Support vector machine
+  source_query: class imbalance credit scoring
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W2052611008
+  doi: https://doi.org/10.1016/j.eswa.2011.09.033
+  title: An experimental comparison of classification algorithms for imbalanced credit
+    scoring data sets
+  year: 2011
+  cited_by_count: 718
+  venue: Expert Systems with Applications
+  authors:
+  - Iain Brown
+  - Christophe Mues
+  concepts:
+  - Machine learning
+  - Artificial intelligence
+  - Decision tree
+  - Computer science
+  - Support vector machine
+  - Boosting (machine learning)
+  source_query: class imbalance credit scoring
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W4223935973
+  doi: https://doi.org/10.1016/j.eswa.2022.117233
+  title: A novel XGBoost extension for credit scoring class-imbalanced data combining
+    a generalized extreme value link and a modified focal loss function
+  year: 2022
+  cited_by_count: 80
+  venue: Expert Systems with Applications
+  authors:
+  - Jonah Mushava
+  - Michael P. Murray
+  concepts:
+  - Computer science
+  - Outlier
+  - Classifier (UML)
+  - Class (philosophy)
+  - Artificial intelligence
+  - Machine learning
+  source_query: class imbalance credit scoring
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W4381997116
+  doi: https://doi.org/10.1016/j.ejor.2023.06.036
+  title: Interpretable machine learning for imbalanced credit scoring datasets
+  year: 2023
+  cited_by_count: 150
+  venue: European Journal of Operational Research
+  authors:
+  - Yujia Chen
+  - Raffaella Calabrese
+  - Belén Martín-Barragán
+  concepts:
+  - Interpretability
+  - Machine learning
+  - Artificial intelligence
+  - Computer science
+  - Class (philosophy)
+  - Stability (learning theory)
+  source_query: class imbalance credit scoring
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W2774028126
+  doi: https://doi.org/10.19044/esj.2017.v13n33p340
+  title: 'Investigating the Performance of Smote for Class Imbalanced Learning: A
+    Case Study of Credit Scoring Datasets'
+  year: 2017
+  cited_by_count: 20
+  venue: European Scientific Journal ESJ
+  authors:
+  - Maira Anis
+  - Mohsin Ali
+  concepts:
+  - Oversampling
+  - Class (philosophy)
+  - Resampling
+  - Computer science
+  - Machine learning
+  - Artificial intelligence
+  source_query: class imbalance credit scoring
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W2298599339
+  doi: https://doi.org/10.1007/978-3-319-28697-6_6
+  title: On Class Imbalance Correction for Classification Algorithms in Credit Scoring
+  year: 2016
+  cited_by_count: 13
+  venue: Operations research proceedings
+  authors:
+  - Bernd Bischl
+  - Tobias Kühn
+  - Gero Szepannek
+  concepts:
+  - Class (philosophy)
+  - Computer science
+  - Algorithm
+  - Artificial intelligence
+  source_query: class imbalance credit scoring
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W3083961251
+  doi: https://doi.org/10.1016/j.eswa.2020.113986
+  title: A benchmark of machine learning approaches for credit score prediction
+  year: 2020
+  cited_by_count: 235
+  venue: Expert Systems with Applications
+  authors:
+  - Vincenzo Moscato
+  - Antonio Picariello
+  - Giancarlo Sperlí
+  concepts:
+  - Computer science
+  - Loan
+  - Leverage (statistics)
+  - Machine learning
+  - Benchmarking
+  - Benchmark (surveying)
+  source_query: class imbalance credit scoring
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W2017416182
+  doi: https://doi.org/10.1016/j.nonrwa.2005.04.006
+  title: Evaluation of neural networks and data mining methods on a credit assessment
+    task for class imbalance problem
+  year: 2005
+  cited_by_count: 162
+  venue: Nonlinear Analysis Real World Applications
+  authors:
+  - Yueh‐Min Huang
+  - Chun-Min Hung
+  - Hewijin Christine Jiau
+  concepts:
+  - Class (philosophy)
+  - Task (project management)
+  - Artificial neural network
+  - Computer science
+  - Artificial intelligence
+  - Data mining
+  source_query: class imbalance credit scoring
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W2958026736
+  doi: https://doi.org/10.1109/access.2019.2927266
+  title: An Experimental Study With Imbalanced Classification Approaches for Credit
+    Card Fraud Detection
+  year: 2019
+  cited_by_count: 322
+  venue: IEEE Access
+  authors:
+  - Sara Makki
+  - Zainab Assaghir
+  - Yéhia Taher
+  - Rafiqul Haque
+  - Mohand-Saïd Hacid
+  - Hassan Zeineddine
+  concepts:
+  - Credit card fraud
+  - Credit card
+  - Computer science
+  - Identity theft
+  - Machine learning
+  - Financial fraud
+  source_query: class imbalance credit scoring
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W2562319768
+  doi: https://doi.org/10.1016/j.eswa.2016.12.035
+  title: 'Learning from class-imbalanced data: Review of methods and applications'
+  year: 2016
+  cited_by_count: 2330
+  venue: Expert Systems with Applications
+  authors:
+  - Guo Haixiang
+  - Yijing Li
+  - Jennifer Shang
+  - Mingyun Gu
+  - Yuanyue Huang
+  - Gong Bing
+  concepts:
+  - Computer science
+  - Machine learning
+  - Artificial intelligence
+  - Preprocessor
+  - Data science
+  - Task (project management)
+  source_query: imbalanced classification rare events
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W2117190680
+  doi: https://doi.org/10.1007/s10618-012-0295-5
+  title: Training and assessing classification rules with imbalanced data
+  year: 2012
+  cited_by_count: 757
+  venue: Data Mining and Knowledge Discovery
+  authors:
+  - Giovanna Menardi
+  - Nicola Torelli
+  concepts:
+  - Training (meteorology)
+  - Computer science
+  - Artificial intelligence
+  - Training set
+  - Machine learning
+  - Data mining
+  source_query: imbalanced classification rare events
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W2936503027
+  doi: https://doi.org/10.1186/s40537-019-0192-5
+  title: Survey on deep learning with class imbalance
+  year: 2019
+  cited_by_count: 2815
+  venue: Journal Of Big Data
+  authors:
+  - Justin Johnson
+  - Taghi M. Khoshgoftaar
+  concepts:
+  - Computer science
+  - Artificial intelligence
+  - Deep learning
+  - Machine learning
+  - Class (philosophy)
+  - Popularity
+  source_query: imbalanced classification rare events
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W2804566321
+  doi: https://doi.org/10.1155/2018/6275435
+  title: 'A Framework of Rebalancing Imbalanced Healthcare Data for Rare Events’ Classification:
+    A Case of Look-Alike Sound-Alike Mix-Up Incident Detection'
+  year: 2018
+  cited_by_count: 84
+  venue: Journal of Healthcare Engineering
+  authors:
+  - Yang Zhao
+  - Zoie Shui-Yee Wong
+  - Kwok‐Leung Tsui
+  concepts:
+  - Algorithm
+  - Computer science
+  - Artificial intelligence
+  - Logistic regression
+  - Machine learning
+  source_query: imbalanced classification rare events
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W2338318698
+  doi: https://doi.org/10.1007/s13748-016-0094-0
+  title: 'Learning from imbalanced data: open challenges and future directions'
+  year: 2016
+  cited_by_count: 2405
+  venue: Progress in Artificial Intelligence
+  authors:
+  - Bartosz Krawczyk
+  concepts:
+  - Computer science
+  - Big data
+  - Data science
+  - Popularity
+  - Focus (optics)
+  - Open research
+  source_query: imbalanced classification rare events
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W2093525795
+  doi: https://doi.org/10.1016/j.knosys.2014.01.012
+  title: Weighted logistic regression for large-scale imbalanced and rare events data
+  year: 2014
+  cited_by_count: 90
+  venue: Knowledge-Based Systems
+  authors:
+  - Maher Maalouf
+  - Mohammad Abdul Majid Siddiqi
+  concepts:
+  - Computer science
+  - Logistic regression
+  - Scale (ratio)
+  - Regression
+  - Artificial intelligence
+  - Data mining
+  source_query: imbalanced classification rare events
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W2899434936
+  doi: https://doi.org/10.1186/s40537-018-0151-6
+  title: A survey on addressing high-class imbalance in big data
+  year: 2018
+  cited_by_count: 752
+  venue: Journal Of Big Data
+  authors:
+  - Joffrey L. Leevy
+  - Taghi M. Khoshgoftaar
+  - Richard A. Bauder
+  - Naeem Seliya
+  concepts:
+  - Class (philosophy)
+  - Computer science
+  - Big data
+  - Scope (computer science)
+  - Sampling bias
+  - Skew
+  source_query: imbalanced classification rare events
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W3180281962
+  doi: https://doi.org/10.1007/s10994-021-06023-5
+  title: Density-based weighting for imbalanced regression
+  year: 2021
+  cited_by_count: 170
+  venue: Machine Learning
+  authors:
+  - Michael Steininger
+  - Konstantin Kobs
+  - Padraig Davidson
+  - Anna Krause
+  - Andreas Hotho
+  concepts:
+  - Weighting
+  - Computer science
+  - Hyperparameter
+  - Regression
+  - Artificial intelligence
+  - Machine learning
+  source_query: imbalanced classification rare events
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W1966748751
+  doi: https://doi.org/10.1016/j.neucom.2013.05.059
+  title: A method for resampling imbalanced datasets in binary classification tasks
+    for real-world problems
+  year: 2014
+  cited_by_count: 171
+  venue: Neurocomputing
+  authors:
+  - Silvia Cateni
+  - Valentina Colla
+  - Marco Vannucci
+  concepts:
+  - Undersampling
+  - Oversampling
+  - Resampling
+  - Computer science
+  - Artificial intelligence
+  - Cluster analysis
+  source_query: imbalanced classification rare events
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W1988056000
+  doi: https://doi.org/10.1016/j.csda.2010.06.014
+  title: Robust weighted kernel logistic regression in imbalanced and rare events
+    data
+  year: 2010
+  cited_by_count: 139
+  venue: Computational Statistics & Data Analysis
+  authors:
+  - Maher Maalouf
+  - Theodore B. Trafali̇s
+  concepts:
+  - Rare events
+  - Artificial intelligence
+  - Support vector machine
+  - Computer science
+  - Machine learning
+  - Logistic regression
+  source_query: imbalanced classification rare events
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W3095606640
+  doi: https://doi.org/10.1016/j.asoc.2020.106852
+  title: A new deep learning ensemble credit risk evaluation model with an improved
+    synthetic minority oversampling technique
+  year: 2020
+  cited_by_count: 223
+  venue: Applied Soft Computing
+  authors:
+  - Feng Shen
+  - Xingchao Zhao
+  - Gang Kou
+  - Fawaz E. Alsaadi
+  concepts:
+  - Oversampling
+  - Artificial intelligence
+  - Machine learning
+  - Computer science
+  - AdaBoost
+  - Boosting (machine learning)
+  source_query: SMOTE credit scoring oversampling
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W3166991320
+  doi: https://doi.org/10.1088/1742-6596/1918/4/042002
+  title: Evaluation performance recall and F2 score of credit card fraud detection
+    unbalanced dataset using SMOTE oversampling technique
+  year: 2021
+  cited_by_count: 32
+  venue: Journal of Physics Conference Series
+  authors:
+  - Budi Prasetiyo
+  - Alamsyah Alamsyah
+  - Much Aziz Muslim
+  - Niswah Baroroh
+  concepts:
+  - Oversampling
+  - Computer science
+  - Class (philosophy)
+  - Random forest
+  - F1 score
+  - Data mining
+  source_query: SMOTE credit scoring oversampling
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W4206464561
+  doi: https://doi.org/10.1109/access.2021.3134330
+  title: Performance Evaluation of Machine Learning Methods for Credit Card Fraud
+    Detection Using SMOTE and AdaBoost
+  year: 2021
+  cited_by_count: 215
+  venue: IEEE Access
+  authors:
+  - Emmanuel Ileberi
+  - Yanxia Sun
+  - Zenghui Wang
+  concepts:
+  - AdaBoost
+  - Computer science
+  - Credit card fraud
+  - Credit card
+  - Machine learning
+  - Artificial intelligence
+  source_query: SMOTE credit scoring oversampling
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W2907709934
+  doi: https://doi.org/10.1111/exsy.12363
+  title: Credit scoring for a microcredit data set using the synthetic minority oversampling
+    technique and ensemble classifiers
+  year: 2018
+  cited_by_count: 47
+  venue: Expert Systems
+  authors:
+  - Adaleta Gicić
+  - Abdülhamit Subaşı
+  concepts:
+  - Oversampling
+  - Microfinance
+  - Computer science
+  - Machine learning
+  - Classifier (UML)
+  - Artificial intelligence
+  source_query: SMOTE credit scoring oversampling
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W3118035547
+  doi: https://doi.org/10.12785/ijcds/100128
+  title: A SMOTe based Oversampling Data-Point Approach to Solving the Credit Card
+    Data Imbalance Problem in Financial Fraud Detection
+  year: 2021
+  cited_by_count: 40
+  venue: International Journal of Computing and Digital Systems
+  authors:
+  - Nhlakanipho Michael Mqadi
+  - Nalindren Naicker
+  - Timothy T. Adeliyi
+  concepts:
+  - Oversampling
+  - Credit card fraud
+  - Credit card
+  - Computer science
+  - Point (geometry)
+  - Data mining
+  source_query: SMOTE credit scoring oversampling
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W3135156596
+  doi: https://doi.org/10.3390/asi4010018
+  title: 'SMOTE-ENC: A Novel SMOTE-Based Method to Generate Synthetic Data for Nominal
+    and Continuous Features'
+  year: 2021
+  cited_by_count: 142
+  venue: Applied System Innovation
+  authors:
+  - M. Mukherjee
+  - Matloob Khushi
+  concepts:
+  - Computer science
+  - Synthetic data
+  - Data mining
+  - Artificial intelligence
+  source_query: SMOTE credit scoring oversampling
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W4317040541
+  doi: https://doi.org/10.1186/s40537-023-00684-w
+  title: The effect of feature extraction and data sampling on credit card fraud detection
+  year: 2023
+  cited_by_count: 105
+  venue: Journal Of Big Data
+  authors:
+  - Zahra Salekshahrezaee
+  - Joffrey L. Leevy
+  - Taghi M. Khoshgoftaar
+  concepts:
+  - Computer science
+  - Undersampling
+  - Oversampling
+  - Random forest
+  - Artificial intelligence
+  - Feature extraction
+  source_query: SMOTE credit scoring oversampling
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W4318559683
+  doi: https://doi.org/10.1016/j.procs.2023.01.231
+  title: 'Unbalanced Credit Card Fraud Detection Data: A Machine Learning-Oriented
+    Comparative Study of Balancing Techniques'
+  year: 2023
+  cited_by_count: 117
+  venue: Procedia Computer Science
+  authors:
+  - Palak Gupta
+  - Anmol Varshney
+  - Mohammad Rafeek Khan
+  - Rafeeq Ahmed
+  - Mohammed Shuaib
+  - Shadab Alam
+  concepts:
+  - Oversampling
+  - Computer science
+  - Credit card fraud
+  - Credit card
+  - Machine learning
+  - Random forest
+  source_query: SMOTE credit scoring oversampling
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W2738681903
+  doi: https://doi.org/10.1371/journal.pone.0179805
+  title: 'Predicting diabetes mellitus using SMOTE and ensemble machine learning approach:
+    The Henry Ford ExercIse Testing (FIT) project'
+  year: 2017
+  cited_by_count: 303
+  venue: PLoS ONE
+  authors:
+  - Manal Alghamdi
+  - Mouaz H. Al‐Mallah
+  - Steven J. Keteyian
+  - Clinton A. Brawner
+  - Jonathan K. Ehrman
+  - Sherif Sakr
+  concepts:
+  - Random forest
+  - Machine learning
+  - Decision tree
+  - Naive Bayes classifier
+  - Artificial intelligence
+  - Logistic regression
+  source_query: SMOTE credit scoring oversampling
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W4399734362
+  doi: https://doi.org/10.1186/s40537-024-00943-4
+  title: 'Data oversampling and imbalanced datasets: an investigation of performance
+    for machine learning and feature engineering'
+  year: 2024
+  cited_by_count: 151
+  venue: Journal Of Big Data
+  authors:
+  - Muhammad Mujahid
+  - Erol Kına
+  - Furqan Rustam
+  - Mónica Gracia Villar
+  - Eduardo Silva Alvarado
+  - Isabel de la Torre Díez
+  - Imran Ashraf
+  concepts:
+  - Computer science
+  - Oversampling
+  - Computational Science and Engineering
+  - Feature (linguistics)
+  - Feature engineering
+  - Machine learning
+  source_query: SMOTE credit scoring oversampling
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W2107726111
+  doi: https://doi.org/10.1613/jair.301
+  title: 'Reinforcement Learning: A Survey'
+  year: 1996
+  cited_by_count: 8814
+  venue: Journal of Artificial Intelligence Research
+  authors:
+  - Leslie Pack Kaelbling
+  - Michael L. Littman
+  - Andrew Moore
+  concepts:
+  - Reinforcement learning
+  - Computer science
+  - Reinforcement
+  - Artificial intelligence
+  - Markov decision process
+  - Field (mathematics)
+  source_query: cost-sensitive learning credit default
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W3135028703
+  doi: https://doi.org/10.1007/s42979-021-00592-x
+  title: 'Machine Learning: Algorithms, Real-World Applications and Research Directions'
+  year: 2021
+  cited_by_count: 5079
+  venue: SN Computer Science
+  authors:
+  - Iqbal H. Sarker
+  concepts:
+  - Computer science
+  - Artificial intelligence
+  - Machine learning
+  - Key (lock)
+  - Big data
+  - Data science
+  source_query: cost-sensitive learning credit default
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W3121588992
+  doi: https://doi.org/10.1016/j.jbankfin.2010.06.001
+  title: Consumer credit-risk models via machine-learning algorithms
+  year: 2010
+  cited_by_count: 728
+  venue: Journal of Banking & Finance
+  authors:
+  - Amir E. Khandani
+  - Adlar J. Kim
+  - Andrew W. Lo
+  concepts:
+  - Credit card
+  - Default
+  - Machine learning
+  - Construct (python library)
+  - Credit risk
+  - Computer science
+  source_query: cost-sensitive learning credit default
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W2988916019
+  doi: https://doi.org/10.1007/s11263-019-01247-4
+  title: 'Deep Learning for Generic Object Detection: A Survey'
+  year: 2019
+  cited_by_count: 2759
+  venue: International Journal of Computer Vision
+  authors:
+  - Li Liu
+  - Wanli Ouyang
+  - Xiaogang Wang
+  - Paul Fieguth
+  - Jie Chen
+  - Xinwang Liu
+  - Matti Pietikäinen
+  concepts:
+  - Computer science
+  - Object detection
+  - Artificial intelligence
+  - Deep learning
+  - Field (mathematics)
+  - Representation (politics)
+  source_query: cost-sensitive learning credit default
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W3149839747
+  doi: https://doi.org/10.1016/j.engappai.2022.105151
+  title: 'Ensemble deep learning: A review'
+  year: 2022
+  cited_by_count: 2022
+  venue: Engineering Applications of Artificial Intelligence
+  authors:
+  - M. A. Ganaie
+  - Minghui Hu
+  - A. K. Malik
+  - M. Tanveer
+  - Ponnuthurai Nagaratnam Suganthan
+  concepts:
+  - Ensemble learning
+  - Computer science
+  - Artificial intelligence
+  - Boosting (machine learning)
+  - Deep learning
+  - Ensemble forecasting
+  source_query: cost-sensitive learning credit default
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W4205539948
+  doi: https://doi.org/10.1093/rfs/hhaa009
+  title: Empirical Asset Pricing via Machine Learning
+  year: 2020
+  cited_by_count: 2201
+  venue: Review of Financial Studies
+  authors:
+  - Shihao Gu
+  - Bryan Kelly
+  - Dacheng Xiu
+  concepts:
+  - Capital asset pricing model
+  - Machine learning
+  - Computer science
+  - Artificial intelligence
+  - Artificial neural network
+  - Volatility (finance)
+  source_query: cost-sensitive learning credit default
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W2700766797
+  doi: https://doi.org/10.1016/j.elerap.2017.06.004
+  title: Cost-sensitive boosted tree for loan evaluation in peer-to-peer lending
+  year: 2017
+  cited_by_count: 184
+  venue: Electronic Commerce Research and Applications
+  authors:
+  - Yufei Xia
+  - Chuanzhe Liu
+  - Nana Liu
+  concepts:
+  - Loan
+  - Computer science
+  - Profitability index
+  - Metric (unit)
+  - Portfolio
+  - Decision tree
+  source_query: cost-sensitive learning credit default
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W2964303497
+  doi: https://doi.org/10.3390/electronics8080832
+  title: 'Machine Learning Interpretability: A Survey on Methods and Metrics'
+  year: 2019
+  cited_by_count: 1750
+  venue: Electronics
+  authors:
+  - Diogo V. Carvalho
+  - Eduardo M. Pereira
+  - Jaime S. Cardoso
+  concepts:
+  - Interpretability
+  - Computer science
+  - Meaning (existential)
+  - Artificial intelligence
+  - Field (mathematics)
+  - Audit
+  source_query: cost-sensitive learning credit default
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W3124834107
+  doi: https://doi.org/10.1111/1540-6261.00527
+  title: Trade Credit, Financial Intermediary Development, and Industry Growth
+  year: 2003
+  cited_by_count: 1033
+  venue: The Journal of Finance
+  authors:
+  - Raymond Fisman
+  - Inessa Love
+  concepts:
+  - Trade credit
+  - Business
+  - Financial intermediary
+  - Financial market
+  - Financial system
+  - Capital market
+  source_query: cost-sensitive learning credit default
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W2800788706
+  doi: https://doi.org/10.1613/jair.1.11192
+  title: 'SMOTE for Learning from Imbalanced Data: Progress and Challenges, Marking
+    the 15-year Anniversary'
+  year: 2018
+  cited_by_count: 2110
+  venue: Journal of Artificial Intelligence Research
+  authors:
+  - Alberto Fernández
+  - Salvador García
+  - Francisco Herrera
+  - Nitesh V. Chawla
+  concepts:
+  - Computer science
+  - Machine learning
+  - Artificial intelligence
+  - Preprocessor
+  - Robustness (evolution)
+  - Benchmark (surveying)
+  source_query: cost-sensitive learning credit default
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W3120093105
+  doi: https://doi.org/10.1109/tnnls.2020.3047335
+  title: 'Dynamically Weighted Balanced Loss: Class Imbalanced Learning and Confidence
+    Calibration of Deep Neural Networks'
+  year: 2021
+  cited_by_count: 310
+  venue: IEEE Transactions on Neural Networks and Learning Systems
+  authors:
+  - K. Ruwani M. Fernando
+  - Chris P. Tsokos
+  concepts:
+  - Artificial intelligence
+  - Computer science
+  - Weighting
+  - Machine learning
+  - Class (philosophy)
+  - Artificial neural network
+  source_query: focal loss imbalanced tabular
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W4323644109
+  doi: https://doi.org/10.1109/tai.2023.3254519
+  title: Synergetic Focal Loss for Imbalanced Classification in Federated XGBoost
+  year: 2023
+  cited_by_count: 26
+  venue: IEEE Transactions on Artificial Intelligence
+  authors:
+  - Jiao Tian
+  - Pei‐Wei Tsai
+  - Kai Zhang
+  - Xinyi Cai
+  - Hongwang Xiao
+  - Ke Yu
+  - Wenyu Zhao
+  - Jinjun Chen
+  concepts:
+  - Computer science
+  - Hyperparameter
+  - Softmax function
+  - Overfitting
+  - Artificial intelligence
+  - Machine learning
+  source_query: focal loss imbalanced tabular
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W4313421210
+  doi: https://doi.org/10.1007/s10994-022-06268-8
+  title: The class imbalance problem in deep learning
+  year: 2022
+  cited_by_count: 262
+  venue: Machine Learning
+  authors:
+  - Kushankur Ghosh
+  - Colin Bellinger
+  - Roberto Corizzo
+  - Paula Branco
+  - Bartosz Krawczyk
+  - Nathalie Japkowicz
+  concepts:
+  - Artificial intelligence
+  - Deep learning
+  - Computer science
+  - Machine learning
+  - Class (philosophy)
+  - Context (archaeology)
+  source_query: focal loss imbalanced tabular
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W3128484727
+  doi: https://doi.org/10.1186/s40537-021-00414-0
+  title: A survey on generative adversarial networks for imbalance problems in computer
+    vision tasks
+  year: 2021
+  cited_by_count: 245
+  venue: Journal Of Big Data
+  authors:
+  - Vignesh Sampath
+  - Iñaki Maurtua
+  - Juan José Aguilar Martín
+  - Aitor Gutierrez
+  concepts:
+  - Computer science
+  - Artificial intelligence
+  - Task (project management)
+  - Machine learning
+  - Preprocessor
+  - Adversarial system
+  source_query: focal loss imbalanced tabular
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W4402128718
+  doi: https://doi.org/10.1007/s10462-024-10884-2
+  title: 'Handling imbalanced medical datasets: review of a decade of research'
+  year: 2024
+  cited_by_count: 210
+  venue: Artificial Intelligence Review
+  authors:
+  - Mabrouka Salmi
+  - Dalia Atif
+  - Diego Oliva
+  - Ajith Abraham
+  - Sebastián Ventura
+  concepts:
+  - Computer science
+  - Data science
+  - Machine learning
+  - Artificial intelligence
+  - Data mining
+  source_query: focal loss imbalanced tabular
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W4282548202
+  doi: https://doi.org/10.3390/cancers14122897
+  title: Bias and Class Imbalance in Oncologic Data—Towards Inclusive and Transferrable
+    AI in Large Scale Oncology Data Sets
+  year: 2022
+  cited_by_count: 97
+  venue: Cancers
+  authors:
+  - Erdal Taşçı
+  - Ying Zhuge
+  - Kevin Camphausen
+  - Andra Krauze
+  concepts:
+  - Class (philosophy)
+  - Computer science
+  - Precision medicine
+  - Data science
+  - Data sharing
+  - Data set
+  source_query: focal loss imbalanced tabular
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W4324046881
+  doi: https://doi.org/10.3390/make5010019
+  title: A Survey on GAN Techniques for Data Augmentation to Address the Imbalanced
+    Data Issues in Credit Card Fraud Detection
+  year: 2023
+  cited_by_count: 80
+  venue: Machine Learning and Knowledge Extraction
+  authors:
+  - Emilija Strelcenia
+  - Simant Prakoonwit
+  concepts:
+  - Credit card fraud
+  - Credit card
+  - Computer science
+  - Payment
+  - Domain (mathematical analysis)
+  - Generative grammar
+  source_query: focal loss imbalanced tabular
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W4387559617
+  doi: https://doi.org/10.48550/arxiv.2310.05067
+  title: 'Robust-GBDT: GBDT with Nonconvex Loss for Tabular Classification in the
+    Presence of Label Noise and Class Imbalance'
+  year: 2023
+  cited_by_count: 3
+  venue: arXiv (Cornell University)
+  authors:
+  - Jiaqi Luo
+  - Yuedong Quan
+  - Shixin Xú
+  concepts:
+  - Boosting (machine learning)
+  - Noise (video)
+  - Computer science
+  - Artificial intelligence
+  - Pattern recognition (psychology)
+  - Gradient boosting
+  source_query: focal loss imbalanced tabular
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W4308699322
+  doi: https://doi.org/10.1186/s13321-022-00657-w
+  title: Tuning gradient boosting for imbalanced bioassay modelling with custom loss
+    functions
+  year: 2022
+  cited_by_count: 20
+  venue: Journal of Cheminformatics
+  authors:
+  - Davide Boldini
+  - Lukas Friedrich
+  - Daniel Kühn
+  - Stephan A. Sieber
+  concepts:
+  - Interpretability
+  - Boosting (machine learning)
+  - Computer science
+  - Machine learning
+  - Scalability
+  - Artificial intelligence
+  source_query: focal loss imbalanced tabular
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W4390511453
+  doi: https://doi.org/10.1186/s40537-023-00851-z
+  title: 'Low-shot learning and class imbalance: a survey'
+  year: 2024
+  cited_by_count: 29
+  venue: Journal Of Big Data
+  authors:
+  - Preston Billion Polak
+  - Joseph D. Prusa
+  - Taghi M. Khoshgoftaar
+  concepts:
+  - Computer science
+  - Obstacle
+  - Class (philosophy)
+  - Shot (pellet)
+  - Task (project management)
+  - Artificial intelligence
+  source_query: focal loss imbalanced tabular
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W3089028909
+  doi: https://doi.org/10.1109/jproc.2021.3052449
+  title: A Unifying Review of Deep and Shallow Anomaly Detection
+  year: 2021
+  cited_by_count: 804
+  venue: Proceedings of the IEEE
+  authors:
+  - Lukas Ruff
+  - Jacob R. Kauffmann
+  - Robert A. Vandermeulen
+  - Gregoire Montavon
+  - Wojciech Samek
+  - Marius Kloft
+  - Thomas G. Dietterich
+  - Klaus-Robert Muller
+  concepts:
+  - Variety (cybernetics)
+  - Computer science
+  - Deep learning
+  - Field (mathematics)
+  - Generative grammar
+  - Anomaly detection
+  source_query: anomaly detection rare default prediction
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W3204263062
+  doi: https://doi.org/10.4230/lipics.time.2024.17
+  title: 'Anomaly Transformer: Time Series Anomaly Detection with Association Discrepancy'
+  year: 2021
+  cited_by_count: 242
+  venue: arXiv (Cornell University)
+  authors:
+  - Jiehui Xu
+  - Haixu Wu
+  - Jianmin Wang
+  - Mingsheng Long
+  concepts:
+  - Pointwise
+  - Pairwise comparison
+  - Anomaly detection
+  - Series (stratigraphy)
+  - Computer science
+  - Transformer
+  source_query: anomaly detection rare default prediction
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W3126814579
+  doi: https://doi.org/10.1109/access.2021.3056614
+  title: Benchmarking of Machine Learning for Anomaly Based Intrusion Detection Systems
+    in the CICIDS2017 Dataset
+  year: 2021
+  cited_by_count: 426
+  venue: IEEE Access
+  authors:
+  - Ziadoon Kamil Maseer
+  - Robiah Yusof
+  - Nazrulazhar Bahaman
+  - Salama A. Mostafa
+  - Cik Feresa Mohd Foozy
+  concepts:
+  - Computer science
+  - Machine learning
+  - Artificial intelligence
+  - Support vector machine
+  - Random forest
+  - Anomaly detection
+  source_query: anomaly detection rare default prediction
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W3195516695
+  doi: https://doi.org/10.1109/access.2021.3107163
+  title: Anomaly Detection in Medical Imaging With Deep Perceptual Autoencoders
+  year: 2021
+  cited_by_count: 143
+  venue: IEEE Access
+  authors:
+  - Nina Shvetsova
+  - Bart Bakker
+  - Irina Fedulova
+  - Heinrich Schulz
+  - Dmitry V. Dylov
+  concepts:
+  - Anomaly detection
+  - Computer science
+  - Artificial intelligence
+  - Autoencoder
+  - Deep learning
+  - Abnormality
+  source_query: anomaly detection rare default prediction
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W4318049614
+  doi: https://doi.org/10.3390/s23031352
+  title: A Survey of AI-Based Anomaly Detection in IoT and Sensor Networks
+  year: 2023
+  cited_by_count: 138
+  venue: Sensors
+  authors:
+  - Kyle DeMedeiros
+  - Abdeltawab Hendawi
+  - Marco Álvarez
+  concepts:
+  - Anomaly detection
+  - Internet of Things
+  - Anomaly (physics)
+  - Computer science
+  - The Internet
+  - Wireless sensor network
+  source_query: anomaly detection rare default prediction
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W4323981513
+  doi: https://doi.org/10.1186/s40854-023-00470-w
+  title: 'Online payment fraud: from anomaly detection to risk management'
+  year: 2023
+  cited_by_count: 124
+  venue: Financial Innovation
+  authors:
+  - Paolo Vanini
+  - Sebastiano Rossi
+  - Ermin Zvizdic
+  - Thomas Domenig
+  concepts:
+  - Benchmark (surveying)
+  - Computer science
+  - Payment
+  - Machine learning
+  - Risk management
+  - Anomaly detection
+  source_query: anomaly detection rare default prediction
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W2080831965
+  doi: https://doi.org/10.1093/nar/gku399
+  title: 'PASTA 2.0: an improved server for protein aggregation prediction'
+  year: 2014
+  cited_by_count: 492
+  venue: Nucleic Acids Research
+  authors:
+  - Ian Walsh
+  - Flavio Seno
+  - Silvio C. E. Tosatto
+  - Antonio Trovato
+  concepts:
+  - Biology
+  - Protein aggregation
+  - Amyloid (mycology)
+  - Complement (music)
+  - Computational biology
+  - Function (biology)
+  source_query: anomaly detection rare default prediction
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W4210793970
+  doi: https://doi.org/10.1049/cit2.12078
+  title: Network anomaly detection using deep learning techniques
+  year: 2022
+  cited_by_count: 110
+  venue: CAAI Transactions on Intelligence Technology
+  authors:
+  - Mohammad Kazim Hooshmand
+  - Doreswamy Hosahalli
+  concepts:
+  - Computer science
+  - Datagram
+  - User Datagram Protocol
+  - Convolutional neural network
+  - Anomaly detection
+  - Artificial intelligence
+  source_query: anomaly detection rare default prediction
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W2947820052
+  doi: https://doi.org/10.14722/ndss.2019.23265
+  title: A Systematic Framework to Generate Invariants for Anomaly Detection in Industrial
+    Control Systems
+  year: 2019
+  cited_by_count: 113
+  venue: null
+  authors:
+  - Cheng Feng
+  - Venkata Reddy Palleti
+  - Aditya P. Mathur
+  - Deeph Chana
+  concepts:
+  - Dependability
+  - Anomaly detection
+  - Computer science
+  - Invariant (physics)
+  - Industrial control system
+  - Pipeline transport
+  source_query: anomaly detection rare default prediction
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W3127413902
+  doi: https://doi.org/10.3390/s21041026
+  title: Efficient Anomaly Detection for Smart Hospital IoT Systems
+  year: 2021
+  cited_by_count: 90
+  venue: Sensors
+  authors:
+  - Abdel Mlak Said
+  - Aymen Yahyaoui
+  - Takoua Abdellatif
+  concepts:
+  - Anomaly detection
+  - Software deployment
+  - Computer science
+  - Internet of Things
+  - Event (particle physics)
+  - Adaptation (eye)
+  source_query: anomaly detection rare default prediction
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W3121146574
+  doi: https://doi.org/10.1137/090771272
+  title: Affine Point Processes and Portfolio Credit Risk
+  year: 2010
+  cited_by_count: 385
+  venue: SIAM Journal on Financial Mathematics
+  authors:
+  - Eymen Errais
+  - Kay Giesecke
+  - Lisa R. Goldberg
+  concepts:
+  - Affine transformation
+  - Point process
+  - Econometrics
+  - Mathematics
+  - Portfolio
+  - Volatility (finance)
+  source_query: probability calibration credit risk
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W1590120741
+  doi: https://doi.org/10.1002/9781118673331
+  title: Copula Methods in Finance
+  year: 2004
+  cited_by_count: 1230
+  venue: null
+  authors:
+  - Umberto Cherubini
+  - Elisa Luciano
+  - Walter Vecchiato
+  concepts:
+  - Copula (linguistics)
+  - Econometrics
+  - Stochastic volatility
+  - Martingale pricing
+  - Economics
+  - Mathematics
+  source_query: probability calibration credit risk
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W2169476066
+  doi: https://doi.org/10.1093/rfs/hhp004
+  title: Explaining Credit Default Swap Spreads with the Equity Volatility and Jump
+    Risks of Individual Firms
+  year: 2009
+  cited_by_count: 614
+  venue: Review of Financial Studies
+  authors:
+  - Benjamin Yibin Zhang
+  - Hao Zhou
+  - Haibin Zhu
+  concepts:
+  - Credit default swap
+  - Volatility (finance)
+  - Jump
+  - Equity (law)
+  - Econometrics
+  - Economics
+  source_query: probability calibration credit risk
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W2155797117
+  doi: https://doi.org/10.1111/j.1540-6261.2005.00797.x
+  title: 'Corporate Yield Spreads: Default Risk or Liquidity? New Evidence from the
+    Credit Default Swap Market'
+  year: 2004
+  cited_by_count: 564
+  venue: The Journal of Finance
+  authors:
+  - Francis A. Longstaff
+  - Sanjay Mithal
+  - Eric Neis
+  concepts:
+  - Credit default swap
+  - Credit default swap index
+  - iTraxx
+  - Corporate bond
+  - Market liquidity
+  - Credit risk
+  source_query: probability calibration credit risk
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W1989005086
+  doi: https://doi.org/10.1257/jep.15.1.219
+  title: 'Anomalies: Risk Aversion'
+  year: 2001
+  cited_by_count: 966
+  venue: The Journal of Economic Perspectives
+  authors:
+  - Matthew Rabin
+  - Richard H. Thaler
+  concepts:
+  - Risk aversion (psychology)
+  - Economics
+  - Loss aversion
+  - Isoelastic utility
+  - Expected utility hypothesis
+  - Function (biology)
+  source_query: probability calibration credit risk
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W2128754415
+  doi: https://doi.org/10.1016/0165-1889(93)90024-m
+  title: The risk-free rate in heterogeneous-agent incomplete-insurance economies
+  year: 1993
+  cited_by_count: 1281
+  venue: Journal of Economic Dynamics and Control
+  authors:
+  - Mark Huggett
+  concepts:
+  - Economics
+  - Endowment
+  - Consumption (sociology)
+  - Risk-free interest rate
+  - Debt
+  - Monetary economics
+  source_query: probability calibration credit risk
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W626978111
+  doi: https://doi.org/10.1002/9781119202219
+  title: Credit Risk Modeling using Excel and VBA
+  year: 2011
+  cited_by_count: 104
+  venue: null
+  authors:
+  - Günter Löffler
+  - Peter N. Posch
+  concepts:
+  - Econometrics
+  - Statistics
+  - Estimator
+  - Mathematics
+  - Economics
+  source_query: probability calibration credit risk
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W640874943
+  doi: null
+  title: Levy Processes in Credit Risk
+  year: 2009
+  cited_by_count: 69
+  venue: null
+  authors:
+  - Wim Schoutens
+  - Jessica Cariboni
+  concepts:
+  - Credit default swap
+  - Credit derivative
+  - Credit risk
+  - Lévy process
+  - Credit valuation adjustment
+  - iTraxx
+  source_query: probability calibration credit risk
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W1908216331
+  doi: https://doi.org/10.2139/ssrn.301968
+  title: Copula-Dependent Defaults in Intensity Models
+  year: 2002
+  cited_by_count: 311
+  venue: SSRN Electronic Journal
+  authors:
+  - Philipp Schönbucher
+  - Dirk Schubert
+  concepts:
+  - Copula (linguistics)
+  - Default
+  - Econometrics
+  - Economics
+  - Mathematics
+  - Actuarial science
+  source_query: probability calibration credit risk
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W1806647190
+  doi: null
+  title: 'The Scored Society: Due Process for Automated Predictions'
+  year: 2014
+  cited_by_count: 530
+  venue: null
+  authors:
+  - Danielle Keats Citron
+  - Frank Pasquale
+  concepts:
+  - Process (computing)
+  - Computer science
+  - Process management
+  - Political science
+  - Econometrics
+  - Business
+  source_query: conformal prediction credit scoring
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W3025031475
+  doi: https://doi.org/10.3150/21-bej1447
+  title: 'Conformal prediction: A unified review of theory and new challenges'
+  year: 2022
+  cited_by_count: 147
+  venue: Bernoulli
+  authors:
+  - Matteo Fontana
+  - Gianluca Zeni
+  - Simone Vantini
+  concepts:
+  - Conformal map
+  - Mathematics
+  - Parametric statistics
+  - Sample (material)
+  - Mathematical economics
+  - Calculus (dental)
+  source_query: conformal prediction credit scoring
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W2119836796
+  doi: https://doi.org/10.1086/659639
+  title: The Credit Crisis as a Problem in the Sociology of Knowledge
+  year: 2011
+  cited_by_count: 414
+  venue: American Journal of Sociology
+  authors:
+  - Donald MacKenzie
+  concepts:
+  - Collateralized debt obligation
+  - Structured finance
+  - Debt
+  - Asset (computer security)
+  - Business
+  - Financial crisis
+  source_query: conformal prediction credit scoring
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W2751808960
+  doi: https://doi.org/10.25675/3.021826
+  title: Protein interface prediction using graph convolutional networks
+  year: 2017
+  cited_by_count: 567
+  venue: Digital Collections of Colorado (Colorado State University)
+  authors:
+  - Alex Fout
+  - Asa Ben‐Hur
+  - Anderson, Chuck
+  - Chitsaz, Hamidreza
+  - Zhou, Wen
+  concepts:
+  - Computer science
+  - Convolution (computer science)
+  - Graph
+  - Theoretical computer science
+  - Interface (matter)
+  - Node (physics)
+  source_query: conformal prediction credit scoring
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W2593370983
+  doi: https://doi.org/10.1016/j.ejor.2017.02.037
+  title: 'Cost-based feature selection for Support Vector Machines: An application
+    in credit scoring'
+  year: 2017
+  cited_by_count: 152
+  venue: European Journal of Operational Research
+  authors:
+  - Sebastián Maldonado
+  - Juan Pérez
+  - Cristián Bravo
+  concepts:
+  - Support vector machine
+  - Feature selection
+  - Computer science
+  - Selection (genetic algorithm)
+  - Artificial intelligence
+  - Machine learning
+  source_query: conformal prediction credit scoring
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W3005048680
+  doi: https://doi.org/10.1109/access.2020.2971354
+  title: An Intelligent Approach to Credit Card Fraud Detection Using an Optimized
+    Light Gradient Boosting Machine
+  year: 2020
+  cited_by_count: 425
+  venue: IEEE Access
+  authors:
+  - Altyeb Taha
+  - Sharaf J. Malebary
+  concepts:
+  - Credit card fraud
+  - Gradient boosting
+  - Credit card
+  - Computer science
+  - Payment
+  - Database transaction
+  source_query: conformal prediction credit scoring
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W2896796252
+  doi: https://doi.org/10.1016/j.asoc.2018.10.004
+  title: 'The value of big data for credit scoring: Enhancing financial inclusion
+    using mobile phone data and social network analytics'
+  year: 2018
+  cited_by_count: 213
+  venue: Applied Soft Computing
+  authors:
+  - María Óskarsdóttir
+  - Cristián Bravo
+  - Carlos Sarraute
+  - Jan Vanthienen
+  - Bart Baesens
+  concepts:
+  - Computer science
+  - Credit card
+  - Big data
+  - Data science
+  - Predictive analytics
+  - Analytics
+  source_query: conformal prediction credit scoring
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W4386934539
+  doi: https://doi.org/10.1002/for.3033
+  title: Credit scoring prediction leveraging interpretable ensemble learning
+  year: 2023
+  cited_by_count: 19
+  venue: Journal of Forecasting
+  authors:
+  - Yang Liu
+  - Fei Huang
+  - Lili Ma
+  - Qingguo Zeng
+  - Jiale Shi
+  concepts:
+  - Interpretability
+  - Machine learning
+  - Computer science
+  - Cluster analysis
+  - Artificial intelligence
+  - Ensemble learning
+  source_query: conformal prediction credit scoring
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W1969221307
+  doi: https://doi.org/10.1093/cercor/bhv075
+  title: Prediction During Natural Language Comprehension
+  year: 2015
+  cited_by_count: 323
+  venue: Cerebral Cortex
+  authors:
+  - Roel M. Willems
+  - Stefan L. Frank
+  - Annabel D. Nijhof
+  - Peter Hagoort
+  - Antal van den Bosch
+  concepts:
+  - Angular gyrus
+  - Inferior frontal gyrus
+  - Psychology
+  - Superior frontal gyrus
+  - Superior temporal sulcus
+  - Comprehension
+  source_query: conformal prediction credit scoring
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W2756921674
+  doi: https://doi.org/10.3386/w23850
+  title: How Credit Cycles across a Financial Crisis
+  year: 2017
+  cited_by_count: 241
+  venue: National Bureau of Economic Research
+  authors:
+  - Arvind Krishnamurthy
+  - Tyler Muir
+  concepts:
+  - Financial crisis
+  - Financial system
+  - Business
+  - Economics
+  - Finance
+  - Keynesian economics
+  source_query: conformal prediction credit scoring
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W2787816121
+  doi: https://doi.org/10.1038/nature26000
+  title: DNA methylation-based classification of central nervous system tumours
+  year: 2018
+  cited_by_count: 3104
+  venue: Nature
+  authors:
+  - David Capper
+  - David Jones
+  - Martin Sill
+  - Volker Hovestadt
+  - Daniel Schrimpf
+  - Dominik Sturm
+  - Christian Koelsche
+  - Felix Sahm
+  concepts:
+  - DNA methylation
+  - DNA
+  - Methylation
+  - Central nervous system
+  - Nervous system
+  - Computational biology
+  source_query: uncertainty quantification imbalanced classification
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W3183048323
+  doi: https://doi.org/10.1007/s10462-023-10562-9
+  title: A survey of uncertainty in deep neural networks
+  year: 2023
+  cited_by_count: 1137
+  venue: Artificial Intelligence Review
+  authors:
+  - Jakob Gawlikowski
+  - Cedrique Rovile Njieutcheu Tassi
+  - Mohsin Ali
+  - Jong‐Seok Lee
+  - Matthias Humt
+  - Jianxiang Feng
+  - Anna Kruspe
+  - Rudolph Triebel
+  concepts:
+  - Artificial neural network
+  - Computer science
+  - Field (mathematics)
+  - Artificial intelligence
+  - Uncertainty quantification
+  - Machine learning
+  source_query: uncertainty quantification imbalanced classification
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W2480078828
+  doi: https://doi.org/10.1109/cvprw.2016.90
+  title: Semantic Segmentation of Small Objects and Modeling of Uncertainty in Urban
+    Remote Sensing Images Using Deep Convolutional Neural Networks
+  year: 2016
+  cited_by_count: 606
+  venue: null
+  authors:
+  - Michael Kampffmeyer
+  - Arnt-Børre Salberg
+  - Robert Jenssen
+  concepts:
+  - Computer science
+  - Convolutional neural network
+  - Artificial intelligence
+  - Pixel
+  - Land cover
+  - Segmentation
+  source_query: uncertainty quantification imbalanced classification
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W2083902817
+  doi: https://doi.org/10.1351/pac199567101699
+  title: Nomenclature in evaluation of analytical methods including detection and
+    quantification capabilities (IUPAC Recommendations 1995)
+  year: 1995
+  cited_by_count: 1675
+  venue: Pure and Applied Chemistry
+  authors:
+  - L. A. Currie
+  concepts:
+  - Chemical nomenclature
+  - Chemistry
+  - Nomenclature
+  - Organic chemistry
+  - Taxonomy (biology)
+  - Biology
+  source_query: uncertainty quantification imbalanced classification
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W2145876138
+  doi: https://doi.org/10.1186/gb-2004-5-2-r7
+  title: A comprehensive evolutionary classification of proteins encoded in complete
+    eukaryotic genomes
+  year: 2004
+  cited_by_count: 1139
+  venue: Genome biology
+  authors:
+  - Eugene V. Koonin
+  - Natalie D. Fedorova
+  - John D. Jackson
+  - Aviva R. Jacobs
+  - Dmitri M. Krylov
+  - Kira S. Makarova
+  - Raja Mazumder
+  - Sergei Mekhedov
+  concepts:
+  - Biology
+  - Genome
+  - Genetics
+  - Gene
+  - Caenorhabditis elegans
+  - Schizosaccharomyces pombe
+  source_query: uncertainty quantification imbalanced classification
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W3030030520
+  doi: https://doi.org/10.1073/pnas.1919012117
+  title: Gender imbalance in medical imaging datasets produces biased classifiers
+    for computer-aided diagnosis
+  year: 2020
+  cited_by_count: 641
+  venue: Proceedings of the National Academy of Sciences
+  authors:
+  - Agostina J. Larrazabal
+  - Nicolás Nieto
+  - Victoria Peterson
+  - Diego H. Milone
+  - Enzo Ferrante
+  concepts:
+  - Computer science
+  - Artificial intelligence
+  - Machine learning
+  - Robustness (evolution)
+  - Medical imaging
+  - Context (archaeology)
+  source_query: uncertainty quantification imbalanced classification
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W1546047689
+  doi: null
+  title: Evaluation Measures for Models Assessment over Imbalanced Data Sets
+  year: 2013
+  cited_by_count: 438
+  venue: Journals & Books Hosting (International Knowledge Sharing Platform)
+  authors:
+  - Mohamed Bekkar
+  - Hassiba Kheliouane Djemaa
+  - Taklit Akrouf Alitouche
+  concepts:
+  - Lift (data mining)
+  - Youden's J statistic
+  - Statistics
+  - Correlation coefficient
+  - Measure (data warehouse)
+  - Computer science
+  source_query: uncertainty quantification imbalanced classification
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W2948646149
+  doi: https://doi.org/10.1186/s40537-019-0206-3
+  title: 'Uncertainty in big data analytics: survey, opportunities, and challenges'
+  year: 2019
+  cited_by_count: 613
+  venue: Journal Of Big Data
+  authors:
+  - Reihaneh H. Hariri
+  - Erik M. Fredericks
+  - Kate M. Bowers
+  concepts:
+  - Big data
+  - Data science
+  - Computer science
+  - Data analysis
+  - Analytics
+  - Social media
+  source_query: uncertainty quantification imbalanced classification
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W3118929067
+  doi: https://doi.org/10.1038/s41746-020-00367-3
+  title: 'Second opinion needed: communicating uncertainty in medical machine learning'
+  year: 2021
+  cited_by_count: 425
+  venue: npj Digital Medicine
+  authors:
+  - Benjamin Kompa
+  - Jasper Snoek
+  - Andrew L. Beam
+  concepts:
+  - Computer science
+  - Software deployment
+  - Artificial intelligence
+  - Machine learning
+  - Reliability (semiconductor)
+  - Health care
+  source_query: uncertainty quantification imbalanced classification
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W3190520168
+  doi: https://doi.org/10.1109/access.2022.3158977
+  title: SMOTified-GAN for Class Imbalanced Pattern Classification Problems
+  year: 2022
+  cited_by_count: 141
+  venue: IEEE Access
+  authors:
+  - Anurag Sharma
+  - Prabhat Kumar Singh
+  - Rohitash Chandra
+  concepts:
+  - Computer science
+  - Pattern recognition (psychology)
+  - Artificial intelligence
+  - Class (philosophy)
+  - Statistical classification
+  source_query: uncertainty quantification imbalanced classification
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W3137125108
+  doi: https://doi.org/10.1214/21-ss133
+  title: 'Interpretable machine learning: Fundamental principles and 10 grand challenges'
+  year: 2022
+  cited_by_count: 833
+  venue: Statistics Surveys
+  authors:
+  - Cynthia Rudin
+  - Chaofan Chen
+  - Zhi Chen
+  - Haiyang Huang
+  - Lesia Semenova
+  - Chudi Zhong
+  concepts:
+  - Interpretability
+  - Artificial intelligence
+  - Machine learning
+  - Computer science
+  - Artificial neural network
+  - Troubleshooting
+  source_query: green loan credit risk machine learning
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W4229006505
+  doi: https://doi.org/10.1007/s44230-022-00004-0
+  title: Review of Machine Learning Approach on Credit Card Fraud Detection
+  year: 2022
+  cited_by_count: 202
+  venue: Human-Centric Intelligent Systems
+  authors:
+  - Rejwan Bin Sulaiman
+  - Vitaly Schetinin
+  - Paul Sant
+  concepts:
+  - Credit card fraud
+  - Credit card
+  - Confidentiality
+  - Computer science
+  - Payment
+  - ATM card
+  source_query: green loan credit risk machine learning
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W3097734923
+  doi: https://doi.org/10.1109/access.2020.3036322
+  title: 'Machine Learning for Financial Risk Management: A Survey'
+  year: 2020
+  cited_by_count: 185
+  venue: IEEE Access
+  authors:
+  - Akib Mashrur
+  - Wei Luo
+  - Nayyar A. Zaidi
+  - Antonio Robles‐Kelly
+  concepts:
+  - Computer science
+  - Risk management
+  - Machine learning
+  - Artificial intelligence
+  - Task (project management)
+  - Data science
+  source_query: green loan credit risk machine learning
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W2969896603
+  doi: https://doi.org/10.1145/3457607
+  title: A Survey on Bias and Fairness in Machine Learning
+  year: 2021
+  cited_by_count: 317
+  venue: ACM Computing Surveys
+  authors:
+  - Ninareh Mehrabi
+  - Fred Morstatter
+  - Nripsuta Ani Saxena
+  - Kristina Lerman
+  - Aram Galstyan
+  concepts:
+  - Computer science
+  - Artificial intelligence
+  - Commercialization
+  - Data science
+  - Taxonomy (biology)
+  - Work (physics)
+  source_query: green loan credit risk machine learning
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W1498604664
+  doi: https://doi.org/10.1257/aer.20120942
+  title: Cultural Proximity and Loan Outcomes
+  year: 2017
+  cited_by_count: 394
+  venue: American Economic Review
+  authors:
+  - Raymond Fisman
+  - Daniel Paravisini
+  - Vikrant Vig
+  concepts:
+  - Collateral
+  - Loan
+  - Economics
+  - Caste
+  - Monetary economics
+  - Ethnic group
+  source_query: green loan credit risk machine learning
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W2152007396
+  doi: https://doi.org/10.1257/jep.24.2.211
+  title: 'Markets: The Credit Rating Agencies'
+  year: 2010
+  cited_by_count: 619
+  venue: The Journal of Economic Perspectives
+  authors:
+  - Lawrence J. White
+  concepts:
+  - Credit rating
+  - Bond credit rating
+  - Credit enhancement
+  - Credit reference
+  - Business
+  - Structured finance
+  source_query: green loan credit risk machine learning
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W4309080560
+  doi: https://doi.org/10.1007/s13042-022-01647-y
+  title: 'A survey on federated learning: challenges and applications'
+  year: 2022
+  cited_by_count: 735
+  venue: International Journal of Machine Learning and Cybernetics
+  authors:
+  - Jie Wen
+  - Zhixia Zhang
+  - Yang Lan
+  - Zhihua Cui
+  - Jianghui Cai
+  - Wensheng Zhang
+  concepts:
+  - Computer science
+  - Software deployment
+  - Process (computing)
+  - Overhead (engineering)
+  - Computational intelligence
+  - Federated learning
+  source_query: green loan credit risk machine learning
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W4214835294
+  doi: https://doi.org/10.1002/widm.1452
+  title: A survey on datasets for fairness-aware machine learning
+  year: 2021
+  cited_by_count: 238
+  venue: arXiv (Cornell University)
+  authors:
+  - Tai Le Quy
+  - Arjun Roy
+  - Vasileios Iosifidis
+  - Wenbin Zhang
+  - Eirini Ntoutsi
+  concepts:
+  - Computer science
+  - Data pre-processing
+  - Variety (cybernetics)
+  - Machine learning
+  - Benchmark (surveying)
+  - Big data
+  source_query: green loan credit risk machine learning
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W2788007910
+  doi: https://doi.org/10.2139/ssrn.3126971
+  title: The Intuitive Appeal of Explainable Machines
+  year: 2018
+  cited_by_count: 342
+  venue: SSRN Electronic Journal
+  authors:
+  - Andrew D. Selbst
+  - Solon Barocas
+  concepts:
+  - Appeal
+  - Computer science
+  - Political science
+  - Law
+  source_query: green loan credit risk machine learning
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W2113844427
+  doi: https://doi.org/10.3386/w10766
+  title: 'Finance and Growth: Theory and Evidence'
+  year: 2004
+  cited_by_count: 1679
+  venue: National Bureau of Economic Research
+  authors:
+  - Ross Levine
+  concepts:
+  - Financial intermediary
+  - Causality (physics)
+  - Economics
+  - Intermediary
+  - Subject matter
+  - Growth theory
+  source_query: sustainable finance default prediction
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W2975308768
+  doi: https://doi.org/10.1257/089533003321164967
+  title: From Efficient Markets Theory to Behavioral Finance
+  year: 2003
+  cited_by_count: 1762
+  venue: The Journal of Economic Perspectives
+  authors:
+  - Robert J. Shiller
+  concepts:
+  - Behavioral economics
+  - Economics
+  - Dominance (genetics)
+  - Volatility (finance)
+  - Financial economics
+  - Faith
+  source_query: sustainable finance default prediction
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W2605496294
+  doi: https://doi.org/10.1257/0002828041464579
+  title: 'In-Kind Finance: A Theory of Trade Credit'
+  year: 2004
+  cited_by_count: 963
+  venue: American Economic Review
+  authors:
+  - Mike Burkart
+  - Tore Ellingsen
+  concepts:
+  - Accounts payable
+  - Trade credit
+  - Economics
+  - Argument (complex analysis)
+  - Cash
+  - Credit history
+  source_query: sustainable finance default prediction
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W1965808745
+  doi: https://doi.org/10.1257/jep.27.2.3
+  title: The Growth of Finance
+  year: 2013
+  cited_by_count: 437
+  venue: The Journal of Economic Perspectives
+  authors:
+  - Robin Greenwood
+  - David Scharfstein
+  concepts:
+  - Finance
+  - Valuation (finance)
+  - Economics
+  - Financial intermediary
+  - Shadow (psychology)
+  - Business
+  source_query: sustainable finance default prediction
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W3022773787
+  doi: https://doi.org/10.1257/jep.24.1.73
+  title: Credit Default Swaps and the Credit Crisis
+  year: 2010
+  cited_by_count: 512
+  venue: The Journal of Economic Perspectives
+  authors:
+  - René M. Stulz
+  concepts:
+  - Credit default swap
+  - Credit derivative
+  - Credit default swap index
+  - Business
+  - Credit risk
+  - iTraxx
+  source_query: sustainable finance default prediction
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W4294883928
+  doi: https://doi.org/10.1016/j.jbusvent.2022.106258
+  title: 'Financing sustainable entrepreneurship: ESG measurement, valuation, and
+    performance'
+  year: 2022
+  cited_by_count: 224
+  venue: Journal of Business Venturing
+  authors:
+  - Sasan Mansouri
+  - Paul P. Momtaz
+  concepts:
+  - Valuation (finance)
+  - Entrepreneurship
+  - Sustainability
+  - Corporate governance
+  - Business
+  - Finance
+  source_query: sustainable finance default prediction
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W2926538648
+  doi: https://doi.org/10.1057/s41267-019-00219-7
+  title: 'De-globalization: Theories, predictions, and opportunities for international
+    business research'
+  year: 2019
+  cited_by_count: 608
+  venue: Journal of International Business Studies
+  authors:
+  - Michael A. Witt
+  concepts:
+  - Globalization
+  - Multinational corporation
+  - International business
+  - Politics
+  - Global politics
+  - Economic system
+  source_query: sustainable finance default prediction
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W2889865253
+  doi: https://doi.org/10.3386/w17950
+  title: The Impact of Corporate Sustainability on Organizational Processes and Performance
+  year: 2012
+  cited_by_count: 650
+  venue: National Bureau of Economic Research
+  authors:
+  - Robert G. Eccles
+  - Ioannis Ioannou
+  - George Serafeim
+  concepts:
+  - Sustainability
+  - Sustainability organizations
+  - Business
+  - Sustainability reporting
+  - Corporate sustainability
+  - Accounting
+  source_query: sustainable finance default prediction
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W3128244637
+  doi: https://doi.org/10.1007/s11192-020-03856-0
+  title: 'Rethinking SME default prediction: a systematic literature review and future
+    perspectives'
+  year: 2021
+  cited_by_count: 138
+  venue: Scientometrics
+  authors:
+  - Francesco Ciampi
+  - Alessandro Giannozzi
+  - Giacomo Marzi
+  - Edward I. Altman
+  concepts:
+  - Systematic review
+  - Data science
+  - Computer science
+  - Business
+  - Political science
+  - MEDLINE
+  source_query: sustainable finance default prediction
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W2604705349
+  doi: https://doi.org/10.1016/j.jfineco.2017.12.012
+  title: Credit default swaps and corporate innovation
+  year: 2019
+  cited_by_count: 255
+  venue: Journal of Financial Economics
+  authors:
+  - Xin Chang
+  - Yangyang Chen
+  - Sarah Qian Wang
+  - Kuo Zhang
+  - Le Zhang
+  concepts:
+  - Credit default swap
+  - Business
+  - Swap (finance)
+  - Debt
+  - Monetary economics
+  - Credit derivative
+  source_query: sustainable finance default prediction
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W4313596561
+  doi: https://doi.org/10.1111/fima.12413
+  title: The end of ESG
+  year: 2022
+  cited_by_count: 470
+  venue: Financial Management
+  authors:
+  - Alex Edmans
+  concepts:
+  - Nothing
+  - Business
+  - Value (mathematics)
+  - Accounting
+  - Quality (philosophy)
+  - Corporate social responsibility
+  source_query: ESG credit scoring machine learning
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W4384821897
+  doi: https://doi.org/10.1007/s10479-023-05514-z
+  title: ESG ratings explainability through machine learning techniques
+  year: 2023
+  cited_by_count: 89
+  venue: Annals of Operations Research
+  authors:
+  - Alessandro Del Vitto
+  - Daniele Marazzina
+  - Davide Stocco
+  concepts:
+  - Interpretability
+  - Computer science
+  - Transparency (behavior)
+  - Replicate
+  - Process (computing)
+  - Exploit
+  source_query: ESG credit scoring machine learning
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W4390886562
+  doi: https://doi.org/10.1016/j.jclimf.2024.100032
+  title: ESG Factors and Firms' Credit Risk
+  year: 2024
+  cited_by_count: 41
+  venue: Journal of Climate Finance
+  authors:
+  - Laura Bonacorsi
+  - Vittoria Cerasi
+  - Paola Galfrascoli
+  - Matteo Manera
+  concepts:
+  - Credit risk
+  - Proxy (statistics)
+  - Business
+  - Credit rating
+  - Lasso (programming language)
+  - Actuarial science
+  source_query: ESG credit scoring machine learning
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W4367671427
+  doi: https://doi.org/10.1007/s11135-023-01673-0
+  title: Examining the research taxonomy of artificial intelligence, deep learning
+    &amp; machine learning in the financial sphere—a bibliometric analysis
+  year: 2023
+  cited_by_count: 78
+  venue: Quality & Quantity
+  authors:
+  - Ajithakumari Vijayappan Nair Biju
+  - Ann Susan Thomas
+  - J Thasneem
+  concepts:
+  - Archetype
+  - Artificial intelligence
+  - Extant taxon
+  - Empirical research
+  - Social sphere
+  - Finance
+  source_query: ESG credit scoring machine learning
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W4382797868
+  doi: https://doi.org/10.1007/s41060-023-00405-9
+  title: Bayesian learning models to measure the relative impact of ESG factors on
+    credit ratings
+  year: 2023
+  cited_by_count: 32
+  venue: International Journal of Data Science and Analytics
+  authors:
+  - Arianna Agosto
+  - Paola Cerchiello
+  - Paolo Giudici
+  concepts:
+  - Representativeness heuristic
+  - Measure (data warehouse)
+  - Computer science
+  - Sustainability
+  - Credit rating
+  - Corporate governance
+  source_query: ESG credit scoring machine learning
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W2883446218
+  doi: https://doi.org/10.2139/ssrn.3212685
+  title: Exploring Social Origins in the Construction of ESG Measures
+  year: 2018
+  cited_by_count: 235
+  venue: SSRN Electronic Journal
+  authors:
+  - Robert G. Eccles
+  - Judith C. Stroehle
+  concepts:
+  - Business
+  - Sociology
+  - Computer science
+  source_query: ESG credit scoring machine learning
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W3215782175
+  doi: https://doi.org/10.1007/s10479-021-04410-8
+  title: 'Past, present, and future of sustainable finance: insights from big data
+    analytics through machine learning of scholarly research'
+  year: 2022
+  cited_by_count: 397
+  venue: Annals of Operations Research
+  authors:
+  - Satish Kumar
+  - Dipasha Sharma
+  - Sandeep Rao
+  - Weng Marc Lim
+  - Sachin Kumar Mangla
+  concepts:
+  - Finance
+  - Sustainability
+  - Corporate governance
+  - Big data
+  - Business
+  - Sustainable development
+  source_query: ESG credit scoring machine learning
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W4304689388
+  doi: https://doi.org/10.1016/j.frl.2022.103411
+  title: The role of Environmental, Social, and Governance (ESG) in predicting bank
+    financial distress
+  year: 2022
+  cited_by_count: 159
+  venue: Finance research letters
+  authors:
+  - Alberto Citterio
+  - Timothy King
+  concepts:
+  - Financial distress
+  - Default
+  - Predictive power
+  - Corporate governance
+  - Distress
+  - Sample (material)
+  source_query: ESG credit scoring machine learning
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W3039714790
+  doi: https://doi.org/10.2139/ssrn.3659584
+  title: Mind the gap! Machine Learning, ESG Metrics and Sustainable Investment
+  year: 2020
+  cited_by_count: 36
+  venue: SSRN Electronic Journal
+  authors:
+  - Ariel Lanza
+  - Enrico Bernardini
+  - Ivan Faiella
+  concepts:
+  - Investment (military)
+  - Computer science
+  - Business
+  - Artificial intelligence
+  - Machine learning
+  - Political science
+  source_query: ESG credit scoring machine learning
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W2981731882
+  doi: https://doi.org/10.1016/j.inffus.2019.12.012
+  title: 'Explainable Artificial Intelligence (XAI): Concepts, taxonomies, opportunities
+    and challenges toward responsible AI'
+  year: 2019
+  cited_by_count: 8892
+  venue: Information Fusion
+  authors:
+  - Alejandro Barredo Arrieta
+  - Natalia Díaz-Rodríguez
+  - Javier Del Ser
+  - Adrien Bennetot
+  - Siham Tabik
+  - Alberto Barbado
+  - Salvador García
+  - Sergio Gil-López
+  concepts:
+  - Computer science
+  - Artificial intelligence
+  - Taxonomy (biology)
+  - Field (mathematics)
+  - Software deployment
+  - Data science
+  source_query: SHAP explainability credit scoring
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W3005086430
+  doi: https://doi.org/10.1145/3375627.3375830
+  title: Fooling LIME and SHAP
+  year: 2020
+  cited_by_count: 759
+  venue: Proceedings of the AAAI/ACM Conference on AI Ethics and Society
+  authors:
+  - Dylan Slack
+  - Sophie Hilgard
+  - Emily Jia
+  - Sameer Singh
+  - Himabindu Lakkaraju
+  concepts:
+  - Computer science
+  - Classifier (UML)
+  - Machine learning
+  - Adversarial system
+  - Artificial intelligence
+  - Post hoc
+  source_query: SHAP explainability credit scoring
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W4362581811
+  doi: https://doi.org/10.3390/jrfm16040221
+  title: 'Explaining Deep Learning Models for Credit Scoring with SHAP: A Case Study
+    Using Open Banking Data'
+  year: 2023
+  cited_by_count: 35
+  venue: Journal of risk and financial management
+  authors:
+  - Lars Ole Hjelkrem
+  - Petter Eilif de Lange
+  concepts:
+  - Computer science
+  - Deep learning
+  - Transfer of learning
+  - Artificial intelligence
+  - Transformer
+  - Scratch
+  source_query: SHAP explainability credit scoring
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W3200880768
+  doi: https://doi.org/10.3389/frai.2021.752558
+  title: 'SHAP and LIME: An Evaluation of Discriminative Power in Credit Risk'
+  year: 2021
+  cited_by_count: 286
+  venue: Frontiers in Artificial Intelligence
+  authors:
+  - Alex Gramegna
+  - Paolo Giudici
+  concepts:
+  - Discriminative model
+  - Boosting (machine learning)
+  - Computer science
+  - Gradient boosting
+  - Credit risk
+  - Predictive power
+  source_query: SHAP explainability credit scoring
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W3175110185
+  doi: https://doi.org/10.1613/jair.1.13283
+  title: On the Tractability of SHAP Explanations
+  year: 2022
+  cited_by_count: 426
+  venue: Journal of Artificial Intelligence Research
+  authors:
+  - Guy Van den Broeck
+  - Anton Lykov
+  - Maximilian Schleich
+  - Dan Suciu
+  concepts:
+  - Computer science
+  - Computation
+  - Feature (linguistics)
+  - Artificial intelligence
+  - Simple (philosophy)
+  - Machine learning
+  source_query: SHAP explainability credit scoring
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W3014660692
+  doi: https://doi.org/10.1109/access.2020.2984412
+  title: Explainability of a Machine Learning Granting Scoring Model in Peer-to-Peer
+    Lending
+  year: 2020
+  cited_by_count: 167
+  venue: IEEE Access
+  authors:
+  - Miller Janny Ariza Garzón
+  - Javier Arroyo
+  - Antonio Caparrini
+  - María Jesús Segovia Vargas
+  concepts:
+  - Machine learning
+  - Computer science
+  - Explanatory power
+  - Artificial intelligence
+  - Logistic regression
+  - Feature (linguistics)
+  source_query: SHAP explainability credit scoring
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W3000463950
+  doi: https://doi.org/10.1007/s10614-020-10042-0
+  title: Explainable Machine Learning in Credit Risk Management
+  year: 2020
+  cited_by_count: 411
+  venue: Computational Economics
+  authors:
+  - Niklas Bussmann
+  - Paolo Giudici
+  - Dimitri Marinelli
+  - Jochen Papenbrock
+  concepts:
+  - Similarity (geometry)
+  - Credit risk
+  - Credit score
+  - Set (abstract data type)
+  - Computer science
+  - Risk management
+  source_query: SHAP explainability credit scoring
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W4410609129
+  doi: https://doi.org/10.1109/icoact63339.2025.11005238
+  title: Explainable AI (XAI) Using SHAP and LIME for Financial Fraud Detection and
+    Credit Scoring
+  year: 2025
+  cited_by_count: 9
+  venue: null
+  authors:
+  - Sophia John Chavakula
+  - Christopher Aseer J Albert
+  - Earnest Ebenezer
+  - Mustansir Habil Bhagat
+  - Chaitanya Vijaykumar Mahamuni
+  concepts:
+  - Computer science
+  - Artificial intelligence
+  - Business
+  - Finance
+  source_query: SHAP explainability credit scoring
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W4310148203
+  doi: https://doi.org/10.3390/jrfm15120556
+  title: Explainable AI for Credit Assessment in Banks
+  year: 2022
+  cited_by_count: 85
+  venue: Journal of risk and financial management
+  authors:
+  - Petter Eilif de Lange
+  - Borger Melsom
+  - Christian Bakke Vennerød
+  - Sjur Westgaard
+  concepts:
+  - Interpretability
+  - Logistic regression
+  - Credit risk
+  - Computer science
+  - Econometrics
+  - Actuarial science
+  source_query: SHAP explainability credit scoring
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W4386142022
+  doi: https://doi.org/10.1007/s12559-023-10179-8
+  title: 'Interpreting Black-Box Models: A Review on Explainable Artificial Intelligence'
+  year: 2023
+  cited_by_count: 1685
+  venue: Cognitive Computation
+  authors:
+  - Vikas Hassija
+  - Vinay Chamola
+  - Atmesh Mahapatra
+  - Abhinandan Singal
+  - Divyansh Goel
+  - Kaizhu Huang
+  - Simone Scardapane
+  - Indro Spinelli
+  concepts:
+  - Transparency (behavior)
+  - Computer science
+  - Black box
+  - Process (computing)
+  - Predictability
+  - Artificial intelligence
+  source_query: SHAP explainability credit scoring
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W2945295328
+  doi: https://doi.org/10.1145/3351095.3372850
+  title: Explaining machine learning classifiers through diverse counterfactual explanations
+  year: 2020
+  cited_by_count: 1065
+  venue: null
+  authors:
+  - Ramaravind Kommiya Mothilal
+  - Amit Sharma
+  - Chenhao Tan
+  concepts:
+  - Counterfactual conditional
+  - Counterfactual thinking
+  - Computer science
+  - Context (archaeology)
+  - Artificial intelligence
+  - Machine learning
+  source_query: counterfactual explanation credit decision
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W2995528912
+  doi: https://doi.org/10.1145/3351095.3372830
+  title: The hidden assumptions behind counterfactual explanations and principal reasons
+  year: 2020
+  cited_by_count: 214
+  venue: null
+  authors:
+  - Solon Barocas
+  - Andrew D. Selbst
+  - Manish Raghavan
+  concepts:
+  - Counterfactual thinking
+  - Principal (computer security)
+  - Set (abstract data type)
+  - Trait
+  - Computer science
+  - Economics
+  source_query: counterfactual explanation credit decision
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W4225150645
+  doi: https://doi.org/10.1007/s10618-022-00831-6
+  title: 'Counterfactual explanations and how to find them: literature review and
+    benchmarking'
+  year: 2022
+  cited_by_count: 395
+  venue: Data Mining and Knowledge Discovery
+  authors:
+  - Riccardo Guidotti
+  concepts:
+  - Counterfactual thinking
+  - Counterfactual conditional
+  - Benchmarking
+  - Categorization
+  - Discriminative model
+  - Computer science
+  source_query: counterfactual explanation credit decision
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W3121567201
+  doi: https://doi.org/10.1111/j.1538-4616.2010.00331.x
+  title: Credit and Banking in a DSGE Model of the Euro Area
+  year: 2010
+  cited_by_count: 1221
+  venue: Journal of money credit and banking
+  authors:
+  - Andrea Gerali
+  - Stefano Neri
+  - Luca Sessa
+  - Federico Maria Signoretti
+  concepts:
+  - Dynamic stochastic general equilibrium
+  - Monetary economics
+  - Collateralized debt obligation
+  - Economics
+  - Interest rate
+  - Loan
+  source_query: counterfactual explanation credit decision
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W3019132020
+  doi: https://doi.org/10.1007/978-3-030-58112-1_31
+  title: Multi-Objective Counterfactual Explanations
+  year: 2020
+  cited_by_count: 169
+  venue: Lecture notes in computer science
+  authors:
+  - Susanne Dandl
+  - Christoph Molnar
+  - Martin Binder
+  - Bernd Bischl
+  concepts:
+  - Counterfactual thinking
+  - Counterfactual conditional
+  - Computer science
+  - Categorical variable
+  - Feature (linguistics)
+  - Set (abstract data type)
+  source_query: counterfactual explanation credit decision
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W2119307369
+  doi: https://doi.org/10.7916/d8wm1qdr
+  title: Credit Markets and the Control of Capital
+  year: 1985
+  cited_by_count: 739
+  venue: 'RePEc: Research Papers in Economics'
+  authors:
+  - Joseph E. Stiglitz
+  concepts:
+  - Capital (architecture)
+  - Capital market
+  - Control (management)
+  - Function (biology)
+  - Economics
+  - Value (mathematics)
+  source_query: counterfactual explanation credit decision
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W2962772482
+  doi: https://doi.org/10.1145/3236009
+  title: A survey of methods for explaining black box models
+  year: 2019
+  cited_by_count: 4673
+  venue: ISTI Open Portal
+  authors:
+  - Riccardo Guidotti
+  - Anna Monreale
+  - Salvatore Ruggieri
+  - Franco Turini
+  - Fosca Giannotti
+  - Dino Pedreschi
+  concepts:
+  - Interpretability
+  - Black box
+  - Computer science
+  - Perspective (graphical)
+  - Data science
+  - Artificial intelligence
+  source_query: counterfactual explanation credit decision
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W2964060106
+  doi: https://doi.org/10.1609/aaai.v33i01.33017801
+  title: Path-Specific Counterfactual Fairness
+  year: 2019
+  cited_by_count: 237
+  venue: null
+  authors:
+  - Silvia Chiappa
+  concepts:
+  - Counterfactual thinking
+  - Leverage (statistics)
+  - Computer science
+  - Inference
+  - Path (computing)
+  - Artificial intelligence
+  source_query: counterfactual explanation credit decision
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W4225876201
+  doi: https://doi.org/10.1039/d1sc05259d
+  title: Model agnostic generation of counterfactual explanations for molecules
+  year: 2022
+  cited_by_count: 134
+  venue: Chemical Science
+  authors:
+  - Geemi P. Wellawatte
+  - Aditi Seshadri
+  - Andrew Dickson White
+  concepts:
+  - Counterfactual thinking
+  - Computer science
+  - Data science
+  - Epistemology
+  - Philosophy
+  source_query: counterfactual explanation credit decision
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W4388767362
+  doi: https://doi.org/10.1016/j.ins.2023.119898
+  title: On generating trustworthy counterfactual explanations
+  year: 2023
+  cited_by_count: 109
+  venue: Information Sciences
+  authors:
+  - Javier Del Ser
+  - Alejandro Barredo-Arrieta
+  - Natalia Díaz-Rodríguez
+  - Francisco Herrera
+  - Anna Saranti
+  - Andreas Holzinger
+  concepts:
+  - Counterfactual thinking
+  - Computer science
+  - Adversarial system
+  - Artificial intelligence
+  - Consistency (knowledge bases)
+  - Machine learning
+  source_query: counterfactual explanation credit decision
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W3093314742
+  doi: https://doi.org/10.3390/math8101756
+  title: A Comparative Performance Assessment of Ensemble Learning for Credit Scoring
+  year: 2020
+  cited_by_count: 143
+  venue: Mathematics
+  authors:
+  - Yiheng Li
+  - Weidong Chen
+  concepts:
+  - Machine learning
+  - AdaBoost
+  - Artificial intelligence
+  - Random forest
+  - Ensemble learning
+  - Support vector machine
+  source_query: fairness credit scoring imbalanced
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W2962750142
+  doi: null
+  title: The Variational Fair Autoencoder
+  year: 2016
+  cited_by_count: 271
+  venue: Data Archiving and Networked Services (DANS)
+  authors:
+  - Christos Louizos
+  - Kevin Swersky
+  - Yujia Li
+  - Max Welling
+  - Richard S. Zemel
+  concepts:
+  - Autoencoder
+  - Variation (astronomy)
+  - Independence (probability theory)
+  - Latent variable
+  - Computer science
+  - Prior probability
+  source_query: fairness credit scoring imbalanced
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W2121502211
+  doi: https://doi.org/10.1257/jep.28.3.217
+  title: The Economics of Fair Trade
+  year: 2014
+  cited_by_count: 260
+  venue: The Journal of Economic Perspectives
+  authors:
+  - Raluca Dragusanu
+  - Daniele Giovannucci
+  - Nathan Nunn
+  concepts:
+  - Fair trade
+  - Economics
+  - Certification
+  - Trade barrier
+  - Product (mathematics)
+  - International trade
+  source_query: fairness credit scoring imbalanced
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W3009609110
+  doi: https://doi.org/10.1016/j.eswa.2020.113351
+  title: A novel approach to define the local region of dynamic selection techniques
+    in imbalanced credit scoring problems
+  year: 2020
+  cited_by_count: 63
+  venue: Expert Systems with Applications
+  authors:
+  - Leopoldo Melo
+  - Franco Maria Nardini
+  - Chiara Renso
+  - Roberto Trani
+  - José Antônio Fernandes de Macêdo
+  concepts:
+  - Computer science
+  - Machine learning
+  - Artificial intelligence
+  - Classifier (UML)
+  - Selection (genetic algorithm)
+  - Credit card
+  source_query: fairness credit scoring imbalanced
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W4210242534
+  doi: https://doi.org/10.1109/access.2022.3148298
+  title: A Neural Network Ensemble With Feature Engineering for Improved Credit Card
+    Fraud Detection
+  year: 2022
+  cited_by_count: 304
+  venue: IEEE Access
+  authors:
+  - Ebenezer Esenogho
+  - Ibomoiye Domor Mienye
+  - Theo G. Swart
+  - Kehinde Aruleba
+  - George Obaido
+  concepts:
+  - Credit card fraud
+  - Computer science
+  - Credit card
+  - AdaBoost
+  - Machine learning
+  - Artificial intelligence
+  source_query: fairness credit scoring imbalanced
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W3138239626
+  doi: https://doi.org/10.1155/2021/6655510
+  title: XGBoost Optimized by Adaptive Particle Swarm Optimization for Credit Scoring
+  year: 2021
+  cited_by_count: 102
+  venue: Mathematical Problems in Engineering
+  authors:
+  - Chao Qin
+  - Yunfeng Zhang
+  - Fangxun Bao
+  - Caiming Zhang
+  - Пэйдэ Лю
+  - Peipei Liu
+  concepts:
+  - Particle swarm optimization
+  - Artificial intelligence
+  - Machine learning
+  - Hyperparameter optimization
+  - Metaheuristic
+  - Computer science
+  source_query: fairness credit scoring imbalanced
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W2296034778
+  doi: https://doi.org/10.1016/j.eswa.2017.01.011
+  title: Reject inference in credit scoring using Semi-supervised Support Vector Machines
+  year: 2017
+  cited_by_count: 129
+  venue: Expert Systems with Applications
+  authors:
+  - Zhiyong Li
+  - Ye Tian
+  - Ke Li
+  - Fanyin Zhou
+  - Wei Yang
+  concepts:
+  - Computer science
+  - Support vector machine
+  - Inference
+  - Machine learning
+  - Benchmark (surveying)
+  - Loan
+  source_query: reject inference credit scoring
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W2039860729
+  doi: https://doi.org/10.1093/imaman/5.1.35
+  title: Reject inference applied to logistic regression for credit scoring
+  year: 1993
+  cited_by_count: 66
+  venue: IMA Journal of Management Mathematics
+  authors:
+  - D. N. Joanes
+  concepts:
+  - Logistic regression
+  - Inference
+  - Statistics
+  - Econometrics
+  - Computer science
+  - Regression
+  source_query: reject inference credit scoring
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W3045116697
+  doi: https://doi.org/10.1016/j.dss.2020.113366
+  title: Three-stage reject inference learning framework for credit scoring using
+    unsupervised transfer learning and three-way decision theory
+  year: 2020
+  cited_by_count: 114
+  venue: Decision Support Systems
+  authors:
+  - Feng Shen
+  - Xingchao Zhao
+  - Gang Kou
+  concepts:
+  - Inference
+  - Artificial intelligence
+  - Machine learning
+  - Computer science
+  - Transfer of learning
+  - Credit risk
+  source_query: reject inference credit scoring
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W3011270868
+  doi: https://doi.org/10.1016/j.knosys.2020.105758
+  title: Deep generative models for reject inference in credit scoring
+  year: 2020
+  cited_by_count: 51
+  venue: Duo Research Archive (University of Oslo)
+  authors:
+  - Rogelio A. Mancisidor
+  - Michael Kampffmeyer
+  - Kjersti Aas
+  - Robert Jenssen
+  concepts:
+  - Inference
+  - Computer science
+  - Machine learning
+  - Artificial intelligence
+  - Generative grammar
+  - Generative model
+  source_query: reject inference credit scoring
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W2005213340
+  doi: https://doi.org/10.1002/(sici)1099-1174(199912)8:4<271::aid-isaf170>3.0.co;2-p
+  title: Credit scoring and reject inference with mixture models
+  year: 1999
+  cited_by_count: 54
+  venue: Intelligent Systems in Accounting Finance & Management
+  authors:
+  - Ad Feelders
+  concepts:
+  - Inference
+  - Econometrics
+  - Computer science
+  - Economics
+  - Artificial intelligence
+  - Machine learning
+  source_query: reject inference credit scoring
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W2085237221
+  doi: https://doi.org/10.1016/j.jbankfin.2012.11.002
+  title: Reject inference in consumer credit scoring with nonignorable missing data
+  year: 2012
+  cited_by_count: 47
+  venue: Journal of Banking & Finance
+  authors:
+  - Michael Bücker
+  - Maarten van Kampen
+  - Walter Krämer
+  concepts:
+  - Missing data
+  - Inference
+  - Default
+  - Econometrics
+  - Data set
+  - Actuarial science
+  source_query: reject inference credit scoring
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W2888997571
+  doi: https://doi.org/10.1016/j.asoc.2018.08.021
+  title: A new approach for reject inference in credit scoring using kernel-free fuzzy
+    quadratic surface support vector machines
+  year: 2018
+  cited_by_count: 62
+  venue: Applied Soft Computing
+  authors:
+  - Ye Tian
+  - Ziyang Yong
+  - Jian Luo
+  concepts:
+  - Computer science
+  - Support vector machine
+  - Outlier
+  - Machine learning
+  - Inference
+  - Benchmark (surveying)
+  source_query: reject inference credit scoring
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W2271858034
+  doi: null
+  title: The Economic Value of Reject Inference in Credit Scoring
+  year: 2001
+  cited_by_count: 15
+  venue: HAL (Le Centre pour la Communication Scientifique Directe)
+  authors:
+  - Thomas B. Åstebro
+  - Gong Chen
+  concepts:
+  - Inference
+  - Value (mathematics)
+  - Computer science
+  - Econometrics
+  - Artificial intelligence
+  - Machine learning
+  source_query: reject inference credit scoring
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W2161820152
+  doi: https://doi.org/10.1007/978-3-642-14400-4_43
+  title: A Semi-supervised Approach for Reject Inference in Credit Scoring Using SVMs
+  year: 2010
+  cited_by_count: 29
+  venue: Lecture notes in computer science
+  authors:
+  - Sebastián Maldonado
+  - Gonzalo Paredes
+  concepts:
+  - Support vector machine
+  - Computer science
+  - Machine learning
+  - Benchmark (surveying)
+  - Artificial intelligence
+  - Inference
+  source_query: reject inference credit scoring
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W2143117649
+  doi: https://doi.org/10.1214/09-ss057
+  title: 'Causal inference in statistics: An overview'
+  year: 2009
+  cited_by_count: 2318
+  venue: Statistics Surveys
+  authors:
+  - Judea Pearl
+  concepts:
+  - Counterfactual conditional
+  - Counterfactual thinking
+  - Causal inference
+  - Causation
+  - Computer science
+  - Causality (physics)
+  source_query: reject inference credit scoring
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W2043324736
+  doi: https://doi.org/10.1057/palgrave.jors.2601578
+  title: Sample selection bias in credit scoring models
+  year: 2003
+  cited_by_count: 133
+  venue: Journal of the Operational Research Society
+  authors:
+  - John Banasik
+  - Jonathan Crook
+  - Lyn C. Thomas
+  concepts:
+  - Sample (material)
+  - Bivariate analysis
+  - Predictive power
+  - Model selection
+  - Cutoff
+  - Econometrics
+  source_query: sample selection bias accepted applicants credit
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W2020821583
+  doi: https://doi.org/10.1016/j.ejor.2006.06.072
+  title: Reject inference, augmentation, and sample selection
+  year: 2007
+  cited_by_count: 78
+  venue: European Journal of Operational Research
+  authors:
+  - John Banasik
+  - Jonathan Crook
+  concepts:
+  - Inference
+  - Sample (material)
+  - Computer science
+  - Selection (genetic algorithm)
+  - Selection bias
+  - Missing data
+  source_query: sample selection bias accepted applicants credit
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W2910707576
+  doi: https://doi.org/10.1136/bmjqs-2018-008370
+  title: Artificial intelligence, bias and clinical safety
+  year: 2019
+  cited_by_count: 894
+  venue: BMJ Quality & Safety
+  authors:
+  - Robert Challen
+  - Joshua C. Denny
+  - Martin Pitt
+  - Luke Gompels
+  - Tom Edwards
+  - Krasimira Tsaneva‐Atanasova
+  concepts:
+  - Medicine
+  - Patient safety
+  - MEDLINE
+  - Medical emergency
+  - Data science
+  - Health care
+  source_query: sample selection bias accepted applicants credit
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W2905169113
+  doi: https://doi.org/10.21954/ou.ro.0000e061
+  title: Statistical aspects of credit scoring
+  year: 1995
+  cited_by_count: 95
+  venue: Open Research Online (The Open University)
+  authors:
+  - William Henley
+  concepts:
+  - Machine learning
+  - Inference
+  - Artificial intelligence
+  - Computer science
+  - Logistic regression
+  - Metric (unit)
+  source_query: sample selection bias accepted applicants credit
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W2098471783
+  doi: https://doi.org/10.1257/aer.102.5.2301
+  title: 'Credit Supply and Monetary Policy: Identifying the Bank Balance-Sheet Channel
+    with Loan Applications'
+  year: 2012
+  cited_by_count: 1054
+  venue: American Economic Review
+  authors:
+  - Gabriel Jiménez
+  - Steven Ongena
+  - José‐Luis Peydró
+  - Jesús Saurina
+  concepts:
+  - Loan
+  - Economics
+  - Monetary policy
+  - Non-conforming loan
+  - Monetary economics
+  - Balance sheet
+  source_query: sample selection bias accepted applicants credit
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W1495317527
+  doi: null
+  title: Accounting for Excess Zeros and Sample Selection in Poisson and Negative
+    Binomial Regression Models
+  year: 1994
+  cited_by_count: 431
+  venue: The Faculty Digital Archive (New York University)
+  authors:
+  - William H. Greene
+  concepts:
+  - Overdispersion
+  - Count data
+  - Negative binomial distribution
+  - Econometrics
+  - Quasi-likelihood
+  - Poisson regression
+  source_query: sample selection bias accepted applicants credit
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W3121325984
+  doi: https://doi.org/10.3982/ecta5781
+  title: 'Observing Unobservables: Identifying Information Asymmetries With a Consumer
+    Credit Field Experiment'
+  year: 2009
+  cited_by_count: 507
+  venue: Econometrica
+  authors:
+  - Dean Karlan
+  - Jonathan Zinman
+  concepts:
+  - Moral hazard
+  - Unobservable
+  - Private information retrieval
+  - Interest rate
+  - Information asymmetry
+  - Surprise
+  source_query: sample selection bias accepted applicants credit
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W2059168045
+  doi: https://doi.org/10.1016/0305-750x(94)90181-3
+  title: 'Determinants of credit rationing: A study of informal lenders and formal
+    credit groups in Madagascar'
+  year: 1994
+  cited_by_count: 285
+  venue: World Development
+  authors:
+  - Manfred Zeller
+  concepts:
+  - Credit rationing
+  - Rationing
+  - Debt
+  - Business
+  - Credit history
+  - Credit reference
+  source_query: sample selection bias accepted applicants credit
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W4210867863
+  doi: https://doi.org/10.1007/s10551-022-05049-6
+  title: 'Ethics of AI-Enabled Recruiting and Selection: A Review and Research Agenda'
+  year: 2022
+  cited_by_count: 367
+  venue: Journal of Business Ethics
+  authors:
+  - Anna Lena Hunkenschroer
+  - Christoph Luetge
+  concepts:
+  - Business ethics
+  - Novelty
+  - Extant taxon
+  - Process (computing)
+  - Engineering ethics
+  - Selection (genetic algorithm)
+  source_query: sample selection bias accepted applicants credit
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W3135336249
+  doi: https://doi.org/10.1016/j.asoc.2021.107259
+  title: A graph-based semi-supervised reject inference framework considering imbalanced
+    data distribution for consumer credit scoring
+  year: 2021
+  cited_by_count: 37
+  venue: Applied Soft Computing
+  authors:
+  - Yanzhe Kang
+  - Ning Jia
+  - Runbang Cui
+  - Jiang Deng
+  concepts:
+  - Inference
+  - Computer science
+  - Machine learning
+  - Artificial intelligence
+  - Loan
+  - Graph
+  source_query: sample selection bias accepted applicants credit
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W4406170795
+  doi: https://doi.org/10.1038/s41586-024-08328-6
+  title: Accurate predictions on small data with a tabular foundation model
+  year: 2025
+  cited_by_count: 589
+  venue: Nature
+  authors:
+  - Noah Hollmann
+  - Samuel Müller
+  - Lennart Purucker
+  - Arjun Krishnakumar
+  - Max Körfer
+  - Shi Bin Hoo
+  - Robin Tibor Schirrmeister
+  - Frank Hutter
+  concepts:
+  - Computer science
+  - Raw data
+  - Artificial intelligence
+  - Deep learning
+  - Machine learning
+  - Ensemble learning
+  source_query: gradient boosting credit default tabular
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W4378803232
+  doi: https://doi.org/10.25007/ajnu.v12n2a1612
+  title: 'eXtreme Gradient Boosting Algorithm with Machine Learning: a Review'
+  year: 2023
+  cited_by_count: 248
+  venue: Academic Journal of Nawroz University
+  authors:
+  - Zeravan Arif Ali
+  - Ziyad H. Abduljabbar
+  - Hanan A. Tahir
+  - Amira Bibo Sallow
+  - Saman M. Almufti‎
+  concepts:
+  - Machine learning
+  - Computer science
+  - Artificial intelligence
+  - Python (programming language)
+  - Interpretability
+  - Boosting (machine learning)
+  source_query: gradient boosting credit default tabular
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W3096019139
+  doi: https://doi.org/10.1109/access.2020.3033784
+  title: An Investigation of Credit Card Default Prediction in the Imbalanced Datasets
+  year: 2020
+  cited_by_count: 184
+  venue: IEEE Access
+  authors:
+  - Talha Mahboob Alam
+  - Kamran Shaukat
+  - Ibrahim A. Hameed
+  - Suhuai Luo
+  - Muhammad Umer Sarwar
+  - Shakir Shabbir
+  - Jiaming Li
+  - Matloob Khushi
+  concepts:
+  - Undersampling
+  - Computer science
+  - Credit card
+  - Resampling
+  - Machine learning
+  - Oversampling
+  source_query: gradient boosting credit default tabular
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W4372283338
+  doi: https://doi.org/10.48550/arxiv.2305.02997
+  title: When Do Neural Nets Outperform Boosted Trees on Tabular Data?
+  year: 2023
+  cited_by_count: 71
+  venue: arXiv (Cornell University)
+  authors:
+  - Duncan C. McElfresh
+  - Sujay Khandagale
+  - Jonathan Valverde
+  - Vishak Prasad C
+  - Feuer, Benjamin
+  - Hegde, Chinmay
+  - Ganesh Ramakrishnan
+  - Micah Goldblum
+  concepts:
+  - Computer science
+  - Hyperparameter
+  - Artificial neural network
+  - Machine learning
+  - Artificial intelligence
+  - Feature (linguistics)
+  source_query: gradient boosting credit default tabular
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W3201854521
+  doi: https://doi.org/10.1109/access.2021.3116481
+  title: 'Explainable Artificial Intelligence for Tabular Data: A Survey'
+  year: 2021
+  cited_by_count: 126
+  venue: IEEE Access
+  authors:
+  - Maria Sahakyan
+  - Zeyar Aung
+  - Talal Rahwan
+  concepts:
+  - Computer science
+  - Artificial intelligence
+  source_query: gradient boosting credit default tabular
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W4390665506
+  doi: https://doi.org/10.3389/fdata.2023.1296508
+  title: 'CTAB-GAN+: enhancing tabular data synthesis'
+  year: 2024
+  cited_by_count: 101
+  venue: Frontiers in Big Data
+  authors:
+  - Zilong Zhao
+  - Aditya Kunar
+  - Robert Birke
+  - Hiek Van der Scheer
+  - Lydia Y. Chen
+  concepts:
+  - Computer science
+  - Unavailability
+  - Categorical variable
+  - Stochastic gradient descent
+  - Differential privacy
+  - Machine learning
+  source_query: gradient boosting credit default tabular
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W3094948551
+  doi: https://doi.org/10.1186/s40537-020-00369-8
+  title: 'CatBoost for big data: an interdisciplinary review'
+  year: 2020
+  cited_by_count: 1636
+  venue: Journal Of Big Data
+  authors:
+  - John Hancock
+  - Taghi M. Khoshgoftaar
+  concepts:
+  - Computer science
+  - Machine learning
+  - Artificial intelligence
+  - Decision tree
+  - Categorical variable
+  - Big data
+  source_query: gradient boosting credit default tabular
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W3154228815
+  doi: https://doi.org/10.1109/access.2021.3070575
+  title: 'SDTR: Soft Decision Tree Regressor for Tabular Data'
+  year: 2021
+  cited_by_count: 64
+  venue: IEEE Access
+  authors:
+  - Haoran Luo
+  - Fan Cheng
+  - Heng Yu
+  - Yuqi Yi
+  concepts:
+  - Computer science
+  - Decision tree
+  - Tree (set theory)
+  - Data mining
+  - Artificial intelligence
+  - Mathematics
+  source_query: gradient boosting credit default tabular
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W4292974997
+  doi: https://doi.org/10.1186/s40537-022-00648-6
+  title: 'The use of generative adversarial networks to alleviate class imbalance
+    in tabular data: a survey'
+  year: 2022
+  cited_by_count: 101
+  venue: Journal Of Big Data
+  authors:
+  - Rick Sauber-Cole
+  - Taghi M. Khoshgoftaar
+  concepts:
+  - Computer science
+  - Popularity
+  - Classifier (UML)
+  - Machine learning
+  - Class (philosophy)
+  - Adversarial system
+  source_query: gradient boosting credit default tabular
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W4383112908
+  doi: https://doi.org/10.1109/tpami.2023.3292075
+  title: 'Transfer Learning in Deep Reinforcement Learning: A Survey'
+  year: 2023
+  cited_by_count: 673
+  venue: IEEE Transactions on Pattern Analysis and Machine Intelligence
+  authors:
+  - Zhuangdi Zhu
+  - Kaixiang Lin
+  - Anil K. Jain
+  - Jiayu Zhou
+  concepts:
+  - Reinforcement learning
+  - Transfer of learning
+  - Artificial intelligence
+  - Computer science
+  - Context (archaeology)
+  - Active learning (machine learning)
+  source_query: deep learning tabular credit scoring benchmark
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W4226492624
+  doi: https://doi.org/10.1109/access.2022.3166891
+  title: Credit Card Fraud Detection Using State-of-the-Art Machine Learning and Deep
+    Learning Algorithms
+  year: 2022
+  cited_by_count: 383
+  venue: IEEE Access
+  authors:
+  - Fawaz Khaled Alarfaj
+  - Iqra Malik
+  - Hikmat Ullah Khan
+  - Naif Almusallam
+  - Muhammad Ramzan
+  - Muzamil Ahmed
+  concepts:
+  - Computer science
+  - Machine learning
+  - Credit card
+  - Artificial intelligence
+  - Credit card fraud
+  - Benchmark (surveying)
+  source_query: deep learning tabular credit scoring benchmark
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W2910096450
+  doi: https://doi.org/10.1007/s10462-018-09679-z
+  title: 'Machine Learning and Deep Learning frameworks and libraries for large-scale
+    data mining: a survey'
+  year: 2019
+  cited_by_count: 851
+  venue: Artificial Intelligence Review
+  authors:
+  - Giang Nguyen
+  - Štefan Dlugolinský
+  - Martin Bobák
+  - Viet Tran
+  - Álvaro López García
+  - Ignacio Heredia
+  - Peter Malík
+  - Ladislav Hluchý
+  concepts:
+  - Computer science
+  - Data science
+  - Field (mathematics)
+  - Implementation
+  - Big data
+  - Deep learning
+  source_query: deep learning tabular credit scoring benchmark
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W2912327653
+  doi: https://doi.org/10.1016/j.neucom.2019.02.003
+  title: Survey on semantic segmentation using deep learning techniques
+  year: 2019
+  cited_by_count: 556
+  venue: Neurocomputing
+  authors:
+  - Fahad Lateef
+  - Yassine Ruichek
+  concepts:
+  - Computer science
+  - Artificial intelligence
+  - Segmentation
+  - Salient
+  - Task (project management)
+  - Machine learning
+  source_query: deep learning tabular credit scoring benchmark
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W3121263745
+  doi: https://doi.org/10.1186/s40537-020-00392-9
+  title: Deep Learning applications for COVID-19
+  year: 2021
+  cited_by_count: 350
+  venue: Journal Of Big Data
+  authors:
+  - Connor Shorten
+  - Taghi M. Khoshgoftaar
+  - Borko Furht
+  concepts:
+  - Deep learning
+  - Artificial intelligence
+  - Computer science
+  - Interpretability
+  - Repurposing
+  - Data science
+  source_query: deep learning tabular credit scoring benchmark
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W4309490745
+  doi: https://doi.org/10.1007/s10462-022-10306-1
+  title: 'Deep learning in drug discovery: an integrative review and future challenges'
+  year: 2022
+  cited_by_count: 365
+  venue: Artificial Intelligence Review
+  authors:
+  - Heba Askr
+  - Enas Elgeldawi
+  - Heba Aboul Ella
+  - Yaseen A. M. M. Elshaier
+  - Mamdouh M. Gomaa
+  - Aboul Ella Hassanien
+  concepts:
+  - Drug discovery
+  - Computer science
+  - Drug
+  - Data science
+  - Benchmark (surveying)
+  - Drug repositioning
+  source_query: deep learning tabular credit scoring benchmark
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto
+- id: W3148119887
+  doi: https://doi.org/10.1109/access.2021.3068854
+  title: Making Deep Learning-Based Predictions for Credit Scoring Explainable
+  year: 2021
+  cited_by_count: 72
+  venue: IEEE Access
+  authors:
+  - Xolani Dastile
+  - Turgay Çelik
+  concepts:
+  - Deep learning
+  - Artificial intelligence
+  - Computer science
+  - Machine learning
+  - Convolutional neural network
+  - Bottleneck
+  source_query: deep learning tabular credit scoring benchmark
+  discovered_at: '2026-06-10T00:03:48Z'
+  origin: auto

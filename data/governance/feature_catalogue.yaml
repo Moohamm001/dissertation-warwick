@@ -1,0 +1,481 @@
+label: Deal Status
+permitted:
+- column: Credit Score
+  category: pre-funding applicant
+- column: Amount Sought
+  category: pre-funding application
+- column: Revenue
+  category: pre-funding applicant (monthly revenue)
+- column: Average Monthly Sales
+  category: pre-funding applicant
+- column: Time In Business
+  category: pre-funding applicant
+- column: Days Since Last Opportunity
+  category: pre-funding behavioural
+- column: Online App Completed
+  category: pre-funding application channel
+- column: Is Borrower Renewal
+  category: pre-funding relationship
+- column: Current Tier
+  category: pre-funding risk tier
+- column: Mktg Tier
+  category: pre-funding marketing tier
+- column: Industry
+  category: pre-funding applicant
+- column: Loan Purpose
+  category: pre-funding application
+- column: Borrower State
+  category: pre-funding applicant geography
+- column: Deal Type
+  category: pre-funding (new/renewal known at application)
+- column: Renewal Type
+  category: pre-funding relationship
+- column: Channel
+  category: pre-funding origination channel
+- column: Medium
+  category: pre-funding origination channel
+forbidden:
+- column: 'Unnamed: 0.1'
+  reason: identifier
+  pct_missing: 0.0
+- column: 'Unnamed: 0'
+  reason: identifier
+  pct_missing: 0.0
+- column: '# Deals Open'
+  reason: administrative / free-text / ops
+  pct_missing: 0.0
+- column: '# Offers Received'
+  reason: administrative / free-text / ops
+  pct_missing: 0.0
+- column: '# Deals Dead'
+  reason: administrative / free-text / ops
+  pct_missing: 0.0
+- column: Opportunity Id
+  reason: identifier
+  pct_missing: 0.0
+- column: Engagement Id
+  reason: identifier
+  pct_missing: 0.0
+- column: Borrower Id
+  reason: identifier
+  pct_missing: 0.0
+- column: Can Text
+  reason: administrative / free-text / ops
+  pct_missing: 0.0
+- column: Start
+  reason: progression timestamp
+  pct_missing: 0.0
+- column: Start Month
+  reason: progression timestamp
+  pct_missing: 0.0
+- column: Start TS
+  reason: progression timestamp
+  pct_missing: 0.0
+- column: End
+  reason: progression timestamp
+  pct_missing: 0.0
+- column: End TS
+  reason: progression timestamp
+  pct_missing: 0.0
+- column: Assigned
+  reason: progression timestamp
+  pct_missing: 2.0
+- column: Assigned TS
+  reason: progression timestamp
+  pct_missing: 2.0
+- column: Current Assigned
+  reason: progression timestamp
+  pct_missing: 8.0
+- column: Current Assigned TS
+  reason: progression timestamp
+  pct_missing: 8.0
+- column: Attempted
+  reason: progression timestamp
+  pct_missing: 12.2
+- column: Attempted TS
+  reason: progression timestamp
+  pct_missing: 12.2
+- column: Contacted
+  reason: progression timestamp
+  pct_missing: 18.0
+- column: Contacted TS
+  reason: progression timestamp
+  pct_missing: 18.0
+- column: App Out
+  reason: empty (100% missing)
+  pct_missing: 100.0
+- column: App Sent
+  reason: progression timestamp
+  pct_missing: 0.0
+- column: App Sent TS
+  reason: progression timestamp
+  pct_missing: 0.0
+- column: DocPrep
+  reason: progression timestamp
+  pct_missing: 22.2
+- column: DocPrep TS
+  reason: progression timestamp
+  pct_missing: 22.2
+- column: Offer Received
+  reason: progression timestamp
+  pct_missing: 0.7
+- column: Offer Received TS
+  reason: progression timestamp
+  pct_missing: 0.7
+- column: Offer Accepted
+  reason: progression timestamp
+  pct_missing: 0.0
+- column: Offer Accepted TS
+  reason: progression timestamp
+  pct_missing: 0.0
+- column: Contract Out
+  reason: progression timestamp
+  pct_missing: 0.0
+- column: Contract Out TS
+  reason: progression timestamp
+  pct_missing: 0.0
+- column: Contract Signed
+  reason: progression timestamp
+  pct_missing: 0.0
+- column: Contract Signed TS
+  reason: progression timestamp
+  pct_missing: 0.0
+- column: Deal Closed
+  reason: progression timestamp
+  pct_missing: 0.0
+- column: Deal Closed Month
+  reason: progression timestamp
+  pct_missing: 0.0
+- column: Deal Closed TS
+  reason: progression timestamp
+  pct_missing: 0.0
+- column: Shared w/ Funding Desk
+  reason: progression timestamp
+  pct_missing: 22.2
+- column: 1st Online Engmnt
+  reason: empty (100% missing)
+  pct_missing: 100.0
+- column: Rep Id
+  reason: identifier
+  pct_missing: 0.0
+- column: 'Engagement #'
+  reason: administrative / free-text / ops
+  pct_missing: 0.0
+- column: '# Deals'
+  reason: administrative / free-text / ops
+  pct_missing: 0.0
+- column: Max Offer Received $
+  reason: offer/contract term (set at funding)
+  pct_missing: 0.0
+- column: '# Closed Deals'
+  reason: outcome / post-funding
+  pct_missing: 0.2
+- column: Used Online Experience
+  reason: empty (100% missing)
+  pct_missing: 100.0
+- column: Online App Complete TS
+  reason: progression timestamp
+  pct_missing: 14.4
+- column: Is Inactive
+  reason: administrative / free-text / ops
+  pct_missing: 0.0
+- column: Mktg Is Accepted
+  reason: administrative / free-text / ops
+  pct_missing: 0.0
+- column: Mktg Has Ownership
+  reason: administrative / free-text / ops
+  pct_missing: 0.0
+- column: Mktg Is Qualified
+  reason: administrative / free-text / ops
+  pct_missing: 0.0
+- column: Closed Max Term
+  reason: offer/contract term (set at funding)
+  pct_missing: 0.2
+- column: Amount Funded
+  reason: offer/contract term (set at funding)
+  pct_missing: 0.2
+- column: Stage
+  reason: post-hoc status field
+  pct_missing: 0.0
+- column: Status
+  reason: post-hoc status field
+  pct_missing: 0.0
+- column: Disposition
+  reason: post-hoc status field
+  pct_missing: 99.1
+- column: Closed Lenders
+  reason: empty (100% missing)
+  pct_missing: 100.0
+- column: Touchpoint
+  reason: administrative / free-text / ops
+  pct_missing: 4.7
+- column: Source
+  reason: administrative / free-text / ops
+  pct_missing: 1.4
+- column: Campaign
+  reason: high missingness (>40%)
+  pct_missing: 41.3
+- column: Ad Group
+  reason: high missingness (>40%)
+  pct_missing: 54.8
+- column: Term
+  reason: offer/contract term (set at funding)
+  pct_missing: 86.4
+- column: Mineral Group
+  reason: administrative / free-text / ops
+  pct_missing: 0.0
+- column: Monthly Credit Card Charges
+  reason: empty (100% missing)
+  pct_missing: 100.0
+- column: Rep
+  reason: administrative / free-text / ops
+  pct_missing: 0.0
+- column: Team
+  reason: administrative / free-text / ops
+  pct_missing: 0.0
+- column: Location
+  reason: administrative / free-text / ops
+  pct_missing: 0.0
+- column: Rep Type
+  reason: empty (100% missing)
+  pct_missing: 100.0
+- column: Rep Is Active
+  reason: empty (100% missing)
+  pct_missing: 100.0
+- column: Marketing Id
+  reason: identifier
+  pct_missing: 0.3
+- column: Inactive Status
+  reason: empty (100% missing)
+  pct_missing: 100.0
+- column: Assignment Group Id
+  reason: identifier
+  pct_missing: 52.6
+- column: Capture Page
+  reason: administrative / free-text / ops
+  pct_missing: 10.7
+- column: Referral URL
+  reason: high missingness (>40%)
+  pct_missing: 68.8
+- column: Marketing Mineral Group
+  reason: redundant marketing snapshot
+  pct_missing: 0.0
+- column: Marketing Credit Score
+  reason: redundant marketing snapshot
+  pct_missing: 2.3
+- column: Marketing Time in Business
+  reason: redundant marketing snapshot
+  pct_missing: 2.1
+- column: Marketing Avg Monthly Sales
+  reason: redundant marketing snapshot
+  pct_missing: 2.1
+- column: Start Business Day
+  reason: administrative / free-text / ops
+  pct_missing: 0.0
+- column: Start Quarter Day
+  reason: administrative / free-text / ops
+  pct_missing: 0.0
+- column: Start Annual Day
+  reason: administrative / free-text / ops
+  pct_missing: 0.0
+- column: Borrower Created
+  reason: progression timestamp
+  pct_missing: 0.0
+- column: Lead Claiming Bucket
+  reason: high missingness (>40%)
+  pct_missing: 56.0
+- column: Lead Claiming Priority
+  reason: high missingness (>40%)
+  pct_missing: 56.0
+- column: Is Claimed By Rep
+  reason: administrative / free-text / ops
+  pct_missing: 0.0
+- column: Is Claimed Lead
+  reason: administrative / free-text / ops
+  pct_missing: 0.0
+- column: Processor Assigned TS
+  reason: progression timestamp
+  pct_missing: 22.3
+- column: Processor
+  reason: administrative / free-text / ops
+  pct_missing: 22.3
+- column: Is Processor Assigned
+  reason: administrative / free-text / ops
+  pct_missing: 0.0
+- column: OcrolusSent
+  reason: progression timestamp
+  pct_missing: 24.8
+- column: OcrolusComplete
+  reason: progression timestamp
+  pct_missing: 24.0
+- column: OcrolusErrored
+  reason: progression timestamp
+  pct_missing: 98.4
+- column: Closed By Rep Id
+  reason: identifier
+  pct_missing: 0.8
+- column: Closed By Team Id
+  reason: identifier
+  pct_missing: 0.8
+- column: Closed By Rep
+  reason: outcome / post-funding
+  pct_missing: 0.8
+- column: Closed By Type
+  reason: empty (100% missing)
+  pct_missing: 100.0
+- column: Closed By Team
+  reason: outcome / post-funding
+  pct_missing: 0.8
+- column: Closed by Location
+  reason: outcome / post-funding
+  pct_missing: 0.8
+- column: Deal Id
+  reason: identifier
+  pct_missing: 0.8
+- column: Is App Sent
+  reason: outcome / post-funding
+  pct_missing: 0.8
+- column: Is Offer Received
+  reason: outcome / post-funding
+  pct_missing: 0.8
+- column: Is Offer Accepted
+  reason: outcome / post-funding
+  pct_missing: 0.8
+- column: Is Closed
+  reason: outcome / post-funding
+  pct_missing: 0.8
+- column: Closed
+  reason: progression timestamp
+  pct_missing: 0.8
+- column: Month Closed
+  reason: progression timestamp
+  pct_missing: 0.8
+- column: Offer Id
+  reason: identifier
+  pct_missing: 0.8
+- column: Is Offer Published
+  reason: outcome / post-funding
+  pct_missing: 0.8
+- column: Is Offer Auto-Published
+  reason: outcome / post-funding
+  pct_missing: 0.8
+- column: Is Offer Accepted Online
+  reason: outcome / post-funding
+  pct_missing: 0.8
+- column: Payback
+  reason: offer/contract term (set at funding)
+  pct_missing: 0.9
+- column: APR
+  reason: offer/contract term (set at funding)
+  pct_missing: 59.6
+- column: Factor
+  reason: offer/contract term (set at funding)
+  pct_missing: 42.0
+- column: Commission
+  reason: offer/contract term (set at funding)
+  pct_missing: 0.8
+- column: Payment Frequency
+  reason: offer/contract term (set at funding)
+  pct_missing: 16.9
+- column: Payment Amount
+  reason: offer/contract term (set at funding)
+  pct_missing: 37.9
+- column: Points
+  reason: offer/contract term (set at funding)
+  pct_missing: 0.8
+- column: Received
+  reason: progression timestamp
+  pct_missing: 0.8
+- column: Published
+  reason: progression timestamp
+  pct_missing: 98.8
+- column: Accepted
+  reason: progression timestamp
+  pct_missing: 0.8
+- column: Prod Id
+  reason: identifier
+  pct_missing: 0.8
+- column: Lender
+  reason: offer/contract term (set at funding)
+  pct_missing: 0.8
+- column: Prod Type
+  reason: offer/contract term (set at funding)
+  pct_missing: 0.8
+- column: Product
+  reason: offer/contract term (set at funding)
+  pct_missing: 0.8
+- column: Tier
+  reason: offer/contract term (set at funding)
+  pct_missing: 0.8
+- column: Orig Medium
+  reason: administrative / free-text / ops
+  pct_missing: 0.9
+- column: Orig Source
+  reason: administrative / free-text / ops
+  pct_missing: 2.2
+- column: Orig Campaign
+  reason: high missingness (>40%)
+  pct_missing: 41.6
+- column: Orig Ad Group
+  reason: high missingness (>40%)
+  pct_missing: 55.0
+- column: '# Borrower Renewals'
+  reason: administrative / free-text / ops
+  pct_missing: 0.8
+- column: Is Product Renewal
+  reason: administrative / free-text / ops
+  pct_missing: 0.8
+- column: Borrower City
+  reason: administrative / free-text / ops
+  pct_missing: 1.0
+- column: Borrower Zip
+  reason: identifier
+  pct_missing: 0.0
+- column: Created
+  reason: progression timestamp
+  pct_missing: 0.8
+- column: Closed TS
+  reason: progression timestamp
+  pct_missing: 0.8
+- column: Is Lender Renewal
+  reason: administrative / free-text / ops
+  pct_missing: 0.8
+- column: Lender Renewal Count
+  reason: administrative / free-text / ops
+  pct_missing: 0.8
+- column: Dead Status
+  reason: empty (100% missing)
+  pct_missing: 100.0
+- column: Renewal Eligible Date
+  reason: empty (100% missing)
+  pct_missing: 100.0
+- column: Original Close Date
+  reason: progression timestamp
+  pct_missing: 0.8
+- column: Search Term
+  reason: offer/contract term (set at funding)
+  pct_missing: 86.4
+- column: Opportunity Start
+  reason: progression timestamp
+  pct_missing: 0.8
+- column: Lender Identifier
+  reason: offer/contract term (set at funding)
+  pct_missing: 97.6
+- column: Term Complete Percentage
+  reason: outcome / post-funding
+  pct_missing: 0.8
+- column: Percent Paid
+  reason: outcome / post-funding
+  pct_missing: 98.6
+- column: Is Automated
+  reason: administrative / free-text / ops
+  pct_missing: 0.8
+- column: Territory Assignment
+  reason: high missingness (>40%)
+  pct_missing: 94.6
+- column: Matching Deal Id
+  reason: identifier
+  pct_missing: 1.1
+- column: Prod Rank
+  reason: offer/contract term (set at funding)
+  pct_missing: 1.1

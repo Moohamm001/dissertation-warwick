@@ -1,0 +1,28 @@
+# Seed queries for the literature crawler — aimed squarely at the dissertation's problem:
+# methods for EXTREME-IMBALANCE green-loan credit scoring. Grouped by theme for readability.
+queries:
+  imbalance_methods:
+    - "class imbalance credit scoring"
+    - "imbalanced classification rare events"
+    - "SMOTE credit scoring oversampling"
+    - "cost-sensitive learning credit default"
+    - "focal loss imbalanced tabular"
+    - "anomaly detection rare default prediction"
+  calibration_uncertainty:
+    - "probability calibration credit risk"
+    - "conformal prediction credit scoring"
+    - "uncertainty quantification imbalanced classification"
+  green_finance:
+    - "green loan credit risk machine learning"
+    - "sustainable finance default prediction"
+    - "ESG credit scoring machine learning"
+  explainability_fairness:
+    - "SHAP explainability credit scoring"
+    - "counterfactual explanation credit decision"
+    - "fairness credit scoring imbalanced"
+  selection_bias:
+    - "reject inference credit scoring"
+    - "sample selection bias accepted applicants credit"
+  tabular_models:
+    - "gradient boosting credit default tabular"
+    - "deep learning tabular credit scoring benchmark"
