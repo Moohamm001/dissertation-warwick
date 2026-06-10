@@ -16,6 +16,7 @@ def main(argv: list[str] | None = None) -> int:
     sub.add_parser("audit", help="Phase 2 target-leakage feature catalogue")
     sub.add_parser("preprocess-check", help="Fit the leakage-safe pipeline and report output shape")
     sub.add_parser("bakeoff", help="Phase 3 model x imbalance-strategy bake-off (RQ1)")
+    sub.add_parser("figures", help="Build the step-by-step visual story (reports/visual_story.md)")
 
     args = parser.parse_args(argv)
 
@@ -49,6 +50,13 @@ def main(argv: list[str] | None = None) -> int:
 
         path = experiments.build_report()
         print(f"[emerald_ai] bake-off report written -> {path}")
+        return 0
+
+    if args.command == "figures":
+        from . import figures
+
+        path = figures.build_story()
+        print(f"[emerald_ai] visual story written -> {path}")
         return 0
 
     parser.error(f"unknown command {args.command!r}")

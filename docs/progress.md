@@ -17,6 +17,9 @@ Updated as work lands; this is the answer to "what's going on in this project?".
 | Phase 7 — write-up + release | ⬜ |
 
 ## Done (most recent first)
+- **2026-06-10 — Visual story.** `python -m emerald_ai figures` → `reports/visual_story.md` + 6
+  figures: imbalance, censoring, CV-resampling schematic, PR-AUC fold boxes vs floor, **cumulative
+  gains (top 10% catches 64% of defaults — the usefulness proof)**, minority calibration.
 - **2026-06-10 — Phase 3: model × imbalance bake-off (RQ1).** `experiments.py` + `metrics.py`,
   5×5 repeated stratified CV, resampling inside folds. `python -m emerald_ai bakeoff` →
   `reports/model_bakeoff.md`. **RQ1 finding: no significant winner — LR (PR-AUC 0.116) ≈ XGBoost

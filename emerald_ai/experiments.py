@@ -93,6 +93,24 @@ def run_bakeoff(scheme: str = "paidoff_only", n_splits: int = 5, n_repeats: int 
     return pd.DataFrame(rows)
 
 
+def oof_predictions(name: str, strategy: str, scheme: str = "paidoff_only", n_splits: int = 5):
+    """Out-of-fold P(default) for every row under one stratified split — for gains/calibration plots."""
+    from sklearn.model_selection import StratifiedKFold
+
+    df = D.build_target(D.load_raw(), scheme).reset_index(drop=True)
+    y = df["y"].to_numpy()
+    pre, _ = P.build_preprocessor(df, scale=(name == "logreg"))
+    skf = StratifiedKFold(n_splits=n_splits, shuffle=True, random_state=C.SEED)
+    oof = np.full(len(y), np.nan)
+    for tr, te in skf.split(df, y):
+        with warnings.catch_warnings():
+            warnings.simplefilter("ignore")
+            X_tr = pre.fit_transform(df.iloc[tr], y[tr])
+            X_te = pre.transform(df.iloc[te])
+            oof[te] = _fold_scores(name, strategy, X_tr, y[tr], X_te)
+    return y, oof
+
+
 def summarise(per_fold: pd.DataFrame) -> pd.DataFrame:
     """Collapse per-fold rows to median + fold band per combo per metric."""
     out = []
