@@ -205,29 +205,6 @@
   source_query: class imbalance credit scoring
   discovered_at: '2026-06-10T00:03:48Z'
   origin: auto
-- id: W2562319768
-  doi: https://doi.org/10.1016/j.eswa.2016.12.035
-  title: 'Learning from class-imbalanced data: Review of methods and applications'
-  year: 2016
-  cited_by_count: 2330
-  venue: Expert Systems with Applications
-  authors:
-  - Guo Haixiang
-  - Yijing Li
-  - Jennifer Shang
-  - Mingyun Gu
-  - Yuanyue Huang
-  - Gong Bing
-  concepts:
-  - Computer science
-  - Machine learning
-  - Artificial intelligence
-  - Preprocessor
-  - Data science
-  - Task (project management)
-  source_query: imbalanced classification rare events
-  discovered_at: '2026-06-10T00:03:48Z'
-  origin: auto
 - id: W2117190680
   doi: https://doi.org/10.1007/s10618-012-0295-5
   title: Training and assessing classification rules with imbalanced data
@@ -748,26 +725,6 @@
   source_query: cost-sensitive learning credit default
   discovered_at: '2026-06-10T00:03:48Z'
   origin: auto
-- id: W2700766797
-  doi: https://doi.org/10.1016/j.elerap.2017.06.004
-  title: Cost-sensitive boosted tree for loan evaluation in peer-to-peer lending
-  year: 2017
-  cited_by_count: 184
-  venue: Electronic Commerce Research and Applications
-  authors:
-  - Yufei Xia
-  - Chuanzhe Liu
-  - Nana Liu
-  concepts:
-  - Loan
-  - Computer science
-  - Profitability index
-  - Metric (unit)
-  - Portfolio
-  - Decision tree
-  source_query: cost-sensitive learning credit default
-  discovered_at: '2026-06-10T00:03:48Z'
-  origin: auto
 - id: W2964303497
   doi: https://doi.org/10.3390/electronics8080832
   title: 'Machine Learning Interpretability: A Survey on Methods and Metrics'
@@ -804,28 +761,6 @@
   - Financial market
   - Financial system
   - Capital market
-  source_query: cost-sensitive learning credit default
-  discovered_at: '2026-06-10T00:03:48Z'
-  origin: auto
-- id: W2800788706
-  doi: https://doi.org/10.1613/jair.1.11192
-  title: 'SMOTE for Learning from Imbalanced Data: Progress and Challenges, Marking
-    the 15-year Anniversary'
-  year: 2018
-  cited_by_count: 2110
-  venue: Journal of Artificial Intelligence Research
-  authors:
-  - Alberto Fernández
-  - Salvador García
-  - Francisco Herrera
-  - Nitesh V. Chawla
-  concepts:
-  - Computer science
-  - Machine learning
-  - Artificial intelligence
-  - Preprocessor
-  - Robustness (evolution)
-  - Benchmark (surveying)
   source_query: cost-sensitive learning credit default
   discovered_at: '2026-06-10T00:03:48Z'
   origin: auto
@@ -4655,25 +4590,6 @@
   source_query: cross-validation imbalanced data overfitting overoptimism
   discovered_at: '2026-06-10T12:01:03Z'
   origin: auto
-- id: W4385576721
-  doi: https://doi.org/10.1016/j.patter.2023.100804
-  title: Leakage and the reproducibility crisis in machine-learning-based science
-  year: 2023
-  cited_by_count: 638
-  venue: Patterns
-  authors:
-  - Sayash Kapoor
-  - Arvind Narayanan
-  concepts:
-  - Reproducibility
-  - Leakage (economics)
-  - Computer science
-  - Logistic regression
-  - Regression
-  - Artificial intelligence
-  source_query: cross-validation imbalanced data overfitting overoptimism
-  discovered_at: '2026-06-10T12:01:03Z'
-  origin: auto
 - id: W4385252239
   doi: https://doi.org/10.1186/s12911-023-02238-9
   title: XGBoost-SHAP-based interpretable diagnostic framework for alzheimer’s disease
@@ -4887,26 +4803,6 @@
   source_query: cross-validation imbalanced data overfitting overoptimism
   discovered_at: '2026-06-10T12:01:03Z'
   origin: auto
-- id: W1966716734
-  doi: https://doi.org/10.1371/journal.pone.0118432
-  title: The Precision-Recall Plot Is More Informative than the ROC Plot When Evaluating
-    Binary Classifiers on Imbalanced Datasets
-  year: 2015
-  cited_by_count: 4578
-  venue: PLoS ONE
-  authors:
-  - Takaya Saito
-  - Marc Rehmsmeier
-  concepts:
-  - Interpretability
-  - Receiver operating characteristic
-  - False positive paradox
-  - Plot (graphics)
-  - Binary classification
-  - Artificial intelligence
-  source_query: precision recall curve imbalanced classification evaluation
-  discovered_at: '2026-06-10T12:01:03Z'
-  origin: auto
 - id: W2888728157
   doi: https://doi.org/10.1016/j.aci.2018.08.003
   title: Classification assessment methods
@@ -4942,25 +4838,6 @@
   - False positives and false negatives
   - Correlation
   - Confusion matrix
-  source_query: precision recall curve imbalanced classification evaluation
-  discovered_at: '2026-06-10T12:01:03Z'
-  origin: auto
-- id: W2330219538
-  doi: https://doi.org/10.5121/ijdkp.2015.5201
-  title: A Review on Evaluation Metrics for Data Classification Evaluations
-  year: 2015
-  cited_by_count: 2661
-  venue: International Journal of Data Mining & Knowledge Management Process
-  authors:
-  - Md Ekrim Hossin
-  - Sulaiman M.N
-  concepts:
-  - Discriminator
-  - Computer science
-  - Classifier (UML)
-  - Optimal distinctiveness theory
-  - Machine learning
-  - Artificial intelligence
   source_query: precision recall curve imbalanced classification evaluation
   discovered_at: '2026-06-10T12:01:03Z'
   origin: auto
@@ -5429,47 +5306,6 @@
   source_query: evaluation metrics credit scoring imbalanced
   discovered_at: '2026-06-10T12:01:03Z'
   origin: auto
-- id: W1981552604
-  doi: https://doi.org/10.1214/09-ss054
-  title: A survey of cross-validation procedures for model selection
-  year: 2010
-  cited_by_count: 3251
-  venue: Statistics Surveys
-  authors:
-  - Sylvain Arlot
-  - Alain Celisse
-  concepts:
-  - Selection (genetic algorithm)
-  - Model selection
-  - Computer science
-  - Simplicity
-  - Estimator
-  - Econometrics
-  source_query: repeated stratified k-fold cross-validation variance
-  discovered_at: '2026-06-10T12:01:03Z'
-  origin: auto
-- id: W2154290668
-  doi: https://doi.org/10.1186/1758-2946-6-10
-  title: Cross-validation pitfalls when selecting and assessing regression and classification
-    models
-  year: 2014
-  cited_by_count: 1057
-  venue: Journal of Cheminformatics
-  authors:
-  - Damjan Krstajić
-  - Ljubomir Buturović
-  - David E. Leahy
-  - Simon Thomas
-  concepts:
-  - Computer science
-  - Data mining
-  - Regression
-  - Cross-validation
-  - Model validation
-  - Regression analysis
-  source_query: repeated stratified k-fold cross-validation variance
-  discovered_at: '2026-06-10T12:01:03Z'
-  origin: auto
 - id: W4403658285
   doi: https://doi.org/10.11648/j.ajtas.20241305.13
   title: 'Comparative Analysis of Cross-Validation Techniques: LOOCV, K-folds Cross-Validation,
@@ -5653,48 +5489,6 @@
   - Greedy algorithm
   - Set (abstract data type)
   source_query: repeated stratified k-fold cross-validation variance
-  discovered_at: '2026-06-10T12:01:03Z'
-  origin: auto
-- id: W2037668591
-  doi: https://doi.org/10.1016/s0895-4356(96)00236-3
-  title: A simulation study of the number of events per variable in logistic regression
-    analysis
-  year: 1996
-  cited_by_count: 8954
-  venue: Journal of Clinical Epidemiology
-  authors:
-  - Peter Peduzzi
-  - John Concato
-  - Elizabeth Kemper
-  - Theodore R. Holford
-  - Alvan R. Feinstein
-  concepts:
-  - Logistic regression
-  - Statistics
-  - Mathematics
-  - Statistic
-  - Regression analysis
-  - Sample size determination
-  source_query: events per variable logistic regression
-  discovered_at: '2026-06-10T12:01:03Z'
-  origin: auto
-- id: W2130373985
-  doi: https://doi.org/10.1093/aje/kwk052
-  title: Relaxing the Rule of Ten Events per Variable in Logistic and Cox Regression
-  year: 2006
-  cited_by_count: 4100
-  venue: American Journal of Epidemiology
-  authors:
-  - Eric Vittinghoff
-  - Charles E. McCulloch
-  concepts:
-  - Logistic regression
-  - Rule of thumb
-  - Statistics
-  - Confounding
-  - Confidence interval
-  - Econometrics
-  source_query: events per variable logistic regression
   discovered_at: '2026-06-10T12:01:03Z'
   origin: auto
 - id: W2553734051
@@ -5932,32 +5726,6 @@
   - Statistic
   - Outcome (game theory)
   - Computer science
-  source_query: minimum sample size clinical prediction model
-  discovered_at: '2026-06-10T12:01:03Z'
-  origin: auto
-- id: W3012413426
-  doi: https://doi.org/10.1136/bmj.m441
-  title: Calculating the sample size required for developing a clinical prediction
-    model
-  year: 2020
-  cited_by_count: 2481
-  venue: BMJ
-  authors:
-  - Richard D Riley
-  - Joie Ensor
-  - Kym I E Snell
-  - Frank E. Harrell
-  - Glen P. Martin
-  - Johannes B. Reitsma
-  - Karel G.M. Moons
-  - Gary S. Collins
-  concepts:
-  - Sample size determination
-  - Computer science
-  - Sample (material)
-  - Outcome (game theory)
-  - Predictive modelling
-  - Health care
   source_query: minimum sample size clinical prediction model
   discovered_at: '2026-06-10T12:01:03Z'
   origin: auto

@@ -1,0 +1,243 @@
+- id: W2562319768
+  doi: https://doi.org/10.1016/j.eswa.2016.12.035
+  title: 'Learning from class-imbalanced data: Review of methods and applications'
+  year: 2016
+  cited_by_count: 2330
+  venue: Expert Systems with Applications
+  authors:
+  - Guo Haixiang
+  - Yijing Li
+  - Jennifer Shang
+  - Mingyun Gu
+  - Yuanyue Huang
+  - Gong Bing
+  concepts:
+  - Computer science
+  - Machine learning
+  - Artificial intelligence
+  - Preprocessor
+  - Data science
+  - Task (project management)
+  source_query: imbalanced classification rare events
+  origin: curated
+  decision: D8 imbalance survey
+  curated_at: '2026-06-10T12:19:19Z'
+- id: W2700766797
+  doi: https://doi.org/10.1016/j.elerap.2017.06.004
+  title: Cost-sensitive boosted tree for loan evaluation in peer-to-peer lending
+  year: 2017
+  cited_by_count: 184
+  venue: Electronic Commerce Research and Applications
+  authors:
+  - Yufei Xia
+  - Chuanzhe Liu
+  - Nana Liu
+  concepts:
+  - Loan
+  - Computer science
+  - Profitability index
+  - Metric (unit)
+  - Portfolio
+  - Decision tree
+  source_query: cost-sensitive learning credit default
+  origin: curated
+  decision: D5 cost-sensitive
+  curated_at: '2026-06-10T12:19:19Z'
+- id: W2800788706
+  doi: https://doi.org/10.1613/jair.1.11192
+  title: 'SMOTE for Learning from Imbalanced Data: Progress and Challenges, Marking
+    the 15-year Anniversary'
+  year: 2018
+  cited_by_count: 2110
+  venue: Journal of Artificial Intelligence Research
+  authors:
+  - Alberto Fernández
+  - Salvador García
+  - Francisco Herrera
+  - Nitesh V. Chawla
+  concepts:
+  - Computer science
+  - Machine learning
+  - Artificial intelligence
+  - Preprocessor
+  - Robustness (evolution)
+  - Benchmark (surveying)
+  source_query: cost-sensitive learning credit default
+  origin: curated
+  decision: D1 SMOTE
+  curated_at: '2026-06-10T12:19:19Z'
+- id: W4385576721
+  doi: https://doi.org/10.1016/j.patter.2023.100804
+  title: Leakage and the reproducibility crisis in machine-learning-based science
+  year: 2023
+  cited_by_count: 638
+  venue: Patterns
+  authors:
+  - Sayash Kapoor
+  - Arvind Narayanan
+  concepts:
+  - Reproducibility
+  - Leakage (economics)
+  - Computer science
+  - Logistic regression
+  - Regression
+  - Artificial intelligence
+  source_query: cross-validation imbalanced data overfitting overoptimism
+  origin: curated
+  decision: D2 leakage
+  curated_at: '2026-06-10T12:19:19Z'
+- id: W1966716734
+  doi: https://doi.org/10.1371/journal.pone.0118432
+  title: The Precision-Recall Plot Is More Informative than the ROC Plot When Evaluating
+    Binary Classifiers on Imbalanced Datasets
+  year: 2015
+  cited_by_count: 4578
+  venue: PLoS ONE
+  authors:
+  - Takaya Saito
+  - Marc Rehmsmeier
+  concepts:
+  - Interpretability
+  - Receiver operating characteristic
+  - False positive paradox
+  - Plot (graphics)
+  - Binary classification
+  - Artificial intelligence
+  source_query: precision recall curve imbalanced classification evaluation
+  origin: curated
+  decision: D3 PR-vs-ROC
+  curated_at: '2026-06-10T12:19:19Z'
+- id: W2330219538
+  doi: https://doi.org/10.5121/ijdkp.2015.5201
+  title: A Review on Evaluation Metrics for Data Classification Evaluations
+  year: 2015
+  cited_by_count: 2661
+  venue: International Journal of Data Mining & Knowledge Management Process
+  authors:
+  - Md Ekrim Hossin
+  - Sulaiman M.N
+  concepts:
+  - Discriminator
+  - Computer science
+  - Classifier (UML)
+  - Optimal distinctiveness theory
+  - Machine learning
+  - Artificial intelligence
+  source_query: precision recall curve imbalanced classification evaluation
+  origin: curated
+  decision: D3 metrics
+  curated_at: '2026-06-10T12:19:19Z'
+- id: W1981552604
+  doi: https://doi.org/10.1214/09-ss054
+  title: A survey of cross-validation procedures for model selection
+  year: 2010
+  cited_by_count: 3251
+  venue: Statistics Surveys
+  authors:
+  - Sylvain Arlot
+  - Alain Celisse
+  concepts:
+  - Selection (genetic algorithm)
+  - Model selection
+  - Computer science
+  - Simplicity
+  - Estimator
+  - Econometrics
+  source_query: repeated stratified k-fold cross-validation variance
+  origin: curated
+  decision: D4 repeated CV
+  curated_at: '2026-06-10T12:19:19Z'
+- id: W2154290668
+  doi: https://doi.org/10.1186/1758-2946-6-10
+  title: Cross-validation pitfalls when selecting and assessing regression and classification
+    models
+  year: 2014
+  cited_by_count: 1057
+  venue: Journal of Cheminformatics
+  authors:
+  - Damjan Krstajić
+  - Ljubomir Buturović
+  - David E. Leahy
+  - Simon Thomas
+  concepts:
+  - Computer science
+  - Data mining
+  - Regression
+  - Cross-validation
+  - Model validation
+  - Regression analysis
+  source_query: repeated stratified k-fold cross-validation variance
+  origin: curated
+  decision: D2 within-fold CV
+  curated_at: '2026-06-10T12:19:19Z'
+- id: W2037668591
+  doi: https://doi.org/10.1016/s0895-4356(96)00236-3
+  title: A simulation study of the number of events per variable in logistic regression
+    analysis
+  year: 1996
+  cited_by_count: 8954
+  venue: Journal of Clinical Epidemiology
+  authors:
+  - Peter Peduzzi
+  - John Concato
+  - Elizabeth Kemper
+  - Theodore R. Holford
+  - Alvan R. Feinstein
+  concepts:
+  - Logistic regression
+  - Statistics
+  - Mathematics
+  - Statistic
+  - Regression analysis
+  - Sample size determination
+  source_query: events per variable logistic regression
+  origin: curated
+  decision: D7 EPV
+  curated_at: '2026-06-10T12:19:19Z'
+- id: W2130373985
+  doi: https://doi.org/10.1093/aje/kwk052
+  title: Relaxing the Rule of Ten Events per Variable in Logistic and Cox Regression
+  year: 2006
+  cited_by_count: 4100
+  venue: American Journal of Epidemiology
+  authors:
+  - Eric Vittinghoff
+  - Charles E. McCulloch
+  concepts:
+  - Logistic regression
+  - Rule of thumb
+  - Statistics
+  - Confounding
+  - Confidence interval
+  - Econometrics
+  source_query: events per variable logistic regression
+  origin: curated
+  decision: D7 EPV
+  curated_at: '2026-06-10T12:19:19Z'
+- id: W3012413426
+  doi: https://doi.org/10.1136/bmj.m441
+  title: Calculating the sample size required for developing a clinical prediction
+    model
+  year: 2020
+  cited_by_count: 2481
+  venue: BMJ
+  authors:
+  - Richard D Riley
+  - Joie Ensor
+  - Kym I E Snell
+  - Frank E. Harrell
+  - Glen P. Martin
+  - Johannes B. Reitsma
+  - Karel G.M. Moons
+  - Gary S. Collins
+  concepts:
+  - Sample size determination
+  - Computer science
+  - Sample (material)
+  - Outcome (game theory)
+  - Predictive modelling
+  - Health care
+  source_query: minimum sample size clinical prediction model
+  origin: curated
+  decision: D7 sample size
+  curated_at: '2026-06-10T12:19:19Z'
