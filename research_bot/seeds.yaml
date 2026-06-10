@@ -36,3 +36,6 @@ queries:
     - "repeated stratified k-fold cross-validation variance"          # D4
     - "events per variable logistic regression"                       # D7
     - "minimum sample size clinical prediction model"                 # D7
+    - "Platt scaling probability calibration classifier"              # D6
+    - "isotonic regression probability calibration"                   # D6
+    - "predicting good probabilities supervised learning calibration" # D6

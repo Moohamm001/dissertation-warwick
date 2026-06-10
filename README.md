@@ -50,13 +50,28 @@ python -m emerald_ai figures
 Open [`reports/visual_story.md`](reports/visual_story.md) — five figures from problem to proof,
 ending in the cumulative-gains curve: **reviewing the riskiest 10% catches ~64% of all defaults**.
 
-**Step 6 — (Optional) grow the literature brain.**
+**Step 5b — Prove the model learns, not memorises (Rule 2 evidence).**
+```powershell
+python -m emerald_ai evidence       # permutation test, baselines, stability, learning curve
+python -m emerald_ai sensitivity    # raw-vs-cleaned robustness check
+```
+
+**Step 6 — Calibration & explanations (Phase 4, answers RQ2/RQ3).**
+```powershell
+python -m emerald_ai calibrate      # Platt/isotonic + within-min ECE (CIs) + split-conformal
+python -m emerald_ai explain        # SHAP global + local explanations
+```
+`reports/calibration.md` — calibration fixes *marginal* Brier (0.12→0.01) but **worsens
+within-minority ECE**: the two objectives conflict at 50 events. `reports/explainability.md` —
+SHAP confirms `Revenue` is the workhorse feature.
+
+**Step 7 — (Optional) grow the literature brain.**
 ```powershell
 python -m research_bot crawl    # OpenAlex -> literature/auto_index.yaml
 python -m research_bot status
 ```
 
-**Step 7 — Verify everything.**
+**Step 8 — Verify everything.**
 ```powershell
 python -m pytest -q              # 13 tests: leakage guard, metrics, bot path-isolation
 ```
@@ -70,6 +85,10 @@ python -m pytest -q              # 13 tests: leakage guard, metrics, bot path-is
 | `reports/feasibility.md` | **Generated.** Phase 1 imbalance/censoring numbers + figures. |
 | `reports/model_bakeoff.md` | **Generated.** Phase 3 RQ1 results (metrics with fold bands). |
 | `reports/visual_story.md` | **Generated.** Five-step figure narrative + the gains-curve proof. |
+| `reports/learning_evidence.md` | **Generated.** Permutation test, baselines, stability, learning curve. |
+| `reports/calibration.md` | **Generated.** Phase 4 RQ2: Platt/isotonic + conformal. |
+| `reports/explainability.md` | **Generated.** Phase 4 RQ3: SHAP global + local. |
+| `docs/methods_citations.md` | Every imbalance/calibration choice → a paper (evidence audit). |
 | `data/governance/` | **Generated.** Leakage audit: `feature_catalogue.yaml` + `feature_audit_summary.md`. |
 | `research_bot/` | Small OpenAlex crawler (lit-review aid). `discovery.py` (queries), `state.py` (brain), `seeds.yaml`. |
 | `literature/` | The literature brain: `index.yaml` (curated) + `auto_index.yaml` (**generated**, auto-discovered). |

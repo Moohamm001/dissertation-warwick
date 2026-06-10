@@ -5935,3 +5935,471 @@
   source_query: minimum sample size clinical prediction model
   discovered_at: '2026-06-10T12:01:03Z'
   origin: auto
+- id: W3084965078
+  doi: https://doi.org/10.1016/j.is.2020.101641
+  title: On the appropriateness of Platt scaling in classifier calibration
+  year: 2020
+  cited_by_count: 59
+  venue: Information Systems
+  authors:
+  - Björn Böken
+  concepts:
+  - Classifier (UML)
+  - Computer science
+  - Scaling
+  - Parametric statistics
+  - Artificial intelligence
+  - Machine learning
+  source_query: Platt scaling probability calibration classifier
+  discovered_at: '2026-06-10T15:36:26Z'
+  origin: auto
+- id: W2254249950
+  doi: https://doi.org/10.1609/aaai.v29i1.9602
+  title: Obtaining Well Calibrated Probabilities Using Bayesian Binning
+  year: 2015
+  cited_by_count: 938
+  venue: Proceedings of the AAAI Conference on Artificial Intelligence
+  authors:
+  - Mahdi Pakdaman Naeini
+  - Gregory Cooper
+  - Miloš Hauskrecht
+  concepts:
+  - Computer science
+  - Calibration
+  - Quantile
+  - Probabilistic logic
+  - Bayesian probability
+  - Machine learning
+  source_query: Platt scaling probability calibration classifier
+  discovered_at: '2026-06-10T15:36:26Z'
+  origin: auto
+- id: W3007453563
+  doi: https://doi.org/10.1093/jamia/ocz228
+  title: A tutorial on calibration measurements and calibration models for clinical
+    prediction models
+  year: 2020
+  cited_by_count: 441
+  venue: Journal of the American Medical Informatics Association
+  authors:
+  - Yingxiang Huang
+  - Wentao Li
+  - Fima Macheret
+  - Rodney A. Gabriel
+  - Lucila Ohno‐Machado
+  concepts:
+  - Calibration
+  - Computer science
+  - Artificial intelligence
+  - Remote sensing
+  - Data mining
+  - Statistics
+  source_query: Platt scaling probability calibration classifier
+  discovered_at: '2026-06-10T15:36:26Z'
+  origin: auto
+- id: W4376891107
+  doi: https://doi.org/10.1007/s10994-023-06336-7
+  title: 'Classifier calibration: a survey on how to assess and improve predicted
+    class probabilities'
+  year: 2023
+  cited_by_count: 133
+  venue: Machine Learning
+  authors:
+  - Telmo M. Silva Filho
+  - Hao Song
+  - Miquel Perelló-Nieto
+  - Raúl Santos‐Rodríguez
+  - Meelis Kull
+  - Peter Flach
+  concepts:
+  - Computer science
+  - Classifier (UML)
+  - Machine learning
+  - Binary classification
+  - Artificial intelligence
+  - Calibration
+  source_query: Platt scaling probability calibration classifier
+  discovered_at: '2026-06-10T15:36:26Z'
+  origin: auto
+- id: W4213212652
+  doi: https://doi.org/10.1103/revmodphys.94.015004
+  title: Noisy intermediate-scale quantum algorithms
+  year: 2022
+  cited_by_count: 1628
+  venue: Reviews of Modern Physics
+  authors:
+  - Kishor Bharti
+  - Alba Cervera-Lierta
+  - Thi Ha Kyaw
+  - Tobias Haug
+  - Sumner Alperin-Lea
+  - Abhinav Anand
+  - Matthias Degroote
+  - Hermanni Heimonen
+  concepts:
+  - Quantum computer
+  - Computation
+  - Scalability
+  - Scale (ratio)
+  - Quantum
+  - Quantum algorithm
+  source_query: Platt scaling probability calibration classifier
+  discovered_at: '2026-06-10T15:36:26Z'
+  origin: auto
+- id: W2963178340
+  doi: https://doi.org/10.48550/arxiv.1709.02012
+  title: On Fairness and Calibration
+  year: 2017
+  cited_by_count: 290
+  venue: arXiv (Cornell University)
+  authors:
+  - Geoff Pleiss
+  - Manish Raghavan
+  - Felix Wu
+  - Jon Kleinberg
+  - Kilian Q. Weinberger
+  concepts:
+  - Classifier (UML)
+  - Calibration
+  - Computer science
+  - Constraint (computer-aided design)
+  - Artificial intelligence
+  - Population
+  source_query: Platt scaling probability calibration classifier
+  discovered_at: '2026-06-10T15:36:26Z'
+  origin: auto
+- id: W4321610982
+  doi: https://doi.org/10.1038/s41586-022-05434-1
+  title: Suppressing quantum errors by scaling a surface code logical qubit
+  year: 2023
+  cited_by_count: 1041
+  venue: Nature
+  authors:
+  - Google Quantum AI
+  - Rajeev Acharya
+  - I. L. Aleǐner
+  - R. M. Allen
+  - Trond I. Andersen
+  - M. Ansmann
+  - Frank Arute
+  - Kunal Arya
+  concepts:
+  - Qubit
+  - Computer science
+  - Error detection and correction
+  - Quantum computer
+  - Algorithm
+  - Quantum error correction
+  source_query: Platt scaling probability calibration classifier
+  discovered_at: '2026-06-10T15:36:26Z'
+  origin: auto
+- id: W2999850615
+  doi: https://doi.org/10.1038/s41596-019-0251-6
+  title: Machine learning workflows to estimate class probabilities for precision
+    cancer diagnostics on DNA methylation microarray data
+  year: 2020
+  cited_by_count: 149
+  venue: Nature Protocols
+  authors:
+  - Máté E. Maros
+  - David Capper
+  - David Jones
+  - Volker Hovestadt
+  - Andreas von Deimling
+  - Stefan M. Pfister
+  - Axel Benner
+  - Manuela Zucknick
+  concepts:
+  - Computer science
+  - Artificial intelligence
+  - Support vector machine
+  - Random forest
+  - Machine learning
+  - Workflow
+  source_query: Platt scaling probability calibration classifier
+  discovered_at: '2026-06-10T15:36:26Z'
+  origin: auto
+- id: W2773235741
+  doi: https://doi.org/10.1214/17-ejs1338si
+  title: 'Beyond sigmoids: How to obtain well-calibrated probabilities from binary
+    classifiers with beta calibration'
+  year: 2017
+  cited_by_count: 101
+  venue: Electronic Journal of Statistics
+  authors:
+  - Meelis Kull
+  - Telmo M. Silva Filho
+  - Peter Flach
+  concepts:
+  - Overfitting
+  - Mathematics
+  - Calibration
+  - Logistic regression
+  - Artificial intelligence
+  - Statistics
+  source_query: Platt scaling probability calibration classifier
+  discovered_at: '2026-06-10T15:36:26Z'
+  origin: auto
+- id: W2725875209
+  doi: null
+  title: 'Beta calibration: a well-founded and easily implemented improvement on logistic
+    calibration for binary classifiers'
+  year: 2017
+  cited_by_count: 94
+  venue: Bristol Research (University of Bristol)
+  authors:
+  - Meelis Kull
+  - Telmo M. Silva Filho
+  - Peter Flach
+  concepts:
+  - Calibration
+  - BETA (programming language)
+  - Computer science
+  - Binary number
+  - Binary classification
+  - Artificial intelligence
+  source_query: Platt scaling probability calibration classifier
+  discovered_at: '2026-06-10T15:36:26Z'
+  origin: auto
+- id: W2098824882
+  doi: https://doi.org/10.1145/1102351.1102430
+  title: Predicting good probabilities with supervised learning
+  year: 2005
+  cited_by_count: 1589
+  venue: null
+  authors:
+  - Alexandru Niculescu-Mizil
+  - Rich Caruana
+  concepts:
+  - Margin (machine learning)
+  - Artificial intelligence
+  - Calibration
+  - Machine learning
+  - Computer science
+  - Independence (probability theory)
+  source_query: isotonic regression probability calibration
+  discovered_at: '2026-06-10T15:36:26Z'
+  origin: auto
+- id: W1841840321
+  doi: https://doi.org/10.48550/arxiv.1207.1403
+  title: Obtaining Calibrated Probabilities from Boosting
+  year: 2012
+  cited_by_count: 155
+  venue: arXiv (Cornell University)
+  authors:
+  - Alexandru Niculescu-Mizil
+  - Rich Caruana
+  concepts:
+  - Boosting (machine learning)
+  - Gradient boosting
+  - Decision tree
+  - AdaBoost
+  - Isotonic regression
+  - Artificial intelligence
+  source_query: isotonic regression probability calibration
+  discovered_at: '2026-06-10T15:36:26Z'
+  origin: auto
+- id: W2166290812
+  doi: https://doi.org/10.1007/s10994-007-5011-0
+  title: PAV and the ROC convex hull
+  year: 2007
+  cited_by_count: 111
+  venue: Machine Learning
+  authors:
+  - Tom Fawcett
+  - Alexandru Niculescu-Mizil
+  concepts:
+  - Convex hull
+  - Isotonic regression
+  - Classifier (UML)
+  - Calibration
+  - Hull
+  - Artificial intelligence
+  source_query: isotonic regression probability calibration
+  discovered_at: '2026-06-10T15:36:26Z'
+  origin: auto
+- id: W1489122873
+  doi: null
+  title: 'Smooth isotonic regression: a new method to calibrate predictive models.'
+  year: 2011
+  cited_by_count: 31
+  venue: PubMed
+  authors:
+  - Xiaoqian Jiang
+  - Melanie Osl
+  - Jihoon Kim
+  - Lucila Ohno‐Machado
+  concepts:
+  - Machine learning
+  - Calibration
+  - Computer science
+  - Isotonic regression
+  - Generalization
+  - Artificial intelligence
+  source_query: isotonic regression probability calibration
+  discovered_at: '2026-06-10T15:36:26Z'
+  origin: auto
+- id: W3192681150
+  doi: https://doi.org/10.1214/23-ejs2180
+  title: 'Regression diagnostics meets forecast evaluation: conditional calibration,
+    reliability diagrams, and coefficient of determination'
+  year: 2023
+  cited_by_count: 44
+  venue: Electronic Journal of Statistics
+  authors:
+  - Tilmann Gneiting
+  - Johannes Resin
+  concepts:
+  - Mathematics
+  - Estimator
+  - Calibration
+  - Statistics
+  - Quantile
+  - Regression
+  source_query: isotonic regression probability calibration
+  discovered_at: '2026-06-10T15:36:26Z'
+  origin: auto
+- id: W3163993681
+  doi: https://doi.org/10.1038/s42254-021-00314-5
+  title: Physics-informed machine learning
+  year: 2021
+  cited_by_count: 6457
+  venue: Nature Reviews Physics
+  authors:
+  - George Em Karniadakis
+  - Ioannis G. Kevrekidis
+  - Lu Lu
+  - Paris Perdikaris
+  - Sifan Wang
+  - Liu Yang
+  concepts:
+  - Computer science
+  - Artificial intelligence
+  - Machine learning
+  - Multiphysics
+  - Inference
+  - Artificial neural network
+  source_query: predicting good probabilities supervised learning calibration
+  discovered_at: '2026-06-10T15:36:26Z'
+  origin: auto
+- id: W3185341429
+  doi: https://doi.org/10.1145/3560815
+  title: 'Pre-train, Prompt, and Predict: A Systematic Survey of Prompting Methods
+    in Natural Language Processing'
+  year: 2022
+  cited_by_count: 3586
+  venue: ACM Computing Surveys
+  authors:
+  - Pengfei Liu
+  - Weizhe Yuan
+  - Jinlan Fu
+  - Zhengbao Jiang
+  - Hiroaki Hayashi
+  - Graham Neubig
+  concepts:
+  - Computer science
+  - Variety (cybernetics)
+  - Set (abstract data type)
+  - Notation
+  - Cover (algebra)
+  - Artificial intelligence
+  source_query: predicting good probabilities supervised learning calibration
+  discovered_at: '2026-06-10T15:36:26Z'
+  origin: auto
+- id: W2157285372
+  doi: https://doi.org/10.1109/cvpr.2013.75
+  title: Supervised Descent Method and Its Applications to Face Alignment
+  year: 2013
+  cited_by_count: 1946
+  venue: null
+  authors:
+  - Xuehan Xiong
+  - Fernando De la Torre
+  concepts:
+  - Hessian matrix
+  - Computer science
+  - Jacobian matrix and determinant
+  - Context (archaeology)
+  - Gradient descent
+  - Coordinate descent
+  source_query: predicting good probabilities supervised learning calibration
+  discovered_at: '2026-06-10T15:36:26Z'
+  origin: auto
+- id: W1970381522
+  doi: https://doi.org/10.3115/1613715.1613751
+  title: Cheap and fast---but is it good?
+  year: 2008
+  cited_by_count: 1919
+  venue: null
+  authors:
+  - Rion Snow
+  - Brendan O’Connor
+  - Daniel Jurafsky
+  - Andrew Y. Ng
+  concepts:
+  - Computer science
+  - Annotation
+  - Task (project management)
+  - Artificial intelligence
+  - Natural language processing
+  - Word (group theory)
+  source_query: predicting good probabilities supervised learning calibration
+  discovered_at: '2026-06-10T15:36:26Z'
+  origin: auto
+- id: W2898280479
+  doi: https://doi.org/10.1007/s41664-018-0068-2
+  title: 'On Splitting Training and Validation Set: A Comparative Study of Cross-Validation,
+    Bootstrap and Systematic Sampling for Estimating the Generalization Performance
+    of Supervised Learning'
+  year: 2018
+  cited_by_count: 1004
+  venue: Journal of Analysis and Testing
+  authors:
+  - Yun Xu
+  - Royston Goodacre
+  concepts:
+  - Cross-validation
+  - Generalization
+  - Bootstrapping (finance)
+  - Test set
+  - Sample size determination
+  - Computer science
+  source_query: predicting good probabilities supervised learning calibration
+  discovered_at: '2026-06-10T15:36:26Z'
+  origin: auto
+- id: W4213308398
+  doi: https://doi.org/10.1007/978-3-030-05318-5
+  title: Automated Machine Learning
+  year: 2019
+  cited_by_count: 1386
+  venue: "\x98The \x9CSpringer series on challenges in machine learning"
+  authors:
+  - Frank Hutter
+  - Lars Kotthoff
+  - Joaquin Vanschoren
+  concepts:
+  - Computer science
+  - Artificial intelligence
+  - Machine learning
+  source_query: predicting good probabilities supervised learning calibration
+  discovered_at: '2026-06-10T15:36:26Z'
+  origin: auto
+- id: W3014596384
+  doi: https://doi.org/10.1007/s10994-021-05946-3
+  title: 'Aleatoric and epistemic uncertainty in machine learning: an introduction
+    to concepts and methods'
+  year: 2021
+  cited_by_count: 1459
+  venue: Machine Learning
+  authors:
+  - Eyke Hüllermeier
+  - Willem Waegeman
+  concepts:
+  - Machine learning
+  - Artificial intelligence
+  - Probabilistic logic
+  - Computer science
+  - Relevance (law)
+  - Algorithmic learning theory
+  source_query: predicting good probabilities supervised learning calibration
+  discovered_at: '2026-06-10T15:36:26Z'
+  origin: auto

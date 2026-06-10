@@ -11,12 +11,21 @@ Updated as work lands; this is the answer to "what's going on in this project?".
 | Phase 2 — leakage audit + preprocessing | ✅ done |
 | Literature bot (lit-review aid) | ✅ built; ⏳ vetting not started (0 curated) |
 | Phase 3 — model × imbalance bake-off | ✅ done (RQ1 answered) |
-| **Phase 4 — calibration + conformal + SHAP** | ⬜ **NEXT** |
+| Phase 4 — calibration + conformal + SHAP | ✅ done (RQ2/RQ3 answered) |
+| Data-quality cleaning + sensitivity | ✅ done (integrated, robust) |
+| **Phase 5 — fairness/robustness audit** | ⬜ **NEXT** (largely a documented non-estimability result) |
 | Phase 5 — audit (XAI / fairness / robustness) | ⬜ |
 | Phase 6 — proof-of-concept demo | ⬜ |
 | Phase 7 — write-up + release | ⬜ |
 
 ## Done (most recent first)
+- **2026-06-10 — Phase 4: calibration + conformal + SHAP (RQ2/RQ3).** `emerald_ai/calibrate.py`
+  (`calibrate`) + `emerald_ai/explain.py` (`explain`). **RQ2:** Platt/isotonic fix *marginal* Brier
+  (0.122→0.012) but **worsen within-minority ECE (0.35→0.97)** — the two calibration objectives
+  conflict at 50 events (validates proposal §5.5). Split-conformal coverage exactly nominal
+  (0.90→0.90, 0.95→0.951), near-vacuous as framed. **RQ3:** SHAP ranks Revenue #1 (corroborates
+  single-feature finding), explanations faithful (linear-SHAP). D6 calibration citation found
+  (Niculescu-Mizil & Caruana 2005) — PROPOSED, awaiting curation approval.
 - **2026-06-10 — Cleaning integrated + sensitivity analysis.** User approved wiring `clean()` into
   the modelling path (`data.build_target(clean=True)` default). New `python -m emerald_ai sensitivity`
   → `reports/sensitivity_cleaning.md`. **RQ1 no-winner conclusion ROBUST to cleaning (LR 0.117 ≥

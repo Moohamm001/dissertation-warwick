@@ -19,11 +19,12 @@ either the **proposal §5.4 bibliography** (already vetted) or the **crawled bra
 | **D7** | **Regularised LR competitive at small n** — interpretation of `reports/model_bakeoff.md` | Peduzzi et al. 1996, *Events per variable in logistic regression*, J. Clin. Epidemiol. — `W2037668591` **[CURATED]**; Vittinghoff & McCulloch 2006 — `W2130373985` **[CURATED]**; Riley et al. 2020, *Sample size for a clinical prediction model*, BMJ — `W3012413426` **[CURATED]** | The EPV literature shows complex models are unstable below ~10 events per predictor; with ~50 events our finding that LR matches gradient boosting is the expected, well-supported outcome, not an anomaly. |
 | **D8** | **General imbalance framing** | Haixiang et al. 2016, *Learning from class-imbalanced data: review*, ESWA — `W2562319768` **[CURATED]** | Survey establishing the method landscape (resampling vs cost-sensitive vs ensemble) the project draws from. |
 
+| **D6** | **Post-hoc calibration (Platt + isotonic)** — `calibrate.py` (`_calibrated_oof`) | Niculescu-Mizil & Caruana 2005, *Predicting good probabilities with supervised learning* — `W2098824882` **[PROPOSED]**; conformal: Angelopoulos & Bates 2023 **[BIB]** | The canonical empirical comparison of Platt scaling vs isotonic regression for post-hoc calibration; grounds both calibrators used in Phase 4a. |
+
 ## Decisions NOT yet citation-closed
-- **D6 — calibration method (Platt/isotonic).** *Not yet implemented* (Phase 4). The brain currently
-  lacks a clean Platt/isotonic reference (only a weakly-related loss paper). **Action:** when Phase 4
-  is built, add seeds for "Platt scaling probability calibration" / "isotonic regression calibration"
-  / Niculescu-Mizil & Caruana 2005, then close. Flagged, not faked.
+- *(none open)* — D6 closed once the **[PROPOSED]** D6 paper above is approved for curation.
+  The Phase 4a finding that calibration improves *marginal* Brier but worsens *within-minority*
+  ECE is additionally supported by the curated within-minority-ECE / imbalance metric papers (D3).
 
 ## How to read the code links
 - `experiments.py:_fold_scores` — SMOTE/encoder fit happen here, after the train/test split → D1, D2.
