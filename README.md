@@ -7,22 +7,73 @@ Applied AI dissertation (University of Warwick) plus a proof-of-concept decision
 > The whole project is engineered around that small *event count* — not the ratio. No resampling
 > creates information 50 events do not contain. See `docs/roadmap.md`.
 
-## Quickstart (Windows-first)
+## Explore this project step by step
+
+New here? Walk it in this order — each step produces something you can open and read. Commands are
+Windows-first (`python -m ...`); they work on any OS.
+
 ```powershell
-pip install -r requirements.txt
-python -m emerald_ai eda          # Phase 1 imbalance/censoring feasibility -> reports/feasibility.md
-python -m research_bot crawl      # grow the literature brain from OpenAlex
-python -m research_bot status     # curated vs auto-discovered counts
+pip install -r requirements.txt   # 0. set up
+```
+
+**Step 1 — Understand the plan and the constraint.**
+Read [`docs/roadmap.md`](docs/roadmap.md). It explains the one fact everything hinges on: **50
+delinquency events (0.36%)**, and how the project is scoped around it. Then skim
+[`docs/progress.md`](docs/progress.md) to see exactly what is done and what is next.
+
+**Step 2 — See the problem in the data (Phase 1).**
+```powershell
+python -m emerald_ai eda
+```
+Open [`reports/feasibility.md`](reports/feasibility.md): the imbalance, the 2015–2020 censoring,
+and the proof that a group-fairness audit is *non-estimable* here (0 estimable cells).
+
+**Step 3 — Check the data can't leak the answer (Phase 2).**
+```powershell
+python -m emerald_ai audit             # -> data/governance/feature_catalogue.yaml
+python -m emerald_ai preprocess-check  # fits the leakage-safe pipeline, prints output shape
+```
+Default-deny: only 17 vetted *pre-funding* features may reach a model. `tests/test_preprocess.py`
+proves post-funding fields (e.g. `Percent Paid`) can never get in.
+
+**Step 4 — Find what works under the imbalance (Phase 3, answers RQ1).**
+```powershell
+python -m emerald_ai bakeoff
+```
+Open [`reports/model_bakeoff.md`](reports/model_bakeoff.md): LR vs XGBoost × class-weight vs SMOTE,
+repeated stratified CV, metrics with fold bands. Honest verdict: **no significant winner**.
+
+**Step 5 — See *why it is useful* (the visual story).**
+```powershell
+python -m emerald_ai figures
+```
+Open [`reports/visual_story.md`](reports/visual_story.md) — five figures from problem to proof,
+ending in the cumulative-gains curve: **reviewing the riskiest 10% catches ~64% of all defaults**.
+
+**Step 6 — (Optional) grow the literature brain.**
+```powershell
+python -m research_bot crawl    # OpenAlex -> literature/auto_index.yaml
+python -m research_bot status
+```
+
+**Step 7 — Verify everything.**
+```powershell
+python -m pytest -q              # 13 tests: leakage guard, metrics, bot path-isolation
 ```
 
 ## What's here
 | Path | What |
 |---|---|
 | `docs/roadmap.md` | MSc-scoped roadmap (v2.1): RQs, imbalance playbook, phase plan, decision gates. |
-| `emerald_ai/` | Analysis package. `config.py` (paths/seed/labels), `data.py` (label construction), `eda.py` (Phase 1), `__main__.py` (CLI). |
-| `reports/feasibility.md` | **Generated.** Real imbalance/censoring numbers + figures. |
-| `research_bot/` | Small OpenAlex crawler (lit-review aid). `discovery.py` (queries), `state.py` (brain), `seeds.yaml` (imbalance + green-credit method queries). |
+| `docs/progress.md` | **Living log** of every step done; newest first. Start here for status. |
+| `emerald_ai/` | Analysis package + CLI (`__main__.py`). `config.py` (paths/seed/labels), `data.py` (label construction), `eda.py` (Phase 1), `feature_audit.py` + `preprocess.py` (Phase 2 leakage-safe), `experiments.py` + `metrics.py` (Phase 3 bake-off), `figures.py` (visual story). |
+| `reports/feasibility.md` | **Generated.** Phase 1 imbalance/censoring numbers + figures. |
+| `reports/model_bakeoff.md` | **Generated.** Phase 3 RQ1 results (metrics with fold bands). |
+| `reports/visual_story.md` | **Generated.** Five-step figure narrative + the gains-curve proof. |
+| `data/governance/` | **Generated.** Leakage audit: `feature_catalogue.yaml` + `feature_audit_summary.md`. |
+| `research_bot/` | Small OpenAlex crawler (lit-review aid). `discovery.py` (queries), `state.py` (brain), `seeds.yaml`. |
 | `literature/` | The literature brain: `index.yaml` (curated) + `auto_index.yaml` (**generated**, auto-discovered). |
+| `tests/` | 13 tests: leakage guard, metric panel, bot path-isolation. |
 | `All_Funded_2019_Green Loan.xlsx` | Raw dataset (14,135 × 166). |
 
 ## Literature bot
