@@ -8,17 +8,17 @@ resampling fit inside the training fold. Metrics: median [2.5–97.5 fold percen
 | index | combo | pr_auc | recall_top_decile | within_min_ece |
 | --- | --- | --- | --- | --- |
 | 0 | dummy+none | 0.013 [0.013, 0.013] | 0.100 [0.000, 0.240] | 0.987 [0.987, 0.987] |
-| 1 | logreg+class_weight | 0.116 [0.043, 0.243] | 0.600 [0.360, 0.900] | 0.306 [0.214, 0.548] |
-| 2 | logreg+smote | 0.118 [0.043, 0.258] | 0.600 [0.300, 0.900] | 0.318 [0.211, 0.562] |
-| 3 | xgboost+class_weight | 0.091 [0.039, 0.186] | 0.500 [0.300, 0.740] | 0.849 [0.711, 0.965] |
-| 4 | xgboost+smote | 0.091 [0.038, 0.217] | 0.500 [0.300, 0.740] | 0.794 [0.618, 0.936] |
+| 1 | logreg+class_weight | 0.117 [0.043, 0.242] | 0.600 [0.360, 0.900] | 0.305 [0.215, 0.548] |
+| 2 | logreg+smote | 0.117 [0.043, 0.255] | 0.600 [0.300, 0.900] | 0.317 [0.214, 0.560] |
+| 3 | xgboost+class_weight | 0.093 [0.038, 0.260] | 0.500 [0.300, 0.700] | 0.845 [0.675, 0.966] |
+| 4 | xgboost+smote | 0.105 [0.039, 0.207] | 0.400 [0.300, 0.700] | 0.780 [0.636, 0.934] |
 
 - **pr_auc** — area under precision-recall (primary). Prevalence floor ≈ 0.0128.
 - **recall_top_decile** — share of all defaults captured in the riskiest 10%.
 - **within_min_ece** — calibration gap on actual defaults (lower = better; Phase 4 will address).
 
 ## RQ1 verdict
-Best GBM (`xgboost+class_weight`, median PR-AUC 0.091) **does NOT clear** the LR baseline median (0.116) at its 2.5th fold percentile (0.039). **The fold bands overlap — no significant winner. This is the honest RQ1 finding, not a failure: at ~10 events per test fold the data cannot separate the models.**
+Best GBM (`xgboost+smote`, median PR-AUC 0.105) **does NOT clear** the LR baseline median (0.117) at its 2.5th fold percentile (0.039). **The fold bands overlap — no significant winner. This is the honest RQ1 finding, not a failure: at ~10 events per test fold the data cannot separate the models.**
 
 ## Reading note (per the roadmap framing)
 The *result* of this dissertation is not a leaderboard win; it is an honest, CI-aware answer

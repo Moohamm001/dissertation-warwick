@@ -7,7 +7,7 @@
 Shuffle the labels and rerun the full out-of-fold pipeline 100 times to build a null
 distribution; the real model must clearly exceed it.
 
-- **Real PR-AUC = 0.096**; null mean 0.014, null max 0.027.
+- **Real PR-AUC = 0.095**; null mean 0.014, null max 0.034.
 - Real beats **100%** of permutations; **p = 0.010**.
 - **Verdict: real signal — clears the null.**
 
@@ -19,29 +19,29 @@ distribution; the real model must clearly exceed it.
 | 0 | dummy (prevalence floor) | 0.0128 |
 | 1 | LR | Credit Score only | 0.0104 |
 | 2 | LR | Revenue only | 0.0645 |
-| 3 | LR | Time In Business only | 0.0113 |
+| 3 | LR | Time In Business only | 0.0114 |
 | 4 | LR | Average Monthly Sales only | 0.0097 |
-| 5 | FULL model (logreg+class_weight, 17 feats) | 0.0958 |
+| 5 | FULL model (logreg+class_weight, 17 feats) | 0.0952 |
 
 ## 3. Stability across CV seeds
 | index | seed | pr_auc | recall_decile |
 | --- | --- | --- | --- |
-| 0 | 1 | 0.091 | 0.6 |
+| 0 | 1 | 0.09 | 0.6 |
 | 1 | 7 | 0.093 | 0.64 |
-| 2 | 21 | 0.093 | 0.62 |
-| 3 | 42 | 0.09 | 0.62 |
+| 2 | 21 | 0.093 | 0.6 |
+| 3 | 42 | 0.091 | 0.62 |
 | 4 | 99 | 0.087 | 0.56 |
 
-PR-AUC 0.091 ± 0.002; recall@decile 0.608
+PR-AUC 0.091 ± 0.002; recall@decile 0.604
 ± 0.027; prevalence floor 0.0128.
 **The interval sits well above the floor — stable signal.**
 
 ## 4. Learning curve
 | index | train_frac | pr_auc |
 | --- | --- | --- |
-| 0 | 0.5 | 0.0941 |
-| 1 | 0.75 | 0.0958 |
-| 2 | 1.0 | 0.0958 |
+| 0 | 0.5 | 0.0945 |
+| 1 | 0.75 | 0.0961 |
+| 2 | 1.0 | 0.0953 |
 
 **Performance has plateaued** between 75% and 100%
 of the data — consistent with the dataset being too small to reward more complex models, which SUPPORTS the logistic-regression finding (events-per-variable literature, Peduzzi 1996; Riley 2020).

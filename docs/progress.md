@@ -17,10 +17,15 @@ Updated as work lands; this is the answer to "what's going on in this project?".
 | Phase 7 — write-up + release | ⬜ |
 
 ## Done (most recent first)
+- **2026-06-10 — Cleaning integrated + sensitivity analysis.** User approved wiring `clean()` into
+  the modelling path (`data.build_target(clean=True)` default). New `python -m emerald_ai sensitivity`
+  → `reports/sensitivity_cleaning.md`. **RQ1 no-winner conclusion ROBUST to cleaning (LR 0.117 ≥
+  XGBoost 0.093–0.105).** Honest correction: cleaning does NOT rescue Credit Score (0.0104→0.0104,
+  only 2 rows) — the feature is genuinely weak here; Revenue (0.065) is the workhorse. Reports
+  regenerated on cleaned basis.
 - **2026-06-10 — Data-quality cleaning module (additive).** `emerald_ai/clean.py` +
   `python -m emerald_ai clean-report` → `reports/data_quality.md`. Rule-based, leakage-safe
   correction of 54 impossible values (Credit Score=0 ×2; Time In Business negative ×1 / >600mo ×51).
-  **NOT yet wired into the modelling path** — awaiting sign-off to integrate + re-run bake-off/evidence.
 - **2026-06-10 — Evidence-grounded methodology audit.** Rule 1: `docs/methods_citations.md`
   (every imbalance choice → paper); 3 gaps (PR-vs-ROC, repeated CV, EPV/small-n) closed by
   patching crawler seeds and re-crawling (179→292 papers; Saito&Rehmsmeier 2015, Peduzzi 1996,

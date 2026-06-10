@@ -25,7 +25,7 @@ winning model* (RQ1).
 
 ## Step 4 — Is it USEFUL on this data? (the key proof)
 Rank every loan by predicted risk and review the riskiest first. Reviewing just the **top 10%**
-captures **64% of all defaults** — far above the 10% a random review would catch.
+captures **62% of all defaults** — far above the 10% a random review would catch.
 *That* is the operational value, and it survives the small sample.
 
 ![gains](figures/story4_gains.png)
