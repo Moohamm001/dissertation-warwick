@@ -10,13 +10,19 @@ Updated as work lands; this is the answer to "what's going on in this project?".
 | Phase 1 — EDA / imbalance feasibility | ✅ done |
 | Phase 2 — leakage audit + preprocessing | ✅ done |
 | Literature bot (lit-review aid) | ✅ built; ⏳ vetting not started (0 curated) |
-| **Phase 3 — model × imbalance bake-off** | ⬜ **NEXT (the dissertation core)** |
-| Phase 4 — calibration + conformal + SHAP | ⬜ |
+| Phase 3 — model × imbalance bake-off | ✅ done (RQ1 answered) |
+| **Phase 4 — calibration + conformal + SHAP** | ⬜ **NEXT** |
 | Phase 5 — audit (XAI / fairness / robustness) | ⬜ |
 | Phase 6 — proof-of-concept demo | ⬜ |
 | Phase 7 — write-up + release | ⬜ |
 
 ## Done (most recent first)
+- **2026-06-10 — Phase 3: model × imbalance bake-off (RQ1).** `experiments.py` + `metrics.py`,
+  5×5 repeated stratified CV, resampling inside folds. `python -m emerald_ai bakeoff` →
+  `reports/model_bakeoff.md`. **RQ1 finding: no significant winner — LR (PR-AUC 0.116) ≈ XGBoost
+  (0.091), fold bands overlap. All models beat the 0.013 prevalence floor ~8× (features carry
+  signal). LR is far better calibrated on defaults (ECE 0.31 vs 0.85) — flagged for Phase 4.**
+  4 metric tests added (13 passing total).
 - **2026-06-10 — Git hygiene.** Untracked `CLAUDE.md` (local working file) via `.gitignore`.
 - **2026-06-10 — Git initialised.** Repo on `main`, commit `5cc534f`. Authored as the user; no AI
   attribution in history (standing rule).
@@ -41,5 +47,6 @@ calibration 29, green-finance 28, explainability/fairness 26, selection-bias 20,
 117/179 are ≥2018. **Vetting (promote to curated `index.yaml`) not yet started.**
 
 ## Next action
-Build **Phase 3**: LR vs XGBoost × class-weight vs SMOTE-in-fold, repeated stratified CV,
-PR-AUC / recall@top-decile / within-minority ECE + bootstrap CIs → answers RQ1.
+Build **Phase 4**: post-hoc calibration (Platt/isotonic) on the best model + within-minority ECE
+with bootstrap CIs + split-conformal (MAPIE, Core-light) + SHAP global/local → answers RQ2/RQ3.
+The Phase 3 calibration gap (LR 0.31 vs XGBoost 0.85) makes calibration the obvious next lever.

@@ -15,6 +15,7 @@ def main(argv: list[str] | None = None) -> int:
     sub.add_parser("eda", help="Phase 1 imbalance/censoring feasibility report")
     sub.add_parser("audit", help="Phase 2 target-leakage feature catalogue")
     sub.add_parser("preprocess-check", help="Fit the leakage-safe pipeline and report output shape")
+    sub.add_parser("bakeoff", help="Phase 3 model x imbalance-strategy bake-off (RQ1)")
 
     args = parser.parse_args(argv)
 
@@ -41,6 +42,13 @@ def main(argv: list[str] | None = None) -> int:
         print(f"[emerald_ai] pipeline OK. inputs={sum(len(v) for v in types.values())} "
               f"(num={len(types['numeric'])}, low={len(types['low_card'])}, high={len(types['high_card'])}) "
               f"-> output matrix {X.shape}")
+        return 0
+
+    if args.command == "bakeoff":
+        from . import experiments
+
+        path = experiments.build_report()
+        print(f"[emerald_ai] bake-off report written -> {path}")
         return 0
 
     parser.error(f"unknown command {args.command!r}")
