@@ -13,6 +13,11 @@ literature/.cache/
 _*.txt
 _*.json
 
+# Local / agent working files (not dissertation deliverables)
+CLAUDE.md
+.claude/
+*.local.md
+
 # OS
 Thumbs.db
 .DS_Store
