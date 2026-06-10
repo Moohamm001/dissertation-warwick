@@ -18,6 +18,7 @@ def main(argv: list[str] | None = None) -> int:
     sub.add_parser("bakeoff", help="Phase 3 model x imbalance-strategy bake-off (RQ1)")
     sub.add_parser("figures", help="Build the step-by-step visual story (reports/visual_story.md)")
     sub.add_parser("evidence", help="Rule 2 learning-evidence proofs (reports/learning_evidence.md)")
+    sub.add_parser("clean-report", help="Data-quality report: impossible-value cleaning impact")
 
     args = parser.parse_args(argv)
 
@@ -65,6 +66,13 @@ def main(argv: list[str] | None = None) -> int:
 
         path = validation.build_report()
         print(f"[emerald_ai] learning-evidence report written -> {path}")
+        return 0
+
+    if args.command == "clean-report":
+        from . import clean
+
+        path = clean.build_report()
+        print(f"[emerald_ai] data-quality report written -> {path}")
         return 0
 
     parser.error(f"unknown command {args.command!r}")

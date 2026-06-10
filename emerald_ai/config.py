@@ -39,6 +39,11 @@ TIB_COL = "Time In Business"
 # Minimum events per group cell for a group-conditional metric to be reported, not "undefined".
 MIN_EVENTS_PER_CELL = 10
 
+# Rule-based data-quality thresholds (domain-justified, leakage-safe — no distributional info).
+CREDIT_SCORE_FLOOR = 1        # FICO 0 is impossible -> missing-coded; values < this -> NaN
+TIB_MAX_MONTHS = 600         # > 50 years in business is implausible (likely a year typo) -> NaN
+TIB_MIN_MONTHS = 0           # negative time-in-business is impossible -> NaN
+
 
 def ensure_dirs() -> None:
     """Create output directories if absent. Safe to call repeatedly."""
