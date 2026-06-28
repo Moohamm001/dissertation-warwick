@@ -1,0 +1,6 @@
+case,Credit Score,Revenue,Average Monthly Sales,Time In Business,Amount Sought,Is Borrower Renewal,Online App Completed
+established_low_revenue,730,700,30000,150,40000,1.0,
+typical_midbook,665,1500,34000,51,50000,,
+borderline,640,3500,60000,30,90000,,
+high_revenue_short_history,615,9000,120000,12,150000,0.0,
+thin_file_new_business,600,4000,20000,6,120000,0.0,1.0

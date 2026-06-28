@@ -65,15 +65,33 @@ python -m emerald_ai explain        # SHAP global + local explanations
 within-minority ECE**: the two objectives conflict at 50 events. `reports/explainability.md` —
 SHAP confirms `Revenue` is the workhorse feature.
 
-**Step 7 — (Optional) grow the literature brain.**
+**Step 7 — See it with your own eyes (Phase 5, the decision-support demo).**
+```powershell
+python -m emerald_ai serve      # -> http://127.0.0.1:8000
+```
+A single-page FastAPI app: fill the pre-funding application form and get **P(default)**, whether the
+applicant falls in the **riskiest decile** (the desk's review queue — threshold set from out-of-fold
+scores, *never* a 0.5 yes/no), and the **top-3 SHAP reasons** mapped back to named features. Framed
+honestly in the UI: the model *ranks for review*, it does not approve or decline.
+
+For **many applicants at once**, upload a CSV in the app's batch panel, or use the CLI:
+```powershell
+python -m emerald_ai make-samples            # -> data/example_cases.csv + data/sample_applicants.csv
+python -m emerald_ai score-file data/sample_applicants.csv   # -> data/sample_applicants_scored.csv
+```
+`data/example_cases.csv` holds five curated, in-distribution demo applicants spanning the risk
+gradient (≈6% → 99%); `data/sample_applicants.csv` is privacy-safe synthetic test data (each column
+resampled independently from its real marginal — no row reproduces a real record).
+
+**Step 8 — (Optional) grow the literature brain.**
 ```powershell
 python -m research_bot crawl    # OpenAlex -> literature/auto_index.yaml
 python -m research_bot status
 ```
 
-**Step 8 — Verify everything.**
+**Step 9 — Verify everything.**
 ```powershell
-python -m pytest -q              # 13 tests: leakage guard, metrics, bot path-isolation
+python -m pytest -q              # 21 tests: leakage guard, metrics, bot path-isolation, demo + batch scoring
 ```
 
 ## What's here
@@ -90,9 +108,12 @@ python -m pytest -q              # 13 tests: leakage guard, metrics, bot path-is
 | `reports/explainability.md` | **Generated.** Phase 4 RQ3: SHAP global + local. |
 | `docs/methods_citations.md` | Every imbalance/calibration choice → a paper (evidence audit). |
 | `data/governance/` | **Generated.** Leakage audit: `feature_catalogue.yaml` + `feature_audit_summary.md`. |
+| `emerald_ai/serve.py` | **Phase 5 demo.** FastAPI decision-support app (`python -m emerald_ai serve`): single-applicant form + CSV batch panel → P(default) + riskiest-decile flag + top-3 SHAP reasons. Also `score-file` / `make-samples` CLIs. |
+| `data/example_cases.csv` | **Generated.** Five curated in-distribution demo applicants (risk gradient ≈6%→99%) for the batch path. |
+| `data/sample_applicants.csv` | **Generated.** 50 privacy-safe synthetic applicants (column-wise resample) for batch testing. |
 | `research_bot/` | Small OpenAlex crawler (lit-review aid). `discovery.py` (queries), `state.py` (brain), `seeds.yaml`. |
 | `literature/` | The literature brain: `index.yaml` (curated) + `auto_index.yaml` (**generated**, auto-discovered). |
-| `tests/` | 13 tests: leakage guard, metric panel, bot path-isolation. |
+| `tests/` | 21 tests: leakage guard, metric panel, bot path-isolation, demo + batch scoring contract. |
 | `All_Funded_2019_Green Loan.xlsx` | Raw dataset (14,135 × 166). |
 
 ## Literature bot

@@ -1,0 +1,51 @@
+id,Credit Score,Amount Sought,Revenue,Average Monthly Sales,Time In Business,Days Since Last Opportunity,Online App Completed,Is Borrower Renewal,Current Tier,Mktg Tier,Industry,Loan Purpose,Borrower State,Deal Type,Renewal Type,Channel,Medium
+app_0000,653.0,50000.0,739.5,27920.8467,22.0,0,1,0,1.0,1.0,restaurants,"workingCapital,payroll,financeAccountsReceivable",OR,renewal,Renewal,Partner,Email
+app_0001,682.0,49999.0,122.92,52248.5667,35.0,0,1,0,1.0,1.0,construction,"workingCapital,financeAccountsReceivable",AZ,new,New,Non-Paid,Paid
+app_0002,685.0,20000.0,1312.0,8000.0,60.0,0,1,0,1.0,2.0,other,"expansion,workingCapital",NV,new,New,Non-Paid,Organic
+app_0003,579.0,20000.0,1744.7,11198.76,197.0,0,1,1,1.0,2.0,automotive,"expansion,workingCapital,payroll,realEstate",CA,new,Renewal,Partner,Organic
+app_0004,668.0,40000.0,2000.0,113629.3033,70.0,0,1,0,1.0,1.0,restaurants,"workingCapital,equipment,financeAccountsReceivable",IL,new,New,Partner,Partner
+app_0005,654.0,100000.0,150.5,23115.1,67.0,0,1,0,1.0,5.0,finance,"expansion,workingCapital",TX,new,New,Non-Paid,Paid
+app_0006,654.0,24999.0,1840.0,199999.0,152.0,168,1,0,2.0,1.0,restaurants,"expansion,workingCapital",WA,new,New,Partner,Organic
+app_0007,707.0,30000.0,587.5,58046.1433,79.0,52,1,1,1.0,2.0,agricultureForestry,workingCapital,GA,new,New,Partner,Partner
+app_0008,619.0,10000.0,2100.0,31846.4833,203.0,0,1,0,2.0,1.0,restaurants,workingCapital,TX,new,New,Partner,Sales
+app_0009,681.0,15000.0,28626.74,0.0,37.0,99,1,1,2.0,2.0,retail,"expansion,workingCapital,equipment",FL,new,New,Partner,Email
+app_0010,658.0,20000.0,275.0,63593.0,30.0,0,0,0,1.0,1.0,freightTrucking,"workingCapital,financeAccountsReceivable",OH,stacked,New,Partner,Organic
+app_0011,722.0,50000.0,480.0,5115.5433,41.0,33,0,0,1.0,2.0,automotive,"workingCapital,payroll",TX,renewal,New,Non-Paid,Partner
+app_0012,821.0,4999.0,687.5,149526.0833,30.0,125,1,0,1.0,2.0,construction,equipment,MN,renewal,New,Partner,Partner
+app_0013,564.0,100000.0,975.0,53118.24,35.0,0,1,1,1.0,1.0,construction,"workingCapital,other",MO,new,New,Partner,Paid
+app_0014,627.0,20000.0,840.0,47219.02,73.0,286,1,1,1.0,1.0,automotive,equipment,WA,new,Renewal,Partner,Organic
+app_0015,619.0,15000.0,172.22,7999.0,30.0,82,1,0,2.0,1.0,informationMedia,realEstate,SC,new,Renewal,Partner,Partner
+app_0016,626.0,49999.0,3395.5,13440.3667,80.0,165,1,0,1.0,1.0,other,"expansion,workingCapital",SC,new,New,Partner,Partner
+app_0017,734.0,20000.0,451.0,319108.5033,62.0,0,0,0,1.0,1.0,restaurants,"workingCapital,payroll",AZ,new,Renewal,Affiliate,Partner
+app_0018,616.0,100000.0,1500.0,192527.0367,343.0,0,1,1,3.0,1.0,informationMedia,"expansion,workingCapital,payroll,realEstate",CA,new,New,Partner,Organic
+app_0019,649.0,20000.0,2120.0,66436.2767,134.0,0,1,0,2.0,2.0,construction,"workingCapital,payroll,equipment,other",NY,new,Renewal,Paid,Partner
+app_0020,615.0,50000.0,1740.0,297129.9233,23.0,0,1,0,2.0,2.0,finance,"expansion,workingCapital",AR,renewal,New,Paid,Direct Mail
+app_0021,666.0,50000.0,2450.0,79999.0,21.0,0,0,0,1.0,2.0,finance,"workingCapital,realEstate",FL,new,Renewal,Partner,Organic
+app_0022,656.0,100000.0,2640.0,203228.81,60.0,41,1,0,2.0,1.0,artsEntertainment,other,TX,new,New,Partner,Partner
+app_0023,743.0,150000.0,1850.0,39336.1167,41.0,0,1,0,2.0,2.0,other,workingCapital,KY,renewal,New,Partner,Partner
+app_0024,850.0,30000.0,6800.0,40665.9533,68.0,0,1,0,1.0,1.0,manufacturing,equipment,NJ,new,Renewal,Partner,Paid Social
+app_0025,671.0,24999.0,1218.0,10000.0,343.0,14,1,0,1.0,1.0,construction,startABusiness,VA,new,Renewal,Partner,Paid Social
+app_0026,679.0,24999.0,720.0,82764.0,25.0,0,1,1,1.0,1.0,construction,"expansion,workingCapital,payroll,equipment,other",VA,new,New,Paid,Organic
+app_0027,613.0,49999.0,800.0,133213.7033,60.0,74,1,0,1.0,1.0,retail,"expansion,workingCapital,payroll,other",CO,new,New,Paid,Ext Paid
+app_0028,673.0,50000.0,810.0,24680.1933,70.0,5,1,0,1.0,2.0,healthcare,"workingCapital,financeAccountsReceivable",TX,renewal,New,Partner,SMS
+app_0029,740.0,200000.0,2200.0,39491.92,39.0,87,1,0,2.0,2.0,freightTrucking,other,NC,new,New,Partner,Partner
+app_0030,675.0,99999.0,5400.0,142572.9133,73.0,0,1,0,1.0,2.0,realEstate,"workingCapital,other",CA,new,New,Paid,Organic
+app_0031,746.0,24999.0,325.0,30522.2767,19.0,0,1,0,1.0,1.0,other,"expansion,workingCapital",UT,new,Renewal,Non-Paid,Partner
+app_0032,645.0,10000.0,137.5,995734.45,68.0,230,1,0,1.0,1.0,other,"expansion,workingCapital",CA,new,Renewal,Partner,Partner
+app_0033,600.0,5000.0,207.36,44996.66,65.0,0,1,0,3.0,2.0,legalServices,expansion,AL,new,New,Paid,Organic
+app_0034,771.0,99999.0,560.0,59444.2,114.0,137,1,0,2.0,1.0,realEstate,"workingCapital,equipment",FL,new,New,Paid,Sales
+app_0035,682.0,40000.0,1040.0,84136.9367,71.0,0,1,0,1.0,2.0,realEstate,"expansion,workingCapital,equipment,financeAccountsReceivable",AZ,new,New,Non-Paid,Organic
+app_0036,692.0,24999.0,800.0,34373.04,35.0,0,1,1,1.0,3.0,informationMedia,other,GA,new,New,Partner,Partner
+app_0037,679.0,50000.0,2640.0,32236.0833,14.0,0,1,0,1.0,1.0,other,"expansion,workingCapital,payroll,equipment",CA,new,Renewal,Partner,Organic
+app_0038,560.0,24999.0,1450.0,39491.92,71.0,0,1,0,1.0,1.0,retail,"expansion,purchaseABusiness",LA,new,Renewal,Non-Paid,Paid Social
+app_0039,599.0,40000.0,4000.0,97578.0267,28.0,0,1,0,1.0,2.0,other,workingCapital,CA,renewal,Renewal,Non-Paid,Email
+app_0040,680.0,75000.0,8600.0,123977.59,396.0,0,1,0,3.0,1.0,other,"expansion,workingCapital",CA,new,Renewal,Partner,Sales
+app_0041,711.0,100000.0,162.5,19659.9933,66.0,99,1,0,2.0,1.0,construction,"workingCapital,financeAccountsReceivable",UT,new,Renewal,Partner,Partner
+app_0042,602.0,100000.0,230.29,9171.7967,47.0,0,1,0,1.0,2.0,transportation,workingCapital,MA,new,Renewal,Partner,Organic
+app_0043,681.0,50000.0,4440.0,116074.86,11.0,0,1,0,1.0,2.0,artsEntertainment,expansion,NY,new,New,Partner,Partner
+app_0044,609.0,350000.0,868.75,7914.3333,8.0,0,1,1,2.0,1.0,realEstate,equipment,MD,new,Renewal,Partner,Partner
+app_0045,648.0,24999.0,666.0,13666.0,15.0,0,1,0,1.0,1.0,retail,"expansion,workingCapital,payroll",FL,renewal,New,Non-Paid,Partner
+app_0046,666.0,49999.0,1147.5,142473.0,44.0,4,1,1,1.0,1.0,construction,"expansion,equipment",CA,new,New,Partner,Partner
+app_0047,729.0,50000.0,1240.0,10098.32,70.0,72,1,0,2.0,2.0,freightTrucking,"workingCapital,other",CA,renewal,Renewal,Paid,Partner
+app_0048,606.0,25000.0,1637.25,10097.0,68.0,0,1,0,2.0,1.0,agricultureForestry,"expansion,equipment,other",TX,new,New,Partner,Organic
+app_0049,624.0,10000.0,2079.0,4902.235,13.0,0,1,0,1.0,2.0,construction,workingCapital,PA,new,New,Non-Paid,Partner

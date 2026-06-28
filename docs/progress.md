@@ -13,12 +13,28 @@ Updated as work lands; this is the answer to "what's going on in this project?".
 | Phase 3 — model × imbalance bake-off | ✅ done (RQ1 answered) |
 | Phase 4 — calibration + conformal + SHAP | ✅ done (RQ2/RQ3 answered) |
 | Data-quality cleaning + sensitivity | ✅ done (integrated, robust) |
-| **Phase 5 — fairness/robustness audit** | ⬜ **NEXT** (largely a documented non-estimability result) |
-| Phase 5 — audit (XAI / fairness / robustness) | ⬜ |
-| Phase 6 — proof-of-concept demo | ⬜ |
-| Phase 7 — write-up + release | ⬜ |
+| **Phase 5 — proof-of-concept demo (FastAPI)** | ✅ done (`python -m emerald_ai serve`) |
+| Fairness/robustness audit (light) | ⬜ **NEXT** (largely a documented non-estimability result) |
+| Phase 6 — write-up + release | ⬜ |
 
 ## Done (most recent first)
+- **2026-06-27 — Phase 5b: batch scoring + demo/test data.** `serve.score_frame` / `score_file`
+  + CLIs `python -m emerald_ai score-file <csv>` and `make-samples`, plus a CSV upload panel in the
+  app (`/api/score-batch`). Two generated fixtures: `data/example_cases.csv` (5 curated
+  in-distribution cases spanning the gradient — 5.8% → 45.5% → 77.7% → 91.3% → 99.3%) and
+  `data/sample_applicants.csv` (50 **privacy-safe synthetic** rows: each column resampled
+  independently from its real marginal, so no real record is reproduced; raw data is git-tracked, so
+  this matters). Verified: CLI scored 50 rows (7 in decile); HTTP batch endpoint and browser upload
+  both return correct records. 3 batch tests (21 passing total).
+- **2026-06-27 — Phase 5: proof-of-concept decision-support demo.** `emerald_ai/serve.py` (FastAPI +
+  minimal single-page UI), `python -m emerald_ai serve`. Serves the frozen class-weighted LR on the
+  17 leakage-safe pre-funding features. Per applicant returns: **P(default) from `predict_proba`
+  (never a 0.5 yes/no)**, a **riskiest-decile flag** (operating threshold P≥0.617 set from
+  out-of-fold scores — OOF catch-rate 62% of 50 defaults), and **top-3 SHAP reasons** aggregated
+  back to named features (exact linear SHAP). UI states honestly: model *ranks for review*, does not
+  approve/decline. Numeric fields show typical p10–p90 range (extreme out-of-distribution inputs
+  saturate the linear model — a documented limitation). `fastapi`/`uvicorn` added to requirements.
+  5 scoring-contract tests (18 passing total).
 - **2026-06-10 — Phase 4: calibration + conformal + SHAP (RQ2/RQ3).** `emerald_ai/calibrate.py`
   (`calibrate`) + `emerald_ai/explain.py` (`explain`). **RQ2:** Platt/isotonic fix *marginal* Brier
   (0.122→0.012) but **worsen within-minority ECE (0.35→0.97)** — the two calibration objectives
@@ -77,6 +93,9 @@ calibration 29, green-finance 28, explainability/fairness 26, selection-bias 20,
 117/179 are ≥2018. **Vetting (promote to curated `index.yaml`) not yet started.**
 
 ## Next action
-Build **Phase 4**: post-hoc calibration (Platt/isotonic) on the best model + within-minority ECE
-with bootstrap CIs + split-conformal (MAPIE, Core-light) + SHAP global/local → answers RQ2/RQ3.
-The Phase 3 calibration gap (LR 0.31 vs XGBoost 0.85) makes calibration the obvious next lever.
+The empirical core (Phases 1–5) is complete: model, calibration, explanations, and a working demo.
+Remaining before write-up: (1) the **light fairness/robustness audit** — mostly a documented
+*non-estimability* result (0 estimable cells from Phase 1), plus the robustness checks already in
+`evidence`/`sensitivity`; (2) **Phase 6 write-up & release** — finalise dissertation chapters, add
+demo screenshots, pin `requirements`, datasheet, tag the repo, and pass the clean-checkout
+reproduction gate.

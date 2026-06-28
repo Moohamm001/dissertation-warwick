@@ -22,6 +22,14 @@ def main(argv: list[str] | None = None) -> int:
     sub.add_parser("sensitivity", help="Raw-vs-cleaned sensitivity analysis of the bake-off")
     sub.add_parser("calibrate", help="Phase 4 calibration + conformal (RQ2)")
     sub.add_parser("explain", help="Phase 4 SHAP explainability (RQ3)")
+    serve_p = sub.add_parser("serve", help="Phase 5 decision-support demo (FastAPI + minimal UI)")
+    serve_p.add_argument("--host", default="127.0.0.1")
+    serve_p.add_argument("--port", type=int, default=8000)
+    sf = sub.add_parser("score-file", help="Batch-score a CSV/XLSX of applicants -> *_scored.csv")
+    sf.add_argument("input", help="path to a CSV/XLSX of applicants")
+    sf.add_argument("-o", "--output", default=None, help="output CSV path (default: <input>_scored.csv)")
+    ms = sub.add_parser("make-samples", help="Write data/example_cases.csv + sample_applicants.csv")
+    ms.add_argument("-n", type=int, default=50, help="number of random sample applicants")
 
     args = parser.parse_args(argv)
 
@@ -97,6 +105,28 @@ def main(argv: list[str] | None = None) -> int:
 
         path = explain.build_report()
         print(f"[emerald_ai] explainability report written -> {path}")
+        return 0
+
+    if args.command == "serve":
+        from . import serve
+
+        serve.run(host=args.host, port=args.port)
+        return 0
+
+    if args.command == "score-file":
+        from . import serve
+
+        info = serve.score_file(args.input, args.output)
+        print(f"[emerald_ai] scored {info['n']} applicants "
+              f"({info['n_riskiest_decile']} in riskiest decile) -> {info['out_path']}")
+        return 0
+
+    if args.command == "make-samples":
+        from . import serve
+
+        info = serve.write_sample_files(n=args.n)
+        print(f"[emerald_ai] wrote {info['example_cases']} and {info['sample_applicants']} "
+              f"(n={info['n_random']})")
         return 0
 
     parser.error(f"unknown command {args.command!r}")
