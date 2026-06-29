@@ -42,6 +42,20 @@ def test_reasons_are_named_permitted_features():
         assert (r["contribution"] > 0) == (r["direction"] == "increases risk")
 
 
+def test_reasons_are_human_readable():
+    """Each reason must carry a plain-English label + verdict consistent with its sign."""
+    sc = S.get_scorer()
+    out = S.score_applicant(sc, {"Revenue": 9000, "Credit Score": 610})
+    for r in out["reasons"]:
+        assert r["label"] == S._friendly(r["feature"])           # friendly name, not the raw column
+        assert r["verdict"] in {"raises risk", "lowers risk"}
+        assert (r["verdict"] == "raises risk") == (r["contribution"] > 0)
+    # the batch column reads as arrowed friendly phrases, not "Revenue +"
+    res = S.score_frame(sc, S.example_cases_frame())
+    sample = res["top_reasons"].iloc[0]
+    assert ("↑" in sample or "↓" in sample) and "+" not in sample
+
+
 def test_higher_revenue_raises_risk_matching_the_data():
     """Defaulters skew to HIGHER revenue here; the served model must reflect that monotone direction."""
     sc = S.get_scorer()

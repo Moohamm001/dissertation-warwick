@@ -23,25 +23,19 @@ either the **proposal §5.4 bibliography** (already vetted) or the **crawled bra
 
 | **D9** | **Events-needed / sample-size projection** — `improve.py:events_projection` | Peduzzi 1996 `W2037668591`, Vittinghoff 2006 `W2130373985`, Riley 2020 `W3012413426` — all **[CURATED]** (reuses D7) | The EPV/sample-size literature grounds the claim that the uncertainty band is event-limited and that more events (not more model) is the lever. |
 
+## RQ1-follow-up & decision-layer decisions (closed 2026-06-29)
+| # | Decision (where) | Supporting paper(s) | Justification |
+|---|---|---|---|
+| **D10** | **L1 / elastic-net penalised logistic regression** — `improve.py:_make_lr` | Tibshirani 1996, *Regression shrinkage and selection via the lasso*, JRSS-B — `W2135046866` **[CURATED]**; Zou & Hastie 2005, *Regularization and variable selection via the elastic net*, JRSS-B — `W2122825543` **[CURATED]** | The canonical L1 and elastic-net penalisation papers; ground the sparse models used to respect the events-per-variable budget at ~3.8 EPV. |
+| **D11** | **Affordability / financial-ratio features** — `improve.py:affordability_features` | Altman 1968, *Financial ratios, discriminant analysis and the prediction of corporate bankruptcy*, J. Finance — `W2124532504` **[CURATED]** | The seminal use of financial ratios to predict default; grounds the loan-to-revenue / loan-to-sales / revenue-to-sales affordability features. |
+| **D12** | **Feature selection under class imbalance** — `improve.py` | Wasikowski & Chen 2009, *Combating the small-sample class-imbalance problem using feature selection*, IEEE TKDE — `W2138776277` **[CURATED]** | Directly on-point: feature selection (not more capacity) is the lever for small, imbalanced samples. |
+| **D13** | **Survival / time-to-event modelling** — `survival.py` | Cox 1972, *Regression models and life-tables*, JRSS-B — `W3147894994` **[CURATED]** | The foundational proportional-hazards reference; cited in `survival_feasibility.md` to frame *why* a clock is needed and *what* would be fitted IF the data supported it (it does not — non-estimable). |
+| **D14** | **Expected-cost threshold selection** — `decision.py` | Elkan 2001, *The foundations of cost-sensitive learning*, IJCAI — `W167016754` **[CURATED]**; cost-sensitive framing reuses D5 (Xia et al. 2017) | The canonical expected-cost decision-theory result; grounds choosing the review threshold that minimises `R·FN + FP`. |
+
 ## Decisions NOT yet citation-closed
 - D6 closes once the **[PROPOSED]** D6 paper above is approved for curation.
-- **D10 — L1 / elastic-net penalised logistic regression** (`improve.py:_make_lr`). **GAP — no
-  supporting paper in the brain.** Needs Tibshirani 1996 (LASSO), Zou & Hastie 2005 (elastic-net),
-  and ideally a small-sample shrinkage/penalisation reference (Riley/Van Calster). Until curated,
-  the `improve` experiment is **provisional** and must not ship in the dissertation.
-- **D11 — affordability / financial-ratio feature engineering** (`improve.py:affordability_features`).
-  **GAP (domain).** Candidates: Altman 1968 (financial ratios), Lessmann et al. 2015 **[BIB]**.
-- **D12 — feature selection under class imbalance.** **PARTIAL** — two on-topic papers already sit
-  in `auto_index.yaml` (not yet curated): "Combating Small Sample Class Imbalance Using Feature
-  Selection" (2009); "Cost-based feature selection for SVM: credit scoring" (2017).
-- **D13 — survival / time-to-event modelling** (`survival.py`). **GAP — zero survival/censoring/Cox
-  papers in the brain.** Would need Cox 1972 + a discrete-time survival reference (e.g. Tutz &
-  Schmid 2016) IF a survival result ever became estimable. NB: `reports/survival_feasibility.md`
-  finds survival **non-estimable** on this data (no reliable duration), so D13 is currently moot —
-  the documented-non-estimability framing itself is COVERED by the Phase-1 feasibility precedent.
-- **Next action:** patch `research_bot/seeds.yaml` with penalised-regression and financial-ratio
-  queries, re-crawl, and promote D10–D12 candidates — then mark them CURATED here (ask first, per
-  standing rule).
+- *(D10–D14 closed 2026-06-29: 6 papers crawled from OpenAlex and promoted to `literature/index.yaml`,
+  curated total 11 → 17. The `improve` / `survival` / `decide` experiments are no longer provisional.)*
 
 ## How to read the code links
 - `experiments.py:_fold_scores` — SMOTE/encoder fit happen here, after the train/test split → D1, D2.

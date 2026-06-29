@@ -76,6 +76,16 @@ dataset has **no trustworthy duration** (the two candidate clocks correlate −0
 sit at 31% median term-complete). Verdict: **survival analysis is NON-ESTIMABLE here** — a second
 documented infeasibility, alongside the fairness audit.
 
+**Step 5e — Turn the score into a review policy (cost-sensitive decision layer).**
+```powershell
+python -m emerald_ai decide          # cost-optimal review threshold + sensitivity to R
+```
+Open [`reports/decision_policy.md`](reports/decision_policy.md): instead of a 0.5 or fixed-decile
+cut, choose the threshold that minimises `R·FN + FP` (R = cost of a missed default ÷ a needless
+review). As R rises the queue grows and recall climbs, as a lender wants. At R=20 it flags 319 vs
+605 applications, catches 29/50 defaults, and **cuts expected cost ~16% vs a 0.5 cut — bootstrap
+19% [8, 33], robust at 50 events**. This improves *decisions*, not discrimination (PR-AUC unchanged).
+
 **Step 6 — Calibration & explanations (Phase 4, answers RQ2/RQ3).**
 ```powershell
 python -m emerald_ai calibrate      # Platt/isotonic + within-min ECE (CIs) + split-conformal
@@ -117,7 +127,7 @@ python -m research_bot status
 
 **Step 9 — Verify everything.**
 ```powershell
-python -m pytest -q              # 28 tests: leakage guard, metrics, bot isolation, demo/batch, improve + survival feasibility
+python -m pytest -q              # 32 tests: leakage guard, metrics, bot isolation, demo/batch, improve, survival, decision policy
 ```
 
 ## What's here
@@ -132,6 +142,7 @@ python -m pytest -q              # 28 tests: leakage guard, metrics, bot isolati
 | `reports/learning_evidence.md` | **Generated.** Permutation test, baselines, stability, learning curve. |
 | `reports/improvement.md` | **Generated.** RQ1 follow-up: L1-sparse + affordability ratios vs the events ceiling, with a method→citation audit (flags lit-brain gaps). |
 | `reports/survival_feasibility.md` | **Generated.** Whether the censored loans support a time-to-event model — verdict: non-estimable (no reliable duration). |
+| `reports/decision_policy.md` | **Generated.** Cost-sensitive review threshold: cost-optimal cut vs naive, bootstrap-robust ~19% saving. |
 | `reports/calibration.md` | **Generated.** Phase 4 RQ2: Platt/isotonic + conformal. |
 | `reports/explainability.md` | **Generated.** Phase 4 RQ3: SHAP global + local. |
 | `docs/methods_citations.md` | Every imbalance/calibration choice → a paper (evidence audit). |
@@ -141,7 +152,7 @@ python -m pytest -q              # 28 tests: leakage guard, metrics, bot isolati
 | `data/sample_applicants.csv` | **Generated.** 50 privacy-safe synthetic applicants (column-wise resample) for batch testing. |
 | `research_bot/` | Small OpenAlex crawler (lit-review aid). `discovery.py` (queries), `state.py` (brain), `seeds.yaml`. |
 | `literature/` | The literature brain: `index.yaml` (curated) + `auto_index.yaml` (**generated**, auto-discovered). |
-| `tests/` | 28 tests: leakage guard, metric panel, bot isolation, demo/batch, improve + survival feasibility. |
+| `tests/` | 32 tests: leakage guard, metric panel, bot isolation, demo/batch, improve, survival, decision policy. |
 | `All_Funded_2019_Green Loan.xlsx` | Raw dataset (14,135 × 166). |
 
 ## Literature bot

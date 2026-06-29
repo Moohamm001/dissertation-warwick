@@ -18,6 +18,16 @@ Updated as work lands; this is the answer to "what's going on in this project?".
 | Phase 6 — write-up + release | ⬜ |
 
 ## Done (most recent first)
+- **2026-06-29 — Cost-sensitive decision layer (option b) — WORKS.** `emerald_ai/decision.py` +
+  `python -m emerald_ai decide` → `reports/decision_policy.md`. Picks the review threshold that
+  minimises `R·FN + FP` (R = cost of missed default ÷ needless review) on OOF scores — not 0.5, not
+  a fixed decile. Behaves correctly: as R rises (5→100) the threshold falls (0.998→0.426), the queue
+  grows (27→816) and recall climbs (0.10→0.82). **At R=20: flags 319 vs 605 (0.5-cut), catches 29/50,
+  expected cost −16% vs 0.5; bootstrap saving 19.0% [7.9, 32.8] — interval above zero, ROBUST at 50
+  events.** Improves *decisions*, not PR-AUC. Honest caveats: R unknown (report a range, not one
+  threshold); probs miscalibrated so threshold chosen empirically not analytic 1/(1+R). Citations:
+  cost-sensitive COVERED (D5 Xia 2017); expected-cost threshold (Elkan 2001) a GAP, 2 uncurated
+  candidates in auto_index. 4 tests (32 total).
 - **2026-06-29 — Survival feasibility: can the censored loans be recovered? NON-ESTIMABLE.**
   `emerald_ai/survival.py` + `python -m emerald_ai survival-check` → `reports/survival_feasibility.md`.
   Tested option (a): use the ~10,124 censored `current` loans (dropped by `paidoff_only`) via a

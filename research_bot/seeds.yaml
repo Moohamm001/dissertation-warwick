@@ -39,3 +39,11 @@ queries:
     - "Platt scaling probability calibration classifier"              # D6
     - "isotonic regression probability calibration"                   # D6
     - "predicting good probabilities supervised learning calibration" # D6
+  # Added 2026-06-29 to close the RQ1-follow-up / decision-layer gaps (D10-D14).
+  followup_justification:
+    - "regression shrinkage and selection via the lasso"             # D10 LASSO
+    - "regularization variable selection elastic net"                # D10 elastic-net
+    - "financial ratios discriminant analysis corporate bankruptcy"  # D11 financial ratios
+    - "feature selection small sample class imbalance"               # D12 feature selection
+    - "Cox regression models life-tables survival"                   # D13 survival
+    - "foundations of cost-sensitive learning threshold"             # D14 cost threshold

@@ -49,14 +49,12 @@ the band is event-limited, and Experiment 1 returns the expected null. The defen
 | Method (where) | Status | Paper(s) |
 |---|---|---|
 | Events-per-variable / sample-size projection (`events_projection`) | **COVERED** | Peduzzi 1996 `W2037668591`, Vittinghoff 2006 `W2130373985`, Riley 2020 `W3012413426` — all **[CURATED]** (D7) |
-| L1 / elastic-net penalised logistic regression (`_make_lr`) | **GAP** | none in the brain — needs Tibshirani 1996 (LASSO) + Zou & Hastie 2005 (elastic-net), and a small-sample shrinkage reference (e.g. Riley/Van Calster on penalisation) |
-| Affordability-ratio feature engineering (`affordability_features`) | **GAP (domain)** | none — candidates: Altman 1968 (financial ratios), Lessmann et al. 2015 **[BIB]** credit-scoring benchmark |
-| Feature selection under class imbalance | **PARTIAL** | discovered in `auto_index.yaml`, not yet curated: "Combating Small Sample Class Imbalance Using Feature Selection" (2009); "Cost-based feature selection for SVM: credit scoring" (2017) |
+| L1 / elastic-net penalised logistic regression (`_make_lr`) | **COVERED** | Tibshirani 1996 `W2135046866`, Zou & Hastie 2005 `W2122825543` — **[CURATED]** (D10) |
+| Affordability-ratio feature engineering (`affordability_features`) | **COVERED** | Altman 1968 `W2124532504` — **[CURATED]** (D11) |
+| Feature selection under class imbalance | **COVERED** | Wasikowski & Chen 2009 `W2138776277` — **[CURATED]** (D12) |
 
-**Action required (standing rule — ask before curating):** the two GAP rows use methods not yet
-backed by a paper in the literature brain. Before this experiment can ship in the dissertation,
-patch `research_bot/seeds.yaml` with penalised-regression / financial-ratio queries, re-crawl, and
-promote the LASSO + elastic-net + a credit-feature-engineering paper to `literature/index.yaml`.
+All methods are now citation-backed (D10–D12 curated 2026-06-29); the experiment is no longer
+provisional.
 
 ---
 *Reproduce: `python -m emerald_ai improve`*

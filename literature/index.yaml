@@ -241,3 +241,119 @@
   origin: curated
   decision: D7 sample size
   curated_at: '2026-06-10T12:19:19Z'
+- id: W2135046866
+  doi: https://doi.org/10.1111/j.2517-6161.1996.tb02080.x
+  title: Regression Shrinkage and Selection Via the Lasso
+  year: 1996
+  cited_by_count: 51812
+  venue: Journal of the Royal Statistical Society Series B (Statistical Methodology)
+  authors:
+  - Robert Tibshirani
+  concepts:
+  - Shrinkage
+  - Lasso (programming language)
+  - Selection (genetic algorithm)
+  - Regression
+  - Computer science
+  - Statistics
+  source_query: Regression shrinkage and selection via the lasso
+  origin: curated
+  decision: D10 L1/LASSO penalised regression
+  curated_at: '2026-06-29T19:02:17Z'
+- id: W2122825543
+  doi: https://doi.org/10.1111/j.1467-9868.2005.00503.x
+  title: Regularization and Variable Selection Via the Elastic Net
+  year: 2005
+  cited_by_count: 20990
+  venue: Journal of the Royal Statistical Society Series B (Statistical Methodology)
+  authors:
+  - Hui Zou
+  - Trevor Hastie
+  concepts:
+  - Elastic net regularization
+  - Regularization (linguistics)
+  - Feature selection
+  - Variable (mathematics)
+  - Computer science
+  - Mathematics
+  source_query: Regularization and variable selection via the elastic net
+  origin: curated
+  decision: D10 elastic-net penalised regression
+  curated_at: '2026-06-29T19:02:17Z'
+- id: W2124532504
+  doi: https://doi.org/10.1111/j.1540-6261.1968.tb00843.x
+  title: FINANCIAL RATIOS, DISCRIMINANT ANALYSIS AND THE PREDICTION OF CORPORATE BANKRUPTCY
+  year: 1968
+  cited_by_count: 13637
+  venue: The Journal of Finance
+  authors:
+  - Edward I. Altman
+  concepts:
+  - Bankruptcy
+  - Citation
+  - Associate editor
+  - Library science
+  - Psychology
+  - Sociology
+  source_query: Financial ratios discriminant analysis prediction of corporate bankruptcy
+  origin: curated
+  decision: D11 financial-ratio features
+  curated_at: '2026-06-29T19:02:17Z'
+- id: W2138776277
+  doi: https://doi.org/10.1109/tkde.2009.187
+  title: Combating the Small Sample Class Imbalance Problem Using Feature Selection
+  year: 2009
+  cited_by_count: 389
+  venue: IEEE Transactions on Knowledge and Data Engineering
+  authors:
+  - Mike Wasikowski
+  - Xuewen Chen
+  concepts:
+  - Feature selection
+  - Computer science
+  - Artificial intelligence
+  - Performance metric
+  - Machine learning
+  - Feature (linguistics)
+  source_query: Combating small sample class imbalance feature selection
+  origin: curated
+  decision: D12 feature selection under imbalance
+  curated_at: '2026-06-29T19:02:17Z'
+- id: W3147894994
+  doi: https://doi.org/10.1111/j.2517-6161.1972.tb00899.x
+  title: Regression Models and Life-Tables
+  year: 1972
+  cited_by_count: 39261
+  venue: Journal of the Royal Statistical Society Series B (Statistical Methodology)
+  authors:
+  - D. R. Cox
+  concepts:
+  - Regression analysis
+  - Statistics
+  - Regression
+  - Econometrics
+  - Computer science
+  - Mathematics
+  source_query: Regression models and life-tables
+  origin: curated
+  decision: D13 survival / time-to-event
+  curated_at: '2026-06-29T19:02:17Z'
+- id: W167016754
+  doi: null
+  title: The foundations of cost-sensitive learning
+  year: 2001
+  cited_by_count: 1840
+  venue: null
+  authors:
+  - Charles Elkan
+  concepts:
+  - Computer science
+  - Classifier (UML)
+  - Mistake
+  - Artificial intelligence
+  - Machine learning
+  - Decision tree
+  source_query: The foundations of cost-sensitive learning
+  origin: curated
+  decision: D14 expected-cost threshold
+  curated_at: '2026-06-29T19:02:17Z'

@@ -36,6 +36,33 @@ from .experiments import _make_model, oof_predictions
 _MAX_CATEGORY_OPTIONS = 40
 TOP_DECILE = 0.10
 
+# Plain-English labels for the model's columns, so a reason reads "Monthly revenue" not "Revenue"
+# and a non-technical reviewer can act on it without a data dictionary.
+FRIENDLY_LABELS = {
+    "Credit Score": "Credit score",
+    "Amount Sought": "Loan amount requested",
+    "Revenue": "Monthly revenue",
+    "Average Monthly Sales": "Monthly sales",
+    "Time In Business": "Time in business",
+    "Days Since Last Opportunity": "Days since last enquiry",
+    "Online App Completed": "Applied online",
+    "Is Borrower Renewal": "Returning borrower",
+    "Current Tier": "Risk tier",
+    "Mktg Tier": "Marketing tier",
+    "Industry": "Industry",
+    "Loan Purpose": "Loan purpose",
+    "Borrower State": "Borrower's state",
+    "Deal Type": "Deal type",
+    "Renewal Type": "Renewal type",
+    "Channel": "Origination channel",
+    "Medium": "Marketing medium",
+}
+
+
+def _friendly(feature: str) -> str:
+    """Plain-English name for a model column (falls back to the raw name)."""
+    return FRIENDLY_LABELS.get(feature, feature)
+
 
 @dataclass
 class FieldSpec:
@@ -168,7 +195,9 @@ def score_applicant(scorer: Scorer, payload: dict, top_k: int = 3) -> dict:
 
     ordered = sorted(agg.items(), key=lambda kv: abs(kv[1]), reverse=True)[:top_k]
     reasons = [
-        {"feature": k, "direction": "increases risk" if v > 0 else "decreases risk",
+        {"feature": k, "label": _friendly(k),
+         "direction": "increases risk" if v > 0 else "decreases risk",
+         "verdict": "raises risk" if v > 0 else "lowers risk",
          "contribution": round(v, 4), "value": _display_value(row, k)}
         for k, v in ordered
     ]
@@ -210,8 +239,8 @@ def score_frame(scorer: Scorer, df: pd.DataFrame, top_k: int = 3,
         probs.append(r["probability"])
         pcts.append(r["percent"])
         flags.append(r["in_riskiest_decile"])
-        reasons_txt.append("; ".join(
-            f"{x['feature']} {'+' if x['contribution'] > 0 else '-'}" for x in r["reasons"]))
+        reasons_txt.append(", ".join(
+            f"{'↑' if x['contribution'] > 0 else '↓'} {x['label']}" for x in r["reasons"]))
     out["probability"] = probs
     out["percent"] = pcts
     # within-batch operating point: rank by risk, queue the riskiest review_frac (at least one row)
@@ -298,9 +327,13 @@ def write_sample_files(n: int = 50, seed: int = C.SEED) -> dict:
 
 def _display_value(row: pd.DataFrame, col: str) -> str:
     v = row.iloc[0][col]
-    if isinstance(v, float) and not np.isnan(v) and v == int(v):
-        return str(int(v))
-    return "—" if (isinstance(v, float) and np.isnan(v)) else str(v)
+    if isinstance(v, float) and np.isnan(v):
+        return "—"
+    if isinstance(v, (int, float)) and float(v) == int(v):
+        return f"{int(v):,}"                       # thousands separators, e.g. 90,000
+    if isinstance(v, float):
+        return f"{v:,.2f}"
+    return str(v)
 
 
 # --------------------------------------------------------------------------- web layer
@@ -365,79 +398,162 @@ def _render_page(scorer: Scorer) -> str:
 
 _PAGE = """<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>EMERALD-AI — decision-support demo</title>
+<title>EMERALD-AI — credit decision support</title>
 <style>
- :root{{--g:#2e7d32;--gd:#1b5e20;--bg:#f6f8f6;--card:#fff;--line:#dfe6df;--risk:#c62828;--ok:#1565c0}}
- *{{box-sizing:border-box}} body{{font-family:system-ui,Segoe UI,Roboto,sans-serif;margin:0;background:var(--bg);color:#1c241c}}
- header{{background:var(--gd);color:#fff;padding:18px 24px}} header h1{{margin:0;font-size:19px}}
- header p{{margin:4px 0 0;opacity:.85;font-size:13px}}
- main{{max-width:1040px;margin:22px auto;padding:0 18px;display:grid;grid-template-columns:1.3fr 1fr;gap:22px}}
- @media(max-width:820px){{main{{grid-template-columns:1fr}}}}
- .card{{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:18px}}
- h2{{font-size:15px;margin:0 0 12px;color:var(--gd)}}
- .grid{{display:grid;grid-template-columns:1fr 1fr;gap:10px}}
- .fld{{display:flex;flex-direction:column;font-size:12px;gap:3px}}
- .fld span{{color:#566;font-weight:600}} input,select{{padding:7px;border:1px solid var(--line);border-radius:6px;font-size:13px}}
- .hint{{color:#8a958a;font-size:10px;font-style:normal}}
- button{{margin-top:14px;background:var(--g);color:#fff;border:0;border-radius:7px;padding:11px 18px;font-size:14px;cursor:pointer;width:100%}}
- button:hover{{background:var(--gd)}}
- .meta{{font-size:12px;color:#566;margin-top:10px;line-height:1.5}}
- #out{{display:none}} .score{{font-size:42px;font-weight:700;margin:4px 0}}
- .pill{{display:inline-block;padding:5px 11px;border-radius:20px;font-size:12px;font-weight:700;color:#fff}}
- .pill.risk{{background:var(--risk)}} .pill.ok{{background:var(--ok)}}
- .reason{{display:flex;justify-content:space-between;gap:8px;padding:9px 11px;border-radius:7px;margin-top:7px;font-size:13px;border-left:4px solid}}
- .reason.up{{background:#fdeaea;border-color:var(--risk)}} .reason.down{{background:#e9f0fb;border-color:var(--ok)}}
- .reason b{{font-weight:600}} .reason small{{color:#667}}
- .disc{{font-size:12px;color:#667;margin-top:16px;border-top:1px dashed var(--line);padding-top:10px}}
- .batch{{max-width:1040px;margin:22px auto 10px;}} .batch input[type=file]{{font-size:13px}}
- .batch button{{width:auto;display:inline-block;margin:10px 0 0 8px;padding:8px 16px}}
- .hero{{border-left:5px solid var(--g)}}
- .sep{{max-width:1040px;margin:26px auto 0;padding:0 18px;font-size:15px;color:var(--gd)}}
- .sepnote{{max-width:1040px;margin:2px auto 0;padding:0 18px;font-size:12px;color:#667;line-height:1.5}}
- #batchtable{{overflow-x:auto;margin-top:12px}} table.bt{{border-collapse:collapse;font-size:12px;width:100%}}
- table.bt th,table.bt td{{border:1px solid var(--line);padding:5px 8px;text-align:left;white-space:nowrap}}
- table.bt th{{background:#eef3ee;color:var(--gd)}} table.bt tr.flag{{background:#fdeaea;font-weight:600}}
- code{{background:#eef3ee;padding:1px 5px;border-radius:4px;font-size:12px}}
+ :root{{
+   --bg:#eef2f6; --surface:#ffffff; --ink:#0f172a; --muted:#64748b; --faint:#94a3b8;
+   --line:#e7ecf2; --brand:#059669; --brand2:#10b981; --brand-deep:#064e3b; --brand-ink:#065f46;
+   --risk:#dc2626; --risk-soft:#fef2f2; --risk-ink:#991b1b;
+   --ok:#2563eb; --ok-soft:#eff6ff; --ok-ink:#1e40af;
+   --ring:rgba(16,185,129,.28);
+   --sh-sm:0 1px 2px rgba(15,23,42,.05); --sh:0 6px 22px rgba(15,23,42,.07);
+   --r:16px; --r-sm:11px;
+ }}
+ *{{box-sizing:border-box}}
+ html{{-webkit-text-size-adjust:100%}}
+ body{{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;
+   margin:0;background:var(--bg);color:var(--ink);line-height:1.5;-webkit-font-smoothing:antialiased}}
+ a{{color:var(--brand)}}
+ .wrap{{max-width:1080px;margin:0 auto;padding:0 20px}}
+ /* header */
+ header{{background:linear-gradient(135deg,var(--brand-deep),var(--brand-ink));color:#fff;
+   padding:30px 0 26px;box-shadow:var(--sh)}}
+ .brand{{display:flex;align-items:center;gap:12px}}
+ .logo{{width:38px;height:38px;border-radius:11px;background:linear-gradient(135deg,var(--brand2),var(--brand));
+   display:grid;place-items:center;box-shadow:0 4px 14px rgba(5,150,105,.45);flex:0 0 auto}}
+ .logo svg{{width:22px;height:22px}}
+ header h1{{margin:0;font-size:20px;font-weight:700;letter-spacing:-.02em}}
+ header .tag{{font-size:12px;opacity:.8;margin-top:1px}}
+ header p{{margin:16px 0 0;max-width:760px;font-size:14px;opacity:.92}}
+ header p b{{font-weight:600}}
+ /* layout */
+ section,main{{margin-top:22px}}
+ .card{{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);
+   padding:22px;box-shadow:var(--sh-sm);transition:box-shadow .2s ease}}
+ .card:hover{{box-shadow:var(--sh)}}
+ .sechead{{display:flex;align-items:center;gap:11px;margin:0 0 6px}}
+ .num{{width:26px;height:26px;border-radius:8px;background:var(--brand-ink);color:#fff;font-size:13px;
+   font-weight:700;display:grid;place-items:center;flex:0 0 auto}}
+ .num.alt{{background:#e2e8f0;color:var(--muted)}}
+ h2{{font-size:16px;margin:0;font-weight:700;letter-spacing:-.01em}}
+ .lead{{font-size:13px;color:var(--muted);margin:6px 0 0;max-width:780px}}
+ .lead b{{color:var(--ink);font-weight:600}}
+ main{{display:grid;grid-template-columns:1.35fr 1fr;gap:22px;align-items:start}}
+ @media(max-width:840px){{main{{grid-template-columns:1fr}}}}
+ /* form fields */
+ .grid{{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin-top:18px}}
+ .fld{{display:flex;flex-direction:column;gap:5px}}
+ .fld span{{font-size:11px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}}
+ input,select{{padding:9px 11px;border:1px solid var(--line);border-radius:10px;font-size:14px;
+   background:#fbfdff;color:var(--ink);font-family:inherit;transition:border-color .15s,box-shadow .15s}}
+ input:focus,select:focus{{outline:none;border-color:var(--brand2);box-shadow:0 0 0 3px var(--ring);background:#fff}}
+ .hint{{color:var(--faint);font-size:10.5px;font-style:normal;letter-spacing:.01em}}
+ /* buttons */
+ .btn{{appearance:none;border:0;cursor:pointer;font-family:inherit;font-weight:600;font-size:14px;
+   border-radius:11px;padding:12px 20px;color:#fff;background:linear-gradient(135deg,var(--brand2),var(--brand));
+   box-shadow:0 4px 14px rgba(5,150,105,.32);transition:transform .12s,box-shadow .2s,filter .2s}}
+ .btn:hover{{filter:brightness(1.04);box-shadow:0 6px 18px rgba(5,150,105,.4)}}
+ .btn:active{{transform:translateY(1px)}}
+ .btn.block{{width:100%;margin-top:18px}}
+ .meta{{font-size:12.5px;color:var(--muted);margin-top:12px}}
+ .meta b{{color:var(--ink);font-weight:600}}
+ code{{background:#eef6f1;color:var(--brand-ink);padding:1.5px 6px;border-radius:6px;
+   font-size:12px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}}
+ /* result panel */
+ #out{{display:none}}
+ .scorewrap{{display:flex;align-items:baseline;gap:12px;margin:6px 0 2px;flex-wrap:wrap}}
+ .score{{font-size:48px;font-weight:800;letter-spacing:-.03em;font-variant-numeric:tabular-nums;line-height:1}}
+ .caption{{font-size:11px;font-weight:600;color:var(--faint);text-transform:uppercase;letter-spacing:.06em}}
+ .pill{{display:inline-flex;align-items:center;gap:6px;padding:6px 13px;border-radius:999px;
+   font-size:12px;font-weight:700;letter-spacing:.01em}}
+ .pill.risk{{background:var(--risk-soft);color:var(--risk-ink);border:1px solid #fecaca}}
+ .pill.ok{{background:var(--ok-soft);color:var(--ok-ink);border:1px solid #bfdbfe}}
+ .dot{{width:7px;height:7px;border-radius:50%}} .pill.risk .dot{{background:var(--risk)}} .pill.ok .dot{{background:var(--ok)}}
+ .subhead{{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin:20px 0 9px}}
+ .reason{{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:11px 13px;
+   border-radius:11px;margin-top:8px;font-size:13.5px;background:#f8fafc;border:1px solid var(--line)}}
+ .reason.up{{background:var(--risk-soft);border-color:#fde0e0}} .reason.down{{background:var(--ok-soft);border-color:#dbeafe}}
+ .reason b{{font-weight:600}} .reason small{{color:var(--faint)}}
+ .tag-dir{{font-size:11.5px;font-weight:700;white-space:nowrap}}
+ .up .tag-dir{{color:var(--risk-ink)}} .down .tag-dir{{color:var(--ok-ink)}}
+ .disc{{font-size:11.5px;color:var(--faint);margin-top:18px;border-top:1px solid var(--line);padding-top:12px;line-height:1.55}}
+ .empty{{display:grid;place-items:center;text-align:center;padding:30px 14px;color:var(--faint)}}
+ .empty svg{{width:40px;height:40px;opacity:.5;margin-bottom:8px}}
+ /* batch */
+ .dropzone{{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:16px;padding:16px;
+   border:1.5px dashed #cbd5e1;border-radius:13px;background:#f8fafc;transition:border-color .15s,background .15s}}
+ .dropzone:hover{{border-color:var(--brand2);background:#f0fdf8}}
+ input[type=file]{{font-size:13px;color:var(--muted);background:transparent;border:0;padding:0;flex:1 1 200px}}
+ input[type=file]::file-selector-button{{font-family:inherit;font-weight:600;font-size:13px;cursor:pointer;
+   margin-right:12px;padding:8px 15px;border:0;border-radius:9px;color:var(--brand-ink);
+   background:#d1fae5;transition:background .15s}}
+ input[type=file]::file-selector-button:hover{{background:#a7f3d0}}
+ #batchsummary{{margin-top:14px}}
+ .summary-card{{display:flex;gap:18px;flex-wrap:wrap;margin-top:14px}}
+ .stat{{background:#f8fafc;border:1px solid var(--line);border-radius:12px;padding:12px 16px;min-width:120px}}
+ .stat .v{{font-size:24px;font-weight:800;letter-spacing:-.02em;font-variant-numeric:tabular-nums}}
+ .stat.flag .v{{color:var(--risk)}}
+ .stat .l{{font-size:11px;color:var(--muted);margin-top:2px}}
+ .tablewrap{{overflow-x:auto;margin-top:16px;border:1px solid var(--line);border-radius:12px}}
+ table.bt{{border-collapse:collapse;font-size:12.5px;width:100%}}
+ table.bt th,table.bt td{{padding:9px 13px;text-align:left;white-space:nowrap;border-bottom:1px solid var(--line)}}
+ table.bt th{{background:#f8fafc;color:var(--muted);font-weight:600;text-transform:uppercase;font-size:10.5px;letter-spacing:.04em}}
+ table.bt tbody tr:last-child td{{border-bottom:0}}
+ table.bt tbody tr:hover{{background:#fafcff}}
+ table.bt tr.flag{{background:var(--risk-soft)}} table.bt tr.flag:hover{{background:#fde8e8}}
+ table.bt tr.flag td:first-child{{font-weight:700;color:var(--risk-ink)}}
+ footer{{text-align:center;color:var(--faint);font-size:11.5px;padding:30px 0 36px}}
 </style></head><body>
-<header>
-  <h1>EMERALD-AI — green-loan default risk (decision support)</h1>
-  <p>The model <b>ranks a batch of applications</b> and routes the riskiest decile to human review.
-    It does not approve or decline. Single-application scoring is below, for explanation and what-if.</p>
-</header>
-<section class="card batch hero">
-  <h2>① Batch review queue — the operational use case</h2>
-  <p class="meta">Upload the day's applications as a CSV. The model ranks them by risk and flags the
-    riskiest <b>10%</b> as the <b>review queue</b> — the operating point behind the headline result
-    (reviewing the top decile historically catches ~{catch_pct}% of all defaults). Columns are named
-    like the form fields (any subset; an optional <b>id</b>/<b>case</b> column is passed through).
-    Try the bundled <code>data/sample_applicants.csv</code> or <code>data/example_cases.csv</code>.</p>
-  <input type="file" id="file" accept=".csv">
-  <button id="batchbtn" type="button">Rank applications</button>
-  <div id="batchsummary" class="meta"></div>
+<header><div class="wrap">
+  <div class="brand">
+    <div class="logo"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21c5-2 8-6 8-12V4l-8 2-8-2v5c0 6 3 10 8 12z" fill="#fff" opacity=".95"/><path d="M12 17V8M9 11l3-3 3 3" stroke="#059669" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div><h1>EMERALD-AI</h1><div class="tag">green-loan credit decision support</div></div>
+  </div>
+  <p>The model <b>ranks a batch of applications</b> and routes the riskiest decile to human review —
+    it does not approve or decline. Single-application scoring is available below for explanation
+    and what-if analysis.</p>
+</div></header>
+
+<div class="wrap">
+<section class="card">
+  <div class="sechead"><span class="num">1</span><h2>Batch review queue</h2></div>
+  <p class="lead">The operational use case. Upload the day's applications as a CSV — the model ranks
+    them by risk and flags the riskiest <b>10%</b> as the review queue (reviewing the top decile
+    historically catches ~{catch_pct}% of all defaults). Any subset of the form columns works; an
+    optional <b>id</b>/<b>case</b> column is passed through. Try the bundled
+    <code>data/sample_applicants.csv</code> or <code>data/example_cases.csv</code>.</p>
+  <div class="dropzone">
+    <input type="file" id="file" accept=".csv">
+    <button id="batchbtn" type="button" class="btn">Rank applications</button>
+  </div>
+  <div id="batchsummary"></div>
   <div id="batchtable"></div>
 </section>
-<h2 class="sep">② Explain or stress-test a single application</h2>
-<p class="sepnote">For decomposing one decision (the "why was this flagged?" answer for an adverse-action
-  notice) or exploring how the score moves as a feature changes — not the bulk scoring path.</p>
+
 <main>
   <form id="f" class="card">
-    <h2>Applicant (pre-funding features)</h2>
+    <div class="sechead"><span class="num">2</span><h2>Single application</h2></div>
+    <p class="lead">Decompose one decision (the "why was this flagged?" answer for an adverse-action
+      notice) or stress-test how the score moves as a feature changes.</p>
     <div class="grid">{fields}</div>
-    <button type="submit">Score applicant</button>
+    <button type="submit" class="btn block">Score applicant</button>
     <p class="meta">Defaults are dataset medians/modes — change only the fields you care about.
-      Trained on {n_rows} loans, {n_events} defaults ({prevalence}% prevalence).</p>
+      Trained on <b>{n_rows}</b> loans, <b>{n_events}</b> defaults ({prevalence}% prevalence).</p>
   </form>
   <div>
-    <div class="card" id="placeholder"><h2>Result</h2>
-      <p class="meta">Fill the form and press <b>Score applicant</b>. You'll get the default
-      probability, whether the applicant clears the historical riskiest-decile threshold,
-      and the top-3 reasons.</p></div>
+    <div class="card" id="placeholder">
+      <div class="sechead"><span class="num alt">→</span><h2>Result</h2></div>
+      <div class="empty">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 13h4l3 7 4-14 3 7h4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div style="font-size:13px;max-width:230px">Fill the form and press <b>Score applicant</b> to
+          see the default probability, review-queue status, and the top-3 reasons.</div>
+      </div>
+    </div>
     <div class="card" id="out">
-      <h2>Result</h2>
-      <div><span class="meta">Estimated probability of default</span></div>
-      <div class="score" id="score">—</div>
-      <div id="band"></div>
-      <h2 style="margin-top:16px">Top reasons</h2>
+      <div class="sechead"><span class="num alt">→</span><h2>Result</h2></div>
+      <div class="caption">Estimated probability of default</div>
+      <div class="scorewrap"><div class="score" id="score">—</div><div id="band"></div></div>
+      <div class="subhead">Top reasons</div>
       <div id="reasons"></div>
       <p class="disc">Reference threshold: historical riskiest decile = P(default) &ge; {threshold}
         (out-of-fold). For one applicant this is an absolute reference; the real review queue is the
@@ -445,40 +561,49 @@ _PAGE = """<!doctype html>
     </div>
   </div>
 </main>
+<footer>EMERALD-AI · proof-of-concept decision support · the model ranks for review, it does not decide</footer>
+</div>
+
 <script>
-const f=document.getElementById('f');
+const $=id=>document.getElementById(id);
+const f=$('f');
 f.addEventListener('submit',async e=>{{
   e.preventDefault();
   const data={{}};
   for(const el of f.querySelectorAll('[name]')) data[el.name]=el.value;
   const r=await fetch('/api/score',{{method:'POST',headers:{{'Content-Type':'application/json'}},body:JSON.stringify(data)}});
   const j=await r.json();
-  document.getElementById('placeholder').style.display='none';
-  document.getElementById('out').style.display='block';
-  document.getElementById('score').textContent=j.percent.toFixed(2)+'%';
-  document.getElementById('band').innerHTML='<span class="pill '+(j.in_riskiest_decile?'risk':'ok')+'">'+j.band+'</span>';
-  const box=document.getElementById('reasons'); box.innerHTML='';
+  $('placeholder').style.display='none';
+  $('out').style.display='block';
+  const s=$('score'); s.textContent=j.percent.toFixed(1)+'%';
+  s.style.color=j.in_riskiest_decile?'var(--risk)':'var(--ink)';
+  $('band').innerHTML='<span class="pill '+(j.in_riskiest_decile?'risk':'ok')+'"><span class="dot"></span>'+j.band+'</span>';
+  const box=$('reasons'); box.innerHTML='';
   for(const x of j.reasons){{
     const up=x.contribution>0;
-    box.innerHTML+='<div class="reason '+(up?'up':'down')+'"><span><b>'+x.feature+
-      '</b> <small>= '+x.value+'</small></span><span>'+(up?'&#9650; ':'&#9660; ')+x.direction+'</span></div>';
+    box.innerHTML+='<div class="reason '+(up?'up':'down')+'"><span><b>'+x.label+
+      '</b> <small>= '+x.value+'</small></span><span class="tag-dir">'+(up?'▲ ':'▼ ')+x.verdict+'</span></div>';
   }}
+  $('out').scrollIntoView({{behavior:'smooth',block:'nearest'}});
 }});
 
-document.getElementById('batchbtn').addEventListener('click',async()=>{{
-  const fi=document.getElementById('file'); if(!fi.files.length){{alert('Choose a CSV first');return;}}
+$('batchbtn').addEventListener('click',async()=>{{
+  const fi=$('file'); if(!fi.files.length){{alert('Choose a CSV first');return;}}
   const csv=await fi.files[0].text();
   const r=await fetch('/api/score-batch',{{method:'POST',headers:{{'Content-Type':'application/json'}},body:JSON.stringify({{csv}})}});
   const j=await r.json();
-  document.getElementById('batchsummary').innerHTML='<b>'+j.n+'</b> applications ranked — review queue: '+
-    'the riskiest <b>'+j.n_review_queue+'</b> (top decile of this batch), shown highlighted. '+
-    '('+j.n_riskiest_decile+' also clear the absolute historical threshold.)';
+  $('batchsummary').innerHTML=
+    '<div class="summary-card">'+
+    '<div class="stat"><div class="v">'+j.n+'</div><div class="l">applications ranked</div></div>'+
+    '<div class="stat flag"><div class="v">'+j.n_review_queue+'</div><div class="l">review queue (top decile)</div></div>'+
+    '<div class="stat"><div class="v">'+j.n_riskiest_decile+'</div><div class="l">clear historical threshold</div></div>'+
+    '</div>';
   const keys=Object.keys(j.rows[0]||{{}});
-  let h='<table class="bt"><thead><tr>'+keys.map(k=>'<th>'+k+'</th>').join('')+'</tr></thead><tbody>';
+  let h='<div class="tablewrap"><table class="bt"><thead><tr>'+keys.map(k=>'<th>'+k+'</th>').join('')+'</tr></thead><tbody>';
   for(const row of j.rows){{
     h+='<tr class="'+(row.review_queue?'flag':'')+'">'+keys.map(k=>'<td>'+row[k]+'</td>').join('')+'</tr>';
   }}
-  document.getElementById('batchtable').innerHTML=h+'</tbody></table>';
+  $('batchtable').innerHTML=h+'</tbody></table></div>';
 }});
 </script>
 </body></html>"""

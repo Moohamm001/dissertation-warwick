@@ -43,7 +43,7 @@ remain: (1) a **cost-sensitive decision threshold** on the existing binary model
 ## Method → citation audit (Rule 1)
 | Method | Status | Note |
 |---|---|---|
-| Survival / time-to-event modelling (Cox, discrete-time) | **GAP** | the literature brain has **zero** survival/censoring papers; would need Cox 1972 + a discrete-time survival reference before any survival result could ship |
+| Survival / time-to-event modelling (Cox, discrete-time) | **COVERED** | Cox 1972 `W3147894994` — **[CURATED]** (D13); grounds the time-to-event framing even though the result is non-estimability |
 | Documented non-estimability framing | **COVERED** | consistent with the Phase-1 fairness non-estimability result already in `reports/feasibility.md` |
 
 ---

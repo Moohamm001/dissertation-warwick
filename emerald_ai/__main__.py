@@ -24,6 +24,7 @@ def main(argv: list[str] | None = None) -> int:
     sub.add_parser("explain", help="Phase 4 SHAP explainability (RQ3)")
     sub.add_parser("improve", help="RQ1 follow-up: sparsity/ratios vs the events ceiling")
     sub.add_parser("survival-check", help="Feasibility: can the censored loans support a survival model?")
+    sub.add_parser("decide", help="Cost-sensitive decision policy: cost-optimal review threshold")
     serve_p = sub.add_parser("serve", help="Phase 5 decision-support demo (FastAPI + minimal UI)")
     serve_p.add_argument("--host", default="127.0.0.1")
     serve_p.add_argument("--port", type=int, default=8000)
@@ -121,6 +122,13 @@ def main(argv: list[str] | None = None) -> int:
 
         path = survival.build_report()
         print(f"[emerald_ai] survival feasibility report written -> {path}")
+        return 0
+
+    if args.command == "decide":
+        from . import decision
+
+        path = decision.build_report()
+        print(f"[emerald_ai] decision policy report written -> {path}")
         return 0
 
     if args.command == "serve":
