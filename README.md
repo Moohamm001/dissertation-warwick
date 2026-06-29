@@ -56,6 +56,26 @@ python -m emerald_ai evidence       # permutation test, baselines, stability, le
 python -m emerald_ai sensitivity    # raw-vs-cleaned robustness check
 ```
 
+**Step 5c — "Can we do better?" (RQ1 follow-up).**
+```powershell
+python -m emerald_ai improve        # L1-sparse + affordability ratios vs the events ceiling
+```
+Open [`reports/improvement.md`](reports/improvement.md): respecting events-per-variable (L1) and
+adding domain affordability ratios is the **expected null** — the fold band is event-limited, not
+model-limited. A fixed-prevalence projection estimates the events needed to halve the uncertainty.
+Includes a **method→citation audit** that flags methods not yet backed by the literature brain
+(penalised regression, financial-ratio features).
+
+**Step 5d — Can we use the censored loans? (survival feasibility).**
+```powershell
+python -m emerald_ai survival-check  # is there a reliable time-to-event clock?
+```
+Open [`reports/survival_feasibility.md`](reports/survival_feasibility.md): a time-to-default model
+could in principle recover the ~10k censored `current` loans the primary label drops — but the
+dataset has **no trustworthy duration** (the two candidate clocks correlate −0.02; `paidOff` loans
+sit at 31% median term-complete). Verdict: **survival analysis is NON-ESTIMABLE here** — a second
+documented infeasibility, alongside the fairness audit.
+
 **Step 6 — Calibration & explanations (Phase 4, answers RQ2/RQ3).**
 ```powershell
 python -m emerald_ai calibrate      # Platt/isotonic + within-min ECE (CIs) + split-conformal
@@ -69,19 +89,25 @@ SHAP confirms `Revenue` is the workhorse feature.
 ```powershell
 python -m emerald_ai serve      # -> http://127.0.0.1:8000
 ```
-A single-page FastAPI app: fill the pre-funding application form and get **P(default)**, whether the
-applicant falls in the **riskiest decile** (the desk's review queue — threshold set from out-of-fold
-scores, *never* a 0.5 yes/no), and the **top-3 SHAP reasons** mapped back to named features. Framed
-honestly in the UI: the model *ranks for review*, it does not approve or decline.
+A FastAPI app whose layout mirrors the real use case. **Primary path — batch review queue:** upload a
+CSV of applications; the model ranks them by risk and flags the riskiest **decile *of that batch*** as
+the review queue (the operating point behind "review the top 10%, catch ~62% of defaults"). The
+headline metric is a population concept, so the queue is defined over the uploaded batch — *never* a
+0.5 yes/no. **Secondary path — single-application panel:** decompose one decision into its **top-3
+SHAP reasons** (the "why was this flagged?" answer for an adverse-action notice) or stress-test how
+the score moves as a feature changes. Framed honestly: the model *ranks for review*, it does not
+approve or decline.
 
-For **many applicants at once**, upload a CSV in the app's batch panel, or use the CLI:
+Batch scoring from the command line (the natural path for volume):
 ```powershell
 python -m emerald_ai make-samples            # -> data/example_cases.csv + data/sample_applicants.csv
-python -m emerald_ai score-file data/sample_applicants.csv   # -> data/sample_applicants_scored.csv
+python -m emerald_ai score-file data/sample_applicants.csv   # -> *_scored.csv, ranked, queue-flagged
 ```
 `data/example_cases.csv` holds five curated, in-distribution demo applicants spanning the risk
 gradient (≈6% → 99%); `data/sample_applicants.csv` is privacy-safe synthetic test data (each column
-resampled independently from its real marginal — no row reproduces a real record).
+resampled independently from its real marginal — no row reproduces a real record). Output is ranked
+by risk with a `review_queue` flag (within-batch top decile) and an `in_riskiest_decile` flag
+(absolute historical threshold).
 
 **Step 8 — (Optional) grow the literature brain.**
 ```powershell
@@ -91,7 +117,7 @@ python -m research_bot status
 
 **Step 9 — Verify everything.**
 ```powershell
-python -m pytest -q              # 21 tests: leakage guard, metrics, bot path-isolation, demo + batch scoring
+python -m pytest -q              # 28 tests: leakage guard, metrics, bot isolation, demo/batch, improve + survival feasibility
 ```
 
 ## What's here
@@ -104,16 +130,18 @@ python -m pytest -q              # 21 tests: leakage guard, metrics, bot path-is
 | `reports/model_bakeoff.md` | **Generated.** Phase 3 RQ1 results (metrics with fold bands). |
 | `reports/visual_story.md` | **Generated.** Five-step figure narrative + the gains-curve proof. |
 | `reports/learning_evidence.md` | **Generated.** Permutation test, baselines, stability, learning curve. |
+| `reports/improvement.md` | **Generated.** RQ1 follow-up: L1-sparse + affordability ratios vs the events ceiling, with a method→citation audit (flags lit-brain gaps). |
+| `reports/survival_feasibility.md` | **Generated.** Whether the censored loans support a time-to-event model — verdict: non-estimable (no reliable duration). |
 | `reports/calibration.md` | **Generated.** Phase 4 RQ2: Platt/isotonic + conformal. |
 | `reports/explainability.md` | **Generated.** Phase 4 RQ3: SHAP global + local. |
 | `docs/methods_citations.md` | Every imbalance/calibration choice → a paper (evidence audit). |
 | `data/governance/` | **Generated.** Leakage audit: `feature_catalogue.yaml` + `feature_audit_summary.md`. |
-| `emerald_ai/serve.py` | **Phase 5 demo.** FastAPI decision-support app (`python -m emerald_ai serve`): single-applicant form + CSV batch panel → P(default) + riskiest-decile flag + top-3 SHAP reasons. Also `score-file` / `make-samples` CLIs. |
+| `emerald_ai/serve.py` | **Phase 5 demo.** FastAPI decision-support app (`python -m emerald_ai serve`): batch review-queue (primary) + single-application explain/what-if panel (secondary) → ranked P(default), within-batch decile queue, top-3 SHAP reasons. Also `score-file` / `make-samples` CLIs. |
 | `data/example_cases.csv` | **Generated.** Five curated in-distribution demo applicants (risk gradient ≈6%→99%) for the batch path. |
 | `data/sample_applicants.csv` | **Generated.** 50 privacy-safe synthetic applicants (column-wise resample) for batch testing. |
 | `research_bot/` | Small OpenAlex crawler (lit-review aid). `discovery.py` (queries), `state.py` (brain), `seeds.yaml`. |
 | `literature/` | The literature brain: `index.yaml` (curated) + `auto_index.yaml` (**generated**, auto-discovered). |
-| `tests/` | 21 tests: leakage guard, metric panel, bot path-isolation, demo + batch scoring contract. |
+| `tests/` | 28 tests: leakage guard, metric panel, bot isolation, demo/batch, improve + survival feasibility. |
 | `All_Funded_2019_Green Loan.xlsx` | Raw dataset (14,135 × 166). |
 
 ## Literature bot

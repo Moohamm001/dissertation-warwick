@@ -85,6 +85,20 @@ def test_score_frame_handles_partial_and_unknown_columns():
     assert res.loc[1, "probability"] > res.loc[0, "probability"]  # higher revenue -> higher risk
 
 
+def test_batch_ranks_and_queues_within_the_uploaded_set():
+    """The review queue is the riskiest decile *of the batch*, ranked by risk — the real operating unit."""
+    import pandas as pd
+
+    sc = S.get_scorer()
+    res = S.score_frame(sc, S.random_applicants(n=30, seed=3))
+    # rank is a 1..n permutation, rank 1 has the highest probability
+    assert sorted(res["rank"]) == list(range(1, len(res) + 1))
+    assert res.loc[res["rank"].idxmin(), "probability"] == res["probability"].max()
+    # queue = ceil(10% of batch), and every queued row outranks every non-queued row
+    assert res["review_queue"].sum() == max(1, int(np.ceil(0.10 * len(res))))
+    assert res.loc[res["review_queue"], "rank"].max() < res.loc[~res["review_queue"], "rank"].min()
+
+
 def test_random_applicants_are_in_distribution_and_unlabelled():
     sc = S.get_scorer()
     samp = S.random_applicants(n=20, seed=1)

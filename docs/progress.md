@@ -18,14 +18,43 @@ Updated as work lands; this is the answer to "what's going on in this project?".
 | Phase 6 — write-up + release | ⬜ |
 
 ## Done (most recent first)
+- **2026-06-29 — Survival feasibility: can the censored loans be recovered? NON-ESTIMABLE.**
+  `emerald_ai/survival.py` + `python -m emerald_ai survival-check` → `reports/survival_feasibility.md`.
+  Tested option (a): use the ~10,124 censored `current` loans (dropped by `paidoff_only`) via a
+  time-to-default model. **Verdict: non-estimable — the dataset has no trustworthy clock.** Two
+  candidate durations (calendar `End−Start` vs term-based `Closed Max Term × Term Complete %`)
+  **correlate −0.02**; 89.9% of `paidOff` sit below 90% term-complete (so the column ≠ elapsed loan
+  life); 75.6% of `current` show <1 month calendar span (implausible for 2015–2019 originations →
+  `End` is an admin booking date, not maturity/default). Did NOT fit a Cox model on a meaningless
+  time axis. Second documented infeasibility, alongside the fairness audit. **Citation GAP:** brain
+  has zero survival/Cox papers. Unlock = a default-date / last-payment-date field. 3 tests (28 total).
+- **2026-06-29 — RQ1 follow-up: "can we do better?" experiment.** `emerald_ai/improve.py` +
+  `python -m emerald_ai improve` → `reports/improvement.md`. **Exp 1:** L1-sparse / elastic-net /
+  affordability ratios vs L2 baseline (10 numerics, EPV~3.8). **Expected NULL — nothing tightens the
+  fold band** (~0.19, median PR-AUC ~0.122 all four); band is sampling-variance-limited, not
+  model-limited. **Exp 2:** fixed-prevalence events projection (subsample both classes, 3 draws);
+  width∝1/√events fit, corr(events,width)=−0.69 → **~245 events (≈4.9×) to halve the band** — lever
+  is *data*, not model. Self-corrected a v1 bug: subsampling only positives confounded prevalence
+  (band rose with events); fixed to subsample both. **Method→citation audit (Rule 1):** events/EPV
+  COVERED (D7); **L1/elastic-net = GAP (D10)**, affordability features = GAP (D11), feature-selection
+  under imbalance = PARTIAL (D12, 2 papers in auto_index uncurated). Experiment is PROVISIONAL until
+  those papers are crawled + curated (awaiting approval). 3 tests (25 passing total).
+- **2026-06-27 — Phase 5c: batch made the hero (use-case alignment).** User-driven reframe after
+  the design question "batch vs single-field — which is the real use case?". Verdict: **batch is the
+  operational unit** — the headline metric (recall@top-decile) is a *population* concept, so a single
+  applicant has no decile; lending desks rank-and-route a pipeline, not type one form. Changes:
+  `score_frame` now adds `rank` + `review_queue` = the riskiest decile **within the uploaded batch**
+  (distinct from `in_riskiest_decile`, the absolute historical-threshold flag). UI reordered: ①
+  batch review queue (hero, ranked table, highlighted queue) on top; ② single-application panel
+  demoted to "explain / what-if" (adverse-action SHAP + sensitivity). `score-file` output now ranked
+  + queue-flagged. Verified live (batch hero renders, ranked 99→19%, queue=top decile). 21 tests pass.
 - **2026-06-27 — Phase 5b: batch scoring + demo/test data.** `serve.score_frame` / `score_file`
   + CLIs `python -m emerald_ai score-file <csv>` and `make-samples`, plus a CSV upload panel in the
   app (`/api/score-batch`). Two generated fixtures: `data/example_cases.csv` (5 curated
   in-distribution cases spanning the gradient — 5.8% → 45.5% → 77.7% → 91.3% → 99.3%) and
   `data/sample_applicants.csv` (50 **privacy-safe synthetic** rows: each column resampled
   independently from its real marginal, so no real record is reproduced; raw data is git-tracked, so
-  this matters). Verified: CLI scored 50 rows (7 in decile); HTTP batch endpoint and browser upload
-  both return correct records. 3 batch tests (21 passing total).
+  this matters). 3 batch tests.
 - **2026-06-27 — Phase 5: proof-of-concept decision-support demo.** `emerald_ai/serve.py` (FastAPI +
   minimal single-page UI), `python -m emerald_ai serve`. Serves the frozen class-weighted LR on the
   17 leakage-safe pre-funding features. Per applicant returns: **P(default) from `predict_proba`

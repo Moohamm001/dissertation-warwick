@@ -21,10 +21,27 @@ either the **proposal §5.4 bibliography** (already vetted) or the **crawled bra
 
 | **D6** | **Post-hoc calibration (Platt + isotonic)** — `calibrate.py` (`_calibrated_oof`) | Niculescu-Mizil & Caruana 2005, *Predicting good probabilities with supervised learning* — `W2098824882` **[PROPOSED]**; conformal: Angelopoulos & Bates 2023 **[BIB]** | The canonical empirical comparison of Platt scaling vs isotonic regression for post-hoc calibration; grounds both calibrators used in Phase 4a. |
 
+| **D9** | **Events-needed / sample-size projection** — `improve.py:events_projection` | Peduzzi 1996 `W2037668591`, Vittinghoff 2006 `W2130373985`, Riley 2020 `W3012413426` — all **[CURATED]** (reuses D7) | The EPV/sample-size literature grounds the claim that the uncertainty band is event-limited and that more events (not more model) is the lever. |
+
 ## Decisions NOT yet citation-closed
-- *(none open)* — D6 closed once the **[PROPOSED]** D6 paper above is approved for curation.
-  The Phase 4a finding that calibration improves *marginal* Brier but worsens *within-minority*
-  ECE is additionally supported by the curated within-minority-ECE / imbalance metric papers (D3).
+- D6 closes once the **[PROPOSED]** D6 paper above is approved for curation.
+- **D10 — L1 / elastic-net penalised logistic regression** (`improve.py:_make_lr`). **GAP — no
+  supporting paper in the brain.** Needs Tibshirani 1996 (LASSO), Zou & Hastie 2005 (elastic-net),
+  and ideally a small-sample shrinkage/penalisation reference (Riley/Van Calster). Until curated,
+  the `improve` experiment is **provisional** and must not ship in the dissertation.
+- **D11 — affordability / financial-ratio feature engineering** (`improve.py:affordability_features`).
+  **GAP (domain).** Candidates: Altman 1968 (financial ratios), Lessmann et al. 2015 **[BIB]**.
+- **D12 — feature selection under class imbalance.** **PARTIAL** — two on-topic papers already sit
+  in `auto_index.yaml` (not yet curated): "Combating Small Sample Class Imbalance Using Feature
+  Selection" (2009); "Cost-based feature selection for SVM: credit scoring" (2017).
+- **D13 — survival / time-to-event modelling** (`survival.py`). **GAP — zero survival/censoring/Cox
+  papers in the brain.** Would need Cox 1972 + a discrete-time survival reference (e.g. Tutz &
+  Schmid 2016) IF a survival result ever became estimable. NB: `reports/survival_feasibility.md`
+  finds survival **non-estimable** on this data (no reliable duration), so D13 is currently moot —
+  the documented-non-estimability framing itself is COVERED by the Phase-1 feasibility precedent.
+- **Next action:** patch `research_bot/seeds.yaml` with penalised-regression and financial-ratio
+  queries, re-crawl, and promote D10–D12 candidates — then mark them CURATED here (ask first, per
+  standing rule).
 
 ## How to read the code links
 - `experiments.py:_fold_scores` — SMOTE/encoder fit happen here, after the train/test split → D1, D2.

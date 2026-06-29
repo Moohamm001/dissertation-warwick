@@ -22,6 +22,8 @@ def main(argv: list[str] | None = None) -> int:
     sub.add_parser("sensitivity", help="Raw-vs-cleaned sensitivity analysis of the bake-off")
     sub.add_parser("calibrate", help="Phase 4 calibration + conformal (RQ2)")
     sub.add_parser("explain", help="Phase 4 SHAP explainability (RQ3)")
+    sub.add_parser("improve", help="RQ1 follow-up: sparsity/ratios vs the events ceiling")
+    sub.add_parser("survival-check", help="Feasibility: can the censored loans support a survival model?")
     serve_p = sub.add_parser("serve", help="Phase 5 decision-support demo (FastAPI + minimal UI)")
     serve_p.add_argument("--host", default="127.0.0.1")
     serve_p.add_argument("--port", type=int, default=8000)
@@ -107,6 +109,20 @@ def main(argv: list[str] | None = None) -> int:
         print(f"[emerald_ai] explainability report written -> {path}")
         return 0
 
+    if args.command == "improve":
+        from . import improve
+
+        path = improve.build_report()
+        print(f"[emerald_ai] improvement experiment written -> {path}")
+        return 0
+
+    if args.command == "survival-check":
+        from . import survival
+
+        path = survival.build_report()
+        print(f"[emerald_ai] survival feasibility report written -> {path}")
+        return 0
+
     if args.command == "serve":
         from . import serve
 
@@ -117,8 +133,10 @@ def main(argv: list[str] | None = None) -> int:
         from . import serve
 
         info = serve.score_file(args.input, args.output)
-        print(f"[emerald_ai] scored {info['n']} applicants "
-              f"({info['n_riskiest_decile']} in riskiest decile) -> {info['out_path']}")
+        print(f"[emerald_ai] ranked {info['n']} applicants — review queue: "
+              f"{info['n_review_queue']} (top decile of batch); "
+              f"{info['n_riskiest_decile']} clear the absolute historical threshold "
+              f"-> {info['out_path']}")
         return 0
 
     if args.command == "make-samples":

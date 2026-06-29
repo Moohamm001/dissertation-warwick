@@ -184,13 +184,21 @@ def score_applicant(scorer: Scorer, payload: dict, top_k: int = 3) -> dict:
     }
 
 
-def score_frame(scorer: Scorer, df: pd.DataFrame, top_k: int = 3) -> pd.DataFrame:
-    """Score a whole batch of applicants (one per row).
+def score_frame(scorer: Scorer, df: pd.DataFrame, top_k: int = 3,
+                review_frac: float = TOP_DECILE) -> pd.DataFrame:
+    """Score a whole batch of applicants (one per row) — the real operational unit.
 
     Columns may be any subset of the permitted features (plus an optional free-text ``id``/``case``
     column, which is passed through). Unknown columns are ignored; missing ones fall back to the
-    training defaults — the same contract as the single-applicant form. Returns the input frame with
-    appended ``probability`` / ``percent`` / ``in_riskiest_decile`` / ``top_reasons`` columns.
+    training defaults — the same contract as the single-applicant form.
+
+    Beyond the per-row score, this computes the operating point the way a desk actually uses it:
+    rank applicants by risk *within this batch* and flag the top ``review_frac`` as the review
+    queue (``rank`` / ``review_queue``). The headline metric (recall@top-decile) is a population
+    concept, so the queue is defined over the uploaded batch, not a frozen historical cut.
+    ``in_riskiest_decile`` is also kept — that is the absolute, historical-threshold flag.
+
+    Input row order is preserved (join-friendly); sort on ``rank`` for the review-queue view.
     """
     permitted = set(FA.permitted_columns())
     out = df.copy().reset_index(drop=True)
@@ -206,6 +214,10 @@ def score_frame(scorer: Scorer, df: pd.DataFrame, top_k: int = 3) -> pd.DataFram
             f"{x['feature']} {'+' if x['contribution'] > 0 else '-'}" for x in r["reasons"]))
     out["probability"] = probs
     out["percent"] = pcts
+    # within-batch operating point: rank by risk, queue the riskiest review_frac (at least one row)
+    out["rank"] = (pd.Series(probs).rank(method="first", ascending=False)).astype(int)
+    queue_size = max(1, int(np.ceil(len(out) * review_frac))) if len(out) else 0
+    out["review_queue"] = out["rank"] <= queue_size
     out["in_riskiest_decile"] = flags
     out["top_reasons"] = reasons_txt
     return out
@@ -215,7 +227,7 @@ def score_file(in_path: str, out_path: str | None = None) -> dict:
     """Batch-score a CSV/XLSX of applicants → write a results CSV. Returns a summary dict."""
     src = pd.read_excel(in_path) if str(in_path).lower().endswith((".xlsx", ".xls")) \
         else pd.read_csv(in_path)
-    scored = score_frame(get_scorer(), src)
+    scored = score_frame(get_scorer(), src).sort_values("rank").reset_index(drop=True)
     if out_path is None:
         from pathlib import Path
         p = Path(in_path)
@@ -223,6 +235,7 @@ def score_file(in_path: str, out_path: str | None = None) -> dict:
     scored.to_csv(out_path, index=False)
     return {
         "in_path": str(in_path), "out_path": out_path, "n": int(len(scored)),
+        "n_review_queue": int(scored["review_queue"].sum()),
         "n_riskiest_decile": int(scored["in_riskiest_decile"].sum()),
     }
 
@@ -308,15 +321,16 @@ def create_app():
 
     @app.post("/api/score-batch")
     def api_score_batch(payload: dict = Body(...)) -> JSONResponse:
-        """Score a pasted/uploaded CSV (``{"csv": "...text..."}``) → JSON records + a summary."""
+        """Score a pasted/uploaded CSV (``{"csv": "...text..."}``) → ranked JSON records + summary."""
         import io
 
         df = pd.read_csv(io.StringIO(payload.get("csv", "")))
-        scored = score_frame(get_scorer(), df)
-        cols = [c for c in ("id", "case") if c in scored.columns] + \
-               ["percent", "in_riskiest_decile", "top_reasons"]
+        scored = score_frame(get_scorer(), df).sort_values("rank").reset_index(drop=True)
+        cols = ["rank"] + [c for c in ("id", "case") if c in scored.columns] + \
+               ["percent", "review_queue", "top_reasons"]
         return JSONResponse({
             "n": int(len(scored)),
+            "n_review_queue": int(scored["review_queue"].sum()),
             "n_riskiest_decile": int(scored["in_riskiest_decile"].sum()),
             "rows": scored[cols].to_dict(orient="records"),
         })
@@ -375,17 +389,36 @@ _PAGE = """<!doctype html>
  .reason.up{{background:#fdeaea;border-color:var(--risk)}} .reason.down{{background:#e9f0fb;border-color:var(--ok)}}
  .reason b{{font-weight:600}} .reason small{{color:#667}}
  .disc{{font-size:12px;color:#667;margin-top:16px;border-top:1px dashed var(--line);padding-top:10px}}
- .batch{{max-width:1040px;margin:0 auto 26px;}} .batch input[type=file]{{font-size:13px}}
+ .batch{{max-width:1040px;margin:22px auto 10px;}} .batch input[type=file]{{font-size:13px}}
  .batch button{{width:auto;display:inline-block;margin:10px 0 0 8px;padding:8px 16px}}
+ .hero{{border-left:5px solid var(--g)}}
+ .sep{{max-width:1040px;margin:26px auto 0;padding:0 18px;font-size:15px;color:var(--gd)}}
+ .sepnote{{max-width:1040px;margin:2px auto 0;padding:0 18px;font-size:12px;color:#667;line-height:1.5}}
  #batchtable{{overflow-x:auto;margin-top:12px}} table.bt{{border-collapse:collapse;font-size:12px;width:100%}}
  table.bt th,table.bt td{{border:1px solid var(--line);padding:5px 8px;text-align:left;white-space:nowrap}}
- table.bt th{{background:#eef3ee;color:var(--gd)}} table.bt tr.flag{{background:#fdeaea}}
+ table.bt th{{background:#eef3ee;color:var(--gd)}} table.bt tr.flag{{background:#fdeaea;font-weight:600}}
  code{{background:#eef3ee;padding:1px 5px;border-radius:4px;font-size:12px}}
 </style></head><body>
 <header>
   <h1>EMERALD-AI — green-loan default risk (decision support)</h1>
-  <p>Proof-of-concept demo. The model <b>ranks applications for review</b>; it does not approve or decline.</p>
+  <p>The model <b>ranks a batch of applications</b> and routes the riskiest decile to human review.
+    It does not approve or decline. Single-application scoring is below, for explanation and what-if.</p>
 </header>
+<section class="card batch hero">
+  <h2>① Batch review queue — the operational use case</h2>
+  <p class="meta">Upload the day's applications as a CSV. The model ranks them by risk and flags the
+    riskiest <b>10%</b> as the <b>review queue</b> — the operating point behind the headline result
+    (reviewing the top decile historically catches ~{catch_pct}% of all defaults). Columns are named
+    like the form fields (any subset; an optional <b>id</b>/<b>case</b> column is passed through).
+    Try the bundled <code>data/sample_applicants.csv</code> or <code>data/example_cases.csv</code>.</p>
+  <input type="file" id="file" accept=".csv">
+  <button id="batchbtn" type="button">Rank applications</button>
+  <div id="batchsummary" class="meta"></div>
+  <div id="batchtable"></div>
+</section>
+<h2 class="sep">② Explain or stress-test a single application</h2>
+<p class="sepnote">For decomposing one decision (the "why was this flagged?" answer for an adverse-action
+  notice) or exploring how the score moves as a feature changes — not the bulk scoring path.</p>
 <main>
   <form id="f" class="card">
     <h2>Applicant (pre-funding features)</h2>
@@ -397,7 +430,7 @@ _PAGE = """<!doctype html>
   <div>
     <div class="card" id="placeholder"><h2>Result</h2>
       <p class="meta">Fill the form and press <b>Score applicant</b>. You'll get the default
-      probability, whether the applicant lands in the riskiest decile (the desk's review queue),
+      probability, whether the applicant clears the historical riskiest-decile threshold,
       and the top-3 reasons.</p></div>
     <div class="card" id="out">
       <h2>Result</h2>
@@ -406,22 +439,12 @@ _PAGE = """<!doctype html>
       <div id="band"></div>
       <h2 style="margin-top:16px">Top reasons</h2>
       <div id="reasons"></div>
-      <p class="disc">Operating point: riskiest decile = P(default) &ge; {threshold}
-        (out-of-fold). Reviewing this decile historically catches ~{catch_pct}% of all defaults.
-        A score is a prioritisation signal, not an adverse-action decision.</p>
+      <p class="disc">Reference threshold: historical riskiest decile = P(default) &ge; {threshold}
+        (out-of-fold). For one applicant this is an absolute reference; the real review queue is the
+        within-batch top decile above. A score is a prioritisation signal, not an adverse-action decision.</p>
     </div>
   </div>
 </main>
-<section class="card batch">
-  <h2>Batch scoring — upload a CSV of applicants</h2>
-  <p class="meta">For scoring many applications at once. The CSV needs columns named like the form
-    fields (any subset; an optional <b>id</b> or <b>case</b> column is passed through). Try the
-    bundled <code>data/sample_applicants.csv</code> or <code>data/example_cases.csv</code>.</p>
-  <input type="file" id="file" accept=".csv">
-  <button id="batchbtn" type="button">Score file</button>
-  <div id="batchsummary" class="meta"></div>
-  <div id="batchtable"></div>
-</section>
 <script>
 const f=document.getElementById('f');
 f.addEventListener('submit',async e=>{{
@@ -447,12 +470,13 @@ document.getElementById('batchbtn').addEventListener('click',async()=>{{
   const csv=await fi.files[0].text();
   const r=await fetch('/api/score-batch',{{method:'POST',headers:{{'Content-Type':'application/json'}},body:JSON.stringify({{csv}})}});
   const j=await r.json();
-  document.getElementById('batchsummary').innerHTML='<b>'+j.n+'</b> applicants scored — <b>'+
-    j.n_riskiest_decile+'</b> in the riskiest decile (flagged for review).';
+  document.getElementById('batchsummary').innerHTML='<b>'+j.n+'</b> applications ranked — review queue: '+
+    'the riskiest <b>'+j.n_review_queue+'</b> (top decile of this batch), shown highlighted. '+
+    '('+j.n_riskiest_decile+' also clear the absolute historical threshold.)';
   const keys=Object.keys(j.rows[0]||{{}});
   let h='<table class="bt"><thead><tr>'+keys.map(k=>'<th>'+k+'</th>').join('')+'</tr></thead><tbody>';
   for(const row of j.rows){{
-    h+='<tr class="'+(row.in_riskiest_decile?'flag':'')+'">'+keys.map(k=>'<td>'+row[k]+'</td>').join('')+'</tr>';
+    h+='<tr class="'+(row.review_queue?'flag':'')+'">'+keys.map(k=>'<td>'+row[k]+'</td>').join('')+'</tr>';
   }}
   document.getElementById('batchtable').innerHTML=h+'</tbody></table>';
 }});
