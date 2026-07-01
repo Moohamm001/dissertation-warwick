@@ -113,6 +113,24 @@ def test_batch_ranks_and_queues_within_the_uploaded_set():
     assert res.loc[res["review_queue"], "rank"].max() < res.loc[~res["review_queue"], "rank"].min()
 
 
+def test_upload_endpoint_scores_csv_and_ignores_extra_columns():
+    """The /api/score-upload endpoint accepts a file (the raw dataset path), keeping only permitted cols."""
+    pytest = __import__("pytest")
+    pytest.importorskip("httpx")
+    from fastapi.testclient import TestClient
+
+    client = TestClient(S.create_app())
+    # a CSV carrying a permitted feature, an id, an unknown column, and the leakage label
+    csv = "id,Revenue,NOT_A_FEATURE,Deal Status\na,800,x,paidOff\nb,11000,y,default\n"
+    r = client.post("/api/score-upload", files={"file": ("book.csv", csv, "text/csv")})
+    assert r.status_code == 200
+    j = r.json()
+    assert j["n"] == 2 and j["shown"] == 2
+    assert {"rank", "id", "percent", "review_queue", "top_reasons"} <= set(j["rows"][0])
+    # ranked riskiest-first; higher revenue is riskier here, so applicant b leads
+    assert j["rows"][0]["id"] == "b"
+
+
 def test_random_applicants_are_in_distribution_and_unlabelled():
     sc = S.get_scorer()
     samp = S.random_applicants(n=20, seed=1)

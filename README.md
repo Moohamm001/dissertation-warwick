@@ -108,6 +108,11 @@ SHAP reasons** (the "why was this flagged?" answer for an adverse-action notice)
 the score moves as a feature changes. Framed honestly: the model *ranks for review*, it does not
 approve or decline.
 
+The batch panel accepts a **CSV or Excel** upload — including the raw
+`All_Funded_2019_Green Loan.xlsx` dataset dropped in **as-is** (only the pre-funding columns are
+used; the other 140+ columns and the outcome label are ignored). Scoring is vectorised, so the full
+14,135-row book ranks in ~1s; the summary spans the whole file and the table shows the riskiest 200.
+
 Batch scoring from the command line (the natural path for volume):
 ```powershell
 python -m emerald_ai make-samples            # -> data/example_cases.csv + data/sample_applicants.csv
@@ -127,7 +132,7 @@ python -m research_bot status
 
 **Step 9 — Verify everything.**
 ```powershell
-python -m pytest -q              # 32 tests: leakage guard, metrics, bot isolation, demo/batch, improve, survival, decision policy
+python -m pytest -q              # 34 tests: leakage guard, metrics, bot isolation, demo/batch, improve, survival, decision policy
 ```
 
 ## What's here
@@ -152,7 +157,7 @@ python -m pytest -q              # 32 tests: leakage guard, metrics, bot isolati
 | `data/sample_applicants.csv` | **Generated.** 50 privacy-safe synthetic applicants (column-wise resample) for batch testing. |
 | `research_bot/` | Small OpenAlex crawler (lit-review aid). `discovery.py` (queries), `state.py` (brain), `seeds.yaml`. |
 | `literature/` | The literature brain: `index.yaml` (curated) + `auto_index.yaml` (**generated**, auto-discovered). |
-| `tests/` | 32 tests: leakage guard, metric panel, bot isolation, demo/batch, improve, survival, decision policy. |
+| `tests/` | 34 tests: leakage guard, metric panel, bot isolation, demo/batch, improve, survival, decision policy. |
 | `All_Funded_2019_Green Loan.xlsx` | Raw dataset (14,135 × 166). |
 
 ## Literature bot

@@ -18,6 +18,17 @@ Updated as work lands; this is the answer to "what's going on in this project?".
 | Phase 6 — write-up + release | ⬜ |
 
 ## Done (most recent first)
+- **2026-06-29 — Web batch upload accepts the raw Excel dataset + vectorised scoring.** New
+  `/api/score-upload` endpoint (multipart, FastAPI `UploadFile`) takes a **CSV or .xlsx** file —
+  the raw `All_Funded_2019_Green Loan.xlsx` can be dropped in as-is (permitted columns only; the
+  other 140+ columns and the label are ignored). `score_frame` rewritten **vectorised**: the whole
+  batch is transformed/predicted in one pass with exact linear SHAP aggregated per row — the full
+  14,135-row book scores in **~0.07s** (was ~37s row-by-row). Summary spans the file; the table
+  returns the riskiest 200. Fix: moved FastAPI type imports to module level so `UploadFile`/`Request`
+  annotations resolve under `from __future__ import annotations` (same root cause as the earlier
+  `Request`-as-query bug). `python-multipart` added to requirements. New TestClient test (34 total).
+- **2026-06-29 — Friendly `top_reasons`.** Plain-English labels ("Monthly revenue"), ↑/↓ arrows +
+  "raises/lowers risk", thousands separators — in the single panel, batch table, and exported CSV.
 - **2026-06-29 — Cost-sensitive decision layer (option b) — WORKS.** `emerald_ai/decision.py` +
   `python -m emerald_ai decide` → `reports/decision_policy.md`. Picks the review threshold that
   minimises `R·FN + FP` (R = cost of missed default ÷ needless review) on OOF scores — not 0.5, not

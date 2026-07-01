@@ -16,12 +16,20 @@ approve or decline. Run: ``python -m emerald_ai serve``.
 """
 from __future__ import annotations
 
+import io
 import warnings
 from dataclasses import dataclass, field
 from functools import lru_cache
 
 import numpy as np
 import pandas as pd
+
+# FastAPI types are imported at module level (not lazily) so that, under
+# ``from __future__ import annotations``, FastAPI can resolve parameter annotations like
+# ``UploadFile`` against the module globals — a lazy import inside create_app() leaves them as
+# unresolvable forward references. FastAPI/uvicorn are declared in requirements.txt.
+from fastapi import Body, FastAPI, File, UploadFile
+from fastapi.responses import HTMLResponse, JSONResponse
 
 from . import config as C
 from . import data as D
@@ -229,25 +237,47 @@ def score_frame(scorer: Scorer, df: pd.DataFrame, top_k: int = 3,
 
     Input row order is preserved (join-friendly); sort on ``rank`` for the review-queue view.
     """
-    permitted = set(FA.permitted_columns())
     out = df.copy().reset_index(drop=True)
-    probs, pcts, flags, reasons_txt = [], [], [], []
-    for _, row in out.iterrows():
-        payload = {k: row[k] for k in df.columns
-                   if k in permitted and not (pd.isna(row[k]) if np.isscalar(row[k]) else False)}
-        r = score_applicant(scorer, payload, top_k=top_k)
-        probs.append(r["probability"])
-        pcts.append(r["percent"])
-        flags.append(r["in_riskiest_decile"])
-        reasons_txt.append(", ".join(
-            f"{'↑' if x['contribution'] > 0 else '↓'} {x['label']}" for x in r["reasons"]))
-    out["probability"] = probs
-    out["percent"] = pcts
+
+    # Build the model-input frame in one shot: every permitted column, blanks/NaN -> training default
+    # (matching the single-applicant contract). This lets the whole batch be transformed at once —
+    # the raw 14k-row dataset scores in ~1s instead of ~40s row-by-row.
+    cols = {}
+    for fs in scorer.fields:
+        if fs.name in out.columns:
+            s = out[fs.name]
+            if fs.kind == "numeric":
+                s = pd.to_numeric(s, errors="coerce")
+            else:
+                s = s.astype(object).replace("", np.nan)
+            cols[fs.name] = s.fillna(fs.default)
+        else:
+            cols[fs.name] = fs.default
+    model_df = pd.DataFrame(cols, index=out.index)
+
+    with warnings.catch_warnings():
+        warnings.simplefilter("ignore")
+        X = np.asarray(scorer.pre.transform(model_df))
+    proba = scorer.model.predict_proba(X)[:, 1]
+
+    # Exact linear SHAP for every row at once, aggregated back to the named source features.
+    contrib = (X - scorer.train_mean) * scorer.model.coef_.ravel()          # n x d
+    agg = pd.DataFrame(contrib, columns=scorer.source_of).T.groupby(level=0).sum().T  # n x sources
+    names = agg.columns.to_numpy()
+    A = agg.to_numpy()
+    order = np.argsort(-np.abs(A), axis=1)[:, :top_k]                        # top-k source idx / row
+    reasons_txt = [
+        ", ".join(f"{'↑' if A[i, j] > 0 else '↓'} {_friendly(names[j])}" for j in order[i])
+        for i in range(len(A))
+    ]
+
+    out["probability"] = np.round(proba, 4)
+    out["percent"] = np.round(100 * proba, 2)
     # within-batch operating point: rank by risk, queue the riskiest review_frac (at least one row)
-    out["rank"] = (pd.Series(probs).rank(method="first", ascending=False)).astype(int)
+    out["rank"] = pd.Series(proba).rank(method="first", ascending=False).astype(int)
     queue_size = max(1, int(np.ceil(len(out) * review_frac))) if len(out) else 0
     out["review_queue"] = out["rank"] <= queue_size
-    out["in_riskiest_decile"] = flags
+    out["in_riskiest_decile"] = proba >= scorer.threshold
     out["top_reasons"] = reasons_txt
     return out
 
@@ -338,11 +368,22 @@ def _display_value(row: pd.DataFrame, col: str) -> str:
 
 # --------------------------------------------------------------------------- web layer
 def create_app():
-    """Build the FastAPI app. Imported lazily so the package has no hard FastAPI dependency."""
-    from fastapi import Body, FastAPI
-    from fastapi.responses import HTMLResponse, JSONResponse
-
+    """Build the FastAPI app (routes over the cached scorer)."""
     app = FastAPI(title="EMERALD-AI — decision-support demo", docs_url="/docs")
+    MAX_TABLE_ROWS = 200  # cap rows returned to the browser; the summary still spans the whole file
+
+    def _batch_payload(df: pd.DataFrame) -> dict:
+        scored = score_frame(get_scorer(), df).sort_values("rank").reset_index(drop=True)
+        cols = ["rank"] + [c for c in ("id", "case") if c in scored.columns] + \
+               ["percent", "review_queue", "top_reasons"]
+        shown = scored.head(MAX_TABLE_ROWS)
+        return {
+            "n": int(len(scored)),
+            "shown": int(len(shown)),
+            "n_review_queue": int(scored["review_queue"].sum()),
+            "n_riskiest_decile": int(scored["in_riskiest_decile"].sum()),
+            "rows": shown[cols].to_dict(orient="records"),
+        }
 
     @app.get("/", response_class=HTMLResponse)
     def index() -> str:
@@ -354,19 +395,21 @@ def create_app():
 
     @app.post("/api/score-batch")
     def api_score_batch(payload: dict = Body(...)) -> JSONResponse:
-        """Score a pasted/uploaded CSV (``{"csv": "...text..."}``) → ranked JSON records + summary."""
-        import io
+        """Score a pasted CSV (``{"csv": "...text..."}``) → ranked JSON records + summary."""
+        return JSONResponse(_batch_payload(pd.read_csv(io.StringIO(payload.get("csv", "")))))
 
-        df = pd.read_csv(io.StringIO(payload.get("csv", "")))
-        scored = score_frame(get_scorer(), df).sort_values("rank").reset_index(drop=True)
-        cols = ["rank"] + [c for c in ("id", "case") if c in scored.columns] + \
-               ["percent", "review_queue", "top_reasons"]
-        return JSONResponse({
-            "n": int(len(scored)),
-            "n_review_queue": int(scored["review_queue"].sum()),
-            "n_riskiest_decile": int(scored["in_riskiest_decile"].sum()),
-            "rows": scored[cols].to_dict(orient="records"),
-        })
+    @app.post("/api/score-upload")
+    async def api_score_upload(file: UploadFile = File(...)) -> JSONResponse:
+        """Score an uploaded CSV **or Excel** file — including the raw ``All_Funded_*.xlsx`` dataset.
+
+        Only the permitted pre-funding columns are used; the file's other 140+ columns (and the
+        outcome label) are ignored, so the raw book can be dropped in as-is.
+        """
+        raw = await file.read()
+        name = (file.filename or "").lower()
+        buf = io.BytesIO(raw)
+        df = pd.read_excel(buf) if name.endswith((".xlsx", ".xls")) else pd.read_csv(buf)
+        return JSONResponse(_batch_payload(df))
 
     return app
 
@@ -477,6 +520,11 @@ _PAGE = """<!doctype html>
  .tag-dir{{font-size:11.5px;font-weight:700;white-space:nowrap}}
  .up .tag-dir{{color:var(--risk-ink)}} .down .tag-dir{{color:var(--ok-ink)}}
  .disc{{font-size:11.5px;color:var(--faint);margin-top:18px;border-top:1px solid var(--line);padding-top:12px;line-height:1.55}}
+ .legend{{margin-top:16px;background:#f0fdf8;border:1px solid #bbf7d0;border-radius:12px;padding:14px 16px}}
+ .legend-h{{font-size:12px;font-weight:700;color:var(--brand-ink);text-transform:uppercase;letter-spacing:.04em;margin-bottom:8px}}
+ .legend ul{{margin:0;padding-left:18px}} .legend li{{font-size:12.5px;color:var(--ink);margin:5px 0;line-height:1.5}}
+ .legend-f{{margin-top:9px;font-size:12.5px;font-weight:600;color:var(--brand-ink)}}
+ .action{{margin:12px 0 2px;font-size:13px;color:var(--ink);background:#f8fafc;border:1px solid var(--line);border-radius:10px;padding:10px 13px;line-height:1.5}}
  .empty{{display:grid;place-items:center;text-align:center;padding:30px 14px;color:var(--faint)}}
  .empty svg{{width:40px;height:40px;opacity:.5;margin-bottom:8px}}
  /* batch */
@@ -517,14 +565,26 @@ _PAGE = """<!doctype html>
 <div class="wrap">
 <section class="card">
   <div class="sechead"><span class="num">1</span><h2>Batch review queue</h2></div>
-  <p class="lead">The operational use case. Upload the day's applications as a CSV — the model ranks
-    them by risk and flags the riskiest <b>10%</b> as the review queue (reviewing the top decile
-    historically catches ~{catch_pct}% of all defaults). Any subset of the form columns works; an
-    optional <b>id</b>/<b>case</b> column is passed through. Try the bundled
-    <code>data/sample_applicants.csv</code> or <code>data/example_cases.csv</code>.</p>
+  <p class="lead">The operational use case. Upload the day's applications as a <b>CSV or Excel</b>
+    file — the model ranks them by risk and flags the riskiest <b>10%</b> as the review queue
+    (reviewing the top decile historically catches ~{catch_pct}% of all defaults). Only the
+    pre-funding columns are used, so you can drop in the raw
+    <code>All_Funded_2019_Green Loan.xlsx</code> as-is; extra columns are ignored. An optional
+    <b>id</b>/<b>case</b> column is passed through. Sample files:
+    <code>data/sample_applicants.csv</code>, <code>data/example_cases.csv</code>.</p>
   <div class="dropzone">
-    <input type="file" id="file" accept=".csv">
+    <input type="file" id="file" accept=".csv,.xlsx,.xls">
     <button id="batchbtn" type="button" class="btn">Rank applications</button>
+  </div>
+  <div class="legend">
+    <div class="legend-h">How to read the results</div>
+    <ul>
+      <li><b>Rank</b> &amp; <b>Percent</b> — the risk order and risk score (higher = riskier). Use it to
+        <b>prioritise who to look at</b> — it is a ranking score, not a literal "% chance of default".</li>
+      <li><b>Review queue</b> — the riskiest 10% of this file. <b>These are the applications to review first.</b></li>
+      <li><b>Top reasons</b> — what is driving the score: <b>↑</b> a factor raising risk, <b>↓</b> one lowering it.</li>
+    </ul>
+    <div class="legend-f">→ The model tells you <b>who to check first</b>. A human still makes the approve/decline decision.</div>
   </div>
   <div id="batchsummary"></div>
   <div id="batchtable"></div>
@@ -551,9 +611,10 @@ _PAGE = """<!doctype html>
     </div>
     <div class="card" id="out">
       <div class="sechead"><span class="num alt">→</span><h2>Result</h2></div>
-      <div class="caption">Estimated probability of default</div>
+      <div class="caption">Risk score — higher means review sooner (a ranking score, not a literal % chance)</div>
       <div class="scorewrap"><div class="score" id="score">—</div><div id="band"></div></div>
-      <div class="subhead">Top reasons</div>
+      <div id="action" class="action"></div>
+      <div class="subhead">Top reasons &mdash; what is driving this score</div>
       <div id="reasons"></div>
       <p class="disc">Reference threshold: historical riskiest decile = P(default) &ge; {threshold}
         (out-of-fold). For one applicant this is an absolute reference; the real review queue is the
@@ -578,6 +639,9 @@ f.addEventListener('submit',async e=>{{
   const s=$('score'); s.textContent=j.percent.toFixed(1)+'%';
   s.style.color=j.in_riskiest_decile?'var(--risk)':'var(--ink)';
   $('band').innerHTML='<span class="pill '+(j.in_riskiest_decile?'risk':'ok')+'"><span class="dot"></span>'+j.band+'</span>';
+  $('action').innerHTML=j.in_riskiest_decile
+    ? '→ <b>Send to manual review.</b> This applicant is among the riskiest — check the reasons below before funding.'
+    : '→ <b>Lower priority.</b> Below the review cut-off; no extra review needed on risk grounds alone.';
   const box=$('reasons'); box.innerHTML='';
   for(const x of j.reasons){{
     const up=x.contribution>0;
@@ -588,22 +652,27 @@ f.addEventListener('submit',async e=>{{
 }});
 
 $('batchbtn').addEventListener('click',async()=>{{
-  const fi=$('file'); if(!fi.files.length){{alert('Choose a CSV first');return;}}
-  const csv=await fi.files[0].text();
-  const r=await fetch('/api/score-batch',{{method:'POST',headers:{{'Content-Type':'application/json'}},body:JSON.stringify({{csv}})}});
-  const j=await r.json();
-  $('batchsummary').innerHTML=
-    '<div class="summary-card">'+
-    '<div class="stat"><div class="v">'+j.n+'</div><div class="l">applications ranked</div></div>'+
-    '<div class="stat flag"><div class="v">'+j.n_review_queue+'</div><div class="l">review queue (top decile)</div></div>'+
-    '<div class="stat"><div class="v">'+j.n_riskiest_decile+'</div><div class="l">clear historical threshold</div></div>'+
-    '</div>';
-  const keys=Object.keys(j.rows[0]||{{}});
-  let h='<div class="tablewrap"><table class="bt"><thead><tr>'+keys.map(k=>'<th>'+k+'</th>').join('')+'</tr></thead><tbody>';
-  for(const row of j.rows){{
-    h+='<tr class="'+(row.review_queue?'flag':'')+'">'+keys.map(k=>'<td>'+row[k]+'</td>').join('')+'</tr>';
-  }}
-  $('batchtable').innerHTML=h+'</tbody></table></div>';
+  const fi=$('file'); if(!fi.files.length){{alert('Choose a CSV or Excel file first');return;}}
+  const btn=$('batchbtn'); btn.disabled=true; btn.textContent='Scoring…';
+  try{{
+    const fd=new FormData(); fd.append('file',fi.files[0]);
+    const r=await fetch('/api/score-upload',{{method:'POST',body:fd}});
+    if(!r.ok){{$('batchsummary').innerHTML='<p class="meta">Could not read that file — check it is a CSV or Excel file.</p>';return;}}
+    const j=await r.json();
+    const note=j.shown<j.n?' · showing the riskiest '+j.shown:'';
+    $('batchsummary').innerHTML=
+      '<div class="summary-card">'+
+      '<div class="stat"><div class="v">'+j.n.toLocaleString()+'</div><div class="l">applications ranked'+note+'</div></div>'+
+      '<div class="stat flag"><div class="v">'+j.n_review_queue.toLocaleString()+'</div><div class="l">review queue (top decile)</div></div>'+
+      '<div class="stat"><div class="v">'+j.n_riskiest_decile.toLocaleString()+'</div><div class="l">clear historical threshold</div></div>'+
+      '</div>';
+    const keys=Object.keys(j.rows[0]||{{}});
+    let h='<div class="tablewrap"><table class="bt"><thead><tr>'+keys.map(k=>'<th>'+k+'</th>').join('')+'</tr></thead><tbody>';
+    for(const row of j.rows){{
+      h+='<tr class="'+(row.review_queue?'flag':'')+'">'+keys.map(k=>'<td>'+row[k]+'</td>').join('')+'</tr>';
+    }}
+    $('batchtable').innerHTML=h+'</tbody></table></div>';
+  }} finally {{ btn.disabled=false; btn.textContent='Rank applications'; }}
 }});
 </script>
 </body></html>"""

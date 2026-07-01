@@ -10,6 +10,7 @@ shap>=0.44           # Phase 4 explainability
 mapie>=0.8           # Phase 4 split-conformal (Core-light)
 fastapi>=0.110       # Phase 5 decision-support demo API
 uvicorn>=0.27        # Phase 5 demo server
+python-multipart>=0.0.9  # Phase 5 file-upload endpoint (CSV/Excel batch)
 requests>=2.31       # research_bot OpenAlex client
 PyYAML>=6.0          # research_bot literature brain
 pytest>=7.4          # tests
