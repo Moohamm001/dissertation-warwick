@@ -32,10 +32,24 @@ either the **proposal §5.4 bibliography** (already vetted) or the **crawled bra
 | **D13** | **Survival / time-to-event modelling** — `survival.py` | Cox 1972, *Regression models and life-tables*, JRSS-B — `W3147894994` **[CURATED]** | The foundational proportional-hazards reference; cited in `survival_feasibility.md` to frame *why* a clock is needed and *what* would be fitted IF the data supported it (it does not — non-estimable). |
 | **D14** | **Expected-cost threshold selection** — `decision.py` | Elkan 2001, *The foundations of cost-sensitive learning*, IJCAI — `W167016754` **[CURATED]**; cost-sensitive framing reuses D5 (Xia et al. 2017) | The canonical expected-cost decision-theory result; grounds choosing the review threshold that minimises `R·FN + FP`. |
 
+## Path-to-production decisions (drafted 2026-07-10; ✅ approved & curated 2026-07-10)
+*Companion to `docs/path_to_production.md`. These ground the governance/monitoring/regulatory
+discussion of what would need to exist before this demo could be operated, not a claim that it
+has been built and validated — the statistical production-readiness question (bounded by N=50
+events) is separate and NOT addressed by any of D15–D17.*
+
+| # | Decision (where discussed) | Supporting paper(s) | Justification |
+|---|---|---|---|
+| **D15** | **Model risk in ML credit scoring** — `docs/path_to_production.md` §governance | Alonso-Robisco & Carbó Martínez 2022, *Measuring the model risk-adjusted performance of machine learning algorithms in credit default prediction*, Financial Innovation — `W4285089594` **[CURATED]** | On-point: quantifies model risk specifically for ML credit-default models, the exact governance question this project's PoC leaves open (single frozen model, no validation sign-off process, no versioning discipline). |
+| **D16** | **Post-deployment monitoring (drift + population stability)** — `docs/path_to_production.md` §monitoring | Gama, Žliobaitė, Bifet, Pechenizkiy & Bouchachia 2014, *A survey on concept drift adaptation*, ACM Computing Surveys — `W2099419573` **[CURATED]**; Yurdakul & Naranjo 2020, *Statistical properties of the population stability index*, J. Risk Model Validation — `W3129493035` **[CURATED]** | Gama et al. is the canonical concept-drift survey (general ML); Yurdakul & Naranjo formalises the Population Stability Index, the credit-risk industry's standard monitoring statistic — grounds the *recommended* (not implemented) monitoring architecture. |
+| **D17** | **Regulatory explainability for adverse credit decisions** — `docs/path_to_production.md` §regulatory; grounds the shipped `top_reasons` SHAP output in `emerald_ai/serve.py` | Wachter, Mittelstadt & Floridi 2017, *Why a Right to Explanation of Automated Decision-Making Does Not Exist in the General Data Protection Regulation*, International Data Privacy Law — `W3124443940` **[CURATED]** | The canonical legal analysis of what automated-decision explanation obligations actually require (and don't); frames why per-applicant SHAP reason codes are the right *kind* of artefact even though no jurisdiction-specific (e.g. FCA, ECOA) compliance audit has been done. |
+
 ## Decisions NOT yet citation-closed
 - D6 closes once the **[PROPOSED]** D6 paper above is approved for curation.
 - *(D10–D14 closed 2026-06-29: 6 papers crawled from OpenAlex and promoted to `literature/index.yaml`,
   curated total 11 → 17. The `improve` / `survival` / `decide` experiments are no longer provisional.)*
+- *(D15–D17 closed 2026-07-10: 4 papers approved and promoted, curated total 17 → 21.
+  `docs/path_to_production.md` is fully citation-backed.)*
 
 ## How to read the code links
 - `experiments.py:_fold_scores` — SMOTE/encoder fit happen here, after the train/test split → D1, D2.

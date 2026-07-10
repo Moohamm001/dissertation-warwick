@@ -17,6 +17,9 @@ approve or decline. Run: ``python -m emerald_ai serve``.
 from __future__ import annotations
 
 import io
+import logging
+import os
+import secrets
 import warnings
 from dataclasses import dataclass, field
 from functools import lru_cache
@@ -28,8 +31,12 @@ import pandas as pd
 # ``from __future__ import annotations``, FastAPI can resolve parameter annotations like
 # ``UploadFile`` against the module globals — a lazy import inside create_app() leaves them as
 # unresolvable forward references. FastAPI/uvicorn are declared in requirements.txt.
-from fastapi import Body, FastAPI, File, UploadFile
+from fastapi import Body, Depends, FastAPI, File, Header, HTTPException, Request, UploadFile
 from fastapi.responses import HTMLResponse, JSONResponse
+
+# Module logger only — no ``basicConfig`` here, so importing this module (e.g. under pytest) has
+# no side effects. ``run()`` below configures handlers for the real server process.
+logger = logging.getLogger(__name__)
 
 from . import config as C
 from . import data as D
@@ -282,6 +289,34 @@ def score_frame(scorer: Scorer, df: pd.DataFrame, top_k: int = 3,
     return out
 
 
+def _parse_upload_bytes(raw: bytes, filename: str) -> pd.DataFrame:
+    """Parse uploaded CSV/XLSX bytes into a frame, or raise ``HTTPException(400, ...)``.
+
+    Boundary validation on a public upload endpoint — not defensive over-engineering: malformed
+    files, wrong extensions, and oversized payloads are things a real caller WILL send.
+    """
+    name = (filename or "").lower()
+    if not name.endswith(C.ALLOWED_UPLOAD_EXT):
+        raise HTTPException(400, f"unsupported file type; expected one of {C.ALLOWED_UPLOAD_EXT}")
+    size_mb = len(raw) / (1024 * 1024)
+    if size_mb > C.MAX_UPLOAD_MB:
+        raise HTTPException(400, f"file too large ({size_mb:.1f} MB > {C.MAX_UPLOAD_MB} MB limit)")
+    if not raw:
+        raise HTTPException(400, "empty file")
+    try:
+        buf = io.BytesIO(raw)
+        return pd.read_excel(buf) if name.endswith((".xlsx", ".xls")) else pd.read_csv(buf)
+    except Exception as exc:  # noqa: BLE001 — genuinely "can happen" at a public upload boundary
+        logger.warning("upload parse failed for %r: %s", filename, exc)
+        raise HTTPException(400, f"could not parse {filename!r} as CSV/Excel: {exc}") from exc
+
+
+def _require_recognised_columns(df: pd.DataFrame) -> None:
+    """Reject a batch with none of the permitted pre-funding columns present."""
+    if not any(c in df.columns for c in FA.permitted_columns()):
+        raise HTTPException(400, "no recognised applicant columns found in the uploaded data")
+
+
 def score_file(in_path: str, out_path: str | None = None) -> dict:
     """Batch-score a CSV/XLSX of applicants → write a results CSV. Returns a summary dict."""
     src = pd.read_excel(in_path) if str(in_path).lower().endswith((".xlsx", ".xls")) \
@@ -366,17 +401,43 @@ def _display_value(row: pd.DataFrame, col: str) -> str:
     return str(v)
 
 
+# --------------------------------------------------------------------------- auth (D15/D17)
+def _require_api_key(x_api_key: str | None = Header(default=None)) -> None:
+    """Gate ``/api/*`` behind a static key when ``EMERALD_API_KEY`` is set.
+
+    **Default-open** (no-op) when the env var is unset, so the local/grading demo needs zero
+    config. This is a single-developer academic-demo baseline, not real auth: no per-caller
+    identity, no rotation, key travels in a plaintext header. See ``docs/path_to_production.md``
+    §governance for the tradeoff and what real deployment would need instead.
+    """
+    expected = os.getenv("EMERALD_API_KEY")
+    if expected is None:
+        return
+    if x_api_key is None or not secrets.compare_digest(x_api_key, expected):
+        logger.warning("rejected request: missing or invalid X-API-Key")
+        raise HTTPException(401, "missing or invalid X-API-Key")
+
+
 # --------------------------------------------------------------------------- web layer
 def create_app():
     """Build the FastAPI app (routes over the cached scorer)."""
     app = FastAPI(title="EMERALD-AI — decision-support demo", docs_url="/docs")
     MAX_TABLE_ROWS = 200  # cap rows returned to the browser; the summary still spans the whole file
 
+    @app.exception_handler(Exception)
+    async def _unhandled_error(request: Request, exc: Exception) -> JSONResponse:
+        """Last-line safety net: never leak an internal traceback to the client."""
+        logger.error("unhandled error on %s %s", request.method, request.url.path, exc_info=True)
+        return JSONResponse({"detail": "internal error"}, status_code=500)
+
     def _batch_payload(df: pd.DataFrame) -> dict:
+        _require_recognised_columns(df)
         scored = score_frame(get_scorer(), df).sort_values("rank").reset_index(drop=True)
         cols = ["rank"] + [c for c in ("id", "case") if c in scored.columns] + \
                ["percent", "review_queue", "top_reasons"]
         shown = scored.head(MAX_TABLE_ROWS)
+        logger.info("scored batch: n=%d review_queue=%d riskiest_decile=%d",
+                    len(scored), int(scored["review_queue"].sum()), int(scored["in_riskiest_decile"].sum()))
         return {
             "n": int(len(scored)),
             "shown": int(len(shown)),
@@ -389,16 +450,26 @@ def create_app():
     def index() -> str:
         return _render_page(get_scorer())
 
-    @app.post("/api/score")
+    @app.post("/api/score", dependencies=[Depends(_require_api_key)])
     def api_score(payload: dict = Body(...)) -> JSONResponse:
+        logger.info("scored single applicant")
         return JSONResponse(score_applicant(get_scorer(), payload))
 
-    @app.post("/api/score-batch")
+    @app.post("/api/score-batch", dependencies=[Depends(_require_api_key)])
     def api_score_batch(payload: dict = Body(...)) -> JSONResponse:
         """Score a pasted CSV (``{"csv": "...text..."}``) → ranked JSON records + summary."""
-        return JSONResponse(_batch_payload(pd.read_csv(io.StringIO(payload.get("csv", "")))))
+        text = payload.get("csv", "")
+        if not text.strip():
+            raise HTTPException(400, "empty csv")
+        try:
+            df = pd.read_csv(io.StringIO(text))
+        except Exception as exc:  # noqa: BLE001 — user-supplied text, genuinely can be malformed
+            logger.warning("pasted-csv parse failed: %s", exc)
+            raise HTTPException(400, f"could not parse pasted CSV: {exc}") from exc
+        logger.info("scoring pasted batch: %d rows", len(df))
+        return JSONResponse(_batch_payload(df))
 
-    @app.post("/api/score-upload")
+    @app.post("/api/score-upload", dependencies=[Depends(_require_api_key)])
     async def api_score_upload(file: UploadFile = File(...)) -> JSONResponse:
         """Score an uploaded CSV **or Excel** file — including the raw ``All_Funded_*.xlsx`` dataset.
 
@@ -406,9 +477,8 @@ def create_app():
         outcome label) are ignored, so the raw book can be dropped in as-is.
         """
         raw = await file.read()
-        name = (file.filename or "").lower()
-        buf = io.BytesIO(raw)
-        df = pd.read_excel(buf) if name.endswith((".xlsx", ".xls")) else pd.read_csv(buf)
+        logger.info("upload received: filename=%r size=%dB", file.filename, len(raw))
+        df = _parse_upload_bytes(raw, file.filename or "")
         return JSONResponse(_batch_payload(df))
 
     return app
@@ -682,9 +752,14 @@ def run(host: str = "127.0.0.1", port: int = 8000) -> None:
     """Boot the demo server. Trains the model up front so the first request is instant."""
     import uvicorn
 
-    print("[emerald_ai] training frozen model + setting operating point ...")
+    logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(name)s %(message)s")
+    logger.info("training frozen model + setting operating point ...")
     s = get_scorer()
-    print(f"[emerald_ai] ready. riskiest-decile threshold P>={s.threshold:.3f} "
-          f"(OOF catch-rate {100*s.catch_rate:.0f}% of {s.n_events} defaults).")
-    print(f"[emerald_ai] open http://{host}:{port}/  (Ctrl+C to stop)")
+    logger.info("ready. riskiest-decile threshold P>=%.3f (OOF catch-rate %.0f%% of %d defaults).",
+                s.threshold, 100 * s.catch_rate, s.n_events)
+    if os.getenv("EMERALD_API_KEY"):
+        logger.info("API key auth ENABLED for /api/* routes")
+    else:
+        logger.warning("API key auth DISABLED (EMERALD_API_KEY not set) — /api/* routes are open")
+    logger.info("open http://%s:%s/  (Ctrl+C to stop)", host, port)
     uvicorn.run(create_app(), host=host, port=port, log_level="warning")

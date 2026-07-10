@@ -47,3 +47,12 @@ queries:
     - "feature selection small sample class imbalance"               # D12 feature selection
     - "Cox regression models life-tables survival"                   # D13 survival
     - "foundations of cost-sensitive learning threshold"             # D14 cost threshold
+  # Added 2026-07-10 for the path-to-production write-up (D15-D17): governance, monitoring,
+  # and regulatory-explainability support for taking the demo beyond a notebook/PoC.
+  production_deployment:
+    - "model risk management machine learning banking"        # D15 governance
+    - "machine learning model validation governance banking"  # D15 governance
+    - "concept drift detection model monitoring"               # D16 monitoring
+    - "population stability index model monitoring credit"     # D16 monitoring
+    - "adverse action notice machine learning credit decision" # D17 regulatory
+    - "right to explanation automated decision making credit"  # D17 regulatory

@@ -113,6 +113,12 @@ The batch panel accepts a **CSV or Excel** upload — including the raw
 used; the other 140+ columns and the outcome label are ignored). Scoring is vectorised, so the full
 14,135-row book ranks in ~1s; the summary spans the whole file and the table shows the riskiest 200.
 
+**Hardening (2026-07-10):** the app now logs every request/scoring event, returns a clean `400`/`500`
+JSON error instead of a raw traceback for malformed uploads, and optionally gates `/api/*` behind a
+static key — set `EMERALD_API_KEY` before starting `serve` to require an `X-API-Key` header (unset =
+open, the default for local/grading use). See `docs/path_to_production.md` for what this does and
+does not get you toward a real deployment.
+
 Batch scoring from the command line (the natural path for volume):
 ```powershell
 python -m emerald_ai make-samples            # -> data/example_cases.csv + data/sample_applicants.csv
@@ -130,9 +136,16 @@ python -m research_bot crawl    # OpenAlex -> literature/auto_index.yaml
 python -m research_bot status
 ```
 
+**Step 8b — Path to production (governance, monitoring, regulatory grounding).**
+Open [`docs/path_to_production.md`](docs/path_to_production.md): what would need to exist before
+this demo could be operated for real — a model risk management process (D15), drift/population-
+stability monitoring (D16), and the regulatory basis for the reason codes already shipped in the
+demo (D17). Reads with a scope note up front: this document does **not** address the statistical
+production-readiness question, which stays bounded by N=50 events regardless of citations.
+
 **Step 9 — Verify everything.**
 ```powershell
-python -m pytest -q              # 34 tests: leakage guard, metrics, bot isolation, demo/batch, improve, survival, decision policy
+python -m pytest -q              # 44 tests: leakage guard, metrics, bot isolation, demo/batch (incl. auth/error-handling), improve, survival, decision policy
 ```
 
 ## What's here
@@ -150,14 +163,15 @@ python -m pytest -q              # 34 tests: leakage guard, metrics, bot isolati
 | `reports/decision_policy.md` | **Generated.** Cost-sensitive review threshold: cost-optimal cut vs naive, bootstrap-robust ~19% saving. |
 | `reports/calibration.md` | **Generated.** Phase 4 RQ2: Platt/isotonic + conformal. |
 | `reports/explainability.md` | **Generated.** Phase 4 RQ3: SHAP global + local. |
-| `docs/methods_citations.md` | Every imbalance/calibration choice → a paper (evidence audit). |
+| `docs/methods_citations.md` | Every imbalance/calibration choice → a paper (evidence audit); D15–D17 cover path-to-production. |
+| `docs/path_to_production.md` | Governance (D15), monitoring (D16), regulatory (D17) grounding for taking the demo beyond a PoC — explicitly scoped away from the N=50 statistical-readiness question. |
 | `data/governance/` | **Generated.** Leakage audit: `feature_catalogue.yaml` + `feature_audit_summary.md`. |
-| `emerald_ai/serve.py` | **Phase 5 demo.** FastAPI decision-support app (`python -m emerald_ai serve`): batch review-queue (primary) + single-application explain/what-if panel (secondary) → ranked P(default), within-batch decile queue, top-3 SHAP reasons. Also `score-file` / `make-samples` CLIs. |
+| `emerald_ai/serve.py` | **Phase 5 demo.** FastAPI decision-support app (`python -m emerald_ai serve`): batch review-queue (primary) + single-application explain/what-if panel (secondary) → ranked P(default), within-batch decile queue, top-3 SHAP reasons. Also `score-file` / `make-samples` CLIs. Hardened: structured logging, clean error responses (no leaked tracebacks), optional `EMERALD_API_KEY` auth on `/api/*`. |
 | `data/example_cases.csv` | **Generated.** Five curated in-distribution demo applicants (risk gradient ≈6%→99%) for the batch path. |
 | `data/sample_applicants.csv` | **Generated.** 50 privacy-safe synthetic applicants (column-wise resample) for batch testing. |
 | `research_bot/` | Small OpenAlex crawler (lit-review aid). `discovery.py` (queries), `state.py` (brain), `seeds.yaml`. |
 | `literature/` | The literature brain: `index.yaml` (curated) + `auto_index.yaml` (**generated**, auto-discovered). |
-| `tests/` | 34 tests: leakage guard, metric panel, bot isolation, demo/batch, improve, survival, decision policy. |
+| `tests/` | 44 tests: leakage guard, metric panel, bot isolation, demo/batch (incl. upload validation + API-key auth), improve, survival, decision policy. |
 | `All_Funded_2019_Green Loan.xlsx` | Raw dataset (14,135 × 166). |
 
 ## Literature bot

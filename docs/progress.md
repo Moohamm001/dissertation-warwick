@@ -18,6 +18,26 @@ Updated as work lands; this is the answer to "what's going on in this project?".
 | Phase 6 — write-up + release | ⬜ |
 
 ## Done (most recent first)
+- **2026-07-10 — Path-to-production write-up + serve.py hardening.** User asked to "upgrade the app
+  and prediction to production level" via more literature support. Pushed back on the framing first:
+  no citation fixes N=50 events — statistical production-readiness (out-of-time validation, external
+  validity, minority calibration) is bounded by sample size, not literature coverage. Split into two
+  achievable tracks. **(A)** `docs/path_to_production.md` (new) + D15–D17 in `methods_citations.md`
+  — ✅ **user approved same day; 4 papers promoted to `index.yaml` (curated 17 → 21)**:
+  D15 model risk in ML credit scoring (Alonso-Robisco &
+  Carbó Martínez 2022, `W4285089594`), D16 monitoring — concept drift (Gama et al. 2014,
+  `W2099419573`) + Population Stability Index (Yurdakul & Naranjo 2020, `W3129493035`), D17
+  regulatory explainability grounding the shipped SHAP `top_reasons` (Wachter, Mittelstadt & Floridi
+  2017, `W3124443940`). Explicit scope note: this document does NOT claim statistical
+  production-readiness. New `research_bot/seeds.yaml` theme `production_deployment` (877 unique
+  papers fetched, 560 new -> auto_index, 863 total). **(B)** `emerald_ai/serve.py` hardened: stdlib
+  `logging` (structured, never logs raw applicant values), clean `400`/`500` JSON errors instead of
+  raw tracebacks on malformed uploads (bad extension/size/parse/no recognised columns), a global
+  exception handler as a last-line safety net, and an optional static `EMERALD_API_KEY` header gate
+  on `/api/*` (default-open, zero-config for local/grading use). 10 new tests in `test_serve.py`
+  (34→44 total, all passing). Verified live via preview tooling: malformed upload → clean 400 JSON
+  (not a traceback), normal scoring still 200 unauthenticated by default, structured log lines
+  observed for every request.
 - **2026-06-29 — Web batch upload accepts the raw Excel dataset + vectorised scoring.** New
   `/api/score-upload` endpoint (multipart, FastAPI `UploadFile`) takes a **CSV or .xlsx** file —
   the raw `All_Funded_2019_Green Loan.xlsx` can be dropped in as-is (permitted columns only; the

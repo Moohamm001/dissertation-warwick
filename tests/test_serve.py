@@ -7,7 +7,12 @@ permitted features, and the leakage guard still holds through the serving path.
 from __future__ import annotations
 
 import numpy as np
+import pytest
 
+pytest.importorskip("httpx")
+from fastapi.testclient import TestClient
+
+from emerald_ai import config as C
 from emerald_ai import feature_audit as FA
 from emerald_ai import serve as S
 
@@ -115,10 +120,6 @@ def test_batch_ranks_and_queues_within_the_uploaded_set():
 
 def test_upload_endpoint_scores_csv_and_ignores_extra_columns():
     """The /api/score-upload endpoint accepts a file (the raw dataset path), keeping only permitted cols."""
-    pytest = __import__("pytest")
-    pytest.importorskip("httpx")
-    from fastapi.testclient import TestClient
-
     client = TestClient(S.create_app())
     # a CSV carrying a permitted feature, an id, an unknown column, and the leakage label
     csv = "id,Revenue,NOT_A_FEATURE,Deal Status\na,800,x,paidOff\nb,11000,y,default\n"
@@ -140,3 +141,96 @@ def test_random_applicants_are_in_distribution_and_unlabelled():
     for c in samp.columns:
         if c != "id":
             assert c in FA.permitted_columns()
+
+
+# --------------------------------------------------------------------------- hardening (path-to-production)
+def _valid_csv() -> str:
+    return "id,Revenue\na,800\nb,11000\n"
+
+
+def test_upload_rejects_disallowed_extension():
+    client = TestClient(S.create_app())
+    r = client.post("/api/score-upload", files={"file": ("book.pdf", _valid_csv(), "application/pdf")})
+    assert r.status_code == 400
+    assert "unsupported file type" in r.json()["detail"]
+
+
+def test_upload_rejects_empty_file():
+    client = TestClient(S.create_app())
+    r = client.post("/api/score-upload", files={"file": ("book.csv", "", "text/csv")})
+    assert r.status_code == 400
+
+
+def test_upload_rejects_oversized_file(monkeypatch):
+    monkeypatch.setattr(C, "MAX_UPLOAD_MB", 0.0000001)
+    client = TestClient(S.create_app())
+    r = client.post("/api/score-upload", files={"file": ("book.csv", _valid_csv(), "text/csv")})
+    assert r.status_code == 400
+    assert "too large" in r.json()["detail"]
+
+
+def test_upload_rejects_unparseable_excel_bytes():
+    client = TestClient(S.create_app())
+    r = client.post("/api/score-upload",
+                     files={"file": ("book.xlsx", b"this is not a real xlsx file", "application/octet-stream")})
+    assert r.status_code == 400
+    assert "could not parse" in r.json()["detail"]
+
+
+def test_upload_rejects_no_recognised_columns():
+    client = TestClient(S.create_app())
+    csv = "id,NOT_A_FEATURE\na,1\nb,2\n"
+    r = client.post("/api/score-upload", files={"file": ("book.csv", csv, "text/csv")})
+    assert r.status_code == 400
+    assert "no recognised applicant columns" in r.json()["detail"]
+
+
+def test_batch_rejects_empty_pasted_csv():
+    client = TestClient(S.create_app())
+    r = client.post("/api/score-batch", json={"csv": "   "})
+    assert r.status_code == 400
+
+
+def test_batch_rejects_unparseable_pasted_csv():
+    client = TestClient(S.create_app())
+    ragged = "a,b\n1,2\n3,4,5,6,7\n"  # inconsistent field counts -> pandas ParserError
+    r = client.post("/api/score-batch", json={"csv": ragged})
+    assert r.status_code == 400
+    assert "could not parse" in r.json()["detail"]
+
+
+def test_api_key_open_when_unset(monkeypatch):
+    """Locks in the safe default: no EMERALD_API_KEY set -> /api/* stays open."""
+    monkeypatch.delenv("EMERALD_API_KEY", raising=False)
+    client = TestClient(S.create_app())
+    r = client.post("/api/score", json={"Revenue": 800})
+    assert r.status_code == 200
+
+
+def test_api_key_required_when_set(monkeypatch):
+    monkeypatch.setenv("EMERALD_API_KEY", "s3cret")
+    client = TestClient(S.create_app())
+    # no header -> 401
+    r = client.post("/api/score", json={"Revenue": 800})
+    assert r.status_code == 401
+    # wrong header -> 401
+    r = client.post("/api/score", json={"Revenue": 800}, headers={"X-API-Key": "wrong"})
+    assert r.status_code == 401
+    # correct header -> 200
+    r = client.post("/api/score", json={"Revenue": 800}, headers={"X-API-Key": "s3cret"})
+    assert r.status_code == 200
+    # the HTML form stays browsable regardless (not gated behind the key)
+    assert client.get("/").status_code == 200
+
+
+def test_unhandled_error_returns_clean_json_no_traceback(monkeypatch):
+    """The global exception handler must not leak internals for an unexpected (non-HTTPException) error."""
+    def _boom(*args, **kwargs):
+        raise RuntimeError("simulated internal failure: db connection string=secret")
+
+    monkeypatch.setattr(S, "score_frame", _boom)
+    client = TestClient(S.create_app(), raise_server_exceptions=False)
+    r = client.post("/api/score-upload", files={"file": ("book.csv", _valid_csv(), "text/csv")})
+    assert r.status_code == 500
+    assert r.json() == {"detail": "internal error"}
+    assert "secret" not in r.text and "RuntimeError" not in r.text and "Traceback" not in r.text

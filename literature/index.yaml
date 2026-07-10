@@ -357,3 +357,89 @@
   origin: curated
   decision: D14 expected-cost threshold
   curated_at: '2026-06-29T19:02:17Z'
+- id: W4285089594
+  doi: https://doi.org/10.1186/s40854-022-00366-1
+  title: Measuring the model risk-adjusted performance of machine learning algorithms
+    in credit default prediction
+  year: 2022
+  cited_by_count: 73
+  venue: Financial Innovation
+  authors:
+  - Andrés Alonso-Robisco
+  - José Manuel Carbó Martínez
+  concepts:
+  - Computer science
+  - Credit risk
+  - Machine learning
+  - Artificial intelligence
+  - Basel II
+  - Capital requirement
+  source_query: green loan credit risk machine learning
+  origin: curated
+  decision: D15 model risk in ML credit scoring
+  curated_at: '2026-07-10T15:45:18Z'
+- id: W2099419573
+  doi: https://doi.org/10.1145/2523813
+  title: A survey on concept drift adaptation
+  year: 2014
+  cited_by_count: 3358
+  venue: ACM Computing Surveys
+  authors:
+  - João Gama
+  - Indrė Žliobaitė
+  - Albert Bifet
+  - Mykola Pechenizkiy
+  - Abdelhamid Bouchachia
+  concepts:
+  - Concept drift
+  - Computer science
+  - Categorization
+  - Adaptation (eye)
+  - Relation (database)
+  - Set (abstract data type)
+  source_query: green loan credit risk machine learning
+  origin: curated
+  decision: D16 concept-drift monitoring
+  curated_at: '2026-07-10T15:45:18Z'
+- id: W3129493035
+  doi: https://doi.org/10.21314/jrmv.2020.227
+  title: Statistical properties of the population stability index
+  year: 2020
+  cited_by_count: 21
+  venue: The Journal of Risk Model Validation
+  authors:
+  - Bilal Yurdakul
+  - Joshua D. Naranjo
+  concepts:
+  - Rule of thumb
+  - Index (typography)
+  - Statistic
+  - Stability (learning theory)
+  - Statistics
+  - Population
+  source_query: population stability index model monitoring credit
+  origin: curated
+  decision: D16 population stability index
+  curated_at: '2026-07-10T15:45:18Z'
+- id: W3124443940
+  doi: https://doi.org/10.1093/idpl/ipx005
+  title: Why a Right to Explanation of Automated Decision-Making Does Not Exist in
+    the General Data Protection Regulation
+  year: 2017
+  cited_by_count: 1161
+  venue: International Data Privacy Law
+  authors:
+  - Sandra Wachter
+  - Brent Mittelstadt
+  - Luciano Floridi
+  concepts:
+  - General Data Protection Regulation
+  - Ambiguity
+  - Transparency (behavior)
+  - Scope (computer science)
+  - Accountability
+  - Mandate
+  source_query: right to explanation automated decision making credit
+  origin: curated
+  decision: D17 regulatory explainability (right to explanation)
+  curated_at: '2026-07-10T15:45:18Z'

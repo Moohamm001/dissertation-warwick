@@ -44,6 +44,10 @@ CREDIT_SCORE_FLOOR = 1        # FICO 0 is impossible -> missing-coded; values < 
 TIB_MAX_MONTHS = 600         # > 50 years in business is implausible (likely a year typo) -> NaN
 TIB_MIN_MONTHS = 0           # negative time-in-business is impossible -> NaN
 
+# --- Phase 5 demo API hardening (path-to-production, D15-D17) --------------
+MAX_UPLOAD_MB = 10                                  # reject uploads larger than this
+ALLOWED_UPLOAD_EXT = (".csv", ".xlsx", ".xls")      # reject anything else before parsing
+
 
 def ensure_dirs() -> None:
     """Create output directories if absent. Safe to call repeatedly."""
