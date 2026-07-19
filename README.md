@@ -143,9 +143,29 @@ stability monitoring (D16), and the regulatory basis for the reason codes alread
 demo (D17). Reads with a scope note up front: this document does **not** address the statistical
 production-readiness question, which stays bounded by N=50 events regardless of citations.
 
+**Step 8b′ — Review follow-up checks (paired RQ1 test, reason-code stability, population diagnostic).**
+```powershell
+python -m emerald_ai followup-checks   # -> reports/followup_checks.md
+```
+Three analyses answering the round-1 adversarial review of the dissertation draft: a paired
+fold-level model comparison (confirms the RQ1 no-winner on shared folds), cross-fold stability of
+the SHAP reason-code ranking (Spearman ~0.89 — not a seed artefact), and a score-distribution
+diagnostic quantifying the evaluation-vs-deployment population mismatch (the terminal-outcome
+threshold over-flags the full book 1.6×).
+
+**Step 8c — Build the dissertation.**
+```powershell
+python docs/dissertation/build.py    # -> docs/dissertation/dissertation.docx (+ combined .md)
+```
+The full write-up lives in [`docs/dissertation/`](docs/dissertation/) as one Markdown file per
+chapter (abstract → conclusion → references → appendices), compiled to `.docx` by `build.py`
+(pandoc if installed, built-in python-docx fallback otherwise). Every number in the chapters is
+traceable to a generated report in `reports/`; citations come only from the curated
+`literature/index.yaml`.
+
 **Step 9 — Verify everything.**
 ```powershell
-python -m pytest -q              # 44 tests: leakage guard, metrics, bot isolation, demo/batch (incl. auth/error-handling), improve, survival, decision policy
+python -m pytest -q              # 49 tests: leakage guard, metrics, bot isolation, demo/batch (incl. auth/error-handling), improve, survival, decision policy, follow-up checks
 ```
 
 ## What's here
@@ -165,13 +185,14 @@ python -m pytest -q              # 44 tests: leakage guard, metrics, bot isolati
 | `reports/explainability.md` | **Generated.** Phase 4 RQ3: SHAP global + local. |
 | `docs/methods_citations.md` | Every imbalance/calibration choice → a paper (evidence audit); D15–D17 cover path-to-production. |
 | `docs/path_to_production.md` | Governance (D15), monitoring (D16), regulatory (D17) grounding for taking the demo beyond a PoC — explicitly scoped away from the N=50 statistical-readiness question. |
+| `docs/dissertation/` | **The write-up.** Markdown chapters (abstract → appendices) + `build.py` → `dissertation.docx`. Numbers from `reports/`, citations from the curated index only. |
 | `data/governance/` | **Generated.** Leakage audit: `feature_catalogue.yaml` + `feature_audit_summary.md`. |
 | `emerald_ai/serve.py` | **Phase 5 demo.** FastAPI decision-support app (`python -m emerald_ai serve`): batch review-queue (primary) + single-application explain/what-if panel (secondary) → ranked P(default), within-batch decile queue, top-3 SHAP reasons. Also `score-file` / `make-samples` CLIs. Hardened: structured logging, clean error responses (no leaked tracebacks), optional `EMERALD_API_KEY` auth on `/api/*`. |
 | `data/example_cases.csv` | **Generated.** Five curated in-distribution demo applicants (risk gradient ≈6%→99%) for the batch path. |
 | `data/sample_applicants.csv` | **Generated.** 50 privacy-safe synthetic applicants (column-wise resample) for batch testing. |
 | `research_bot/` | Small OpenAlex crawler (lit-review aid). `discovery.py` (queries), `state.py` (brain), `seeds.yaml`. |
 | `literature/` | The literature brain: `index.yaml` (curated) + `auto_index.yaml` (**generated**, auto-discovered). |
-| `tests/` | 44 tests: leakage guard, metric panel, bot isolation, demo/batch (incl. upload validation + API-key auth), improve, survival, decision policy. |
+| `tests/` | 49 tests: leakage guard, metric panel, bot isolation, demo/batch (incl. upload validation + API-key auth), improve, survival, decision policy. |
 | `All_Funded_2019_Green Loan.xlsx` | Raw dataset (14,135 × 166). |
 
 ## Literature bot

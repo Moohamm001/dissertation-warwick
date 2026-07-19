@@ -302,7 +302,7 @@
 - id: W2138776277
   doi: https://doi.org/10.1109/tkde.2009.187
   title: Combating the Small Sample Class Imbalance Problem Using Feature Selection
-  year: 2009
+  year: 2010
   cited_by_count: 389
   venue: IEEE Transactions on Knowledge and Data Engineering
   authors:
@@ -443,3 +443,234 @@
   origin: curated
   decision: D17 regulatory explainability (right to explanation)
   curated_at: '2026-07-10T15:45:18Z'
+- id: W2098824882
+  doi: https://doi.org/10.1145/1102351.1102430
+  title: Predicting good probabilities with supervised learning
+  year: 2005
+  cited_by_count: 1589
+  venue: null
+  authors:
+  - Alexandru Niculescu-Mizil
+  - Rich Caruana
+  concepts:
+  - Margin (machine learning)
+  - Artificial intelligence
+  - Calibration
+  - Machine learning
+  - Computer science
+  - Independence (probability theory)
+  source_query: isotonic regression probability calibration
+  origin: curated
+  decision: D6 post-hoc calibration (Platt/isotonic)
+  curated_at: '2026-07-13T09:57:29Z'
+- id: W2618851150
+  doi: https://doi.org/10.48550/arxiv.1705.07874
+  title: A Unified Approach to Interpreting Model Predictions
+  year: 2017
+  cited_by_count: 7622
+  venue: arXiv (Cornell University)
+  authors:
+  - Scott Lundberg
+  - Su‐In Lee
+  concepts:
+  - Interpretability
+  - Computer science
+  - Unification
+  - Machine learning
+  - Artificial intelligence
+  - Class (philosophy)
+  source_query: unified approach to interpreting model predictions
+  origin: curated
+  decision: D18 SHAP / Shapley-value attribution
+  curated_at: '2026-07-13T09:57:29Z'
+- id: W4390886562
+  doi: https://doi.org/10.1016/j.jclimf.2024.100032
+  title: ESG Factors and Firms' Credit Risk
+  year: 2024
+  cited_by_count: 41
+  venue: Journal of Climate Finance
+  authors:
+  - Laura Bonacorsi
+  - Vittoria Cerasi
+  - Paola Galfrascoli
+  - Matteo Manera
+  concepts:
+  - Credit risk
+  - Proxy (statistics)
+  - Business
+  - Credit rating
+  - Lasso (programming language)
+  - Actuarial science
+  source_query: ESG credit scoring machine learning
+  origin: curated
+  decision: D23 green/ESG credit-risk domain
+  curated_at: '2026-07-14T11:38:32Z'
+- id: W4382797868
+  doi: https://doi.org/10.1007/s41060-023-00405-9
+  title: Bayesian learning models to measure the relative impact of ESG factors on
+    credit ratings
+  year: 2023
+  cited_by_count: 32
+  venue: International Journal of Data Science and Analytics
+  authors:
+  - Arianna Agosto
+  - Paola Cerchiello
+  - Paolo Giudici
+  concepts:
+  - Representativeness heuristic
+  - Measure (data warehouse)
+  - Computer science
+  - Sustainability
+  - Credit rating
+  - Corporate governance
+  source_query: ESG credit scoring machine learning
+  origin: curated
+  decision: D23 green/ESG credit-risk domain
+  curated_at: '2026-07-14T11:38:32Z'
+- id: W4281717669
+  doi: https://doi.org/10.1093/jamia/ocac093
+  title: 'The harm of class imbalance corrections for risk prediction models: illustration
+    and simulation using logistic regression'
+  year: 2022
+  cited_by_count: 314
+  venue: Journal of the American Medical Informatics Association
+  authors:
+  - Ruben van den Goorbergh
+  - Maarten van Smeden
+  - D. Timmerman
+  - Ben Van Calster
+  concepts:
+  - Undersampling
+  - Logistic regression
+  - Statistics
+  - Outcome (game theory)
+  - Computer science
+  - Random forest
+  source_query: harm of class imbalance corrections risk prediction calibration
+  origin: curated
+  decision: D19 imbalance corrections harm calibration
+  curated_at: '2026-07-14T11:38:32Z'
+- id: W2075159929
+  doi: https://doi.org/10.1007/s10115-013-0670-6
+  title: Improving class probability estimates for imbalanced data
+  year: 2013
+  cited_by_count: 59
+  venue: Knowledge and Information Systems
+  authors:
+  - Byron Wallace
+  - Issa J Dahabreh
+  concepts:
+  - Brier score
+  - Computer science
+  - Machine learning
+  - Metric (unit)
+  - Calibration
+  - Estimator
+  source_query: class probability estimates imbalanced data classifiers
+  origin: curated
+  decision: D19 class probability estimates under imbalance
+  curated_at: '2026-07-14T11:38:32Z'
+- id: W2078129874
+  doi: https://doi.org/10.1093/biomet/80.1.27
+  title: Bias reduction of maximum likelihood estimates
+  year: 1993
+  cited_by_count: 4495
+  venue: Biometrika
+  authors:
+  - David Firth
+  concepts:
+  - Mathematics
+  - Exponential family
+  - Generalized linear model
+  - Statistics
+  - Applied mathematics
+  - Log-linear model
+  source_query: bias reduction of maximum likelihood estimates
+  origin: curated
+  decision: D20 rare-events / penalised likelihood (Firth)
+  curated_at: '2026-07-14T11:38:32Z'
+- id: W2120199131
+  doi: https://doi.org/10.1023/a:1024068626366
+  title: Inference for the Generalization Error
+  year: 2003
+  cited_by_count: 964
+  venue: Machine Learning
+  authors:
+  - Claude Nadeau
+  - Yoshua Bengio
+  concepts:
+  - Estimator
+  - Variance (accounting)
+  - Generalization
+  - Statistical hypothesis testing
+  - Null hypothesis
+  - Statistics
+  source_query: inference for the generalization error
+  origin: curated
+  decision: D21 CV generalization-error inference
+  curated_at: '2026-07-14T11:38:32Z'
+- id: W2167277498
+  doi: https://doi.org/10.1162/089976698300017197
+  title: Approximate Statistical Tests for Comparing Supervised Classification Learning
+    Algorithms
+  year: 1998
+  cited_by_count: 3673
+  venue: Neural Computation
+  authors:
+  - Thomas G. Dietterich
+  concepts:
+  - McNemar's test
+  - Type I and type II errors
+  - Algorithm
+  - Mathematics
+  - Test (biology)
+  - Statistical hypothesis testing
+  source_query: approximate statistical tests comparing supervised classification
+    learning
+  origin: curated
+  decision: D21 classifier-comparison tests
+  curated_at: '2026-07-14T11:38:32Z'
+- id: W1973682096
+  doi: https://doi.org/10.1214/088342306000000060
+  title: Classifier Technology and the Illusion of Progress
+  year: 2006
+  cited_by_count: 713
+  venue: Statistical Science
+  authors:
+  - David J. Hand
+  concepts:
+  - Illusion
+  - Linear discriminant analysis
+  - Computer science
+  - Machine learning
+  - Artificial intelligence
+  - Classifier (UML)
+  source_query: classifier technology and the illusion of progress
+  origin: curated
+  decision: D22 classifier progress scepticism (Hand)
+  curated_at: '2026-07-14T11:38:32Z'
+- id: W2225109326
+  doi: https://doi.org/10.1016/j.jclinepi.2015.12.005
+  title: 'A calibration hierarchy for risk models was defined: from utopia to empirical
+    data'
+  year: 2016
+  cited_by_count: 850
+  venue: Journal of Clinical Epidemiology
+  authors:
+  - Ben Van Calster
+  - Daan Nieboer
+  - Yvonne Vergouwe
+  - B. De Cock
+  - Michael Pencina
+  - Ewout W. Steyerberg
+  concepts:
+  - Calibration
+  - Covariate
+  - Hierarchy
+  - Event (particle physics)
+  - Econometrics
+  - Computer science
+  source_query: calibration hierarchy of risk prediction models
+  origin: curated
+  decision: D19 calibration hierarchy
+  curated_at: '2026-07-14T11:38:32Z'

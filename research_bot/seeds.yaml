@@ -56,3 +56,18 @@ queries:
     - "population stability index model monitoring credit"     # D16 monitoring
     - "adverse action notice machine learning credit decision" # D17 regulatory
     - "right to explanation automated decision making credit"  # D17 regulatory
+  # Added 2026-07-12 (examiner finding F1): the SHAP method itself was uncited in the draft.
+  explainability_method:
+    - "unified approach to interpreting model predictions"      # D18 SHAP
+    - "SHAP Shapley additive explanations"                      # D18 SHAP
+  # Added 2026-07-12 (review round 1, reviewer B): missing-literature areas — imbalance-vs-
+  # calibration prior art, rare-events logistic, CV-comparison inference, progress scepticism.
+  review_round2:
+    - "harm of class imbalance corrections risk prediction calibration"  # D19 van den Goorbergh
+    - "class probability estimates imbalanced data classifiers"          # D19 Wallace & Dahabreh
+    - "logistic regression in rare events data"                          # D20 King & Zeng
+    - "bias reduction of maximum likelihood estimates"                   # D20 Firth
+    - "inference for the generalization error"                           # D21 Nadeau & Bengio
+    - "approximate statistical tests comparing supervised classification learning" # D21 Dietterich
+    - "classifier technology and the illusion of progress"               # D22 Hand
+    - "calibration hierarchy of risk prediction models"                  # D19 Van Calster

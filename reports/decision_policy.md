@@ -18,16 +18,33 @@
 - **cost_vs_0.5_%saved** — expected-cost reduction against the naive 0.5 cut-off.
 
 As R rises (a missed default hurts more), the optimal threshold falls, the queue grows, and recall
-climbs — the policy trades cheap reviews for caught defaults exactly as a lender would want.
+climbs — the policy trades cheap reviews for caught defaults exactly as a lender would want. The
+`cost_vs_0.5_%saved` column is a ratio to a baseline whose own quality varies with R, so it is not
+monotone in R — the non-monotonicity comes from the moving 0.5-cut denominator, not from
+instability in the optimal policy (whose absolute cost is monotone in R).
+
+## Reference operating point (as served by the demo)
+The decision-support app flags the riskiest OOF decile: **threshold P >= 0.617**,
+catching **62%** of defaults (31/50).
+This is the catch-rate operating point used when R is unknown; the cost-optimal thresholds above
+generalise it once a desk supplies its R.
 
 ## Does it actually work? (robustness at 50 events)
 At **R = 20**, the cost-optimal policy flags **319** applications
 (vs **605** under a 0.5 cut), catches **29/50**
-defaults, and cuts expected cost by **16.4%**.
+defaults, and cuts expected cost by **16.4%**
+vs the 0.5 cut, and by **3.9%** vs the top-decile rule (the operationally
+natural baseline).
 
 Bootstrapping the OOF rows (500 resamples), the cost saving vs the 0.5 cut is
-**19.0% [7.9, 32.8]** (95% interval).
-**Verdict: the saving is robust — the interval stays above zero, so the policy genuinely beats the naive cut despite the 50-event noise.**
+**19.0% [7.9, 32.8]**, and vs the top-decile rule
+**6.8% [1.2, 19.4]** (95% intervals).
+**Bootstrap procedure:** the threshold is **re-selected inside every resample** (selection and
+evaluation both happen on the resampled rows), so the intervals propagate threshold-selection
+uncertainty. Because selection and evaluation share each resample, both intervals retain
+in-sample optimism in their *location* — the true savings may lie below the quoted bounds.
+**Verdict vs 0.5 cut: the interval stays above zero — the policy beats the naive cut despite the 50-event noise (subject to the location caveat above).**
+**Verdict vs top-decile rule: the interval stays above zero — a demonstrated (if modest) advantage.**
 
 ![cost curve](figures/decision_cost_curve.png)
 

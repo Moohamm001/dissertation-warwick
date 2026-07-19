@@ -25,6 +25,7 @@ def main(argv: list[str] | None = None) -> int:
     sub.add_parser("improve", help="RQ1 follow-up: sparsity/ratios vs the events ceiling")
     sub.add_parser("survival-check", help="Feasibility: can the censored loans support a survival model?")
     sub.add_parser("decide", help="Cost-sensitive decision policy: cost-optimal review threshold")
+    sub.add_parser("followup-checks", help="Review follow-ups: paired RQ1 test, reason-code stability, population diagnostic")
     serve_p = sub.add_parser("serve", help="Phase 5 decision-support demo (FastAPI + minimal UI)")
     serve_p.add_argument("--host", default="127.0.0.1")
     serve_p.add_argument("--port", type=int, default=8000)
@@ -129,6 +130,13 @@ def main(argv: list[str] | None = None) -> int:
 
         path = decision.build_report()
         print(f"[emerald_ai] decision policy report written -> {path}")
+        return 0
+
+    if args.command == "followup-checks":
+        from . import followup
+
+        path = followup.build_report()
+        print(f"[emerald_ai] follow-up checks written -> {path}")
         return 0
 
     if args.command == "serve":

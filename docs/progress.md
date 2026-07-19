@@ -14,10 +14,136 @@ Updated as work lands; this is the answer to "what's going on in this project?".
 | Phase 4 — calibration + conformal + SHAP | ✅ done (RQ2/RQ3 answered) |
 | Data-quality cleaning + sensitivity | ✅ done (integrated, robust) |
 | **Phase 5 — proof-of-concept demo (FastAPI)** | ✅ done (`python -m emerald_ai serve`) |
-| Fairness/robustness audit (light) | ⬜ **NEXT** (largely a documented non-estimability result) |
-| Phase 6 — write-up + release | ⬜ |
+| Fairness/robustness audit (light) | ✅ done (documented non-estimability, now §4.6 of the draft) |
+| Phase 6 — write-up + release | 🟨 **IN PROGRESS** — full first draft built (`docs/dissertation/`); polish + release gate remain |
 
 ## Done (most recent first)
+- **2026-07-17 — Polish loop: plain-language pass + contribution framing + Appendix E; round-3
+  review launched.** Per user request to reduce hard vocabulary while keeping required technical
+  terms: simplified ornate wording across all chapters (near-vacuous→"almost no information",
+  trebles→triples, straddling→"span", "manufacture results"→"produce meaningless numbers",
+  "governing fact"→"central fact", "flatters"→"makes look better than it is", "anti-conservative"
+  glossed in plain words). Strengthened the contribution framing: §7.2 now invokes Hand (2006,
+  *Classifier Technology and the Illusion of Progress*) to present methodological-rigour-as-
+  contribution as a positive stance, not an apology for N=50. Fixed the last two places that led
+  with the "19% vs 0.5-cut" strawman (§7.2 central claim, §1.4 contribution 5) — both now frame
+  the decision layer as "cost-sized queue depth; clearly better than 0.5, modestly better than
+  the decile rule", consistent with §4.6/§5.4. Ran the demo (`serve`) to verify it works end-to-
+  end (all 4 endpoints, model trains, P>=0.617 operating point) — screenshot-capture tool was
+  unavailable, so Appendix E is updated to the verified-working description with a precise
+  capture instruction for the student. Every embedded figure path re-verified after the
+  restructure. Round-3 adversarial review (both reviewers) launched on the WMG + plain-language
+  version — **both returned "internally sealed on substance" / "Minor revision at the accept
+  boundary"**. All findings fixed same session: §3.12 test count 44→49, §7.3 projection ref
+  §4.3→§4.4, §3.7 stranded-"is" grammar, §2.6 pointer Chapter 5→§4.8, abstract 6.8% hedge, and
+  the highest-leverage item — §7.2 now demarcates replication (imbalance-harms-calibration, EPV
+  ceiling — confirms prior art) from the three original contributions (joint characterisation at
+  N=50 on a real green-loan book; two entry-condition-tested non-estimability verdicts; pricing
+  declined claims in events ~200–250). docx rebuilt (11,985 words); 49 tests pass. Full ledger:
+  `docs/dissertation/REVIEW_ROUND1.md`.
+  **Professional-formatting pass (same day):** `build.py` upgraded to emit A4, 2.54 cm margins,
+  Times New Roman 12 / 1.5 line spacing / justified body, a bold heading hierarchy, italic centred
+  captions, roman front-matter + arabic body page numbering (two Word sections), and
+  `updateFields=true` (Word auto-populates TOC/lists/page numbers on open — no manual F9).
+  Appendix B ethics-waiver rationale drafted (secondary/anonymised/no-participants; approval
+  reference left blank). Demo re-verified working end-to-end; screenshot-capture tool unavailable
+  in this environment (Appendix E left with a precise capture instruction). Core word count
+  chapters 1–7 ≈ 10,324 + abstract 457 — under a typical 15k MSc limit. Remaining items all need
+  the student (ethics certificate, approval ref, screenshots, name/ID) — none fabricable.
+- **2026-07-18 — Strict WMG-template fidelity: build.py now populates the actual template file.**
+  Rather than build a lookalike, `build.py` now opens `24-25_wmg_ft_msc_dissertation_template.docx`
+  as the base document, clears its placeholder body, and pours the content in using the template's
+  OWN named styles — so the output inherits WMG's real theme: blue headings (2E74B5), "Alt
+  Heading 1" front matter, "Title" style title page, the template's fonts/margins/section setup.
+  `build_from_template` is now the default (was build-from-scratch); `--scratch` keeps the
+  house-style fallback. Fixed two template-specific issues found in verification: (a) the template
+  lacks "List Bullet"/"List Number"/"Light Grid Accent 1" styles → added resilient fallbacks
+  (`_list_para`, table-style try-list); (b) the template wraps its original Table of Contents in a
+  `<w:sdt>` content control that the first `_clear_body` missed → it now strips every non-sectPr
+  body child, so no duplicate TOC and no leftover template placeholder text survives. Verified:
+  26 body fields (3 TOC + 23 SEQ captions), single main TOC, 2 sections (roman front / arabic
+  body), updateFields on open, 7 chapters + References + Appendices, 8 tables. Both build modes
+  confirmed working via temp builds. (Real dissertation.docx write pending — file was locked open
+  in Word at build time; re-run `build.py` with Word closed.)
+- **2026-07-14 — D19–D23 curated (9 papers, per supervisor recommendation) + WMG template
+  restructure begun.** User approved the round-2 literature shortlist minus the King & Zeng
+  software-paper variant (Firth 1993 is the rare-events anchor instead): curated 23 → 32.
+  New citations written into the draft: §2.4 RQ2 prior art (van den Goorbergh 2022; Wallace &
+  Dahabreh 2013; Van Calster 2016 calibration hierarchy), §2.3 Firth, §2.2 CV-comparison
+  inference (Nadeau & Bengio 2003; Dietterich 1998), §2.8 Hand 2006, §2 opening green-domain
+  note (Bonacorsi et al. 2024; Agosto, Cerchiello & Giudici 2023 — with the honest statement
+  that no direct green-loan default literature exists); §5.2's placeholder attribution replaced
+  with real citations; references 27 → 36 entries; D19–D23 rows added to
+  `methods_citations.md` (**all decisions D1–D23 citation-closed**). User also supplied the
+  official WMG dissertation template (`24-25_wmg_ft_msc_dissertation_template.docx`) —
+  restructure to its required order — **DONE**. Chapters now: 1 Introduction, 2 Literature
+  Review, 3 Methodology, 4 Results, 5 Analysis, 6 Discussion, 7 Conclusion (Results/Analysis/
+  Discussion split into three; each of Ch2–6 opens with Introduction and closes with Summary).
+  Files renamed 03_data_and_methodology→03_methodology, 05_discussion split into 05_analysis +
+  06_discussion, 06_conclusion→07_conclusion, 07_references→08_references. Appendices
+  restructured to WMG order: A ethics-training evidence, B ethical-approval/waiver (placeholders),
+  C feature set, D reproduction, E demo, F supplementary figures. Full cross-reference sweep done
+  (all §x.y / Chapter / Appendix refs remapped; verified no stale refs remain). `build.py`
+  rewritten for the WMG template: submission pro-forma, title page, verbatim declaration,
+  abstract, acknowledgements, auto TOC + List of Tables + List of Figures (Word fields — F9 to
+  populate), auto SEQ captions above tables / below figures, footer page numbers. Structural
+  build verified programmatically (9 H1 headings, 23 captions/SEQ, 3 TOC fields, footer PAGE).
+  Note: pandoc/LibreOffice absent on this machine — python-docx fallback is the production path.
+- **2026-07-12 — Review round 2 closed: examiner "internally sealed", adversarial reviewer
+  Major→Minor.** Both reviewers re-audited the revised draft. Both independently caught the same
+  process failure: the round-1 ledger claimed the "pre-registered" sweep complete when 4
+  instances survived (abstract included) — fixed and grep-verified. Two new computations:
+  **(1) `behind` leave-one-out** (`followup_checks.md` §4): PR-AUC 0.117→0.099 (inside fold
+  band), recall unchanged — nothing turns on the undocumented n=1 case; **(2) vs-decile
+  bootstrap** (`decision_policy.md`): **6.8% [1.2, 19.4]** — above zero (reviewer predicted it
+  would cover zero) but modest + location-optimistic; abstract/§4.5/§5.3 restated at the right
+  size ("queue-depth derivation is the durable contribution; the cost edge is the bonus").
+  Abstract brought up to the body's standard (decile context, cluster-level driver claim,
+  confidence-shortfall wording, "delinquency-detection"); "early" defined at §1.3;
+  location-bias phrasing fixed ("true saving may lie below the quoted bounds"). Full round-2
+  ledger appended to `docs/dissertation/REVIEW_ROUND1.md`. docx rebuilt; 49/49 tests.
+  **Open:** D19–D23 curation approval, Appendix C screenshots, Warwick format check.
+- **2026-07-12 — D6+D18 curated + follow-up checks module (all review-round-1 items closed).**
+  User approved D6 (Niculescu-Mizil & Caruana 2005) + D18 (Lundberg & Lee 2017) → curated 21→23;
+  **all decisions D1–D18 now citation-closed.** New `emerald_ai/followup.py` +
+  `python -m emerald_ai followup-checks` → `reports/followup_checks.md`, answering the three
+  reviewer challenges with data: **(1) paired fold-level RQ1 test** — baseline wins only 14/25
+  shared folds, sign-test p≈0.69, difference bands straddle zero → no-winner CONFIRMED under the
+  sharper instrument; **(2) reason-code stability** — mean pairwise Spearman 0.89 (min 0.80),
+  Revenue top-3 in 100% of folds, affordability cluster rank-1 in 60% → global ordering not a
+  seed artefact, cluster-level claim retained; **(3) population diagnostic** — terminal-outcome
+  threshold flags 16.4% of the full 14,135-row book vs the intended 10% (1.6×, KS 0.065) → C8
+  mismatch quantified. Draft updated (§4.7, §5.1, §5.4, §5.6, §6.3); 5 new tests (49 total).
+  Literature round 2 crawled (52 seeds, 1,062 auto): 8 target papers found (van den Goorbergh,
+  Wallace & Dahabreh, Van Calster, King & Zeng, Firth, Nadeau & Bengio, Dietterich, Hand) +
+  2 green-domain candidates — **shortlist awaiting curation approval (D19–D23)**.
+- **2026-07-12 — Review round 1 (two adversarial reviewers) + same-day revision pass.** Two
+  independent reviews of the first draft: an external-examiner audit (3 FATAL, 10 MAJOR — numbers
+  faithful to reports, but SHAP uncited, demo threshold untraceable, Brier inconsistency) and a
+  top-tier adversarial review (verdict: Major revision — within-minority ECE near-tautological as
+  "calibration", 0.5-cut a strawman baseline, 245-event fit from 3 points, funded-book range
+  restriction and label/deployment-population mismatch unaddressed). All findings verified
+  against code before action; one corrected (bootstrap DOES re-select threshold per resample).
+  ~25 fixes applied across all chapters; `decision.py` now reports the demo operating point
+  (0.617/62%) and the top-decile baseline (**cost-optimal beats decile rule by only 3.9% at
+  R=20 — quoted honestly**); `clean.py` stale status fixed; Lundberg & Lee 2017 crawled and
+  cited (D18 [PROPOSED]). Full ledger: `docs/dissertation/REVIEW_ROUND1.md`. Rebuilt docx;
+  44 tests pass. **Open:** D6+D18 curation approvals, 3 queued analyses (paired RQ1 test,
+  reason-code stability, score-distribution diagnostic), literature round 2, screenshots.
+- **2026-07-12 — Phase 6 started: full dissertation first draft.** `docs/dissertation/` created —
+  9 Markdown chapters (abstract, introduction, literature review, data & methodology, results,
+  discussion, conclusion, references, appendices) + `build.py` (pandoc → python-docx fallback;
+  pandoc absent on this machine, fallback verified). First complete draft ≈8,200 words, 8 tables,
+  15 embedded figures, compiled to `dissertation.docx`. Structure per the agreed reading order:
+  infeasibility results (fairness, survival) presented **in Results** as findings, not buried in
+  limitations; no separate implementation chapter (demo = 1 section of Methodology + Appendix C);
+  "rigour is the contribution" threaded from §1.3 through §6.2. Every number traceable to a
+  generated report; citations restricted to the 21 curated papers + proposal BIB entries.
+  Discussion includes the detection-bound argument (band ~0.19 vs plausible effect ~0.03) and the
+  path-to-production scope split. **Remaining for Phase 6:** demo screenshots (Appendix C
+  placeholder), D6 curation approval (Niculescu-Mizil & Caruana 2005 — cited in draft, flagged),
+  Warwick word-limit/format check, pin requirements, datasheet, clean-checkout reproduction gate,
+  repo tag. Prose polish passes to follow.
 - **2026-07-10 — Path-to-production write-up + serve.py hardening.** User asked to "upgrade the app
   and prediction to production level" via more literature support. Pushed back on the framing first:
   no citation fixes N=50 events — statistical production-readiness (out-of-time validation, external
@@ -163,9 +289,9 @@ calibration 29, green-finance 28, explainability/fairness 26, selection-bias 20,
 117/179 are ≥2018. **Vetting (promote to curated `index.yaml`) not yet started.**
 
 ## Next action
-The empirical core (Phases 1–5) is complete: model, calibration, explanations, and a working demo.
-Remaining before write-up: (1) the **light fairness/robustness audit** — mostly a documented
-*non-estimability* result (0 estimable cells from Phase 1), plus the robustness checks already in
-`evidence`/`sensitivity`; (2) **Phase 6 write-up & release** — finalise dissertation chapters, add
-demo screenshots, pin `requirements`, datasheet, tag the repo, and pass the clean-checkout
-reproduction gate.
+The first full dissertation draft exists (`docs/dissertation/`, build verified). Remaining for
+Phase 6: (1) polish passes on the prose (chapter by chapter, against the Warwick word limit and
+format rules — check the handbook); (2) capture demo screenshots into Appendix C; (3) close D6
+(the one remaining [PROPOSED] citation — Niculescu-Mizil & Caruana 2005, already cited in the
+draft); (4) release gate — pin `requirements`, datasheet, tag the repo, clean-checkout
+reproduction of every figure.

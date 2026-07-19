@@ -72,9 +72,9 @@ dropped, so the event count (50) is unchanged.
   field); it distorts scaling and any tree split on tenure.
 
 ## Status
-Cleaning is **not yet wired into the modelling pipeline** — this report only shows the impact.
-Integrating `clean()` into the data path and re-running the bake-off + evidence is the next step,
-pending sign-off (it changes model inputs).
+Cleaning **is wired into the modelling pipeline** (`data.build_target(clean=True)` is the
+default, approved 2026-06-10). `reports/sensitivity_cleaning.md` documents that the headline
+findings are unchanged raw-vs-cleaned — the cleaning neither manufactures nor destroys a result.
 
 ---
 *Reproduce: `python -m emerald_ai clean-report`*

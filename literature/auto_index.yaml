@@ -2212,27 +2212,6 @@
   source_query: ESG credit scoring machine learning
   discovered_at: '2026-06-10T00:03:48Z'
   origin: auto
-- id: W4390886562
-  doi: https://doi.org/10.1016/j.jclimf.2024.100032
-  title: ESG Factors and Firms' Credit Risk
-  year: 2024
-  cited_by_count: 41
-  venue: Journal of Climate Finance
-  authors:
-  - Laura Bonacorsi
-  - Vittoria Cerasi
-  - Paola Galfrascoli
-  - Matteo Manera
-  concepts:
-  - Credit risk
-  - Proxy (statistics)
-  - Business
-  - Credit rating
-  - Lasso (programming language)
-  - Actuarial science
-  source_query: ESG credit scoring machine learning
-  discovered_at: '2026-06-10T00:03:48Z'
-  origin: auto
 - id: W4367671427
   doi: https://doi.org/10.1007/s11135-023-01673-0
   title: Examining the research taxonomy of artificial intelligence, deep learning
@@ -2251,27 +2230,6 @@
   - Empirical research
   - Social sphere
   - Finance
-  source_query: ESG credit scoring machine learning
-  discovered_at: '2026-06-10T00:03:48Z'
-  origin: auto
-- id: W4382797868
-  doi: https://doi.org/10.1007/s41060-023-00405-9
-  title: Bayesian learning models to measure the relative impact of ESG factors on
-    credit ratings
-  year: 2023
-  cited_by_count: 32
-  venue: International Journal of Data Science and Analytics
-  authors:
-  - Arianna Agosto
-  - Paola Cerchiello
-  - Paolo Giudici
-  concepts:
-  - Representativeness heuristic
-  - Measure (data warehouse)
-  - Computer science
-  - Sustainability
-  - Credit rating
-  - Corporate governance
   source_query: ESG credit scoring machine learning
   discovered_at: '2026-06-10T00:03:48Z'
   origin: auto
@@ -6158,25 +6116,6 @@
   - Binary classification
   - Artificial intelligence
   source_query: Platt scaling probability calibration classifier
-  discovered_at: '2026-06-10T15:36:26Z'
-  origin: auto
-- id: W2098824882
-  doi: https://doi.org/10.1145/1102351.1102430
-  title: Predicting good probabilities with supervised learning
-  year: 2005
-  cited_by_count: 1589
-  venue: null
-  authors:
-  - Alexandru Niculescu-Mizil
-  - Rich Caruana
-  concepts:
-  - Margin (machine learning)
-  - Artificial intelligence
-  - Calibration
-  - Machine learning
-  - Computer science
-  - Independence (probability theory)
-  source_query: isotonic regression probability calibration
   discovered_at: '2026-06-10T15:36:26Z'
   origin: auto
 - id: W1841840321
@@ -18130,4 +18069,4144 @@
   - Classics
   source_query: right to explanation automated decision making credit
   discovered_at: '2026-07-10T15:06:05Z'
+  origin: auto
+- id: W1951724000
+  doi: https://doi.org/10.18637/jss.v067.i01
+  title: Fitting Linear Mixed-Effects Models Using <b>lme4</b>
+  year: 2015
+  cited_by_count: 86236
+  venue: Journal of Statistical Software
+  authors:
+  - Douglas M. Bates
+  - Martin Mächler
+  - Benjamin M. Bolker
+  - Steve Walker
+  concepts:
+  - Restricted maximum likelihood
+  - Deviance (statistics)
+  - Mixed model
+  - Smoothing
+  - Applied mathematics
+  - Likelihood function
+  source_query: unified approach to interpreting model predictions
+  discovered_at: '2026-07-13T09:39:00Z'
+  origin: auto
+- id: W1803102843
+  doi: https://doi.org/10.1038/nprot.2015.053
+  title: The Phyre2 web portal for protein modeling, prediction and analysis
+  year: 2015
+  cited_by_count: 10254
+  venue: Nature Protocols
+  authors:
+  - Lawrence A. Kelley
+  - Stefans Mezulis
+  - Christopher M. Yates
+  - Mark N. Wass
+  - Michael J.E. Sternberg
+  concepts:
+  - Computational biology
+  - Computer science
+  - Bioinformatics
+  - Biology
+  source_query: unified approach to interpreting model predictions
+  discovered_at: '2026-07-13T09:39:00Z'
+  origin: auto
+- id: W2077959816
+  doi: https://doi.org/10.2307/2669574
+  title: 'Model Selection and Inference: A Practical Information-Theoretic Approach'
+  year: 2000
+  cited_by_count: 4224
+  venue: Journal of the American Statistical Association
+  authors:
+  - Robert L. Strawderman
+  - Kenneth P. Burnham
+  - David R. Anderson
+  concepts:
+  - Inference
+  - Model selection
+  - Selection (genetic algorithm)
+  - Computer science
+  - Statistical inference
+  - Monte Carlo method
+  source_query: unified approach to interpreting model predictions
+  discovered_at: '2026-07-13T09:39:00Z'
+  origin: auto
+- id: W2123998733
+  doi: https://doi.org/10.1198/106186006x133933
+  title: 'Unbiased Recursive Partitioning: A Conditional Inference Framework'
+  year: 2006
+  cited_by_count: 4065
+  venue: Journal of Computational and Graphical Statistics
+  authors:
+  - Torsten Hothorn
+  - Kurt Hornik
+  - Achim Zeileis
+  concepts:
+  - Overfitting
+  - Interpretability
+  - Feature selection
+  - Computer science
+  - Inference
+  - Recursive partitioning
+  source_query: unified approach to interpreting model predictions
+  discovered_at: '2026-07-13T09:39:00Z'
+  origin: auto
+- id: W1678356000
+  doi: https://doi.org/10.1214/aos/1013203451
+  title: 'Greedy function approximation: A gradient boosting machine.'
+  year: 2001
+  cited_by_count: 29213
+  venue: The Annals of Statistics
+  authors:
+  - Jerome H. Friedman
+  concepts:
+  - Mathematics
+  - Gradient boosting
+  - Boosting (machine learning)
+  - Gradient descent
+  - Regression
+  - Mathematical optimization
+  source_query: unified approach to interpreting model predictions
+  discovered_at: '2026-07-13T09:39:00Z'
+  origin: auto
+- id: W2101846955
+  doi: https://doi.org/10.1080/10635150490522304
+  title: 'Model Selection and Model Averaging in Phylogenetics: Advantages of Akaike
+    Information Criterion and Bayesian Approaches Over Likelihood Ratio Tests'
+  year: 2004
+  cited_by_count: 3999
+  venue: Systematic Biology
+  authors:
+  - David Posada
+  - Thomas R. Buckley
+  concepts:
+  - Akaike information criterion
+  - Bayesian information criterion
+  - Model selection
+  - Bayesian inference
+  - Selection (genetic algorithm)
+  - Inference
+  source_query: unified approach to interpreting model predictions
+  discovered_at: '2026-07-13T09:39:00Z'
+  origin: auto
+- id: W2223470559
+  doi: https://doi.org/10.1108/imds-09-2015-0382
+  title: 'Using PLS path modeling in new technology research: updated guidelines'
+  year: 2016
+  cited_by_count: 6728
+  venue: Industrial Management & Data Systems
+  authors:
+  - Jörg Henseler
+  - Geoffrey S. Hubona
+  - Pauline Ash Ray
+  concepts:
+  - Structural equation modeling
+  - Partial least squares regression
+  - Confirmatory factor analysis
+  - Path analysis (statistics)
+  - Variance (accounting)
+  - Path (computing)
+  source_query: unified approach to interpreting model predictions
+  discovered_at: '2026-07-13T09:39:00Z'
+  origin: auto
+- id: W2657631929
+  doi: https://doi.org/10.1016/j.dsp.2017.10.011
+  title: Methods for interpreting and understanding deep neural networks
+  year: 2017
+  cited_by_count: 2716
+  venue: Digital Signal Processing
+  authors:
+  - Grégoire Montavon
+  - Wojciech Samek
+  - Klaus‐Robert Müller
+  concepts:
+  - Computer science
+  - Artificial neural network
+  - Artificial intelligence
+  - Deep neural networks
+  source_query: unified approach to interpreting model predictions
+  discovered_at: '2026-07-13T09:39:00Z'
+  origin: auto
+- id: W2910705748
+  doi: https://doi.org/10.1073/pnas.1900654116
+  title: Definitions, methods, and applications in interpretable machine learning
+  year: 2019
+  cited_by_count: 2093
+  venue: Proceedings of the National Academy of Sciences
+  authors:
+  - William J. Murdoch
+  - Chandan Singh
+  - Karl Kumbier
+  - Reza Abbasi-Asl
+  - Bin Yu
+  concepts:
+  - Interpretability
+  - Computer science
+  - Artificial intelligence
+  - Categorization
+  - Machine learning
+  - Context (archaeology)
+  source_query: unified approach to interpreting model predictions
+  discovered_at: '2026-07-13T09:39:00Z'
+  origin: auto
+- id: W2153791616
+  doi: https://doi.org/10.1017/s0140525x12000477
+  title: Whatever next? Predictive brains, situated agents, and the future of cognitive
+    science
+  year: 2013
+  cited_by_count: 5924
+  venue: Behavioral and Brain Sciences
+  authors:
+  - Andy Clark
+  concepts:
+  - Situated
+  - Cognitive science
+  - Cognition
+  - Psychology
+  - Computer science
+  - Cognitive psychology
+  source_query: unified approach to interpreting model predictions
+  discovered_at: '2026-07-13T09:39:00Z'
+  origin: auto
+- id: W2161620511
+  doi: https://doi.org/10.1093/bioinformatics/bts444
+  title: 'GAPIT: genome association and prediction integrated tool'
+  year: 2012
+  cited_by_count: 2396
+  venue: Bioinformatics
+  authors:
+  - Alexander E. Lipka
+  - Feng Tian
+  - Qishan Wang
+  - Jason A. Peiffer
+  - Meng Li
+  - Peter J. Bradbury
+  - Michael A. Gore
+  - Edward S. Buckler
+  concepts:
+  - Computer science
+  - R package
+  - Data mining
+  - Software
+  - Selection (genetic algorithm)
+  - Machine learning
+  source_query: unified approach to interpreting model predictions
+  discovered_at: '2026-07-13T09:39:00Z'
+  origin: auto
+- id: W2094458603
+  doi: https://doi.org/10.1093/nar/gkv342
+  title: 'I-TASSER server: new development for protein structure and function predictions'
+  year: 2015
+  cited_by_count: 2668
+  venue: Nucleic Acids Research
+  authors:
+  - Jianyi Yang
+  - Yang Zhang
+  concepts:
+  - Protein structure prediction
+  - Threading (protein sequence)
+  - Computer science
+  - Function (biology)
+  - Web server
+  - Annotation
+  source_query: unified approach to interpreting model predictions
+  discovered_at: '2026-07-13T09:39:00Z'
+  origin: auto
+- id: W2101270539
+  doi: https://doi.org/10.1186/s13012-015-0242-0
+  title: Making sense of implementation theories, models and frameworks
+  year: 2015
+  cited_by_count: 4577
+  venue: Implementation Science
+  authors:
+  - Per Nilsén
+  concepts:
+  - Process (computing)
+  - Computer science
+  - Management science
+  - Relevance (law)
+  - Selection (genetic algorithm)
+  - Data science
+  source_query: unified approach to interpreting model predictions
+  discovered_at: '2026-07-13T09:39:00Z'
+  origin: auto
+- id: W2622556140
+  doi: https://doi.org/10.1371/journal.pone.0178691
+  title: 'The use of Gompertz models in growth analyses, and new Gompertz-model approach:
+    An addition to the Unified-Richards family'
+  year: 2017
+  cited_by_count: 789
+  venue: PLoS ONE
+  authors:
+  - Kathleen M. C. Tjørve
+  - Even Tjørve
+  concepts:
+  - Gompertz function
+  - Econometrics
+  - Mathematics
+  - Computer science
+  - Biology
+  - Statistics
+  source_query: unified approach to interpreting model predictions
+  discovered_at: '2026-07-13T09:39:00Z'
+  origin: auto
+- id: W2251939518
+  doi: https://doi.org/10.18653/v1/d13-1170
+  title: Recursive Deep Models for Semantic Compositionality Over a Sentiment Treebank
+  year: 2013
+  cited_by_count: 6785
+  venue: null
+  authors:
+  - Richard Socher
+  - Alex Perelygin
+  - Jean Y. Wu
+  - Jason Chuang
+  - Christopher D. Manning
+  - Andrew Y. Ng
+  - Christopher Potts
+  concepts:
+  - Treebank
+  - Principle of compositionality
+  - Computer science
+  - Natural language processing
+  - Artificial intelligence
+  - Sentence
+  source_query: unified approach to interpreting model predictions
+  discovered_at: '2026-07-13T09:39:00Z'
+  origin: auto
+- id: W3039232647
+  doi: https://doi.org/10.1002/widm.1379
+  title: Interpretability of machine learning‐based prediction models in healthcare
+  year: 2020
+  cited_by_count: 399
+  venue: Wiley Interdisciplinary Reviews Data Mining and Knowledge Discovery
+  authors:
+  - Gregor Stiglic
+  - Primoz Kocbek
+  - Nino Fijacko
+  - Marinka Zitnik
+  - Katrien Verbert
+  - Leona Cilar
+  concepts:
+  - Interpretability
+  - Computer science
+  - Machine learning
+  - Artificial intelligence
+  - Predictive modelling
+  - Interpretation (philosophy)
+  source_query: unified approach to interpreting model predictions
+  discovered_at: '2026-07-13T09:39:00Z'
+  origin: auto
+- id: W2158216255
+  doi: https://doi.org/10.1177/109019818801500203
+  title: Social Learning Theory and the Health Belief Model
+  year: 1988
+  cited_by_count: 5525
+  venue: Health Education Quarterly
+  authors:
+  - Irwin M. Rosenstock
+  - Victor J. Strecher
+  - Marshall H. Becker
+  concepts:
+  - Health belief model
+  - Locus of control
+  - Explanatory model
+  - Social learning theory
+  - Social cognitive theory
+  - Psychology
+  source_query: unified approach to interpreting model predictions
+  discovered_at: '2026-07-13T09:39:00Z'
+  origin: auto
+- id: W2029776687
+  doi: https://doi.org/10.1038/nn1309
+  title: Optimality principles in sensorimotor control
+  year: 2004
+  cited_by_count: 1787
+  venue: Nature Neuroscience
+  authors:
+  - Emanuel Todorov
+  concepts:
+  - Computer science
+  - Task (project management)
+  - Adaptation (eye)
+  - Control (management)
+  - Motor control
+  - Function (biology)
+  source_query: unified approach to interpreting model predictions
+  discovered_at: '2026-07-13T09:39:00Z'
+  origin: auto
+- id: W2100174116
+  doi: https://doi.org/10.1111/j.1365-2486.2010.02375.x
+  title: Reconciling the optimal and empirical approaches to modelling stomatal conductance
+  year: 2010
+  cited_by_count: 1372
+  venue: Global Change Biology
+  authors:
+  - Belinda E. Medlyn
+  - Remko A. Duursma
+  - Derek Eamus
+  - David S. Ellsworth
+  - I. Colin Prentice
+  - Craig V. M. Barton
+  - Kristine Y. Crous
+  - Paolo De Angelis
+  concepts:
+  - Stomatal conductance
+  - Empirical modelling
+  - Climate model
+  - Environmental science
+  - Carbon cycle
+  - Climate change
+  source_query: unified approach to interpreting model predictions
+  discovered_at: '2026-07-13T09:39:00Z'
+  origin: auto
+- id: W1608836379
+  doi: https://doi.org/10.17705/1cais.00407
+  title: 'Structural Equation Modeling and Regression: Guidelines for Research Practice'
+  year: 2000
+  cited_by_count: 6397
+  venue: Communications of the Association for Information Systems
+  authors:
+  - David Gefen
+  - Detmar W. Straub
+  - Marie‐Claude Boudreau
+  concepts:
+  - Structural equation modeling
+  - Partial least squares regression
+  - Rule of thumb
+  - Heuristics
+  - Contrast (vision)
+  - Covariance
+  source_query: unified approach to interpreting model predictions
+  discovered_at: '2026-07-13T09:39:00Z'
+  origin: auto
+- id: W2949457836
+  doi: https://doi.org/10.1124/pr.118.017160
+  title: 'REBUS and the Anarchic Brain: Toward a Unified Model of the Brain Action
+    of Psychedelics'
+  year: 2019
+  cited_by_count: 1162
+  venue: Pharmacological Reviews
+  authors:
+  - Robin Carhart‐Harris
+  - Karl Friston
+  concepts:
+  - Prior probability
+  - Action (physics)
+  - Psychology
+  - Consciousness
+  - Psilocybin
+  - Epistemology
+  source_query: unified approach to interpreting model predictions
+  discovered_at: '2026-07-13T09:39:00Z'
+  origin: auto
+- id: W3035353528
+  doi: https://doi.org/10.1016/j.engstruct.2020.110927
+  title: Failure mode and effects analysis of RC members based on machine-learning-based
+    SHapley Additive exPlanations (SHAP) approach
+  year: 2020
+  cited_by_count: 1018
+  venue: Engineering Structures
+  authors:
+  - Sujith Mangalathu
+  - Seong‐Hoon Hwang
+  - Jong‐Su Jeon
+  concepts:
+  - Failure mode and effects analysis
+  - Mode (computer interface)
+  - Random forest
+  - Identification (biology)
+  - Machine learning
+  - Computer science
+  source_query: SHAP Shapley additive explanations
+  discovered_at: '2026-07-13T09:39:00Z'
+  origin: auto
+- id: W4206828290
+  doi: https://doi.org/10.1016/j.scs.2022.103677
+  title: Explainable heat-related mortality with random forest and SHapley Additive
+    exPlanations (SHAP) models
+  year: 2022
+  cited_by_count: 334
+  venue: Sustainable Cities and Society
+  authors:
+  - Yesuel Kim
+  - Young‐Chul Kim
+  concepts:
+  - Estimation
+  - Hyperparameter
+  - Unit (ring theory)
+  - Socioeconomic status
+  - Climate change
+  - Environmental science
+  source_query: SHAP Shapley additive explanations
+  discovered_at: '2026-07-13T09:39:00Z'
+  origin: auto
+- id: W4399162979
+  doi: https://doi.org/10.1016/j.compenvurbsys.2024.102133
+  title: How can SHAP (SHapley Additive exPlanations) interpretations improve deep
+    learning based urban cellular automata model?
+  year: 2024
+  cited_by_count: 77
+  venue: Computers Environment and Urban Systems
+  authors:
+  - Changlan Yang
+  - Xuefeng Guan
+  - Qingyang Xu
+  - Weiran Xing
+  - Xiaoyu Chen
+  - Jinguo Chen
+  - Peng Jia
+  concepts:
+  - Cellular automaton
+  - Computer science
+  - Artificial intelligence
+  - Mathematics education
+  - Theoretical computer science
+  - Mathematics
+  source_query: SHAP Shapley additive explanations
+  discovered_at: '2026-07-13T09:39:00Z'
+  origin: auto
+- id: W4226408629
+  doi: https://doi.org/10.1016/j.cscm.2022.e01059
+  title: A novel approach to explain the black-box nature of machine learning in compressive
+    strength predictions of concrete using Shapley additive explanations (SHAP)
+  year: 2022
+  cited_by_count: 470
+  venue: Case Studies in Construction Materials
+  authors:
+  - I.U. Ekanayake
+  - D.P.P. Meddage
+  - Upaka Rathnayake
+  concepts:
+  - Interpretability
+  - Compressive strength
+  - Machine learning
+  - Genetic programming
+  - AdaBoost
+  - Computer science
+  source_query: SHAP Shapley additive explanations
+  discovered_at: '2026-07-13T09:39:00Z'
+  origin: auto
+- id: W3139236016
+  doi: https://doi.org/10.1016/j.cmpb.2021.106584
+  title: Explanation of machine learning models using shapley additive explanation
+    and application for real data in hospital
+  year: 2021
+  cited_by_count: 951
+  venue: Computer Methods and Programs in Biomedicine
+  authors:
+  - Yasunobu Nohara
+  - Koutarou Matsumoto
+  - Hidehisa Soejima
+  - Naoki Nakashima
+  concepts:
+  - Interpretability
+  - Computer science
+  - Machine learning
+  - Artificial intelligence
+  - Decision tree
+  - Feature (linguistics)
+  source_query: SHAP Shapley additive explanations
+  discovered_at: '2026-07-13T09:39:00Z'
+  origin: auto
+- id: W4283077289
+  doi: https://doi.org/10.1016/j.compenvurbsys.2022.101845
+  title: 'Extracting spatial effects from machine learning model using local interpretation
+    method: An example of SHAP and XGBoost'
+  year: 2022
+  cited_by_count: 1068
+  venue: Computers Environment and Urban Systems
+  authors:
+  - Ziqi Li
+  concepts:
+  - Artificial intelligence
+  - Interpretation (philosophy)
+  - Machine learning
+  - Boosting (machine learning)
+  - Computer science
+  - Gradient boosting
+  source_query: SHAP Shapley additive explanations
+  discovered_at: '2026-07-13T09:39:00Z'
+  origin: auto
+- id: W2996705655
+  doi: https://doi.org/10.1016/j.aap.2019.105405
+  title: Toward safer highways, application of XGBoost and SHAP for real-time accident
+    detection and feature analysis
+  year: 2019
+  cited_by_count: 1024
+  venue: Accident Analysis & Prevention
+  authors:
+  - Amir Bahador Parsa
+  - Ali Movahedi
+  - Homa Taghipour
+  - Sybil Derrible
+  - Abolfazl Mohammadian
+  concepts:
+  - SAFER
+  - Transport engineering
+  - Metropolitan area
+  - Computer science
+  - Feature (linguistics)
+  - Poison control
+  source_query: SHAP Shapley additive explanations
+  discovered_at: '2026-07-13T09:39:00Z'
+  origin: auto
+- id: W4321496345
+  doi: https://doi.org/10.3390/fi15030088
+  title: 'Machine Learning for Data Center Optimizations: Feature Selection Using
+    Shapley Additive exPlanation (SHAP)'
+  year: 2023
+  cited_by_count: 124
+  venue: Future Internet
+  authors:
+  - Yibrah Gebreyesus
+  - Damian Dalton
+  - Sebastian Nixon
+  - Davide De Chiara
+  - Marta Chinnici
+  concepts:
+  - Computer science
+  - Feature selection
+  - Machine learning
+  - Feature (linguistics)
+  - Artificial intelligence
+  - Hyperparameter
+  source_query: SHAP Shapley additive explanations
+  discovered_at: '2026-07-13T09:39:00Z'
+  origin: auto
+- id: W4390952995
+  doi: https://doi.org/10.1016/j.jwpe.2024.104789
+  title: Evaluation of water quality indexes with novel machine learning and SHapley
+    Additive ExPlanation (SHAP) approaches
+  year: 2024
+  cited_by_count: 148
+  venue: Journal of Water Process Engineering
+  authors:
+  - Ali Aldrees
+  - Majid Khan
+  - Abubakr Taha Bakheit Taha
+  - Mujahid Ali
+  concepts:
+  - Mean squared error
+  - Interpretability
+  - Water quality
+  - Total dissolved solids
+  - Predictive modelling
+  - Statistics
+  source_query: SHAP Shapley additive explanations
+  discovered_at: '2026-07-13T09:39:00Z'
+  origin: auto
+- id: W4308448216
+  doi: https://doi.org/10.1016/j.ajp.2022.103316
+  title: An explainable predictive model for suicide attempt risk using an ensemble
+    learning and Shapley Additive Explanations (SHAP) approach
+  year: 2022
+  cited_by_count: 121
+  venue: Asian Journal of Psychiatry
+  authors:
+  - Noratikah Nordin
+  - Zurinahni Zainol
+  - Mohd Halim Mohd Noor
+  - Lai Fong Chan
+  concepts:
+  - Boosting (machine learning)
+  - Random forest
+  - Identification (biology)
+  - Machine learning
+  - Suicide Risk
+  - Suicide attempt
+  source_query: SHAP Shapley additive explanations
+  discovered_at: '2026-07-13T09:39:00Z'
+  origin: auto
+- id: W4396557573
+  doi: https://doi.org/10.3389/fimmu.2024.1367340
+  title: Creating machine learning models that interpretably link systemic inflammatory
+    index, sex steroid hormones, and dietary antioxidants to identify gout using the
+    SHAP (SHapley Additive exPlanations) method
+  year: 2024
+  cited_by_count: 39
+  venue: Frontiers in Immunology
+  authors:
+  - Shunshun Cao
+  - Yangyang Hu
+  concepts:
+  - Hormone
+  - Gout
+  - Internal medicine
+  - Vitamin D and neurology
+  - Medicine
+  - Steroid
+  source_query: SHAP Shapley additive explanations
+  discovered_at: '2026-07-13T09:39:00Z'
+  origin: auto
+- id: W4393954746
+  doi: https://doi.org/10.1039/d4ra00010b
+  title: Integrated hybrid modeling and SHAP (SHapley Additive exPlanations) to predict
+    and explain the adsorption properties of thermoplastic polyurethane (TPU) porous
+    materials
+  year: 2024
+  cited_by_count: 27
+  venue: RSC Advances
+  authors:
+  - Kangyong Ma
+  concepts:
+  - Thermoplastic polyurethane
+  - Materials science
+  - Adsorption
+  - Porosity
+  - Composite material
+  - Polyurethane
+  source_query: SHAP Shapley additive explanations
+  discovered_at: '2026-07-13T09:39:00Z'
+  origin: auto
+- id: W4307373104
+  doi: https://doi.org/10.3390/bdcc6040126
+  title: Explaining Intrusion Detection-Based Convolutional Neural Networks Using
+    Shapley Additive Explanations (SHAP)
+  year: 2022
+  cited_by_count: 71
+  venue: Big Data and Cognitive Computing
+  authors:
+  - Remah Younisse
+  - Ashraf Ahmad
+  - Qasem Abu Al‐Haija
+  concepts:
+  - Computer science
+  - Artificial intelligence
+  - Machine learning
+  - Process (computing)
+  - Variance (accounting)
+  - Convolutional neural network
+  source_query: SHAP Shapley additive explanations
+  discovered_at: '2026-07-13T09:39:00Z'
+  origin: auto
+- id: W4403139919
+  doi: https://doi.org/10.1002/solr.202400432
+  title: Predictive Modeling and SHAP (SHapley Additive ExPlanations) Analysis for
+    Enhancing Natural Dye‐Sensitized Solar Cell Performance
+  year: 2024
+  cited_by_count: 14
+  venue: Solar RRL
+  authors:
+  - Burcu Oral
+  - Hisham A. Maddah
+  - Ramazan Yıldırım
+  concepts:
+  - Natural (archaeology)
+  - Computer science
+  - Econometrics
+  - Mathematics
+  - Geology
+  - Paleontology
+  source_query: SHAP Shapley additive explanations
+  discovered_at: '2026-07-13T09:39:00Z'
+  origin: auto
+- id: W3191161603
+  doi: https://doi.org/10.1016/j.eswa.2021.115736
+  title: Explaining anomalies detected by autoencoders using Shapley Additive Explanations
+  year: 2021
+  cited_by_count: 458
+  venue: Expert Systems with Applications
+  authors:
+  - Liat Antwarg
+  - Ronnie Mindlin Miller
+  - Bracha Shapira
+  - Lior Rokach
+  concepts:
+  - Autoencoder
+  - Computer science
+  - Anomaly detection
+  - Outlier
+  - Artificial intelligence
+  - Machine learning
+  source_query: SHAP Shapley additive explanations
+  discovered_at: '2026-07-13T09:39:00Z'
+  origin: auto
+- id: W4391616365
+  doi: https://doi.org/10.3390/make6010016
+  title: SHapley Additive exPlanations (SHAP) for Efficient Feature Selection in Rolling
+    Bearing Fault Diagnosis
+  year: 2024
+  cited_by_count: 76
+  venue: Machine Learning and Knowledge Extraction
+  authors:
+  - Mailson Ribeiro Santos
+  - Luiz Affonso Guedes
+  - Ignacio Sánchez-Gendriz
+  concepts:
+  - Bearing (navigation)
+  - Feature selection
+  - Fault (geology)
+  - Selection (genetic algorithm)
+  - Feature (linguistics)
+  - Computer science
+  source_query: SHAP Shapley additive explanations
+  discovered_at: '2026-07-13T09:39:00Z'
+  origin: auto
+- id: W4318683761
+  doi: https://doi.org/10.1016/j.jenvman.2023.117357
+  title: Insights into geospatial heterogeneity of landslide susceptibility based
+    on the SHAP-XGBoost model
+  year: 2023
+  cited_by_count: 587
+  venue: Journal of Environmental Management
+  authors:
+  - Junyi Zhang
+  - Junyi Zhang
+  - Xianglong Ma
+  - Jialan Zhang
+  - Jialan Zhang
+  - Deliang Sun
+  - Xinzhi Zhou
+  - Changlin Mi
+  concepts:
+  - Landslide
+  - Geospatial analysis
+  - Generalizability theory
+  - Spatial heterogeneity
+  - Physical geography
+  - Lithology
+  source_query: SHAP Shapley additive explanations
+  discovered_at: '2026-07-13T09:39:00Z'
+  origin: auto
+- id: W4386435351
+  doi: https://doi.org/10.1016/j.fuel.2023.129573
+  title: 'Prediction of HHV of fuel by Machine learning Algorithm: Interpretability
+    analysis using Shapley Additive Explanations (SHAP)'
+  year: 2023
+  cited_by_count: 87
+  venue: Fuel
+  authors:
+  - Manish Sharma Timilsina
+  - Subhadip Sen
+  - Bibek Uprety
+  - Vashishtha B. Patel
+  - Prateek Sharma
+  - Pratik N. Sheth
+  concepts:
+  - Interpretability
+  - Random forest
+  - Decision tree
+  - Hyperparameter
+  - Machine learning
+  - Mean squared error
+  source_query: SHAP Shapley additive explanations
+  discovered_at: '2026-07-13T09:39:00Z'
+  origin: auto
+- id: W4400135851
+  doi: https://doi.org/10.1002/aisy.202400304
+  title: 'A Perspective on Explainable Artificial Intelligence Methods: SHAP and LIME'
+  year: 2024
+  cited_by_count: 673
+  venue: Advanced Intelligent Systems
+  authors:
+  - Ahmed Salih
+  - Zahra Raisi‐Estabragh
+  - Ilaria Boscolo Galazzo
+  - Petia Radeva
+  - Steffen E. Petersen
+  - Karim Lekadir
+  - Gloria Menegaz
+  concepts:
+  - Collinearity
+  - Perspective (graphical)
+  - Interpretation (philosophy)
+  - Computer science
+  - Artificial intelligence
+  - Dependency (UML)
+  source_query: SHAP Shapley additive explanations
+  discovered_at: '2026-07-13T09:39:00Z'
+  origin: auto
+- id: W3022298391
+  doi: https://doi.org/10.1007/s10822-020-00314-0
+  title: 'Interpretation of machine learning models using shapley values: application
+    to compound potency and multi-target activity predictions'
+  year: 2020
+  cited_by_count: 697
+  venue: Journal of Computer-Aided Molecular Design
+  authors:
+  - Raquel Rodríguez-Pérez
+  - Jürgen Bajorath
+  concepts:
+  - Interpretation (philosophy)
+  - Shapley value
+  - Computer science
+  - Artificial intelligence
+  - Artificial neural network
+  - Machine learning
+  source_query: SHAP Shapley additive explanations
+  discovered_at: '2026-07-13T09:39:00Z'
+  origin: auto
+- id: W4402206216
+  doi: https://doi.org/10.1016/j.rineng.2024.102831
+  title: Advancing water quality assessment and prediction using machine learning
+    models, coupled with explainable artificial intelligence (XAI) techniques like
+    shapley additive explanations (SHAP) for interpreting the black-box nature
+  year: 2024
+  cited_by_count: 180
+  venue: Results in Engineering
+  authors:
+  - Randika K. Makumbura
+  - Lakindu Mampitiya
+  - Namal Rathnayake
+  - D.P.P. Meddage
+  - Shagufta Henna
+  - Tuan Linh Dang
+  - Yukinobu Hoshino
+  - Upaka Rathnayake
+  concepts:
+  - Water quality
+  - Index (typography)
+  - Quality (philosophy)
+  - Predictive modelling
+  - Mean squared error
+  - Machine learning
+  source_query: SHAP Shapley additive explanations
+  discovered_at: '2026-07-13T09:39:00Z'
+  origin: auto
+- id: W3204874854
+  doi: https://doi.org/10.1109/icesc51422.2021.9532829
+  title: Predicting Covid-19 Positive Cases and Analysis on the Relevance of Features
+    using SHAP (SHapley Additive exPlanation)
+  year: 2021
+  cited_by_count: 9
+  venue: 2021 Second International Conference on Electronics and Sustainable Communication
+    Systems (ICESC)
+  authors:
+  - Movva Naga Sumanth Choudary
+  - Vinay Babu Bommineni
+  - Grandhi Tarun
+  - Guvvala Prasanth Reddy
+  - G. Gopakumar
+  concepts:
+  - Coronavirus disease 2019 (COVID-19)
+  - Pandemic
+  - Relevance (law)
+  - 2019-20 coronavirus outbreak
+  - Severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2)
+  - Outbreak
+  source_query: SHAP Shapley additive explanations
+  discovered_at: '2026-07-13T09:39:00Z'
+  origin: auto
+- id: W4200090997
+  doi: https://doi.org/10.5121/ijcnc.2021.13607
+  title: Utilizing XAI Technique to Improve Autoencoder based Model for Computer Network
+    Anomaly Detection with Shapley Additive Explanation(SHAP)
+  year: 2021
+  cited_by_count: 80
+  venue: International journal of Computer Networks & Communications
+  authors:
+  - Khushnaseeb Roshan
+  - Aasim Zafar
+  concepts:
+  - Autoencoder
+  - Computer science
+  - Anomaly detection
+  - Artificial intelligence
+  - Feature selection
+  - Data mining
+  source_query: SHAP Shapley additive explanations
+  discovered_at: '2026-07-13T09:39:00Z'
+  origin: auto
+- id: W1939947548
+  doi: https://doi.org/10.1161/cir.0000000000000228
+  title: Social Determinants of Risk and Outcomes for Cardiovascular Disease
+  year: 2015
+  cited_by_count: 1448
+  venue: Circulation
+  authors:
+  - Edward P. Havranek
+  - Mahasin S. Mujahid
+  - Donald A. Barr
+  - Irene V. Blair
+  - Meryl S. Cohen
+  - Salvador Cruz‐Flores
+  - George Davey-Smith
+  - Cheryl Dennison Himmelfarb
+  concepts:
+  - Medicine
+  - Disease
+  - Intensive care medicine
+  - Environmental health
+  - Internal medicine
+  source_query: harm of class imbalance corrections risk prediction calibration
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W4406851452
+  doi: https://doi.org/10.1002/sim.10320
+  title: 'The Harms of Class Imbalance Corrections for Machine Learning Based Prediction
+    Models: A Simulation Study'
+  year: 2025
+  cited_by_count: 35
+  venue: Statistics in Medicine
+  authors:
+  - Alex Carriero
+  - Kim Luijken
+  - Anne de Hond
+  - Karel G. M. Moons
+  - Ben Van Calster
+  - Maarten van Smeden
+  concepts:
+  - Calibration
+  - Computer science
+  - Machine learning
+  - Artificial intelligence
+  - Sample size determination
+  - Class (philosophy)
+  source_query: harm of class imbalance corrections risk prediction calibration
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W2164861810
+  doi: https://doi.org/10.1093/eurheartj/ehq278
+  title: 'Guidelines for the management of atrial fibrillation: The Task Force for
+    the Management of Atrial Fibrillation of the European Society of Cardiology (ESC)'
+  year: 2010
+  cited_by_count: 5874
+  venue: European Heart Journal
+  authors:
+  - Authors/Task Force Members
+  - A. John Camm
+  - Paulus Kirchhof
+  - Gregory Y.H. Lip
+  - Ulrich Schotten
+  - Irene Savelieva
+  - Sabine Ernst
+  - Isabelle C. Van Gelder
+  concepts:
+  - Medicine
+  - Atrial fibrillation
+  - Guardian
+  - Judgement
+  - Medical prescription
+  - Task force
+  source_query: harm of class imbalance corrections risk prediction calibration
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W4221164706
+  doi: https://doi.org/10.48550/arxiv.2202.09101
+  title: 'The harm of class imbalance corrections for risk prediction models: illustration
+    and simulation using logistic regression'
+  year: 2022
+  cited_by_count: 9
+  venue: arXiv (Cornell University)
+  authors:
+  - Ruben van den Goorbergh
+  - Maarten van Smeden
+  - D. Timmerman
+  - Ben Van Calster
+  concepts:
+  - Logistic regression
+  - Statistics
+  - Calibration
+  - Undersampling
+  - Receiver operating characteristic
+  - Monte Carlo method
+  source_query: harm of class imbalance corrections risk prediction calibration
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W2614986146
+  doi: https://doi.org/10.1016/s0140-6736(16)31012-1
+  title: 'Global, regional, and national life expectancy, all-cause mortality, and
+    cause-specific mortality for 249 causes of death, 1980–2015: a systematic analysis
+    for the Global Burden of Disease Study 2015'
+  year: 2016
+  cited_by_count: 6704
+  venue: The Lancet
+  authors:
+  - Haidong Wang
+  - Mohsen Naghavi
+  - Christine A. Allen
+  - Ryan M Barber
+  - Zulfiqar A Bhutta
+  - Austin Carter
+  - Daniel Casey
+  - Fiona Charlson
+  concepts:
+  - Life expectancy
+  - Cause of death
+  - Disease
+  - Demography
+  - Burden of disease
+  - Mortality rate
+  source_query: harm of class imbalance corrections risk prediction calibration
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W4390547705
+  doi: https://doi.org/10.1186/s40537-023-00857-7
+  title: Impact of random oversampling and random undersampling on the performance
+    of prediction models developed using observational health data
+  year: 2024
+  cited_by_count: 78
+  venue: Journal Of Big Data
+  authors:
+  - Cynthia Yang
+  - Egill A. Friðgeirsson
+  - Jan A. Kors
+  - Jenna Reps
+  - Peter R. Rijnbeek
+  concepts:
+  - Undersampling
+  - Oversampling
+  - Random forest
+  - Observational study
+  - Computer science
+  - Calibration
+  source_query: harm of class imbalance corrections risk prediction calibration
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W4377240346
+  doi: https://doi.org/10.1186/s12911-023-02185-5
+  title: Classification of imbalanced data using machine learning algorithms to predict
+    the risk of renal graft failures in Ethiopia
+  year: 2023
+  cited_by_count: 29
+  venue: BMC Medical Informatics and Decision Making
+  authors:
+  - Getahun Mulugeta
+  - Temesgen Zewotir
+  - Awoke Seyoum Tegegne
+  - Leja Hamza Juhar
+  - Mahteme Bekele Muleta
+  concepts:
+  - Brier score
+  - Random forest
+  - Machine learning
+  - Artificial intelligence
+  - Ensemble learning
+  - Computer science
+  source_query: harm of class imbalance corrections risk prediction calibration
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W2989324284
+  doi: https://doi.org/10.2196/15510
+  title: 'Longitudinal Risk Prediction of Chronic Kidney Disease in Diabetic Patients
+    using Temporal-Enhanced Gradient Boosting Machine: Retrospective Cohort Study'
+  year: 2019
+  cited_by_count: 78
+  venue: JMIR Medical Informatics
+  authors:
+  - Xing Song
+  - Lemuel R. Waitman
+  - Alan S.L. Yu
+  - David C. Robbins
+  - Yong Hu
+  - Mei Liu
+  concepts:
+  - Medicine
+  - Gradient boosting
+  - Boosting (machine learning)
+  - Kidney disease
+  - Retrospective cohort study
+  - Receiver operating characteristic
+  source_query: harm of class imbalance corrections risk prediction calibration
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W4309944697
+  doi: https://doi.org/10.1016/j.jclinepi.2022.11.015
+  title: Systematic review identifies the design and methodological conduct of studies
+    on machine learning-based prediction models
+  year: 2022
+  cited_by_count: 105
+  venue: Journal of Clinical Epidemiology
+  authors:
+  - Constanza L. Andaur Navarro
+  - Johanna AAG Damen
+  - Maarten van Smeden
+  - Toshihiko Takada
+  - Steven W J Nijman
+  - Paula Dhiman
+  - Jie Ma
+  - Gary S. Collins
+  concepts:
+  - Machine learning
+  - Receiver operating characteristic
+  - Medicine
+  - Artificial intelligence
+  - Calibration
+  - Random forest
+  source_query: harm of class imbalance corrections risk prediction calibration
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W1989256564
+  doi: https://doi.org/10.1016/j.jtcvs.2005.06.050
+  title: Risk factors for and economic implications of prolonged ventilation after
+    cardiac surgery
+  year: 2005
+  cited_by_count: 108
+  venue: Journal of Thoracic and Cardiovascular Surgery
+  authors:
+  - Chanaka Rajakaruna
+  - Chris Rogers
+  - Gianni D. Angelini
+  - Raimondo Ascione
+  concepts:
+  - Ventilation (architecture)
+  - Medicine
+  - Cardiac surgery
+  - Intensive care medicine
+  - Anesthesia
+  - Cardiology
+  source_query: harm of class imbalance corrections risk prediction calibration
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W4234934322
+  doi: https://doi.org/10.1016/0167-2231(87)90017-0
+  title: Journal of monetary economics
+  year: 1987
+  cited_by_count: 792
+  venue: Carnegie-Rochester Conference Series on Public Policy
+  authors:
+  - Tteo Iacoviello Urban
+  - Uadrini David Romer
+  concepts:
+  - Economics
+  - Keynesian economics
+  - Positive economics
+  source_query: harm of class imbalance corrections risk prediction calibration
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W4392826556
+  doi: https://doi.org/10.1136/bmjment-2024-300990
+  title: 'Suicide risk assessment tools and prediction models: new evidence, methodological
+    innovations, outdated criticisms'
+  year: 2024
+  cited_by_count: 33
+  venue: BMJ Mental Health
+  authors:
+  - Aida Seyedsalehi
+  - Seena Fazel
+  concepts:
+  - Risk assessment
+  - Management science
+  - Risk analysis (engineering)
+  - Psychology
+  - Engineering
+  - Computer science
+  source_query: harm of class imbalance corrections risk prediction calibration
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W4390833755
+  doi: https://doi.org/10.48550/arxiv.2401.06091
+  title: A Closer Look at AUROC and AUPRC under Class Imbalance
+  year: 2024
+  cited_by_count: 18
+  venue: arXiv (Cornell University)
+  authors:
+  - Matthew B. A. McDermott
+  - Haoran Zhang
+  - Lasse Hansen
+  - Giovanni Angelotti
+  - Jack Gallifant
+  concepts:
+  - Metric (unit)
+  - Class (philosophy)
+  - Computer science
+  - Probabilistic logic
+  - Recall
+  - Receiver operating characteristic
+  source_query: harm of class imbalance corrections risk prediction calibration
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W3004155201
+  doi: https://doi.org/10.1145/3351095.3372869
+  title: The false promise of risk assessments
+  year: 2020
+  cited_by_count: 83
+  venue: null
+  authors:
+  - Ben Green
+  concepts:
+  - Criminal justice
+  - Discretion
+  - Legitimacy
+  - Objectivity (philosophy)
+  - Law and economics
+  - Theory of criminal justice
+  source_query: harm of class imbalance corrections risk prediction calibration
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W4414993346
+  doi: https://doi.org/10.1186/s12916-025-04367-6
+  title: 'Prediction models for self-harm and suicide: a systematic review and critical
+    appraisal'
+  year: 2025
+  cited_by_count: 12
+  venue: BMC Medicine
+  authors:
+  - Aida Seyedsalehi
+  - J.p.m. Bailey
+  - Maya G. T. Ogonah
+  - Thomas Fanshawe
+  - Seena Fazel
+  concepts:
+  - Rigour
+  - Medicine
+  - Predictive modelling
+  - Critical appraisal
+  - Risk analysis (engineering)
+  - Presentation (obstetrics)
+  source_query: harm of class imbalance corrections risk prediction calibration
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W4385145683
+  doi: https://doi.org/10.1186/s12874-023-01989-3
+  title: Comparison of discrimination and calibration performance of ECG-based machine
+    learning models for prediction of new-onset atrial fibrillation
+  year: 2023
+  cited_by_count: 12
+  venue: BMC Medical Research Methodology
+  authors:
+  - Giovanni Baj
+  - Ilaria Gandin
+  - Arjuna Scagnetto
+  - Luca Bortolussi
+  - Chiara Cappelletto
+  - Andrea Di Lenarda
+  - Giulia Barbati
+  concepts:
+  - Calibration
+  - Sample size determination
+  - Artificial intelligence
+  - Logistic regression
+  - Computer science
+  - Undersampling
+  source_query: harm of class imbalance corrections risk prediction calibration
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W4220657299
+  doi: https://doi.org/10.3390/ijerph19063641
+  title: Sources of Risk of AI Systems
+  year: 2022
+  cited_by_count: 77
+  venue: International Journal of Environmental Research and Public Health
+  authors:
+  - André Steimers
+  - Moritz Schneider
+  concepts:
+  - Computer science
+  - Risk management
+  - Risk analysis (engineering)
+  - Risk assessment
+  - Trustworthiness
+  - Software
+  source_query: harm of class imbalance corrections risk prediction calibration
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W4292321564
+  doi: https://doi.org/10.1016/j.atherosclerosis.2015.05.007
+  title: The role of vascular biomarkers for primary and secondary prevention. A position
+    paper from the European Society of Cardiology Working Group on peripheral circulation
+  year: 2015
+  cited_by_count: 720
+  venue: Atherosclerosis
+  authors:
+  - Charalambos Vlachopoulos
+  - Panagiotis Xaplanteris
+  - Victor Aboyans
+  - Marianne Brodmann
+  - Renata Cífková
+  - Francesco Cosentino
+  - Marco De Carlo
+  - Augusto Gallino
+  concepts:
+  - Medicine
+  - Biomarker
+  - Clinical endpoint
+  - Surrogate endpoint
+  - Pulse wave velocity
+  - Internal medicine
+  source_query: harm of class imbalance corrections risk prediction calibration
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W4412103547
+  doi: https://doi.org/10.1016/j.compbiomed.2025.110718
+  title: Artificial intelligence and digital twins for the personalised prediction
+    of hypertension risk
+  year: 2025
+  cited_by_count: 14
+  venue: Computers in Biology and Medicine
+  authors:
+  - Akhil Naik
+  - Jakub Nalepa
+  - Agata M. Wijata
+  - J.R. Mahon
+  - Dharmesh Mistry
+  - Adam T Knowles
+  - Ellen A. Dawson
+  - Gregory Y.H. Lip
+  concepts:
+  - Computer science
+  - Artificial intelligence
+  - Machine learning
+  source_query: harm of class imbalance corrections risk prediction calibration
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W4328125153
+  doi: https://doi.org/10.1186/s13643-023-02181-w
+  title: 'Screening for the primary prevention of fragility fractures among adults
+    aged 40 years and older in primary care: systematic reviews of the effects and
+    acceptability of screening and treatment, and the accuracy of risk prediction
+    tools'
+  year: 2023
+  cited_by_count: 37
+  venue: Systematic Reviews
+  authors:
+  - Michelle Gates
+  - Jennifer Pillay
+  - Megan Nuspl
+  - Aireen Wingert
+  - Ben Vandermeer
+  - Lisa Hartling
+  concepts:
+  - Medicine
+  - Primary care
+  - Fragility
+  - Primary prevention
+  - Fragility fracture
+  - Family medicine
+  source_query: harm of class imbalance corrections risk prediction calibration
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W3201071194
+  doi: https://doi.org/10.5070/cj85154807
+  title: Investigating Algorithmic Risk and Race
+  year: 2021
+  cited_by_count: 48
+  venue: UCLA Criminal Justice Law Review
+  authors:
+  - Melissa Hamilton
+  concepts:
+  - Criminal justice
+  - Disparate impact
+  - Population
+  - Race (biology)
+  - Actuarial science
+  - Field (mathematics)
+  source_query: harm of class imbalance corrections risk prediction calibration
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W4415821179
+  doi: https://doi.org/10.1371/journal.pone.0330050
+  title: 'Resampling methods for class imbalance in clinical prediction models: A
+    scoping review protocol'
+  year: 2025
+  cited_by_count: 4
+  venue: PLoS ONE
+  authors:
+  - Osama Abdelhay
+  - Adam Shatnawi
+  - Hassan Najadat
+  - Taghreed Altamimi
+  concepts:
+  - Protocol (science)
+  - Computer science
+  - Resampling
+  - Artificial intelligence
+  - Data mining
+  - Class (philosophy)
+  source_query: harm of class imbalance corrections risk prediction calibration
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W2157446241
+  doi: https://doi.org/10.1016/j.neuroimage.2013.11.046
+  title: 'Automatic denoising of functional MRI data: Combining independent component
+    analysis and hierarchical fusion of classifiers'
+  year: 2014
+  cited_by_count: 2024
+  venue: NeuroImage
+  authors:
+  - Gholamreza Salimi‐Khorshidi
+  - Gwenaëlle Douaud
+  - Christian F. Beckmann
+  - Matthew F. Glasser
+  - Ludovica Griffanti
+  - Stephen M. Smith
+  concepts:
+  - Independent component analysis
+  - Pattern recognition (psychology)
+  - Computer science
+  - Artificial intelligence
+  - Noise (video)
+  - Noise reduction
+  source_query: class probability estimates imbalanced data classifiers
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W1970088130
+  doi: https://doi.org/10.1023/b:mach.0000008084.60811.49
+  title: Support Vector Data Description
+  year: 2003
+  cited_by_count: 3490
+  venue: Machine Learning
+  authors:
+  - David M. J. Tax
+  - Robert P. W. Duin
+  concepts:
+  - Support vector machine
+  - Outlier
+  - Computer science
+  - Relevance vector machine
+  - Data space
+  - Structured support vector machine
+  source_query: class probability estimates imbalanced data classifiers
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W2776146695
+  doi: https://doi.org/10.3390/s18010018
+  title: Comparison of Random Forest, k-Nearest Neighbor, and Support Vector Machine
+    Classifiers for Land Cover Classification Using Sentinel-2 Imagery
+  year: 2017
+  cited_by_count: 1335
+  venue: Sensors
+  authors:
+  - Phan Thanh Noi
+  - Martin Kappas
+  concepts:
+  - Random forest
+  - Support vector machine
+  - Artificial intelligence
+  - Land cover
+  - Pattern recognition (psychology)
+  - Computer science
+  source_query: class probability estimates imbalanced data classifiers
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W2024046085
+  doi: https://doi.org/10.1214/aos/1016218223
+  title: 'Additive logistic regression: a statistical view of boosting (With discussion
+    and a rejoinder by the authors)'
+  year: 2000
+  cited_by_count: 6961
+  venue: The Annals of Statistics
+  authors:
+  - Jerome H. Friedman
+  - Trevor Hastie
+  - Robert Tibshirani
+  concepts:
+  - Boosting (machine learning)
+  - Gradient boosting
+  - Mathematics
+  - Decision tree
+  - Machine learning
+  - Multinomial logistic regression
+  source_query: class probability estimates imbalanced data classifiers
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W2116984840
+  doi: https://doi.org/10.1007/s10115-011-0463-8
+  title: Data preprocessing techniques for classification without discrimination
+  year: 2011
+  cited_by_count: 1263
+  venue: Knowledge and Information Systems
+  authors:
+  - Faisal Kamiran
+  - Toon Calders
+  concepts:
+  - Preprocessor
+  - Computer science
+  - Classifier (UML)
+  - Artificial intelligence
+  - Resampling
+  - Pattern recognition (psychology)
+  source_query: class probability estimates imbalanced data classifiers
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W3014666486
+  doi: https://doi.org/10.1016/j.neucom.2020.03.064
+  title: 'AdaBoost-CNN: An adaptive boosting algorithm for convolutional neural networks
+    to classify multi-class imbalanced datasets using transfer learning'
+  year: 2020
+  cited_by_count: 277
+  venue: Neurocomputing
+  authors:
+  - Aboozar Taherkhani
+  - Georgina Cosma
+  - T.M. McGinnity
+  concepts:
+  - AdaBoost
+  - Artificial intelligence
+  - Boosting (machine learning)
+  - Computer science
+  - Machine learning
+  - Convolutional neural network
+  source_query: class probability estimates imbalanced data classifiers
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W2915981391
+  doi: https://doi.org/10.11591/ijeecs.v14.i3.pp1552-1563
+  title: 'Imbalance class problems in data mining: a review'
+  year: 2019
+  cited_by_count: 151
+  venue: Indonesian Journal of Electrical Engineering and Computer Science
+  authors:
+  - Haseeb Ali
+  - Mohd Najib Mohd Salleh
+  - Rd. Rohmat Saedudin
+  - Kashif Hussain
+  - Muhammad Faheem Mushtaq
+  concepts:
+  - Class (philosophy)
+  - Machine learning
+  - Process (computing)
+  - Artificial intelligence
+  - Computer science
+  - Data mining
+  source_query: class probability estimates imbalanced data classifiers
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W1533970595
+  doi: null
+  title: Machine Learning from Imbalanced Data Sets 101
+  year: 2008
+  cited_by_count: 391
+  venue: Faculty Digital Archive (New York University Florence)
+  authors:
+  - Foster Provost
+  concepts:
+  - Artificial intelligence
+  - Computer science
+  - Machine learning
+  source_query: class probability estimates imbalanced data classifiers
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W2163667253
+  doi: https://doi.org/10.5555/1248659.1248675
+  title: Boosted Classification Trees and Class Probability/Quantile Estimation
+  year: 2007
+  cited_by_count: 247
+  venue: ScholarlyCommons (University of Pennsylvania)
+  authors:
+  - David Mease
+  - Abraham J. Wyner
+  - Andreas Buja
+  concepts:
+  - Quantile
+  - Overfitting
+  - Boosting (machine learning)
+  - AdaBoost
+  - Estimator
+  - Artificial intelligence
+  source_query: class probability estimates imbalanced data classifiers
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W1745603050
+  doi: https://doi.org/10.18637/jss.v008.i02
+  title: Logistic Regression in Rare Events Data
+  year: 2003
+  cited_by_count: 348
+  venue: Journal of Statistical Software
+  authors:
+  - Gary King
+  - Langche Zeng
+  concepts:
+  - Rare events
+  - Logistic regression
+  - Politics
+  - Binary number
+  - Regression
+  - Computer science
+  source_query: logistic regression in rare events data
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W2163848058
+  doi: https://doi.org/10.1093/oxfordjournals.pan.a004868
+  title: Logistic Regression in Rare Events Data
+  year: 2001
+  cited_by_count: 99
+  venue: Political Analysis
+  authors:
+  - Gary King
+  - Langche Zeng
+  concepts:
+  - Rare events
+  - Econometrics
+  - Variable (mathematics)
+  - Fraction (chemistry)
+  - Logistic regression
+  - Sampling (signal processing)
+  source_query: logistic regression in rare events data
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W3095274957
+  doi: https://doi.org/10.1016/j.ssresearch.2020.102486
+  title: 'Estimating group fixed effects in panel data with a binary dependent variable:
+    How the LPM outperforms logistic regression in rare events data'
+  year: 2020
+  cited_by_count: 164
+  venue: Social Science Research
+  authors:
+  - Joan C. Timoneda
+  concepts:
+  - Logit
+  - Logistic regression
+  - Statistics
+  - Fixed effects model
+  - Econometrics
+  - Variable (mathematics)
+  source_query: logistic regression in rare events data
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W2008640468
+  doi: https://doi.org/10.1214/08-aoas191
+  title: A weakly informative default prior distribution for logistic and other regression
+    models
+  year: 2008
+  cited_by_count: 1802
+  venue: The Annals of Applied Statistics
+  authors:
+  - Andrew Gelman
+  - Aleks Jakulin
+  - Maria Grazia Pittau
+  - Yu-Sung Su
+  concepts:
+  - Mathematics
+  - Cauchy distribution
+  - Logistic regression
+  - Statistics
+  - Logistic distribution
+  - Gaussian
+  source_query: logistic regression in rare events data
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W2128076015
+  doi: https://doi.org/10.1002/sim.2528
+  title: 'Much ado about nothing: a comparison of the performance of meta‐analytical
+    methods with rare events'
+  year: 2006
+  cited_by_count: 948
+  venue: Statistics in Medicine
+  authors:
+  - Michael J. Bradburn
+  - Jonathan J Deeks
+  - Jesse A. Berlin
+  - A. Russell Localio
+  concepts:
+  - Nothing
+  - Computer science
+  - Meta-analysis
+  - Rare events
+  - Statistics
+  - Econometrics
+  source_query: logistic regression in rare events data
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W3007017972
+  doi: https://doi.org/10.1155/2020/1632350
+  title: A Comparative Study of the Bias Correction Methods for Differential Item
+    Functioning Analysis in Logistic Regression with Rare Events Data
+  year: 2020
+  cited_by_count: 8
+  venue: BioMed Research International
+  authors:
+  - Marjan Faghih
+  - Zahra Bagheri
+  - Dejan Stevanović
+  - Seyyed Mohhamad Taghi Ayatollahi
+  - Peyman Jafari
+  concepts:
+  - Statistics
+  - Logistic regression
+  - Differential item functioning
+  - Mathematics
+  - Sample size determination
+  - Regression analysis
+  source_query: logistic regression in rare events data
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W2593185514
+  doi: https://doi.org/10.1002/sim.7273
+  title: 'Firth''s logistic regression with rare events: accurate effect estimates
+    and predictions?'
+  year: 2017
+  cited_by_count: 409
+  venue: Statistics in Medicine
+  authors:
+  - Rainer Puhr
+  - Georg Heinze
+  - Mariana Nold
+  - Lara Lusa
+  - Angelika Geroldinger
+  concepts:
+  - Firth
+  - Logistic regression
+  - Rare events
+  - Statistics
+  - Regression
+  - Econometrics
+  source_query: logistic regression in rare events data
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W2584211670
+  doi: https://doi.org/10.1080/02664763.2017.1282441
+  title: Inferences from logistic regression models in the presence of small samples,
+    rare events, nonlinearity, and multicollinearity with observational data
+  year: 2017
+  cited_by_count: 41
+  venue: Journal of Applied Statistics
+  authors:
+  - Jason S. Bergtold
+  - Elizabeth A. Yeager
+  - Allen M. Featherstone
+  concepts:
+  - Multicollinearity
+  - Statistics
+  - Logistic regression
+  - Econometrics
+  - Observational study
+  - Sample size determination
+  source_query: logistic regression in rare events data
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W2170952317
+  doi: https://doi.org/10.1002/sim.1761
+  title: What to add to nothing? Use and avoidance of continuity corrections in meta‐analysis
+    of sparse data
+  year: 2004
+  cited_by_count: 1711
+  venue: Statistics in Medicine
+  authors:
+  - Michael Sweeting
+  - Alex J. Sutton
+  - Paul C. Lambert
+  concepts:
+  - Pooling
+  - Statistics
+  - Meta-analysis
+  - Sample size determination
+  - Bayesian probability
+  - Event (particle physics)
+  source_query: logistic regression in rare events data
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W2743594598
+  doi: https://doi.org/10.1111/coin.12123
+  title: 'Logistic regression in large rare events and imbalanced data: A performance
+    comparison of prior correction and weighting methods'
+  year: 2017
+  cited_by_count: 37
+  venue: Computational Intelligence
+  authors:
+  - Maher Maalouf
+  - Dirar Homouz
+  - Theodore B. Trafali̇s
+  concepts:
+  - Weighting
+  - Discriminative model
+  - Data set
+  - Logistic regression
+  - Computer science
+  - Mathematics
+  source_query: logistic regression in rare events data
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W2148361291
+  doi: https://doi.org/10.1002/sim.4040
+  title: Random effects meta-analysis of event outcome in the framework of the generalized
+    linear mixed model with applications in sparse data
+  year: 2010
+  cited_by_count: 731
+  venue: Statistics in Medicine
+  authors:
+  - Theo Stijnen
+  - Taye H. Hamza
+  - Pınar Özdemir
+  concepts:
+  - Statistics
+  - Bivariate analysis
+  - Random effects model
+  - Mathematics
+  - Outcome (game theory)
+  - Logistic regression
+  source_query: logistic regression in rare events data
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W2278972578
+  doi: https://doi.org/10.1093/pan/mpv024
+  title: Comparing Random Forest with Logistic Regression for Predicting Class-Imbalanced
+    Civil War Onset Data
+  year: 2015
+  cited_by_count: 242
+  venue: Political Analysis
+  authors:
+  - David Muchlinski
+  - David S. Siroky
+  - Jingrui He
+  - Matthew Adam Kocher
+  concepts:
+  - Logistic regression
+  - Logistic model tree
+  - Statistics
+  - Random forest
+  - Computer science
+  - Regression
+  source_query: logistic regression in rare events data
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W3030977454
+  doi: https://doi.org/10.48550/arxiv.2006.00683
+  title: Logistic Regression for Massive Data with Rare Events
+  year: 2020
+  cited_by_count: 9
+  venue: arXiv (Cornell University)
+  authors:
+  - Haiying Wang
+  concepts:
+  - Logistic regression
+  - Rare events
+  - Regression
+  - Statistics
+  - Computer science
+  - Econometrics
+  source_query: logistic regression in rare events data
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W1563636823
+  doi: https://doi.org/10.1017/cbo9780511525575
+  title: Data Analysis in Community and Landscape Ecology
+  year: 1995
+  cited_by_count: 4585
+  venue: Cambridge University Press eBooks
+  authors:
+  - R.H.G. Jongman
+  - Cajo J. F. ter Braak
+  - O. F. R. van Tongeren
+  concepts:
+  - Ecology
+  - Landscape ecology
+  - Abundance (ecology)
+  - Geography
+  - Canonical correspondence analysis
+  - Environmental data
+  source_query: logistic regression in rare events data
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W2138784405
+  doi: https://doi.org/10.1503/cmaj.1040498
+  title: 'The Canadian Adverse Events Study: the incidence of adverse events among
+    hospital patients in Canada'
+  year: 2004
+  cited_by_count: 2353
+  venue: Canadian Medical Association Journal
+  authors:
+  - G. Ross Baker
+  concepts:
+  - Medicine
+  - Incidence (geometry)
+  - Confidence interval
+  - Adverse effect
+  - Emergency medicine
+  - Rate ratio
+  source_query: logistic regression in rare events data
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W4398935954
+  doi: https://doi.org/10.7910/dvn/spafjk
+  title: 'Replication data for: Logistic Regression in Rare Events Data'
+  year: 2010
+  cited_by_count: 1
+  venue: Harvard Dataverse
+  authors:
+  - Gary King
+  - Langche Zeng
+  concepts:
+  - Replication (statistics)
+  - Logistic regression
+  - Rare events
+  - Computer science
+  - Statistics
+  - Mathematics
+  source_query: logistic regression in rare events data
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W2105044903
+  doi: https://doi.org/10.1175/1520-0442(2001)014<1568:dpotir>2.0.co;2
+  title: 'Detection Probability of Trends in Rare Events: Theory and Application to
+    Heavy Precipitation in the Alpine Region'
+  year: 2001
+  cited_by_count: 376
+  venue: Journal of Climate
+  authors:
+  - Christoph Frei
+  - Christoph Schär
+  concepts:
+  - Climatology
+  - Precipitation
+  - Rare events
+  - Environmental science
+  - Probability theory
+  - Geology
+  source_query: logistic regression in rare events data
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W2227809122
+  doi: https://doi.org/10.1007/s12665-010-0509-3
+  title: GIS-based rare events logistic regression for landslide-susceptibility mapping
+    of Lianyungang, China
+  year: 2010
+  cited_by_count: 148
+  venue: Environmental Earth Sciences
+  authors:
+  - Shibiao Bai
+  - Guonian Lü
+  - Jian Wang
+  - Pinggen Zhou
+  - Liang Ding
+  concepts:
+  - Landslide
+  - Logistic regression
+  - Digital elevation model
+  - Geographic information system
+  - Cartography
+  - Biogeosciences
+  source_query: logistic regression in rare events data
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W4249343991
+  doi: https://doi.org/10.2307/2336755
+  title: Bias Reduction of Maximum Likelihood Estimates
+  year: 1993
+  cited_by_count: 384
+  venue: Biometrika
+  authors:
+  - David Firth
+  concepts:
+  - Mathematics
+  - Statistics
+  - Maximum likelihood
+  - Reduction (mathematics)
+  - Econometrics
+  - Geometry
+  source_query: bias reduction of maximum likelihood estimates
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W2963911805
+  doi: https://doi.org/10.1093/biomet/asx046
+  title: Median bias reduction of maximum likelihood estimates
+  year: 2017
+  cited_by_count: 45
+  venue: Biometrika
+  authors:
+  - Euloge Clovis Kenne Pagui
+  - Alessandra Salvan
+  - Nicola Sartori
+  concepts:
+  - Mathematics
+  - Centring
+  - Estimator
+  - Statistics
+  - Equivariant map
+  - Parametric statistics
+  source_query: bias reduction of maximum likelihood estimates
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W2119160928
+  doi: https://doi.org/10.1111/j.1467-9868.2010.00749.x
+  title: Fast Stable Restricted Maximum Likelihood and Marginal Likelihood Estimation
+    of Semiparametric Generalized Linear Models
+  year: 2010
+  cited_by_count: 7619
+  venue: Journal of the Royal Statistical Society Series B (Statistical Methodology)
+  authors:
+  - Simon N. Wood
+  concepts:
+  - Restricted maximum likelihood
+  - Smoothing
+  - Mathematics
+  - Marginal likelihood
+  - Generalized linear model
+  - Applied mathematics
+  source_query: bias reduction of maximum likelihood estimates
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W2045361781
+  doi: https://doi.org/10.2307/2337546
+  title: 'Amendments and Corrections: Bias Reduction of Maximum Likelihood Estimates'
+  year: 1995
+  cited_by_count: 24
+  venue: Biometrika
+  authors:
+  - David Firth
+  concepts:
+  - Mathematics
+  - Statistics
+  - Reduction (mathematics)
+  - Maximum likelihood
+  - Econometrics
+  - Geometry
+  source_query: bias reduction of maximum likelihood estimates
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W2061106858
+  doi: https://doi.org/10.1016/j.jspi.2011.08.012
+  title: A note on bias reduction of maximum likelihood estimates for the scalar skew
+    t distribution
+  year: 2011
+  cited_by_count: 33
+  venue: Journal of Statistical Planning and Inference
+  authors:
+  - Bernardo Lagos-Álvarez
+  - M.D. Jiménez–Gamero
+  concepts:
+  - Mathematics
+  - Kurtosis
+  - Skew
+  - Skewness
+  - Estimator
+  - Statistics
+  source_query: bias reduction of maximum likelihood estimates
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W4235344130
+  doi: https://doi.org/10.1093/biomet/82.3.667-b
+  title: '''Bias reduction of maximum likelihood estimates'''
+  year: 1995
+  cited_by_count: 11
+  venue: Biometrika
+  authors:
+  - D. FIRTH
+  concepts:
+  - Firth
+  - Mathematics
+  - Statistics
+  - Maximum likelihood
+  - Reduction (mathematics)
+  - Volume (thermodynamics)
+  source_query: bias reduction of maximum likelihood estimates
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W4254344340
+  doi: https://doi.org/10.1093/biomet/82.3.667-a
+  title: ‘Bias reduction of maximum likelihood estimates’
+  year: 1995
+  cited_by_count: 12
+  venue: Biometrika
+  authors:
+  - DAVID FIRTH
+  concepts:
+  - Mathematics
+  - Statistics
+  - Divergence (linguistics)
+  - Maximum likelihood
+  - Reduction (mathematics)
+  - Econometrics
+  source_query: bias reduction of maximum likelihood estimates
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W2405360351
+  doi: https://doi.org/10.1080/00949655.2016.1143471
+  title: Bias reduction of maximum likelihood estimates for a modified skew-normal
+    distribution
+  year: 2016
+  cited_by_count: 18
+  venue: Journal of Statistical Computation and Simulation
+  authors:
+  - Jaime Arrué
+  - Reinaldo B. Arellano‐Valle
+  - Héctor W. Gómez
+  concepts:
+  - Mathematics
+  - Skewness
+  - Fisher information
+  - Statistics
+  - Scale parameter
+  - Likelihood function
+  source_query: bias reduction of maximum likelihood estimates
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W1819467863
+  doi: https://doi.org/10.3758/s13428-015-0619-7
+  title: 'Confirmatory factor analysis with ordinal data: Comparing robust maximum
+    likelihood and diagonally weighted least squares'
+  year: 2015
+  cited_by_count: 2874
+  venue: Behavior Research Methods
+  authors:
+  - Cheng-Hsien Li
+  concepts:
+  - Statistics
+  - Mathematics
+  - Categorical variable
+  - Ordinal data
+  - Sample size determination
+  - Latent variable
+  source_query: bias reduction of maximum likelihood estimates
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W2069285643
+  doi: https://doi.org/10.1080/01621459.2000.10474318
+  title: Bias Reduction of Autoregressive Estimates in Time Series Regression Model
+    through Restricted Maximum Likelihood
+  year: 2000
+  cited_by_count: 66
+  venue: Journal of the American Statistical Association
+  authors:
+  - Wai‐Kwong Cheang
+  - Gregory C. Reinsel
+  concepts:
+  - Autoregressive model
+  - Statistics
+  - Series (stratigraphy)
+  - Econometrics
+  - Mathematics
+  - Reduction (mathematics)
+  source_query: bias reduction of maximum likelihood estimates
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W2073832139
+  doi: https://doi.org/10.1086/300499
+  title: Observational Evidence from Supernovae for an Accelerating Universe and a
+    Cosmological Constant
+  year: 1998
+  cited_by_count: 19531
+  venue: The Astronomical Journal
+  authors:
+  - Adam G. Riess
+  - A. V. Filippenko
+  - P. Challis
+  - A. Clocchiatti
+  - Alan H. Diercks
+  - P. Garnavich
+  - Ron Gilliland
+  - Craig J. Hogan
+  concepts:
+  - Physics
+  - Astrophysics
+  - Cosmological constant
+  - Supernova
+  - Redshift
+  - Dark energy
+  source_query: bias reduction of maximum likelihood estimates
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W2170521505
+  doi: https://doi.org/10.1002/(sici)1097-0258(19991030)18:20<2693::aid-sim235>3.0.co;2-v
+  title: 'Explaining heterogeneity in meta-analysis: a comparison of methods'
+  year: 1999
+  cited_by_count: 1732
+  venue: Statistics in Medicine
+  authors:
+  - Simon G. Thompson
+  - Stephen J. Sharp
+  concepts:
+  - Covariate
+  - Statistics
+  - Estimator
+  - Binomial regression
+  - Econometrics
+  - Random effects model
+  source_query: bias reduction of maximum likelihood estimates
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W2114075279
+  doi: https://doi.org/10.1080/106351599260184
+  title: The Maximum Likelihood Approach to Reconstructing Ancestral Character States
+    of Discrete Characters on Phylogenies
+  year: 1999
+  cited_by_count: 1071
+  venue: Systematic Biology
+  authors:
+  - Mark Pagel
+  concepts:
+  - Biology
+  - Character (mathematics)
+  - Maximum likelihood
+  - Evolutionary biology
+  - Genealogy
+  - Statistics
+  source_query: bias reduction of maximum likelihood estimates
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W2338997551
+  doi: https://doi.org/10.48550/arxiv.1604.04768
+  title: Median bias reduction of maximum likelihood estimates
+  year: 2016
+  cited_by_count: 1
+  venue: arXiv (Cornell University)
+  authors:
+  - Euloge Clovis
+  - Kenne Pagui
+  - Alessandra Salvan
+  - Nicola Sartori
+  concepts:
+  - Mathematics
+  - Estimator
+  - Equivariant map
+  - Applied mathematics
+  - Parametric statistics
+  - Statistics
+  source_query: bias reduction of maximum likelihood estimates
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W1905058580
+  doi: https://doi.org/10.1002/gepi.21758
+  title: Mendelian Randomization Analysis With Multiple Genetic Variants Using Summarized
+    Data
+  year: 2013
+  cited_by_count: 6457
+  venue: Genetic Epidemiology
+  authors:
+  - Stephen Burgess
+  - Adam S. Butterworth
+  - Simon G. Thompson
+  concepts:
+  - Mendelian randomization
+  - Mendelian inheritance
+  - Genetics
+  - Biology
+  - Computational biology
+  - Randomization
+  source_query: bias reduction of maximum likelihood estimates
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W2168091501
+  doi: https://doi.org/10.2307/2533865
+  title: Bias Reduction of Approximate Maximum Likelihood Estimates for Heritability
+    in Threshold Models
+  year: 1998
+  cited_by_count: 14
+  venue: Biometrics
+  authors:
+  - B. Engel
+  - W.G. Buist
+  concepts:
+  - Heritability
+  - Restricted maximum likelihood
+  - Statistics
+  - Threshold model
+  - Intraclass correlation
+  - Mathematics
+  source_query: bias reduction of maximum likelihood estimates
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W1900937478
+  doi: https://doi.org/10.1186/s13059-015-0721-2
+  title: 'OrthoFinder: solving fundamental biases in whole genome comparisons dramatically
+    improves orthogroup inference accuracy'
+  year: 2015
+  cited_by_count: 3975
+  venue: Genome biology
+  authors:
+  - David Emms
+  - Steven Kelly
+  concepts:
+  - Biology
+  - Inference
+  - Human genetics
+  - Genome Biology
+  - Computational biology
+  - Genome
+  source_query: bias reduction of maximum likelihood estimates
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W2079672223
+  doi: https://doi.org/10.1111/1467-937x.00050
+  title: 'Stochastic Volatility: Likelihood Inference and Comparison with ARCH Models'
+  year: 1998
+  cited_by_count: 2331
+  venue: The Review of Economic Studies
+  authors:
+  - Sang‐Joon Kim
+  - Neil Shepherd
+  - Siddhartha Chib
+  concepts:
+  - Inference
+  - Stochastic volatility
+  - Arch
+  - Volatility (finance)
+  - History
+  - Econometrics
+  source_query: bias reduction of maximum likelihood estimates
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W2343557095
+  doi: https://doi.org/10.1136/bmj.i1981
+  title: 'Sparse data bias: a problem hiding in plain sight'
+  year: 2016
+  cited_by_count: 880
+  venue: BMJ
+  authors:
+  - Sander Greenland
+  - Mohammad Alì Mansournia
+  - Douglas G. Altman
+  concepts:
+  - Confounding
+  - Statistics
+  - Poisson regression
+  - Logistic regression
+  - Poisson distribution
+  - Econometrics
+  source_query: bias reduction of maximum likelihood estimates
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W2113891902
+  doi: https://doi.org/10.1109/83.491322
+  title: 'Mean and variance of implicitly defined biased estimators (such as penalized
+    maximum likelihood): applications to tomography'
+  year: 1996
+  cited_by_count: 402
+  venue: IEEE Transactions on Image Processing
+  authors:
+  - Jeffrey A. Fessler
+  concepts:
+  - Estimator
+  - Mathematics
+  - Applied mathematics
+  - Taylor series
+  - Maximum a posteriori estimation
+  - Poisson distribution
+  source_query: bias reduction of maximum likelihood estimates
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W2023689787
+  doi: https://doi.org/10.1007/bf01897167
+  title: A maximum likelihood methodology for clusterwise linear regression
+  year: 1988
+  cited_by_count: 518
+  venue: Journal of Classification
+  authors:
+  - Wayne S. DeSarbo
+  - William L. Cron
+  concepts:
+  - Maximum likelihood
+  - Linear regression
+  - Monte Carlo method
+  - Statistics
+  - Restricted maximum likelihood
+  - Mathematics
+  source_query: bias reduction of maximum likelihood estimates
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W2026598211
+  doi: https://doi.org/10.21236/ada186320
+  title: Estimation and Comparison of Changes in the Presence of Information Right
+    Censoring by Modeling the Censoring Process.
+  year: 1987
+  cited_by_count: 531
+  venue: null
+  authors:
+  - Margaret Wu
+  - Raymond J. Carroll
+  concepts:
+  - Censoring (clinical trials)
+  - Computer science
+  - Statistics
+  - Econometrics
+  - Mathematics
+  source_query: bias reduction of maximum likelihood estimates
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W3123294050
+  doi: null
+  title: Inference for the Generalization Error
+  year: 1999
+  cited_by_count: 487
+  venue: Érudit documents and data repository (Érudit Consortium, University of Montreal)
+  authors:
+  - Yoshua Bengio
+  - Claude Nadeau
+  concepts:
+  - Generalization
+  - Estimator
+  - Mathematics
+  - Generalization error
+  - Humanities
+  - Variance (accounting)
+  source_query: inference for the generalization error
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W2988396470
+  doi: https://doi.org/10.1186/s13059-019-1832-y
+  title: 'OrthoFinder: phylogenetic orthology inference for comparative genomics'
+  year: 2019
+  cited_by_count: 8044
+  venue: Genome biology
+  authors:
+  - David Emms
+  - Steven Kelly
+  concepts:
+  - Inference
+  - Phylogenetic tree
+  - Biology
+  - Genomics
+  - Computational biology
+  - Comparative genomics
+  source_query: inference for the generalization error
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W2155163959
+  doi: https://doi.org/10.1214/09-sts313
+  title: 'Matching Methods for Causal Inference: A Review and a Look Forward'
+  year: 2010
+  cited_by_count: 5394
+  venue: Statistical Science
+  authors:
+  - Elizabeth A. Stuart
+  concepts:
+  - Causal inference
+  - Covariate
+  - Matching (statistics)
+  - Observational study
+  - Replicate
+  - Randomized experiment
+  source_query: inference for the generalization error
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W2120846249
+  doi: https://doi.org/10.1093/restud/rdt044
+  title: Inference on Treatment Effects after Selection among High-Dimensional Controls
+  year: 2013
+  cited_by_count: 1501
+  venue: The Review of Economic Studies
+  authors:
+  - Alexandre Belloni
+  - Victor Chernozhukov
+  - Christian Hansen
+  concepts:
+  - Inference
+  - Economics
+  - Selection (genetic algorithm)
+  - Econometrics
+  - Mathematical economics
+  - Computer science
+  source_query: inference for the generalization error
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W2029941278
+  doi: https://doi.org/10.1093/pan/mpr013
+  title: 'Causal Inference without Balance Checking: Coarsened Exact Matching'
+  year: 2011
+  cited_by_count: 3553
+  venue: Political Analysis
+  authors:
+  - Stefano M. Iacus
+  - Gary King
+  - Giuseppe Porro
+  concepts:
+  - Computer science
+  - Matching (statistics)
+  - Bounding overwatch
+  - Causal inference
+  - Inference
+  - Variety (cybernetics)
+  source_query: inference for the generalization error
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W2140968572
+  doi: https://doi.org/10.2139/ssrn.956890
+  title: Bootstrap-Based Improvements for Inference with Clustered Errors
+  year: 2007
+  cited_by_count: 957
+  venue: SSRN Electronic Journal
+  authors:
+  - A. Colin Cameron
+  - Jonah B. Gelbach
+  - Douglas L. Miller
+  concepts:
+  - Inference
+  - Heteroscedasticity
+  - Cluster (spacecraft)
+  - Standard error
+  - Monte Carlo method
+  - Statistics
+  source_query: inference for the generalization error
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W3109908659
+  doi: https://doi.org/10.1007/978-3-030-58536-5_24
+  title: 'RAFT: Recurrent All-Pairs Field Transforms for Optical Flow'
+  year: 2020
+  cited_by_count: 2374
+  venue: Lecture notes in computer science
+  authors:
+  - Zachary Teed
+  - Jia Deng
+  concepts:
+  - Raft
+  - Computer science
+  - Pixel
+  - Algorithm
+  - Generalization
+  - Field (mathematics)
+  source_query: inference for the generalization error
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W3188875553
+  doi: https://doi.org/10.32614/cran.package.mumin
+  title: 'MuMIn: Multi-Model Inference'
+  year: 2010
+  cited_by_count: 1953
+  venue: null
+  authors:
+  - Kamil A. Bartoń
+  concepts:
+  - Inference
+  - Computer science
+  - Artificial intelligence
+  source_query: inference for the generalization error
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W2019599312
+  doi: null
+  title: Understanding belief propagation and its generalizations
+  year: 2003
+  cited_by_count: 1283
+  venue: null
+  authors:
+  - Jonathan S. Yedidia
+  - William T. Freeman
+  - Yair Weiss
+  concepts:
+  - Belief propagation
+  - Inference
+  - Connection (principal bundle)
+  - Approximate inference
+  - Notation
+  - Construct (python library)
+  source_query: inference for the generalization error
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W2052685640
+  doi: https://doi.org/10.1016/j.tics.2013.09.007
+  title: Interoceptive inference, emotion, and the embodied self
+  year: 2013
+  cited_by_count: 1808
+  venue: Trends in Cognitive Sciences
+  authors:
+  - Anil K. Seth
+  concepts:
+  - Interoception
+  - Psychology
+  - Embodied cognition
+  - Neurocognitive
+  - Predictive coding
+  - Inference
+  source_query: inference for the generalization error
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W2582743722
+  doi: https://doi.org/10.32614/r.manuals
+  title: 'R: A Language and Environment for Statistical Computing'
+  year: 2000
+  cited_by_count: 353004
+  venue: null
+  authors:
+  - R Core Team
+  concepts:
+  - Computer science
+  - Programming language
+  source_query: inference for the generalization error
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W33507944
+  doi: https://doi.org/10.1111/j.2517-6161.1991.tb01825.x
+  title: Procrustes Methods in the Statistical Analysis of Shape
+  year: 1991
+  cited_by_count: 2044
+  venue: Journal of the Royal Statistical Society Series B (Statistical Methodology)
+  authors:
+  - Colin Goodall
+  concepts:
+  - Procrustes analysis
+  - Statistical analysis
+  - Computer science
+  - Mathematics
+  - Statistics
+  - Econometrics
+  source_query: inference for the generalization error
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W2125663122
+  doi: https://doi.org/10.1364/josaa.20.001434
+  title: Hierarchical Bayesian inference in the visual cortex
+  year: 2003
+  cited_by_count: 1544
+  venue: Journal of the Optical Society of America A
+  authors:
+  - Tai Sing Lee
+  - David B. Mumford
+  concepts:
+  - Visual cortex
+  - Computer science
+  - Bayesian inference
+  - Artificial intelligence
+  - Visual processing
+  - Feed forward
+  source_query: inference for the generalization error
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W2157581667
+  doi: https://doi.org/10.1111/j.1756-8765.2008.01006.x
+  title: 'Homo Heuristicus: Why Biased Minds Make Better Inferences'
+  year: 2009
+  cited_by_count: 1806
+  venue: Topics in Cognitive Science
+  authors:
+  - Gerd Gigerenzer
+  - Henry Brighton
+  concepts:
+  - Heuristics
+  - Exploit
+  - Computer science
+  - Toolbox
+  - Social heuristics
+  - Artificial intelligence
+  source_query: inference for the generalization error
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W2552810632
+  doi: https://doi.org/10.1162/neco_a_00912
+  title: 'Active Inference: A Process Theory'
+  year: 2016
+  cited_by_count: 1193
+  venue: Neural Computation
+  authors:
+  - Karl Friston
+  - Thomas H. B. FitzGerald
+  - Francesco Rigoli
+  - Philipp Schwartenbeck
+  - Giovanni Pezzulo
+  concepts:
+  - Free energy principle
+  - Inference
+  - Gradient descent
+  - Bayesian inference
+  - Context (archaeology)
+  - Computer science
+  source_query: inference for the generalization error
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W2056621649
+  doi: https://doi.org/10.1214/10-sts321
+  title: Identification, Inference and Sensitivity Analysis for Causal Mediation Effects
+  year: 2010
+  cited_by_count: 1573
+  venue: Statistical Science
+  authors:
+  - Kosuke Imai
+  - Luke Keele
+  - Teppei Yamamoto
+  concepts:
+  - Causal inference
+  - Estimator
+  - Computer science
+  - Robustness (evolution)
+  - Econometrics
+  - Identification (biology)
+  source_query: inference for the generalization error
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W2962695761
+  doi: https://doi.org/10.48550/arxiv.1606.03976
+  title: 'Estimating individual treatment effect: generalization bounds and\n algorithms'
+  year: 2016
+  cited_by_count: 393
+  venue: arXiv (Cornell University)
+  authors:
+  - Uri Shalit
+  - Fredrik Johansson
+  - David Sontag
+  concepts:
+  - Generalization
+  - Representation (politics)
+  - Inference
+  - Bounded function
+  - Algorithm
+  - Causal inference
+  source_query: inference for the generalization error
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W41409100
+  doi: https://doi.org/10.1007/978-1-4612-0173-1
+  title: The Laplace Distribution and Generalizations
+  year: 2001
+  cited_by_count: 821
+  venue: Birkhäuser Boston eBooks
+  authors:
+  - Samuel Kotz
+  - Tomaz J. Kozubowski
+  - Krzysztof Podgórski
+  concepts:
+  - Laplace transform
+  - Laplace distribution
+  - Mathematics
+  - Distribution (mathematics)
+  - Mathematical analysis
+  source_query: inference for the generalization error
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W2745098867
+  doi: https://doi.org/10.1093/pan/mpt024
+  title: 'Causal Inference in Conjoint Analysis: Understanding Multidimensional Choices
+    via Stated Preference Experiments'
+  year: 2013
+  cited_by_count: 1922
+  venue: Political Analysis
+  authors:
+  - Jens Hainmueller
+  - Daniel J. Hopkins
+  - Teppei Yamamoto
+  concepts:
+  - Conjoint analysis
+  - Causal inference
+  - Inference
+  - Identification (biology)
+  - Computer science
+  - Econometrics
+  source_query: inference for the generalization error
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W1996016456
+  doi: https://doi.org/10.1214/ss/1009211805
+  title: Confounding and Collapsibility in Causal Inference
+  year: 1999
+  cited_by_count: 939
+  venue: Statistical Science
+  authors:
+  - Sander Greenland
+  - Judea Pearl
+  - James M. Robins
+  concepts:
+  - Confounding
+  - Causal inference
+  - Counterfactual thinking
+  - Causation
+  - Causality (physics)
+  - Econometrics
+  source_query: inference for the generalization error
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W2952085197
+  doi: https://doi.org/10.1214/009053605000000084
+  title: Generalizations of the familywise error rate
+  year: 2005
+  cited_by_count: 301
+  venue: The Annals of Statistics
+  authors:
+  - E. L. Lehmann
+  - Joseph P. Romano
+  concepts:
+  - False discovery rate
+  - Multiple comparisons problem
+  - Mathematics
+  - Statistics
+  - Null hypothesis
+  - Control (management)
+  source_query: inference for the generalization error
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W2149706766
+  doi: https://doi.org/10.1023/a:1022643204877
+  title: Induction of Decision Trees
+  year: 1986
+  cited_by_count: 14871
+  venue: Machine Learning
+  authors:
+  - J. R. Quinlan
+  concepts:
+  - Variety (cybernetics)
+  - Computer science
+  - Artificial intelligence
+  - Inference
+  - Machine learning
+  - ID3
+  source_query: inference for the generalization error
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W4406317315
+  doi: https://doi.org/10.32614/cran.package.mlr3inferr
+  title: 'mlr3inferr: Inference on the Generalization Error'
+  year: 2025
+  cited_by_count: 1
+  venue: null
+  authors:
+  - Sebastian Fischer
+  - Hannah Kümpel
+  concepts:
+  - Inference
+  - Generalization
+  - Computer science
+  - Artificial intelligence
+  - Mathematics
+  - Mathematical analysis
+  source_query: inference for the generalization error
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W1479807131
+  doi: https://doi.org/10.7551/mitpress/9780262033589.001.0001
+  title: Semi-Supervised Learning
+  year: 2006
+  cited_by_count: 4320
+  venue: The MIT Press eBooks
+  authors:
+  - Olivier Chapelle
+  - Schölkopf, Bernhard
+  - Alexander Zien
+  concepts:
+  - Computer science
+  - Artificial intelligence
+  - Machine learning
+  - Benchmark (surveying)
+  - Field (mathematics)
+  - Unsupervised learning
+  source_query: approximate statistical tests comparing supervised classification
+    learning
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W2147169507
+  doi: https://doi.org/10.1023/a:1022689900470
+  title: Instance-Based Learning Algorithms
+  year: 1991
+  cited_by_count: 4119
+  venue: Machine Learning
+  authors:
+  - David W. Aha
+  - Dennis Kibler
+  - Marc K. Albert
+  concepts:
+  - Computer science
+  - Decision tree
+  - Machine learning
+  - Artificial intelligence
+  - Noise (video)
+  - Set (abstract data type)
+  source_query: approximate statistical tests comparing supervised classification
+    learning
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W2979750740
+  doi: https://doi.org/10.1145/3326362
+  title: Dynamic Graph CNN for Learning on Point Clouds
+  year: 2019
+  cited_by_count: 6775
+  venue: ACM Transactions on Graphics
+  authors:
+  - Yue Wang
+  - Yongbin Sun
+  - Ziwei Liu
+  - Sanjay E. Sarma
+  - Michael M. Bronstein
+  - Justin Solomon
+  concepts:
+  - Point cloud
+  - Computer science
+  - Representation (politics)
+  - Convolutional neural network
+  - Embedding
+  - Computer graphics
+  source_query: approximate statistical tests comparing supervised classification
+    learning
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W4244238212
+  doi: https://doi.org/10.1007/bf00153759
+  title: Instance-based learning algorithms
+  year: 1991
+  cited_by_count: 2915
+  venue: Machine Learning
+  authors:
+  - David W. Aha
+  - Dennis Kibler
+  - Marc K. Albert
+  concepts:
+  - Computer science
+  - Machine learning
+  - Decision tree
+  - Artificial intelligence
+  - Algorithm
+  - Instance-based learning
+  source_query: approximate statistical tests comparing supervised classification
+    learning
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W2031489346
+  doi: https://doi.org/10.1007/s11263-009-0275-4
+  title: The Pascal Visual Object Classes (VOC) Challenge
+  year: 2009
+  cited_by_count: 19597
+  venue: International Journal of Computer Vision
+  authors:
+  - Mark Everingham
+  - Luc Van Gool
+  - Christopher K. I. Williams
+  - John Winn
+  - Andrew Zisserman
+  concepts:
+  - Pascal (unit)
+  - Benchmark (surveying)
+  - Artificial intelligence
+  - Computer science
+  - Object detection
+  - Cognitive neuroscience of visual object recognition
+  source_query: approximate statistical tests comparing supervised classification
+    learning
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W2153959628
+  doi: https://doi.org/10.1609/aimag.v29i3.2157
+  title: Collective Classification in Network Data
+  year: 2008
+  cited_by_count: 3292
+  venue: AI Magazine
+  authors:
+  - Prithviraj Sen
+  - Galileo Namata
+  - Mustafa Bilgic
+  - Lise Getoor
+  - Brian Gallagher
+  - Tina Eliassi‐Rad
+  concepts:
+  - Computer science
+  - Hyperlink
+  - Hypertext
+  - Inference
+  - Focus (optics)
+  - Friendship
+  source_query: approximate statistical tests comparing supervised classification
+    learning
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W2559394418
+  doi: https://doi.org/10.1038/nature23474
+  title: Quantum machine learning
+  year: 2017
+  cited_by_count: 4495
+  venue: Nature
+  authors:
+  - Jacob Biamonte
+  - Péter Wittek
+  - Nicola Pancotti
+  - Patrick Rebentrost
+  - Nathan Wiebe
+  - Seth Lloyd
+  concepts:
+  - Quantum machine learning
+  - Computer science
+  - Quantum
+  - Software
+  - Field (mathematics)
+  - Quantum computer
+  source_query: approximate statistical tests comparing supervised classification
+    learning
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W2151591509
+  doi: https://doi.org/10.3389/fninf.2014.00014
+  title: Machine learning for neuroimaging with scikit-learn
+  year: 2014
+  cited_by_count: 2655
+  venue: Frontiers in Neuroinformatics
+  authors:
+  - Alexandre Abraham
+  - Fabian Pedregosa
+  - Michael Eickenberg
+  - Philippe Gervais
+  - Andreas Mueller
+  - Jean Kossaifi
+  - Alexandre Gramfort
+  - Bertrand Thirion
+  concepts:
+  - Neuroimaging
+  - Computer science
+  - Artificial intelligence
+  - Unsupervised learning
+  - Machine learning
+  - Python (programming language)
+  source_query: approximate statistical tests comparing supervised classification
+    learning
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W2884430236
+  doi: https://doi.org/10.1038/s41586-018-0337-2
+  title: Machine learning for molecular and materials science
+  year: 2018
+  cited_by_count: 4614
+  venue: Nature
+  authors:
+  - Keith T. Butler
+  - Daniel W. Davies
+  - Hugh Cartwright
+  - Olexandr Isayev
+  - Aron Walsh
+  concepts:
+  - Computer science
+  - Field (mathematics)
+  - Data science
+  - Characterization (materials science)
+  - Domain (mathematical analysis)
+  - Artificial intelligence
+  source_query: approximate statistical tests comparing supervised classification
+    learning
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W2995022099
+  doi: https://doi.org/10.1561/2200000083
+  title: Advances and Open Problems in Federated Learning
+  year: 2020
+  cited_by_count: 4821
+  venue: Foundations and Trends® in Machine Learning
+  authors:
+  - Peter Kairouz
+  - H. Brendan McMahan
+  - Brendan Avent
+  - Aurélien Bellet
+  - Mehdi Bennis
+  - Arjun Nitin Bhagoji
+  - Kallista Bonawitz
+  - Zachary Charles
+  concepts:
+  - Orchestration
+  - Computer science
+  - Data collection
+  - Federated learning
+  - Open research
+  - Service provider
+  source_query: approximate statistical tests comparing supervised classification
+    learning
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W4366208220
+  doi: https://doi.org/10.48550/arxiv.2304.07193
+  title: 'DINOv2: Learning Robust Visual Features without Supervision'
+  year: 2023
+  cited_by_count: 1050
+  venue: arXiv (Cornell University)
+  authors:
+  - Maxime Oquab
+  - Timothée Darcet
+  - Théo Moutakanni
+  - Huy Vo
+  - Marc Szafraniec
+  - Vasil Khalidov
+  - Pierre Fernandez
+  - Daniel Haziza
+  concepts:
+  - Computer science
+  - Pipeline (software)
+  - Artificial intelligence
+  - Machine learning
+  - Scale (ratio)
+  - Training set
+  source_query: approximate statistical tests comparing supervised classification
+    learning
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W2265846598
+  doi: https://doi.org/10.1609/aaai.v29i1.9513
+  title: Recurrent Convolutional Neural Networks for Text Classification
+  year: 2015
+  cited_by_count: 2309
+  venue: Proceedings of the AAAI Conference on Artificial Intelligence
+  authors:
+  - Siwei Lai
+  - Liheng Xu
+  - Kang Liu
+  - Jun Zhao
+  concepts:
+  - Computer science
+  - Artificial intelligence
+  - Pooling
+  - Convolutional neural network
+  - Key (lock)
+  - Task (project management)
+  source_query: approximate statistical tests comparing supervised classification
+    learning
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W2610332124
+  doi: https://doi.org/10.1093/bib/bbx044
+  title: 'Deep learning for healthcare: review, opportunities and challenges'
+  year: 2017
+  cited_by_count: 3022
+  venue: Briefings in Bioinformatics
+  authors:
+  - Riccardo Miotto
+  - Fei Wang
+  - Shuang Wang
+  - Xiaoqian Jiang
+  - Joel T. Dudley
+  concepts:
+  - Interpretability
+  - Deep learning
+  - Data science
+  - Computer science
+  - Big data
+  - Artificial intelligence
+  source_query: approximate statistical tests comparing supervised classification
+    learning
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W2125238156
+  doi: https://doi.org/10.1109/tpami.2007.61
+  title: Supervised Learning of Semantic Classes for Image Annotation and Retrieval
+  year: 2007
+  cited_by_count: 870
+  venue: IEEE Transactions on Pattern Analysis and Machine Intelligence
+  authors:
+  - Gustavo Carneiro
+  - Antoni B. Chan
+  - Pedro J. Moreno
+  - Nuno Vasconcelos
+  concepts:
+  - Artificial intelligence
+  - Computer science
+  - Image retrieval
+  - Automatic image annotation
+  - Pattern recognition (psychology)
+  - Feature (linguistics)
+  source_query: approximate statistical tests comparing supervised classification
+    learning
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W2973119841
+  doi: https://doi.org/10.1146/annurev-fluid-010719-060214
+  title: Machine Learning for Fluid Mechanics
+  year: 2019
+  cited_by_count: 2667
+  venue: Annual Review of Fluid Mechanics
+  authors:
+  - Steven L. Brunton
+  - Bernd R. Noack
+  - Petros Koumoutsakos
+  concepts:
+  - Fluid mechanics
+  - Computer science
+  - Current (fluid)
+  - Field (mathematics)
+  - Perspective (graphical)
+  - Fluid dynamics
+  source_query: approximate statistical tests comparing supervised classification
+    learning
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W2794284562
+  doi: https://doi.org/10.1155/2018/7068349
+  title: 'Deep Learning for Computer Vision: A Brief Review'
+  year: 2018
+  cited_by_count: 3320
+  venue: Computational Intelligence and Neuroscience
+  authors:
+  - Athanasios Voulodimos
+  - Nikolaos Doulamis
+  - Anastasios Doulamis
+  - Eftychios Protopapadakis
+  concepts:
+  - Artificial intelligence
+  - Deep learning
+  - Computer science
+  - Boltzmann machine
+  - Convolutional neural network
+  - Machine learning
+  source_query: approximate statistical tests comparing supervised classification
+    learning
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W2097089247
+  doi: https://doi.org/10.1023/a:1007692713085
+  title: Text Classification from Labeled and Unlabeled Documents using EM
+  year: 2000
+  cited_by_count: 2749
+  venue: Machine Learning
+  authors:
+  - Kamal Nigam
+  - Andrew Kachites McCallum
+  - Sebastian Thrun
+  - Tom M. Mitchell
+  concepts:
+  - Computer science
+  - Classifier (UML)
+  - Artificial intelligence
+  - Iterated function
+  - Weighting
+  - Labeled data
+  source_query: approximate statistical tests comparing supervised classification
+    learning
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W2709069284
+  doi: https://doi.org/10.1214/088342306000000024
+  title: 'Comment: Classifier Technology and the Illusion of Progress'
+  year: 2006
+  cited_by_count: 15
+  venue: Statistical Science
+  authors:
+  - Jerome H. Friedman
+  concepts:
+  - Illusion
+  - Artificial intelligence
+  - Classifier (UML)
+  - Computer science
+  - Machine learning
+  - Pattern recognition (psychology)
+  source_query: classifier technology and the illusion of progress
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W2053489501
+  doi: https://doi.org/10.1214/088342306000000079
+  title: 'Rejoinder: Classifier Technology and the Illusion of Progress'
+  year: 2006
+  cited_by_count: 11
+  venue: Statistical Science
+  authors:
+  - David J. Hand
+  concepts:
+  - Illusion
+  - Classifier (UML)
+  - Artificial intelligence
+  - Computer science
+  - Machine learning
+  - Pattern recognition (psychology)
+  source_query: classifier technology and the illusion of progress
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W2015928670
+  doi: https://doi.org/10.1214/088342306000000033
+  title: Elaboration on Two Points Raised in “Classifier Technology and the Illusion
+    of Progress”
+  year: 2006
+  cited_by_count: 8
+  venue: Statistical Science
+  authors:
+  - Robert C. Holte
+  concepts:
+  - Elaboration
+  - Illusion
+  - Psychology
+  - Epistemology
+  - Aesthetics
+  - Cognitive psychology
+  source_query: classifier technology and the illusion of progress
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W2043196904
+  doi: https://doi.org/10.1214/088342306000000051
+  title: 'Comment: Classifier Technology and the Illusion of Progress—Credit Scoring'
+  year: 2006
+  cited_by_count: 4
+  venue: Statistical Science
+  authors:
+  - Ross W. Gayler
+  concepts:
+  - Illusion
+  - Classifier (UML)
+  - Artificial intelligence
+  - Computer science
+  - Pattern recognition (psychology)
+  - Machine learning
+  source_query: classifier technology and the illusion of progress
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W3105201135
+  doi: null
+  title: Elaboration on Two Points Raised in “Classifier Technology and the Illusion
+    of Progress”
+  year: 2008
+  cited_by_count: 6
+  venue: null
+  authors:
+  - Robert C. Holte
+  concepts:
+  - Elaboration
+  - Illusion
+  - Classifier (UML)
+  - Artificial intelligence
+  - Computer science
+  - Cognitive psychology
+  source_query: classifier technology and the illusion of progress
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W2112042732
+  doi: https://doi.org/10.1111/j.1540-5915.2008.00192.x
+  title: Technology Acceptance Model 3 and a Research Agenda on Interventions
+  year: 2008
+  cited_by_count: 7857
+  venue: Decision Sciences
+  authors:
+  - Viswanath Venkatesh
+  - Hillol Bala
+  concepts:
+  - Psychological intervention
+  - Nomological network
+  - Knowledge management
+  - Technology acceptance model
+  - Work (physics)
+  - Business
+  source_query: classifier technology and the illusion of progress
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W2013071794
+  doi: https://doi.org/10.1214/088342306000000042
+  title: 'Comment: Classifier Technology and the Illusion of Progress'
+  year: 2006
+  cited_by_count: 2
+  venue: Statistical Science
+  authors:
+  - Robert A. Stine
+  concepts:
+  - Illusion
+  - Artificial intelligence
+  - Computer science
+  - Classifier (UML)
+  - Machine learning
+  - Data science
+  source_query: classifier technology and the illusion of progress
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W2137959503
+  doi: https://doi.org/10.1007/s10994-009-5119-5
+  title: 'Measuring classifier performance: a coherent alternative to the area under
+    the ROC curve'
+  year: 2009
+  cited_by_count: 1001
+  venue: Machine Learning
+  authors:
+  - David J. Hand
+  concepts:
+  - Classifier (UML)
+  - Receiver operating characteristic
+  - Artificial intelligence
+  - Mathematics
+  - Property (philosophy)
+  - Pattern recognition (psychology)
+  source_query: classifier technology and the illusion of progress
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W3091751937
+  doi: https://doi.org/10.1109/tkde.2021.3112126
+  title: Current Time Series Anomaly Detection Benchmarks are Flawed and are Creating
+    the Illusion of Progress
+  year: 2021
+  cited_by_count: 136
+  venue: IEEE Transactions on Knowledge and Data Engineering
+  authors:
+  - Renjie Wu
+  - Eamonn Keogh
+  concepts:
+  - Anomaly detection
+  - Computer science
+  - Benchmark (surveying)
+  - Series (stratigraphy)
+  - Outlier
+  - Time series
+  source_query: classifier technology and the illusion of progress
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W1573556430
+  doi: null
+  title: 'Social Construction of Race: Some Observations on Illusion, Fabrication,
+    and Choice, The'
+  year: 1994
+  cited_by_count: 277
+  venue: null
+  authors:
+  - Ian F. Haney-López
+  concepts:
+  - Race (biology)
+  - Illusion
+  - Fabrication
+  - Sociology
+  - Psychology
+  - Cognitive psychology
+  source_query: classifier technology and the illusion of progress
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W4391849646
+  doi: https://doi.org/10.1016/j.heliyon.2024.e26297
+  title: 'Ethical and regulatory challenges of AI technologies in healthcare: A narrative
+    review'
+  year: 2024
+  cited_by_count: 846
+  venue: Heliyon
+  authors:
+  - Ciro Mennella
+  - Umberto Maniscalco
+  - Giuseppe De Pietro
+  - Massimo Esposito
+  concepts:
+  - Health care
+  - Engineering ethics
+  - Narrative
+  - Bioethics
+  - Medicine
+  - Political science
+  source_query: classifier technology and the illusion of progress
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W2910098374
+  doi: https://doi.org/10.3389/fnsys.2021.578875
+  title: 'Progress in Brain Computer Interface: Challenges and Opportunities'
+  year: 2021
+  cited_by_count: 357
+  venue: Frontiers in Systems Neuroscience
+  authors:
+  - Simanto Saha
+  - Khondaker A. Mamun
+  - Khawza Ahmed
+  - Raqibul Mostafa
+  - Ganesh R. Naik
+  - Sam Darvishi
+  - Ahsan H. Khandoker
+  - Mathias Baumert
+  concepts:
+  - Brain–computer interface
+  - Standardization
+  - Computer science
+  - Field (mathematics)
+  - Brain research
+  - Data science
+  source_query: classifier technology and the illusion of progress
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W1992019053
+  doi: https://doi.org/10.1145/2783258.2783372
+  title: Efficient Online Evaluation of Big Data Stream Classifiers
+  year: 2015
+  cited_by_count: 165
+  venue: null
+  authors:
+  - Albert Bifet
+  - Gianmarco De Francisci Morales
+  - Jesse Read
+  - Geoffrey Holmes
+  - Bernhard Pfahringer
+  concepts:
+  - Computer science
+  - Data stream mining
+  - Big data
+  - Data stream
+  - Task (project management)
+  - Concept drift
+  source_query: classifier technology and the illusion of progress
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W3007279380
+  doi: https://doi.org/10.1136/gutjnl-2019-320065
+  title: 'Big data in IBD: big progress for clinical practice'
+  year: 2020
+  cited_by_count: 222
+  venue: Gut
+  authors:
+  - Nasim Sadat Seyed Tabib
+  - Matthew Madgwick
+  - Padhmanand Sudhakar
+  - Bram Verstockt
+  - Tamás Korcsmáros
+  - Séverine Vermeire
+  concepts:
+  - Big data
+  - Translational research
+  - Artificial intelligence
+  - Data science
+  - Microbiome
+  - Disease
+  source_query: classifier technology and the illusion of progress
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W2168293325
+  doi: https://doi.org/10.2139/ssrn.1111721
+  title: The Illusion of Sustainability
+  year: 2008
+  cited_by_count: 64
+  venue: SSRN Electronic Journal
+  authors:
+  - Michael Kremer
+  - Edward Miguel
+  concepts:
+  - Illusion
+  - Sustainability
+  - Business
+  - Cognitive psychology
+  - Psychology
+  - Ecology
+  source_query: classifier technology and the illusion of progress
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W2512035795
+  doi: https://doi.org/10.1002/aqc.2702
+  title: 'Habitat recovery and restoration in aquatic ecosystems: current progress
+    and future challenges'
+  year: 2016
+  cited_by_count: 341
+  venue: Aquatic Conservation Marine and Freshwater Ecosystems
+  authors:
+  - Juergen Geist
+  - Stephen J. Hawkins
+  concepts:
+  - Biodiversity
+  - Ecosystem
+  - Restoration ecology
+  - Habitat
+  - Environmental science
+  - Ecology
+  source_query: classifier technology and the illusion of progress
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W2004802063
+  doi: https://doi.org/10.1089/cyber.2011.0140
+  title: The Present and Future of Positive Technologies
+  year: 2011
+  cited_by_count: 201
+  venue: Cyberpsychology Behavior and Social Networking
+  authors:
+  - Cristina Botella
+  - Giuseppe Riva
+  - Andrea Gaggioli
+  - Brenda K. Wiederhold
+  - Mariano Alcañíz
+  - Rosa Baños
+  concepts:
+  - Social connectedness
+  - Psychology
+  - Mood
+  - Quality (philosophy)
+  - Interpersonal communication
+  - Field (mathematics)
+  source_query: classifier technology and the illusion of progress
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W1946925372
+  doi: null
+  title: '"Records of Simple Truth and Precision": Photography, Archives, and the
+    Illusion of Control'
+  year: 2000
+  cited_by_count: 84
+  venue: Archivaria
+  authors:
+  - Joan M. Schwartz
+  concepts:
+  - Context (archaeology)
+  - Agency (philosophy)
+  - Photography
+  - Politics
+  - Art history
+  - Sociology
+  source_query: classifier technology and the illusion of progress
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W3125765272
+  doi: https://doi.org/10.3386/w10324
+  title: The Illusion of Sustainability
+  year: 2004
+  cited_by_count: 44
+  venue: National Bureau of Economic Research
+  authors:
+  - Michael Kremer
+  - Edward Miguel
+  concepts:
+  - Illusion
+  - Sustainability
+  - Geography
+  - Psychology
+  - Cognitive psychology
+  - Ecology
+  source_query: classifier technology and the illusion of progress
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W2082302771
+  doi: https://doi.org/10.1038/srep02396
+  title: Humanlike robot hands controlled by brain activity arouse illusion of ownership
+    in operators
+  year: 2013
+  cited_by_count: 93
+  venue: Scientific Reports
+  authors:
+  - Maryam Alimardani
+  - Shuichi Nishio
+  - Hiroshi Ishiguro
+  concepts:
+  - Illusion
+  - Proprioception
+  - GRASP
+  - Robot
+  - Sensory system
+  - Computer science
+  source_query: classifier technology and the illusion of progress
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W158152395
+  doi: https://doi.org/10.15215/aupress/9781897425763.01
+  title: Emerging Technologies in Distance Education
+  year: 2010
+  cited_by_count: 219
+  venue: Athabasca University Press eBooks
+  authors: []
+  concepts:
+  - Distance education
+  - Context (archaeology)
+  - Emerging technologies
+  - Sociology
+  - Pedagogy
+  - Library science
+  source_query: classifier technology and the illusion of progress
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W2079015646
+  doi: https://doi.org/10.3389/fneur.2015.00033
+  title: Pitfalls in the Neuroimaging of Glioblastoma in the Era of Antiangiogenic
+    and Immuno/Targeted Therapy â€“ Detecting Illusive Disease, Defining Response
+  year: 2015
+  cited_by_count: 159
+  venue: Frontiers in Neurology
+  authors:
+  - Raymond Y. Huang
+  - Martha R. Neagu
+  - David A. Reardon
+  - Patrick Y. Wen
+  concepts:
+  - Medicine
+  - Neuroimaging
+  - Context (archaeology)
+  - Glioma
+  - Brain tumor
+  - Tumor progression
+  source_query: classifier technology and the illusion of progress
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W3150796314
+  doi: https://doi.org/10.2307/23042796
+  title: Predictive Analytics in Information Systems Research1
+  year: 2011
+  cited_by_count: 1249
+  venue: MIS Quarterly
+  authors:
+  - Galit Shmueli
+  - Koppius
+  concepts:
+  - Analytics
+  - Predictive analytics
+  - Data science
+  - Information system
+  - Computer science
+  - Knowledge management
+  source_query: classifier technology and the illusion of progress
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W4224839097
+  doi: https://doi.org/10.3390/w14091384
+  title: A Review on Machine Learning, Artificial Intelligence, and Smart Technology
+    in Water Treatment and Monitoring
+  year: 2022
+  cited_by_count: 329
+  venue: Water
+  authors:
+  - Matthew Lowe
+  - Ruwen Qin
+  - Xinwei Mao
+  concepts:
+  - Computer science
+  - Automation
+  - Artificial intelligence
+  - Standardization
+  - Water quality
+  - Engineering
+  source_query: classifier technology and the illusion of progress
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W1973333099
+  doi: https://doi.org/10.1111/1467-9868.00294
+  title: Bayesian Calibration of Computer Models
+  year: 2001
+  cited_by_count: 4199
+  venue: Journal of the Royal Statistical Society Series B (Statistical Methodology)
+  authors:
+  - Marc C. Kennedy
+  - Anthony O’Hagan
+  concepts:
+  - Calibration
+  - Computer science
+  - Bayesian probability
+  - Context (archaeology)
+  - Code (set theory)
+  - Process (computing)
+  source_query: calibration hierarchy of risk prediction models
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W2996480032
+  doi: https://doi.org/10.1186/s12916-019-1466-7
+  title: 'Calibration: the Achilles heel of predictive analytics'
+  year: 2019
+  cited_by_count: 1934
+  venue: BMC Medicine
+  authors:
+  - On behalf of Topic Group ‘Evaluating diagnostic tests and prediction models’ of
+    the STRATOS initiative
+  - Ben Van Calster
+  - David J. McLernon
+  - Maarten van Smeden
+  - Laure Wynants
+  - Ewout W. Steyerberg
+  concepts:
+  - Calibration
+  - Machine learning
+  - Medicine
+  - Predictive analytics
+  - Heel
+  - Analytics
+  source_query: calibration hierarchy of risk prediction models
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W2899773405
+  doi: https://doi.org/10.1016/s0140-6736(18)32225-6
+  title: 'Global, regional, and national comparative risk assessment of 84 behavioural,
+    environmental and occupational, and metabolic risks or clusters of risks for 195
+    countries and territories, 1990–2017: a systematic analysis for the Global Burden
+    of Disease Study 2017'
+  year: 2018
+  cited_by_count: 5044
+  venue: The Lancet
+  authors:
+  - Jeffrey D Stanaway
+  - Ashkan Afshin
+  - Emmanuela Gakidou
+  - Stephen S Lim
+  - Degu Abate
+  - Kalkidan Hassen Abate
+  - Cristiana Abbafati
+  - Nooshin Abbasi
+  concepts:
+  - Risk assessment
+  - Medicine
+  - Relative risk
+  - Environmental health
+  - Cohort study
+  - Estimation
+  source_query: calibration hierarchy of risk prediction models
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W1499796422
+  doi: null
+  title: Risk adjustment of Medicare capitation payments using the CMS-HCC model.
+  year: 2004
+  cited_by_count: 808
+  venue: PubMed
+  authors:
+  - Gregory C. Pope
+  - John Kautter
+  - Randall P. Ellis
+  - Arlene S. Ash
+  - John Z. Ayanian
+  - Lisa I. lezzoni
+  - Melvin J. Ingber
+  - Jesse M. Levy
+  concepts:
+  - Capitation
+  - Capitation fee
+  - Actuarial science
+  - Payment
+  - Medicine
+  - Health plan
+  source_query: calibration hierarchy of risk prediction models
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W2130761473
+  doi: https://doi.org/10.1111/1467-9876.00113
+  title: Model-Based Geostatistics
+  year: 1998
+  cited_by_count: 2212
+  venue: Journal of the Royal Statistical Society Series C (Applied Statistics)
+  authors:
+  - Peter J. Diggle
+  - Jonathan A. Tawn
+  - Rana Moyeed
+  concepts:
+  - Statistics
+  - Mathematics
+  - Markov chain Monte Carlo
+  - Geostatistics
+  - Bayesian probability
+  - Residual
+  source_query: calibration hierarchy of risk prediction models
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W2954707123
+  doi: https://doi.org/10.1002/sim.8281
+  title: The Integrated Calibration Index (ICI) and related metrics for quantifying
+    the calibration of logistic regression models
+  year: 2019
+  cited_by_count: 314
+  venue: Statistics in Medicine
+  authors:
+  - Peter C. Austin
+  - Ewout W. Steyerberg
+  concepts:
+  - Calibration
+  - Statistics
+  - Percentile
+  - Logistic regression
+  - Mathematics
+  - Range (aeronautics)
+  source_query: calibration hierarchy of risk prediction models
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W1603903339
+  doi: https://doi.org/10.1214/ss/1009212519
+  title: 'Bayesian model averaging: a tutorial (with comments by M. Clyde, David Draper
+    and E. I. George, and a rejoinder by the authors'
+  year: 1999
+  cited_by_count: 4187
+  venue: Statistical Science
+  authors:
+  - Jennifer A. Hoeting
+  - David Madigan
+  - Adrian E. Raftery
+  - Chris Volinsky
+  concepts:
+  - George (robot)
+  - Model selection
+  - Computer science
+  - Bayesian probability
+  - Bayesian inference
+  - Class (philosophy)
+  source_query: calibration hierarchy of risk prediction models
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W2084089095
+  doi: https://doi.org/10.1093/biomet/87.4.731
+  title: Calibration and empirical Bayes variable selection
+  year: 2000
+  cited_by_count: 534
+  venue: Biometrika
+  authors:
+  - Edward I. George
+  concepts:
+  - Mathematics
+  - Bayes' theorem
+  - Statistics
+  - Econometrics
+  - Calibration
+  - Selection (genetic algorithm)
+  source_query: calibration hierarchy of risk prediction models
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W2081346522
+  doi: https://doi.org/10.1016/j.jhydrol.2005.07.007
+  title: A manifesto for the equifinality thesis
+  year: 2005
+  cited_by_count: 2640
+  venue: Journal of Hydrology
+  authors:
+  - Keith Beven
+  concepts:
+  - Equifinality
+  - Identification (biology)
+  - Manifesto
+  - Calibration
+  - Computer science
+  - Argument (complex analysis)
+  source_query: calibration hierarchy of risk prediction models
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W2604950454
+  doi: https://doi.org/10.1371/journal.pmed.1002277
+  title: 'Risk prediction models for selection of lung cancer screening candidates:
+    A retrospective validation study'
+  year: 2017
+  cited_by_count: 287
+  venue: PLoS Medicine
+  authors:
+  - Kevin ten Haaf
+  - Jihyoun Jeon
+  - Martin C. Tammemägi
+  - Summer S. Han
+  - Chung Yin Kong
+  - Sylvia K. Plevritis
+  - Eric J. Feuer
+  - Harry J. de Koning
+  concepts:
+  - Medicine
+  - Lung cancer
+  - National Lung Screening Trial
+  - Lung cancer screening
+  - Internal medicine
+  - Cancer
+  source_query: calibration hierarchy of risk prediction models
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W2901954177
+  doi: https://doi.org/10.1371/journal.pcbi.1006650
+  title: 'BEAST 2.5: An advanced software platform for Bayesian evolutionary analysis'
+  year: 2019
+  cited_by_count: 4771
+  venue: PLoS Computational Biology
+  authors:
+  - Remco Bouckaert
+  - Timothy G. Vaughan
+  - Joëlle Barido‐Sottani
+  - Sebastián Duchêne
+  - Mathieu Fourment
+  - Alexandra Gavryushkina
+  - Joseph Heled
+  - Graham Jones
+  concepts:
+  - Computer science
+  - Software
+  - Data science
+  - Hierarchy
+  - Bayesian probability
+  - Inference
+  source_query: calibration hierarchy of risk prediction models
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W3128782210
+  doi: https://doi.org/10.1038/s43586-020-00001-2
+  title: Bayesian statistics and modelling
+  year: 2021
+  cited_by_count: 1178
+  venue: Nature Reviews Methods Primers
+  authors:
+  - Rens van de Schoot
+  - Sarah Depaoli
+  - Ruth King
+  - Bianca Kramer
+  - Kaspar Märtens
+  - Mahlet G. Tadesse
+  - Marina Vannucci
+  - Andrew Gelman
+  concepts:
+  - Bayesian statistics
+  - Bayesian probability
+  - Statistics
+  - Econometrics
+  - Computer science
+  - Bayesian inference
+  source_query: calibration hierarchy of risk prediction models
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W2952094509
+  doi: https://doi.org/10.1038/s41564-019-0476-8
+  title: The current and future global distribution and population at risk of dengue
+  year: 2019
+  cited_by_count: 1418
+  venue: Nature Microbiology
+  authors:
+  - Jane P. Messina
+  - Oliver J. Brady
+  - Nick Golding
+  - Moritz U. G. Kraemer
+  - William Wint
+  - Sarah E. Ray
+  - David M. Pigott
+  - Freya M. Shearer
+  concepts:
+  - Dengue fever
+  - Urbanization
+  - Population
+  - Geography
+  - Dengue virus
+  - Vector (molecular biology)
+  source_query: calibration hierarchy of risk prediction models
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W2143313161
+  doi: https://doi.org/10.1002/sim.6782
+  title: Review and evaluation of penalised regression methods for risk prediction
+    in low‐dimensional data with few events
+  year: 2015
+  cited_by_count: 408
+  venue: Statistics in Medicine
+  authors:
+  - Menelaos Pavlou
+  - Gareth Ambler
+  - Shaun R. Seaman
+  - Maria De Iorio
+  - Rumana Omar
+  concepts:
+  - Elastic net regularization
+  - Overfitting
+  - Lasso (programming language)
+  - Computer science
+  - Logistic regression
+  - Statistics
+  source_query: calibration hierarchy of risk prediction models
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W2141151213
+  doi: https://doi.org/10.1126/scitranslmed.3005893
+  title: An Integrated Clinico-Metabolomic Model Improves Prediction of Death in Sepsis
+  year: 2013
+  cited_by_count: 513
+  venue: Science Translational Medicine
+  authors:
+  - Raymond J. Langley
+  - Ephraim L. Tsalik
+  - Jennifer C. van Velkinburgh
+  - Seth W. Glickman
+  - Brandon Rice
+  - Chunping Wang
+  - Bo Chen
+  - Lawrence Carin
+  concepts:
+  - Sepsis
+  - Metabolome
+  - Proteome
+  - Metabolomics
+  - Septic shock
+  - Medicine
+  source_query: calibration hierarchy of risk prediction models
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W3080150692
+  doi: https://doi.org/10.3390/app10175776
+  title: A Review of the Artificial Neural Network Models for Water Quality Prediction
+  year: 2020
+  cited_by_count: 459
+  venue: Applied Sciences
+  authors:
+  - Yingyi Chen
+  - Lihua Song
+  - Yeqi Liu
+  - Ling Yang
+  - Daoliang Li
+  concepts:
+  - Univariate
+  - Artificial neural network
+  - Water quality
+  - Multivariate statistics
+  - Feed forward
+  - Computer science
+  source_query: calibration hierarchy of risk prediction models
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W1935773568
+  doi: https://doi.org/10.1002/2015wr016967
+  title: A review of surrogate models and their application to groundwater modeling
+  year: 2015
+  cited_by_count: 591
+  venue: Water Resources Research
+  authors:
+  - M. J. C. Asher
+  - Barry Croke
+  - Anthony J. Jakeman
+  - Luk Peeters
+  concepts:
+  - Computer science
+  - Surrogate model
+  - Context (archaeology)
+  - Projection (relational algebra)
+  - Curse of dimensionality
+  - Sensitivity (control systems)
+  source_query: calibration hierarchy of risk prediction models
+  discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W3099011804
+  doi: https://doi.org/10.1038/s41586-020-2923-3
+  title: Mobility network models of COVID-19 explain inequities and inform reopening
+  year: 2020
+  cited_by_count: 1641
+  venue: Nature
+  authors:
+  - Serina Chang
+  - Emma Pierson
+  - Pang Wei Koh
+  - Jaline Gerardin
+  - Beth Redbird
+  - David B. Grusky
+  - Jure Leskovec
+  concepts:
+  - Metapopulation
+  - Metropolitan area
+  - Population
+  - Geography
+  - Occupancy
+  - Demography
+  source_query: calibration hierarchy of risk prediction models
+  discovered_at: '2026-07-14T11:13:47Z'
   origin: auto
