@@ -237,7 +237,7 @@ model, SHAP importance is the coefficient weighted by each feature's spread, so
 positive-but-imperfect correlation is the mathematically expected behaviour, and the
 explanations are faithful to the model by construction rather than post-hoc storytelling. The
 boundary: faithfulness to the model does not certify the model's coefficients themselves, which
-at EPV ≈ 3.8 carry sampling instability (§2.4) — and `Revenue` and `Average Monthly Sales` are
+at EPV ≈ 3.8 carry sampling instability (§2.5) — and `Revenue` and `Average Monthly Sales` are
 correlated, so linear attribution divides credit between them in a way that is partly arbitrary.
 A cross-fold stability check was therefore run (`reports/followup_checks.md`): recomputing the
 global importance ranking independently in each of five folds gives a mean pairwise Spearman

@@ -2130,28 +2130,6 @@
   source_query: sustainable finance default prediction
   discovered_at: '2026-06-10T00:03:48Z'
   origin: auto
-- id: W3128244637
-  doi: https://doi.org/10.1007/s11192-020-03856-0
-  title: 'Rethinking SME default prediction: a systematic literature review and future
-    perspectives'
-  year: 2021
-  cited_by_count: 138
-  venue: Scientometrics
-  authors:
-  - Francesco Ciampi
-  - Alessandro Giannozzi
-  - Giacomo Marzi
-  - Edward I. Altman
-  concepts:
-  - Systematic review
-  - Data science
-  - Computer science
-  - Business
-  - Political science
-  - MEDLINE
-  source_query: sustainable finance default prediction
-  discovered_at: '2026-06-10T00:03:48Z'
-  origin: auto
 - id: W2604705349
   doi: https://doi.org/10.1016/j.jfineco.2017.12.012
   title: Credit default swaps and corporate innovation
@@ -2312,32 +2290,6 @@
   source_query: ESG credit scoring machine learning
   discovered_at: '2026-06-10T00:03:48Z'
   origin: auto
-- id: W2981731882
-  doi: https://doi.org/10.1016/j.inffus.2019.12.012
-  title: 'Explainable Artificial Intelligence (XAI): Concepts, taxonomies, opportunities
-    and challenges toward responsible AI'
-  year: 2019
-  cited_by_count: 8892
-  venue: Information Fusion
-  authors:
-  - Alejandro Barredo Arrieta
-  - Natalia Díaz-Rodríguez
-  - Javier Del Ser
-  - Adrien Bennetot
-  - Siham Tabik
-  - Alberto Barbado
-  - Salvador García
-  - Sergio Gil-López
-  concepts:
-  - Computer science
-  - Artificial intelligence
-  - Taxonomy (biology)
-  - Field (mathematics)
-  - Software deployment
-  - Data science
-  source_query: SHAP explainability credit scoring
-  discovered_at: '2026-06-10T00:03:48Z'
-  origin: auto
 - id: W3005086430
   doi: https://doi.org/10.1145/3375627.3375830
   title: Fooling LIME and SHAP
@@ -2377,25 +2329,6 @@
   - Artificial intelligence
   - Transformer
   - Scratch
-  source_query: SHAP explainability credit scoring
-  discovered_at: '2026-06-10T00:03:48Z'
-  origin: auto
-- id: W3200880768
-  doi: https://doi.org/10.3389/frai.2021.752558
-  title: 'SHAP and LIME: An Evaluation of Discriminative Power in Credit Risk'
-  year: 2021
-  cited_by_count: 286
-  venue: Frontiers in Artificial Intelligence
-  authors:
-  - Alex Gramegna
-  - Paolo Giudici
-  concepts:
-  - Discriminative model
-  - Boosting (machine learning)
-  - Computer science
-  - Gradient boosting
-  - Credit risk
-  - Predictive power
   source_query: SHAP explainability credit scoring
   discovered_at: '2026-06-10T00:03:48Z'
   origin: auto
@@ -2439,27 +2372,6 @@
   - Artificial intelligence
   - Logistic regression
   - Feature (linguistics)
-  source_query: SHAP explainability credit scoring
-  discovered_at: '2026-06-10T00:03:48Z'
-  origin: auto
-- id: W3000463950
-  doi: https://doi.org/10.1007/s10614-020-10042-0
-  title: Explainable Machine Learning in Credit Risk Management
-  year: 2020
-  cited_by_count: 411
-  venue: Computational Economics
-  authors:
-  - Niklas Bussmann
-  - Paolo Giudici
-  - Dimitri Marinelli
-  - Jochen Papenbrock
-  concepts:
-  - Similarity (geometry)
-  - Credit risk
-  - Credit score
-  - Set (abstract data type)
-  - Computer science
-  - Risk management
   source_query: SHAP explainability credit scoring
   discovered_at: '2026-06-10T00:03:48Z'
   origin: auto
@@ -5143,28 +5055,6 @@
   - Ensemble learning
   - Artificial intelligence
   - Support vector machine
-  source_query: evaluation metrics credit scoring imbalanced
-  discovered_at: '2026-06-10T12:01:03Z'
-  origin: auto
-- id: W3173725123
-  doi: https://doi.org/10.1016/j.ejor.2021.06.053
-  title: 'Machine learning for credit scoring: Improving logistic regression with
-    non-linear decision-tree effects'
-  year: 2021
-  cited_by_count: 384
-  venue: European Journal of Operational Research
-  authors:
-  - Elena Dumitrescu
-  - Sullivan Hué
-  - Christophe Hurlin
-  - Sessi Tokpavi
-  concepts:
-  - Logistic regression
-  - Interpretability
-  - Logistic model tree
-  - Random forest
-  - Decision tree
-  - Machine learning
   source_query: evaluation metrics credit scoring imbalanced
   discovered_at: '2026-06-10T12:01:03Z'
   origin: auto
@@ -22209,4 +22099,2534 @@
   - Demography
   source_query: calibration hierarchy of risk prediction models
   discovered_at: '2026-07-14T11:13:47Z'
+  origin: auto
+- id: W2161965672
+  doi: https://doi.org/10.1596/1813-9450-1678
+  title: 'Financial Development and Economic Growth: Views and Agenda'
+  year: 1999
+  cited_by_count: 3038
+  venue: World Bank policy research working paper
+  authors:
+  - Ross Levine
+  concepts:
+  - Finance
+  - Business
+  - Economics
+  source_query: green finance market growth policy bank lending
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W1954685264
+  doi: https://doi.org/10.3386/w21162
+  title: 'Dilemma not Trilemma: The Global Financial Cycle and Monetary Policy Independence'
+  year: 2015
+  cited_by_count: 1946
+  venue: National Bureau of Economic Research
+  authors:
+  - Hélène Rey
+  concepts:
+  - Trilemma
+  - Economics
+  - Monetary policy
+  - Monetary economics
+  - International finance
+  - Financial capital
+  source_query: green finance market growth policy bank lending
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W4200447668
+  doi: https://doi.org/10.1016/j.ecolecon.2021.107308
+  title: 'The impact of fintech innovation on green growth in China: Mediating effect
+    of green finance'
+  year: 2021
+  cited_by_count: 617
+  venue: Ecological Economics
+  authors:
+  - Guangyou Zhou
+  - Jieyu Zhu
+  - Sumei Luo
+  concepts:
+  - China
+  - Green growth
+  - Green development
+  - Economics
+  - Green economy
+  - Panel data
+  source_query: green finance market growth policy bank lending
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W2240034294
+  doi: https://doi.org/10.1016/j.ecolecon.2015.03.020
+  title: 'Beyond carbon pricing: The role of banking and monetary policy in financing
+    the transition to a low-carbon economy'
+  year: 2016
+  cited_by_count: 777
+  venue: Archivio istituzionale della ricerca (Alma Mater Studiorum Università di
+    Bologna)
+  authors:
+  - Emanuele Campiglio
+  concepts:
+  - Incentive
+  - Economics
+  - Monetary policy
+  - Monetary economics
+  - Investment (military)
+  - Interest rate
+  source_query: green finance market growth policy bank lending
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W2463885116
+  doi: https://doi.org/10.17221/174/2014-agricecon
+  title: Green finance for sustainable green economic growth in India
+  year: 2016
+  cited_by_count: 296
+  venue: Agricultural Economics (Zemědělská ekonomika)
+  authors:
+  - Parvadavardini SOUNDARRAJAN
+  - N. Vivek
+  concepts:
+  - Carbon finance
+  - Incentive
+  - Business
+  - Equity (law)
+  - Finance
+  - Depreciation (economics)
+  source_query: green finance market growth policy bank lending
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W2145732420
+  doi: https://doi.org/10.1596/1813-9450-4469
+  title: Finance, Financial Sector Policies, And Long-Run Growth
+  year: 2008
+  cited_by_count: 419
+  venue: World Bank, Washington, DC eBooks
+  authors:
+  - Ross Levine
+  - Asli Demirgüç‐Kunt
+  concepts:
+  - Finance
+  - Financial sector
+  - Business
+  - Financial system
+  - Economics
+  source_query: green finance market growth policy bank lending
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W2897383306
+  doi: https://doi.org/10.1093/icc/dty034
+  title: 'Mission-oriented innovation policies: challenges and opportunities'
+  year: 2018
+  cited_by_count: 1389
+  venue: Industrial and Corporate Change
+  authors:
+  - Mariana Mazzucato
+  concepts:
+  - Key (lock)
+  - Investment (military)
+  - Business
+  - Market oriented
+  - Industrial organization
+  - Process management
+  source_query: green finance market growth policy bank lending
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W3005939108
+  doi: https://doi.org/10.3390/en13040788
+  title: Sustainable Solutions for Green Financing and Investment in Renewable Energy
+    Projects
+  year: 2020
+  cited_by_count: 560
+  venue: Energies
+  authors:
+  - Farhad Taghizadeh–Hesary
+  - Naoyuki Yoshino
+  concepts:
+  - Finance
+  - Renewable energy
+  - Business
+  - Investment (military)
+  - Rate of return
+  - Spillover effect
+  source_query: green finance market growth policy bank lending
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W1982461819
+  doi: https://doi.org/10.1257/jep.23.3.125
+  title: The Economics of Two-Sided Markets
+  year: 2009
+  cited_by_count: 1270
+  venue: The Journal of Economic Perspectives
+  authors:
+  - Marc Rysman
+  concepts:
+  - Two-sided market
+  - Payment card
+  - Payment
+  - Value (mathematics)
+  - Newspaper
+  - Externality
+  source_query: green finance market growth policy bank lending
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W3047288361
+  doi: https://doi.org/10.1111/aepr.12320
+  title: Green Innovation and Finance in Asia
+  year: 2020
+  cited_by_count: 321
+  venue: Asian Economic Policy Review
+  authors:
+  - Clarence Tolliver
+  - Hidemichi Fujii
+  - Alexander Ryota Keeley
+  - Shunsuke Managi
+  concepts:
+  - Green growth
+  - Externality
+  - China
+  - Green economy
+  - Corporate governance
+  - Productivity
+  source_query: green finance market growth policy bank lending
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W2468992219
+  doi: https://doi.org/10.1016/j.techfore.2017.05.021
+  title: 'Financing renewable energy: Who is financing what and why it matters'
+  year: 2017
+  cited_by_count: 675
+  venue: Technological Forecasting and Social Change
+  authors:
+  - Mariana Mazzucato
+  - Gregor Semieniuk
+  concepts:
+  - Finance
+  - Portfolio
+  - Venture capital
+  - Business
+  - Investment (military)
+  - Financial innovation
+  source_query: green finance market growth policy bank lending
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W2153524047
+  doi: https://doi.org/10.1111/j.1540-6261.1977.tb03267.x
+  title: DEBT AND TAXES*
+  year: 1977
+  cited_by_count: 2972
+  venue: The Journal of Finance
+  authors:
+  - Merton H. Miller
+  concepts:
+  - Economics
+  - Debt
+  - Monetary economics
+  - Financial system
+  - Finance
+  source_query: green finance market growth policy bank lending
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W2808161882
+  doi: https://doi.org/10.3390/su10062008
+  title: The Impact of Green Lending on Credit Risk in China
+  year: 2018
+  cited_by_count: 241
+  venue: Sustainability
+  authors:
+  - Yujun Cui
+  - Sean Geobey
+  - Olaf Weber
+  - Haiying Lin
+  concepts:
+  - Credit risk
+  - Loan
+  - Panel data
+  - Business
+  - China
+  - Financial system
+  source_query: green finance market growth policy bank lending
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W2791159758
+  doi: https://doi.org/10.1093/ser/mwy008
+  title: 'Central banking and the infrastructural power of finance: the case of ECB
+    support for repo and securitization markets'
+  year: 2018
+  cited_by_count: 380
+  venue: Socio-Economic Review
+  authors:
+  - Benjamin Braun
+  concepts:
+  - Securitization
+  - Financial system
+  - Financial crisis
+  - Financial market
+  - Finance
+  - Position (finance)
+  source_query: green finance market growth policy bank lending
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W2151945084
+  doi: https://doi.org/10.1257/jep.8.1.23
+  title: Endogenous Innovation in the Theory of Growth
+  year: 1994
+  cited_by_count: 1519
+  venue: The Journal of Economic Perspectives
+  authors:
+  - Gene M. Grossman
+  - Elhanan Helpman
+  concepts:
+  - Endogenous growth theory
+  - Growth theory
+  - Economics
+  - Neoclassical economics
+  - Growth model
+  - Empirical evidence
+  source_query: green finance market growth policy bank lending
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W4206339922
+  doi: https://doi.org/10.1007/s11356-021-18454-7
+  title: 'Green bond as a new determinant of sustainable green financing, energy efficiency
+    investment, and economic growth: a global perspective'
+  year: 2022
+  cited_by_count: 236
+  venue: Environmental Science and Pollution Research
+  authors:
+  - Yiyi Ning
+  - Jacob Cherian
+  - Muhammad Safdar Sial
+  - Susana Álvarez-Otero
+  - Ubaldo Comite
+  - Malik Zia-ud-Din
+  concepts:
+  - Finance
+  - Bond
+  - Investment (military)
+  - Green growth
+  - Efficient energy use
+  - Business
+  source_query: green finance market growth policy bank lending
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W4383742957
+  doi: https://doi.org/10.1016/j.gsf.2023.101669
+  title: 'Adoption of green finance and green innovation for achieving circularity:
+    An exploratory review and future directions'
+  year: 2023
+  cited_by_count: 372
+  venue: Geoscience Frontiers
+  authors:
+  - Rohit Agrawal
+  - Shruti Agrawal
+  - Ashutosh Samadhiya
+  - Anil Kumar
+  - Sunil Luthra
+  - Vranda Jain
+  concepts:
+  - Context (archaeology)
+  - Externality
+  - Supply chain
+  - Business
+  - Circular economy
+  - Scopus
+  source_query: green finance market growth policy bank lending
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W4206962518
+  doi: https://doi.org/10.1007/s11356-021-18224-5
+  title: 'The impact of green lending on credit risk: evidence from UAE’s banks'
+  year: 2022
+  cited_by_count: 152
+  venue: Environmental Science and Pollution Research
+  authors:
+  - Anas Ali Al-Qudah
+  - Allam Hamdan
+  - Manaf Al‐Okaily
+  - Lara Al‐Haddad
+  concepts:
+  - Current ratio
+  - Credit risk
+  - Inefficiency
+  - Loan
+  - Return on equity
+  - Solvency
+  source_query: green finance market growth policy bank lending
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W4205165561
+  doi: https://doi.org/10.3390/su14020989
+  title: Do Green Banking Activities Improve the Banks’ Environmental Performance?
+    The Mediating Effect of Green Financing
+  year: 2022
+  cited_by_count: 206
+  venue: Sustainability
+  authors:
+  - Xin Zhang
+  - Zhihui Wang
+  - Xiaobing Zhong
+  - Yang Shouzhi
+  - Abu Bakkar Siddik
+  concepts:
+  - Business
+  - Finance
+  - Sustainable development
+  - Sample (material)
+  - Green development
+  - Investment (military)
+  source_query: green finance market growth policy bank lending
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W3043294291
+  doi: https://doi.org/10.13106/jafeb.2020.vol7.no7.577
+  title: 'Green Finance and Sustainable Development Goals: The Case of China'
+  year: 2020
+  cited_by_count: 261
+  venue: Journal of Asian Finance Economics and Business
+  authors:
+  - Jung Wan Lee
+  concepts:
+  - Finance
+  - Sustainable development
+  - Business
+  - Corporate governance
+  - Transparency (behavior)
+  - Project finance
+  source_query: green finance market growth policy bank lending
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W2754240787
+  doi: https://doi.org/10.1016/j.ecolecon.2018.05.011
+  title: Climate Change, Financial Stability and Monetary Policy
+  year: 2018
+  cited_by_count: 734
+  venue: Ecological Economics
+  authors:
+  - Yannis Dafermos
+  - Maria Nikolaidi
+  - Giorgos Galanis
+  concepts:
+  - Damages
+  - Climate change
+  - Economics
+  - Financial market
+  - Bond
+  - Interest rate
+  source_query: green finance market growth policy bank lending
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W1738524706
+  doi: https://doi.org/10.1002/smj.2131
+  title: Corporate social responsibility and access to finance
+  year: 2013
+  cited_by_count: 3784
+  venue: Strategic Management Journal
+  authors:
+  - Beiting Cheng
+  - Ioannis Ioannou
+  - George Serafeim
+  concepts:
+  - Corporate social responsibility
+  - Transparency (behavior)
+  - Stakeholder engagement
+  - Stakeholder
+  - Accounting
+  - Agency (philosophy)
+  source_query: green credit policy firm financing constraints
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W2927570196
+  doi: https://doi.org/10.1002/pam.22137
+  title: 'Money Talks: The Environmental Impact of China''s Green Credit Policy'
+  year: 2019
+  cited_by_count: 212
+  venue: Journal of Policy Analysis and Management
+  authors:
+  - Junxiu Sun
+  - Feng Wang
+  - Haitao Yin
+  - Bing Zhang
+  concepts:
+  - Constraint (computer-aided design)
+  - Leverage (statistics)
+  - Business
+  - Enforcement
+  - General partnership
+  - Loan
+  source_query: green credit policy firm financing constraints
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W3143939708
+  doi: https://doi.org/10.1016/j.jfs.2021.100875
+  title: Three green financial policies to address climate risks
+  year: 2021
+  cited_by_count: 300
+  venue: Journal of Financial Stability
+  authors:
+  - Francesco Lamperti
+  - Valentina Bosetti
+  - Andrea Roventini
+  - Massimo Tavoni
+  - Tania Treibich
+  concepts:
+  - Climate change
+  - Finance
+  - Business
+  - Financial fragility
+  - Economics
+  - Capital requirement
+  source_query: green credit policy firm financing constraints
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W2081631040
+  doi: https://doi.org/10.1257/aer.89.3.605
+  title: Do Domestic Firms Benefit from Direct Foreign Investment? Evidence from Venezuela
+  year: 1999
+  cited_by_count: 3628
+  venue: American Economic Review
+  authors:
+  - Brian Aitken
+  - Ann Harrison
+  concepts:
+  - Foreign direct investment
+  - Foreign portfolio investment
+  - Productivity
+  - Economics
+  - Panel data
+  - Equity (law)
+  source_query: green credit policy firm financing constraints
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W3181836791
+  doi: https://doi.org/10.1016/j.ese.2021.100107
+  title: 'Green finance, fintech and environmental protection: Evidence from China'
+  year: 2021
+  cited_by_count: 610
+  venue: Environmental Science and Ecotechnology
+  authors:
+  - Tadiwanashe Muganyi
+  - Linnan Yan
+  - Huaping Sun
+  concepts:
+  - China
+  - Business
+  - Finance
+  - Investment (military)
+  - Financial crisis
+  - Panel data
+  source_query: green credit policy firm financing constraints
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W3098098507
+  doi: https://doi.org/10.1016/j.jenvman.2020.111609
+  title: 'The causal effect on firm performance of China''s financing–pollution emission
+    reduction policy: Firm-level evidence'
+  year: 2020
+  cited_by_count: 166
+  venue: Journal of Environmental Management
+  authors:
+  - Dongyang Zhang
+  - Samuel A. Vigne
+  concepts:
+  - Profitability index
+  - Pollution
+  - Business
+  - China
+  - Loan
+  - Sustainable development
+  source_query: green credit policy firm financing constraints
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W4366487479
+  doi: https://doi.org/10.1002/csr.2506
+  title: 'Can green credit policy reduce corporate carbon emission intensity: Evidence
+    from China''s listed firms'
+  year: 2023
+  cited_by_count: 112
+  venue: Corporate Social Responsibility and Environmental Management
+  authors:
+  - Pei Xu
+  - Penghao Ye
+  - Atif Jahanger
+  - Siwei Huang
+  - Fan Zhao
+  concepts:
+  - Emission intensity
+  - Business
+  - China
+  - Investment (military)
+  - Carbon fibers
+  - R&D intensity
+  source_query: green credit policy firm financing constraints
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W4322624932
+  doi: https://doi.org/10.1111/jofi.13219
+  title: Firm‐Level Climate Change Exposure
+  year: 2023
+  cited_by_count: 1255
+  venue: The Journal of Finance
+  authors:
+  - Zacharias Sautner
+  - Laurence van Lent
+  - Grigory Vilkov
+  - RUISHEN ZHANG
+  concepts:
+  - Climate change
+  - Earnings
+  - Equity (law)
+  - Business
+  - Natural resource economics
+  - Economics
+  source_query: green credit policy firm financing constraints
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W2770414254
+  doi: https://doi.org/10.1093/qje/qjz021
+  title: 'Firm-Level Political Risk: Measurement and Effects*'
+  year: 2019
+  cited_by_count: 1462
+  venue: The Quarterly Journal of Economics
+  authors:
+  - Tarek A. Hassan
+  - Stephan Hollander
+  - Laurence van Lent
+  - Ahmed Tahoun
+  concepts:
+  - Political risk
+  - Politics
+  - Volatility (finance)
+  - Earnings
+  - Economics
+  - Variance (accounting)
+  source_query: green credit policy firm financing constraints
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W4390604157
+  doi: https://doi.org/10.1016/j.iref.2024.01.009
+  title: Can green credit policy stimulate firms’ green investments?
+  year: 2024
+  cited_by_count: 59
+  venue: International Review of Economics & Finance
+  authors:
+  - Yanbai Ma
+  - Lu Ling
+  - Jingbo Cui
+  - Xunpeng Shi
+  concepts:
+  - Subsidy
+  - Green economy
+  - Investment (military)
+  - Green development
+  - Business
+  - Green innovation
+  source_query: green credit policy firm financing constraints
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W4385477656
+  doi: https://doi.org/10.1177/00368504231191985
+  title: Does green credit really increase green technology innovation?
+  year: 2023
+  cited_by_count: 104
+  venue: Science Progress
+  authors:
+  - Tao Lin
+  - Wanwan Wu
+  - Mingyue Du
+  - Siyu Ren
+  - Yangping Huang
+  - Javier Cifuentes‐Faura
+  concepts:
+  - Subsidy
+  - Business
+  - Profitability index
+  - China
+  - Green innovation
+  - Government (linguistics)
+  source_query: green credit policy firm financing constraints
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W4386198454
+  doi: https://doi.org/10.1108/cfri-11-2022-0224
+  title: 'The impact of China''s green credit policy on enterprise digital innovation:
+    evidence from heavily-polluting Chinese listed companies'
+  year: 2023
+  cited_by_count: 104
+  venue: China Finance Review International
+  authors:
+  - Qiang Lu
+  - Yang Deng
+  - Xinyi Wang
+  - Aiping Wang
+  concepts:
+  - Business
+  - China
+  - Industrial organization
+  - Originality
+  - Value (mathematics)
+  - Economics
+  source_query: green credit policy firm financing constraints
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W4288060992
+  doi: https://doi.org/10.1016/j.eneco.2022.106209
+  title: 'Climate policy uncertainty and firm-level total factor productivity: Evidence
+    from China'
+  year: 2022
+  cited_by_count: 569
+  venue: Energy Economics
+  authors:
+  - Xiaohang Ren
+  - Xiao Zhang
+  - Cheng Yan
+  - Giray Gözgör
+  concepts:
+  - Total factor productivity
+  - Endogeneity
+  - Productivity
+  - Economics
+  - Robustness (evolution)
+  - Capital (architecture)
+  source_query: green credit policy firm financing constraints
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W2029792205
+  doi: https://doi.org/10.2307/2118445
+  title: The Effect of Credit Market Competition on Lending Relationships
+  year: 1995
+  cited_by_count: 3379
+  venue: The Quarterly Journal of Economics
+  authors:
+  - Mitchell A. Petersen
+  - Raghuram G. Rajan
+  concepts:
+  - Creditor
+  - Competition (biology)
+  - Economics
+  - Bond market
+  - Monetary economics
+  - Value (mathematics)
+  source_query: small business lending credit risk determinants
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W2059694171
+  doi: https://doi.org/10.1016/s0378-4266(01)00189-3
+  title: The ability of banks to lend to informationally opaque small businesses
+  year: 2001
+  cited_by_count: 1002
+  venue: Journal of Banking & Finance
+  authors:
+  - Allen N. Berger
+  - Leora Klapper
+  - Gregory F. Udell
+  concepts:
+  - Monetary economics
+  - Distress
+  - Business
+  - Raising (metalworking)
+  - Financial distress
+  - Financial system
+  source_query: small business lending credit risk determinants
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W2119780569
+  doi: https://doi.org/10.1016/s0378-4266(98)00038-7
+  title: 'The economics of small business finance: The roles of private equity and
+    debt markets in the financial growth cycle'
+  year: 1998
+  cited_by_count: 3720
+  venue: Journal of Banking & Finance
+  authors:
+  - Allen N. Berger
+  - Gregory F. Udell
+  concepts:
+  - Business cycle
+  - Economics
+  - Debt
+  - Finance
+  - Capital structure
+  - Equity capital markets
+  source_query: small business lending credit risk determinants
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W1928404015
+  doi: https://doi.org/10.1016/s0304-405x(98)00036-1
+  title: The effects of bank mergers and acquisitions on small business lending
+  year: 1998
+  cited_by_count: 806
+  venue: Journal of Financial Economics
+  authors:
+  - Allen N. Berger
+  - Anthony Saunders
+  - Joseph M. Scalise
+  - Gregory F. Udell
+  concepts:
+  - Consolidation (business)
+  - Mergers and acquisitions
+  - Business
+  - Financial institution
+  - Antecedent (behavioral psychology)
+  - Small business
+  source_query: small business lending credit risk determinants
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W1560350676
+  doi: https://doi.org/10.1016/s1574-0048(99)10034-x
+  title: Chapter 21 The financial accelerator in a quantitative business cycle framework
+  year: 1999
+  cited_by_count: 3597
+  venue: Handbook of macroeconomics
+  authors:
+  - Ben Bernanke
+  - Mark Gertler
+  - Simon Gilchrist
+  concepts:
+  - Financial accelerator
+  - Business cycle
+  - Economics
+  - Investment (military)
+  - General equilibrium theory
+  - Financial market
+  source_query: small business lending credit risk determinants
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W2171896830
+  doi: https://doi.org/10.1353/mcb.2005.0019
+  title: Credit Scoring and the Availability, Price, and Risk of Small Business Credit
+  year: 2005
+  cited_by_count: 427
+  venue: Journal of money credit and banking
+  authors:
+  - Allen N. Berger
+  - W. Scott Frame
+  - Nathan Miller
+  concepts:
+  - Credit risk
+  - Discretion
+  - Small business
+  - Business
+  - Credit rating
+  - Actuarial science
+  source_query: small business lending credit risk determinants
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W1933529014
+  doi: https://doi.org/10.22004/ag.econ.292693
+  title: Agency Costs, Net Worth, And Business Fluctuations
+  year: 1988
+  cited_by_count: 4435
+  venue: AgEcon Search (University of Minnesota, USA)
+  authors:
+  - Ben Bernanke
+  - Gertler, Mark
+  - Ben Bernanke
+  - Gertler, Mark
+  concepts:
+  - Net worth
+  - Business cycle
+  - Economics
+  - Agency cost
+  - Debt
+  - Investment (military)
+  source_query: small business lending credit risk determinants
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W2157801094
+  doi: https://doi.org/10.1006/jfin.1999.0278
+  title: 'Relationship Lending within a Bank-Based System: Evidence from European
+    Small Business Data'
+  year: 2000
+  cited_by_count: 991
+  venue: Journal of Financial Intermediation
+  authors:
+  - Hans Degryse
+  - Patrick Van Cayseele
+  concepts:
+  - Loan
+  - Collateral
+  - Scope (computer science)
+  - Term loan
+  - Duration (music)
+  - Participation loan
+  source_query: small business lending credit risk determinants
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W3122858800
+  doi: https://doi.org/10.1353/mcb.2002.0032
+  title: Trade Credit and the Bank Lending Channel
+  year: 2002
+  cited_by_count: 627
+  venue: Journal of money credit and banking
+  authors:
+  - Jeffrey H. Nilsen
+  concepts:
+  - Trade credit
+  - Loan
+  - Business
+  - Credit history
+  - Credit reference
+  - Monetary economics
+  source_query: small business lending credit risk determinants
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W2164367837
+  doi: https://doi.org/10.1111/0022-1082.00138
+  title: Evidence on the Determinants of Credit Terms Used in Interfirm Trade
+  year: 1999
+  cited_by_count: 864
+  venue: The Journal of Finance
+  authors:
+  - Chee K. Ng
+  - Janet Kiholm Smith
+  - Richard L. Smith
+  concepts:
+  - Trade credit
+  - Payment
+  - Cash
+  - Quality (philosophy)
+  - Business
+  - Credit reference
+  source_query: small business lending credit risk determinants
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W2742667902
+  doi: null
+  title: Determinants and Impact of Sovereign Credit Ratings
+  year: 1996
+  cited_by_count: 590
+  venue: 'RePEc: Research Papers in Economics'
+  authors:
+  - Richard Cantor
+  - Frank Packer
+  concepts:
+  - Sovereign credit
+  - Credit rating
+  - Business
+  - Credit risk
+  - Consistency (knowledge bases)
+  - Government (linguistics)
+  source_query: small business lending credit risk determinants
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W2185712725
+  doi: https://doi.org/10.1371/journal.pone.0139427
+  title: Determinants of Default in P2P Lending
+  year: 2015
+  cited_by_count: 327
+  venue: PLoS ONE
+  authors:
+  - Carlos Serrano‐Cinca
+  - Begoña Gutiérrez Nieto
+  - Luz López-Palacios
+  concepts:
+  - Default
+  - Loan
+  - Business
+  - Non-performing loan
+  - Credit risk
+  - Debt
+  source_query: small business lending credit risk determinants
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W3125016737
+  doi: https://doi.org/10.3386/w4921
+  title: The Effect of Credit Market Competition on Lending Relationships
+  year: 1994
+  cited_by_count: 389
+  venue: National Bureau of Economic Research
+  authors:
+  - Mitchell A. Petersen
+  - Raghuram G. Rajan
+  concepts:
+  - Business
+  - Competition (biology)
+  - Financial system
+  - Monetary economics
+  - Bond market
+  - Economics
+  source_query: small business lending credit risk determinants
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W4239189107
+  doi: https://doi.org/10.4337/9781849807630.00021
+  title: Journal of Business Venturing
+  year: 2011
+  cited_by_count: 908
+  venue: Edward Elgar Publishing eBooks
+  authors:
+  - Dimo Dimov
+  - W Förster
+  concepts:
+  - Business
+  source_query: small business lending credit risk determinants
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W2906323621
+  doi: https://doi.org/10.1093/rfs/hhz137
+  title: The Importance of Climate Risks for Institutional Investors
+  year: 2019
+  cited_by_count: 2859
+  venue: Review of Financial Studies
+  authors:
+  - Philipp Krueger
+  - Zacharias Sautner
+  - Laura T. Starks
+  concepts:
+  - Divestment
+  - Climate risk
+  - Business
+  - Equity (law)
+  - Institutional investor
+  - Climate change
+  source_query: small business lending credit risk determinants
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W3049243281
+  doi: https://doi.org/10.3982/ecta10104
+  title: 'Hazardous Times for Monetary Policy: What Do Twenty-Three Million Bank Loans
+    Say About the Effects of Monetary Policy on Credit Risk-Taking?'
+  year: 2014
+  cited_by_count: 1330
+  venue: Econometrica
+  authors:
+  - Gabriel Jiménez
+  - Steven Ongena
+  - José-Luis Peydró
+  - Jesús Saurina
+  concepts:
+  - Collateral
+  - Loan
+  - Monetary economics
+  - Monetary policy
+  - Interest rate
+  - Commit
+  source_query: small business lending credit risk determinants
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W3115732278
+  doi: https://doi.org/10.1109/access.2020.3048018
+  title: Tax Default Prediction Using Feature Transformation-Based Machine Learning
+  year: 2020
+  cited_by_count: 61
+  venue: IEEE Access
+  authors:
+  - Mohammad Zoynul Abedin
+  - Guotai Chi
+  - Mohammed Mohi Uddin
+  - Md. Shahriare Satu
+  - Md. Imran Khan
+  - Petr Hájek
+  concepts:
+  - Computer science
+  - Artificial intelligence
+  - Feature (linguistics)
+  - Machine learning
+  - Transformation (genetics)
+  - Pattern recognition (psychology)
+  source_query: SME default prediction machine learning
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W3184858604
+  doi: https://doi.org/10.3390/ijfs9030039
+  title: 'Financial Inclusion in Emerging Economies: The Application of Machine Learning
+    and Artificial Intelligence in Credit Risk Assessment'
+  year: 2021
+  cited_by_count: 243
+  venue: International Journal of Financial Studies
+  authors:
+  - David Mhlanga
+  concepts:
+  - Collateral
+  - Credit risk
+  - Credit reference
+  - Adverse selection
+  - Loan
+  - Credit history
+  source_query: SME default prediction machine learning
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W4389475439
+  doi: https://doi.org/10.1080/00472778.2023.2277426
+  title: 'SME default prediction: A systematic methodology-focused review'
+  year: 2023
+  cited_by_count: 41
+  venue: Journal of Small Business Management
+  authors:
+  - Hamid Cheraghali
+  - Péter Molnár
+  concepts:
+  - Systematic review
+  - Management science
+  - Business
+  - Computer science
+  - Economics
+  - Political science
+  source_query: SME default prediction machine learning
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W3180102056
+  doi: https://doi.org/10.1093/jjfinec/nbab010
+  title: Forecasting Loan Default in Europe with Machine Learning
+  year: 2021
+  cited_by_count: 51
+  venue: Journal of Financial Econometrics
+  authors:
+  - Luca Barbaglia
+  - Sebastiano Manzan
+  - Elisa Tosetti
+  concepts:
+  - Loan
+  - Default
+  - Logistic regression
+  - Econometrics
+  - Variable (mathematics)
+  - Credit risk
+  source_query: SME default prediction machine learning
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W2167710876
+  doi: https://doi.org/10.1109/sai.2014.6918252
+  title: Intrusion detection in SCADA systems using machine learning techniques
+  year: 2014
+  cited_by_count: 184
+  venue: null
+  authors:
+  - Λέανδρος Μαγλαράς
+  - Jianmin Jiang
+  concepts:
+  - SCADA
+  - Intrusion detection system
+  - Computer science
+  - Anomaly detection
+  - Support vector machine
+  - Anomaly-based intrusion detection system
+  source_query: SME default prediction machine learning
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W4205137933
+  doi: https://doi.org/10.5089/9781513557618.001
+  title: 'Fintech Credit Risk Assessment for SMEs: Evidence from China'
+  year: 2020
+  cited_by_count: 50
+  venue: IMF Working Paper
+  authors:
+  - Yiping Huang
+  - Longmei Zhang
+  - Zhenhua Li
+  - Han Qiu
+  - Tao Sun
+  - Xue Wang
+  concepts:
+  - Unbanked
+  - Big data
+  - Loan
+  - Business
+  - Financial inclusion
+  - FinTech
+  source_query: SME default prediction machine learning
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W3135752241
+  doi: https://doi.org/10.5755/j01.ee.32.1.27382
+  title: Financial Distress Prediction for Small and Medium Enterprises Using Machine
+    Learning Techniques
+  year: 2021
+  cited_by_count: 75
+  venue: Engineering Economics
+  authors:
+  - Aidas Malakauskas
+  - Aušrinė Lakštutienė
+  concepts:
+  - Financial distress
+  - Random forest
+  - Logistic regression
+  - Binomial regression
+  - Financial ratio
+  - Finance
+  source_query: SME default prediction machine learning
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W3039419186
+  doi: https://doi.org/10.3390/su12135317
+  title: Does Good ESG Lead to Better Financial Performances by Firms? Machine Learning
+    and Logistic Regression Models of Public Enterprises in Europe
+  year: 2020
+  cited_by_count: 297
+  venue: Sustainability
+  authors:
+  - Caterina De Lucia
+  - Pasquale Pazienza
+  - Mark Bartlett
+  concepts:
+  - Return on equity
+  - Corporate social responsibility
+  - Business
+  - Logistic regression
+  - Corporate governance
+  - Sustainability
+  source_query: SME default prediction machine learning
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W3122259034
+  doi: https://doi.org/10.2139/ssrn.3721218
+  title: 'Fintech Credit Risk Assessment for SMEs: Evidence from China'
+  year: 2020
+  cited_by_count: 57
+  venue: SSRN Electronic Journal
+  authors:
+  - Yiping Huang
+  - Longmei Zhang
+  - Zhenhua Li
+  - Han Qiu
+  - Tao Sun
+  - Xue Wang
+  concepts:
+  - Business
+  - China
+  - Credit risk
+  - Risk assessment
+  - Systemic risk
+  - Financial system
+  source_query: SME default prediction machine learning
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W4393910198
+  doi: https://doi.org/10.1016/j.ijinfomgt.2024.102781
+  title: 'Artificial intelligence implementation in manufacturing SMEs: A resource
+    orchestration approach'
+  year: 2024
+  cited_by_count: 189
+  venue: International Journal of Information Management
+  authors:
+  - Einav Peretz-Andersson
+  - Sabrina Tabares
+  - Patrick Mikalef
+  - Vinit Parida
+  concepts:
+  - Orchestration
+  - Knowledge management
+  - Manufacturing engineering
+  - Business
+  - Computer science
+  - Resource (disambiguation)
+  source_query: SME default prediction machine learning
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W4309213722
+  doi: https://doi.org/10.3390/data7110160
+  title: 'Explainable Machine Learning for Financial Distress Prediction: Evidence
+    from Vietnam'
+  year: 2022
+  cited_by_count: 61
+  venue: Data
+  authors:
+  - Kim Long Tran
+  - Hoang Anh Le
+  - Thanh Nguyen
+  - Duc Trung Nguyen
+  concepts:
+  - Machine learning
+  - Credit default swap
+  - Random forest
+  - Bond
+  - Credit rating
+  - Predictive power
+  source_query: SME default prediction machine learning
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W3126457608
+  doi: https://doi.org/10.2991/ijcis.d.210203.007
+  title: Comparing performances and effectiveness of machine learning classifiers
+    in detecting financial accounting fraud for Turkish SMEs
+  year: 2021
+  cited_by_count: 63
+  venue: International Journal of Computational Intelligence Systems
+  authors:
+  - Serhan Hamal
+  - Özlem Şenvar
+  concepts:
+  - Oversampling
+  - Random forest
+  - Feature selection
+  - Undersampling
+  - Naive Bayes classifier
+  - Computer science
+  source_query: SME default prediction machine learning
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W2793320726
+  doi: https://doi.org/10.1007/s11136-018-1798-3
+  title: COSMIN guideline for systematic reviews of patient-reported outcome measures
+  year: 2018
+  cited_by_count: 3373
+  venue: Quality of Life Research
+  authors:
+  - C.A.C. Prinsen
+  - Lidwine B. Mokkink
+  - L.M. Bouter
+  - Jordi Alonso
+  - Donald L. Patrick
+  - Henrica C. W. de Vet
+  - Caroline B. Terwee
+  concepts:
+  - Systematic review
+  - Prom
+  - Guideline
+  - Patient-reported outcome
+  - Medicine
+  - Interpretability
+  source_query: credit scoring practice industry review
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W3121143499
+  doi: https://doi.org/10.1016/j.jacceco.2014.09.002
+  title: A review of archival auditing research
+  year: 2014
+  cited_by_count: 3031
+  venue: Journal of Accounting and Economics
+  authors:
+  - Mark L. DeFond
+  - Jieying Zhang
+  concepts:
+  - Audit
+  - Accounting
+  - Business
+  source_query: credit scoring practice industry review
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W2153509701
+  doi: https://doi.org/10.1016/j.ecolecon.2008.03.011
+  title: 'Designing payments for environmental services in theory and practice: An
+    overview of the issues'
+  year: 2008
+  cited_by_count: 2441
+  venue: Ecological Economics
+  authors:
+  - Stefanie Engel
+  - Stefano Pagiola
+  - Sven Wunder
+  concepts:
+  - Ecosystem services
+  - Payment
+  - Externality
+  - Beneficiary
+  - Incentive
+  - Scope (computer science)
+  source_query: credit scoring practice industry review
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W2133864799
+  doi: https://doi.org/10.1016/s0378-4266(98)00125-3
+  title: 'The consolidation of the financial services industry: Causes, consequences,
+    and implications for the future'
+  year: 1999
+  cited_by_count: 1537
+  venue: Journal of Banking & Finance
+  authors:
+  - Allen N. Berger
+  - Rebecca S. Demsetz
+  - Philip E. Strahan
+  concepts:
+  - Consolidation (business)
+  - Extant taxon
+  - Diversification (marketing strategy)
+  - Financial services
+  - Business
+  - Profit (economics)
+  source_query: credit scoring practice industry review
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W3123349974
+  doi: https://doi.org/10.1016/j.jacceco.2014.08.009
+  title: 'Financial accounting in the banking industry: A review of the empirical
+    literature'
+  year: 2014
+  cited_by_count: 673
+  venue: Journal of Accounting and Economics
+  authors:
+  - Anne Beatty
+  - Scott Liao
+  concepts:
+  - Accounting
+  - Valuation (finance)
+  - Financial accounting
+  - Accounting information system
+  - Business
+  - Positive accounting
+  source_query: credit scoring practice industry review
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W2901598045
+  doi: https://doi.org/10.1016/j.tele.2018.11.006
+  title: 'A systematic literature review of blockchain-based applications: Current
+    status, classification and open issues'
+  year: 2018
+  cited_by_count: 2468
+  venue: Telematics and Informatics
+  authors:
+  - Fran Casino
+  - Thomas K. Dasaklis
+  - Constantinos Patsakis
+  concepts:
+  - Blockchain
+  - Computer science
+  - Systematic review
+  - Current (fluid)
+  - Data science
+  - Computer security
+  source_query: credit scoring practice industry review
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W3020855431
+  doi: https://doi.org/10.1016/j.ijpe.2020.107776
+  title: 'Industry 4.0 technologies assessment: A sustainability perspective'
+  year: 2020
+  cited_by_count: 1388
+  venue: International Journal of Production Economics
+  authors:
+  - Chunguang Bai
+  - Patrick Dallasega
+  - Guido Orzes
+  - Joseph Sarkis
+  concepts:
+  - Sustainability
+  - Automotive industry
+  - Business
+  - Emerging technologies
+  - Social sustainability
+  - Investment (military)
+  source_query: credit scoring practice industry review
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W2899357412
+  doi: https://doi.org/10.1016/j.rser.2018.10.014
+  title: 'Blockchain technology in the energy sector: A systematic review of challenges
+    and opportunities'
+  year: 2018
+  cited_by_count: 2386
+  venue: Renewable and Sustainable Energy Reviews
+  authors:
+  - Merlinda Andoni
+  - Valentin Robu
+  - David Flynn
+  - Simone Abram
+  - Dale Geach
+  - David Jenkins
+  - Peter McCallum
+  - Andrew Peacock
+  concepts:
+  - Blockchain
+  - Construct (python library)
+  - Computer science
+  - Smart contract
+  - Relevance (law)
+  - Emerging technologies
+  source_query: credit scoring practice industry review
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W4391963747
+  doi: https://doi.org/10.30574/gjeta.2024.18.2.0029
+  title: 'AI in credit scoring: A comprehensive review of models and predictive analytics'
+  year: 2024
+  cited_by_count: 64
+  venue: Global Journal of Engineering and Technology Advances
+  authors:
+  - Wilhelmina Afua Addy
+  - Adeola Olusola Ajayi-Nifise
+  - Binaebi Gloria Bello
+  - Sunday Tubokirifuruar Tula
+  - Olubusola Odeyemi
+  - Titilola Falaiye
+  concepts:
+  - Predictive analytics
+  - Analytics
+  - Data science
+  - Computer science
+  source_query: credit scoring practice industry review
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W3113541070
+  doi: https://doi.org/10.3390/ijerph18010271
+  title: 'Application of Artificial Intelligence-Based Technologies in the Healthcare
+    Industry: Opportunities and Challenges'
+  year: 2021
+  cited_by_count: 996
+  venue: International Journal of Environmental Research and Public Health
+  authors:
+  - DonHee Lee
+  - Seong No Yoon
+  concepts:
+  - Health care
+  - Healthcare industry
+  - Computer science
+  - Applications of artificial intelligence
+  - Knowledge management
+  - Emerging technologies
+  source_query: credit scoring practice industry review
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W1978175480
+  doi: https://doi.org/10.1016/j.jbankfin.2005.05.015
+  title: 'Capital structure and firm performance: A new approach to testing agency
+    theory and an application to the banking industry'
+  year: 2005
+  cited_by_count: 1032
+  venue: Journal of Banking & Finance
+  authors:
+  - Allen N. Berger
+  - Emilia Bonaccorsi di Patti
+  concepts:
+  - Capital structure
+  - Leverage (statistics)
+  - Corporate governance
+  - Theory of the firm
+  - Principal–agent problem
+  - Industrial organization
+  source_query: credit scoring practice industry review
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W2774779278
+  doi: https://doi.org/10.1017/s0261444817000350
+  title: A systematic review of English medium instruction in higher education
+  year: 2017
+  cited_by_count: 1466
+  venue: Language Teaching
+  authors:
+  - Ernesto Macaro
+  - Samantha Curle
+  - Jack Pun
+  - Jiangshan An
+  - Julie Dearden
+  concepts:
+  - EMI
+  - Phenomenon
+  - English language
+  - Medium of instruction
+  - Pedagogy
+  - Psychology
+  source_query: credit scoring practice industry review
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W2981869278
+  doi: https://doi.org/10.1126/science.aax2342
+  title: Dissecting racial bias in an algorithm used to manage the health of populations
+  year: 2019
+  cited_by_count: 6471
+  venue: Science
+  authors:
+  - Ziad Obermeyer
+  - Brian W. Powers
+  - Christine Vogeli
+  - Sendhil Mullainathan
+  concepts:
+  - Proxy (statistics)
+  - Health care
+  - Racial bias
+  - Computer science
+  - White (mutation)
+  - Actuarial science
+  source_query: credit scoring practice industry review
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W3159759907
+  doi: https://doi.org/10.1007/s11142-021-09609-5
+  title: 'Mandatory CSR and sustainability reporting: economic analysis and literature
+    review'
+  year: 2021
+  cited_by_count: 1720
+  venue: Review of Accounting Studies
+  authors:
+  - Hans Bonde Christensen
+  - Luzi Hail
+  - Christian Leuz
+  concepts:
+  - Sustainability reporting
+  - Corporate social responsibility
+  - Sustainability
+  - Accounting
+  - Integrated reporting
+  - Corporate sustainability
+  source_query: credit scoring practice industry review
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W2996541402
+  doi: https://doi.org/10.1007/s11948-019-00165-5
+  title: 'From What to How: An Initial Review of Publicly Available AI Ethics Tools,
+    Methods and Research to Translate Principles into Practices'
+  year: 2019
+  cited_by_count: 788
+  venue: Science and Engineering Ethics
+  authors:
+  - Jessica Morley
+  - Luciano Floridi
+  - Libby Kinsey
+  - Anat Elhalal
+  concepts:
+  - Beneficence
+  - Mainstream
+  - Engineering ethics
+  - Autonomy
+  - Typology
+  - Philosophy of science
+  source_query: credit scoring practice industry review
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W2809925683
+  doi: https://doi.org/10.23919/mipro.2018.8400040
+  title: 'Explainable artificial intelligence: A survey'
+  year: 2018
+  cited_by_count: 1137
+  venue: null
+  authors:
+  - Filip Karlo Došilović
+  - Mario Brčić
+  - Nikica Hlupić
+  concepts:
+  - Interpretability
+  - Variety (cybernetics)
+  - Transparency (behavior)
+  - Computer science
+  - Artificial intelligence
+  - Data science
+  source_query: explainable artificial intelligence finance applications
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W2954503794
+  doi: https://doi.org/10.1609/aimag.v40i2.2850
+  title: DARPA's Explainable Artificial Intelligence Program
+  year: 2019
+  cited_by_count: 1255
+  venue: AI Magazine
+  authors:
+  - David Gunning
+  - David W. Aha
+  concepts:
+  - Computer science
+  - Task (project management)
+  - Artificial intelligence
+  - Knowledge management
+  - Management science
+  - Engineering
+  source_query: explainable artificial intelligence finance applications
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W3000603264
+  doi: https://doi.org/10.1038/s41467-019-14108-y
+  title: The role of artificial intelligence in achieving the Sustainable Development
+    Goals
+  year: 2020
+  cited_by_count: 3033
+  venue: Nature Communications
+  authors:
+  - Ricardo Vinuesa
+  - Hossein Azizpour
+  - Iolanda Leite
+  - Madeline Balaam
+  - Virginia Dignum
+  - Sami Domisch
+  - Anna Felländer
+  - Simone D. Langhans
+  concepts:
+  - Accountability
+  - Transparency (behavior)
+  - Sustainable development
+  - Productivity
+  - Computer science
+  - Business
+  source_query: explainable artificial intelligence finance applications
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W4390187135
+  doi: https://doi.org/10.1109/access.2023.3347028
+  title: 'Explainable Artificial Intelligence (XAI): A Systematic Literature Review
+    on Taxonomies and Applications in Finance'
+  year: 2023
+  cited_by_count: 51
+  venue: IEEE Access
+  authors:
+  - Tiago Martins
+  - Ana de Almeida
+  - Elsa Cardoso
+  - Luís Nunes
+  concepts:
+  - Interpretability
+  - Taxonomy (biology)
+  - Computer science
+  - Categorization
+  - Systematic review
+  - Management science
+  source_query: explainable artificial intelligence finance applications
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W4366085876
+  doi: https://doi.org/10.1016/j.dajour.2023.100230
+  title: 'A systematic review of Explainable Artificial Intelligence models and applications:
+    Recent developments and future trends'
+  year: 2023
+  cited_by_count: 407
+  venue: Decision Analytics Journal
+  authors:
+  - A. Saranya
+  - R. Subhashini
+  concepts:
+  - Computer science
+  - Scopus
+  - Transparency (behavior)
+  - Artificial intelligence
+  - Field (mathematics)
+  - Systematic review
+  source_query: explainable artificial intelligence finance applications
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W3093718041
+  doi: https://doi.org/10.1002/widm.1391
+  title: A historical perspective of explainable Artificial Intelligence
+  year: 2020
+  cited_by_count: 375
+  venue: Wiley Interdisciplinary Reviews Data Mining and Knowledge Discovery
+  authors:
+  - Roberto Confalonieri
+  - Ludovik Çoba
+  - B.J. Wagner
+  - Tarek R. Besold
+  concepts:
+  - Perspective (graphical)
+  - Computer science
+  - Artificial intelligence
+  - Expert system
+  - Applications of artificial intelligence
+  - Cognitive science
+  source_query: explainable artificial intelligence finance applications
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W3182546273
+  doi: https://doi.org/10.1002/widm.1424
+  title: 'Explainable artificial intelligence: an analytical review'
+  year: 2021
+  cited_by_count: 815
+  venue: Wiley Interdisciplinary Reviews Data Mining and Knowledge Discovery
+  authors:
+  - Plamen Angelov
+  - Eduardo Soares
+  - Richard Jiang
+  - Nicholas I. Arnold
+  - Peter M. Atkinson
+  concepts:
+  - Artificial intelligence
+  - Computer science
+  - Context (archaeology)
+  - Taxonomy (biology)
+  - Relation (database)
+  - Applications of artificial intelligence
+  source_query: explainable artificial intelligence finance applications
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W4307486628
+  doi: https://doi.org/10.1016/j.aac.2022.10.001
+  title: Understanding the potential applications of Artificial Intelligence in Agriculture
+    Sector
+  year: 2022
+  cited_by_count: 803
+  venue: Advanced Agrochem
+  authors:
+  - Mohd Javaid
+  - Abid Haleem
+  - Ibrahim Haleem Khan
+  - Rajiv Suman
+  concepts:
+  - Agriculture
+  - Agricultural engineering
+  - Business
+  - Quality (philosophy)
+  - Product (mathematics)
+  - Production (economics)
+  source_query: explainable artificial intelligence finance applications
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W4294647307
+  doi: https://doi.org/10.1016/j.ijin.2022.08.005
+  title: 'Artificial intelligence (AI) applications for marketing: A literature-based
+    study'
+  year: 2022
+  cited_by_count: 877
+  venue: International Journal of Intelligent Networks
+  authors:
+  - Abid Haleem
+  - Mohd Javaid
+  - Mohammad Asim Qadri
+  - Ravi Pratap Singh
+  - Rajiv Suman
+  concepts:
+  - Computer science
+  - Theme (computing)
+  - Focus (optics)
+  - Artificial intelligence
+  - Marketing research
+  - Software
+  source_query: explainable artificial intelligence finance applications
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W3164846705
+  doi: https://doi.org/10.1016/j.inffus.2021.05.009
+  title: Notions of explainability and evaluation approaches for explainable artificial
+    intelligence
+  year: 2021
+  cited_by_count: 568
+  venue: Information Fusion
+  authors:
+  - Giulia Vilone
+  - Luca Longo
+  concepts:
+  - Interpretability
+  - Computer science
+  - Hierarchy
+  - Artificial intelligence
+  - Cluster analysis
+  - Component (thermodynamics)
+  source_query: explainable artificial intelligence finance applications
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W4210361514
+  doi: https://doi.org/10.3390/app12031353
+  title: A Systematic Review of Explainable Artificial Intelligence in Terms of Different
+    Application Domains and Tasks
+  year: 2022
+  cited_by_count: 310
+  venue: Applied Sciences
+  authors:
+  - Mir Riyanul Islam
+  - Mobyen Uddin Ahmed
+  - Shaibal Barua
+  - Shahina Begum
+  concepts:
+  - Interpretability
+  - Computer science
+  - Domain (mathematical analysis)
+  - Artificial intelligence
+  - Systematic review
+  - Scarcity
+  source_query: explainable artificial intelligence finance applications
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W3081261125
+  doi: https://doi.org/10.1177/0022242920953847
+  title: 'Consumers and Artificial Intelligence: An Experiential Perspective'
+  year: 2020
+  cited_by_count: 1064
+  venue: Journal of Marketing
+  authors:
+  - Stefano Puntoni
+  - Rebecca Walker Reczek
+  - Markus Giesler
+  - Simona Botti
+  concepts:
+  - Value (mathematics)
+  - Experiential learning
+  - Scholarship
+  - Perspective (graphical)
+  - Bridge (graph theory)
+  - Marketing
+  source_query: explainable artificial intelligence finance applications
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W3019464069
+  doi: https://doi.org/10.1016/j.aiia.2020.04.002
+  title: Implementation of artificial intelligence in agriculture for optimisation
+    of irrigation and application of pesticides and herbicides
+  year: 2020
+  cited_by_count: 891
+  venue: Artificial Intelligence in Agriculture
+  authors:
+  - Tanha Talaviya
+  - Dhara Shah
+  - Nivedita Patel
+  - Hiteshri Yagnik
+  - Manan Shah
+  concepts:
+  - Agriculture
+  - Food security
+  - Population
+  - Drone
+  - Automation
+  - Agricultural engineering
+  source_query: explainable artificial intelligence finance applications
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W4401011076
+  doi: https://doi.org/10.1007/s10462-024-10854-8
+  title: 'Explainable artificial intelligence (XAI) in finance: a systematic literature
+    review'
+  year: 2024
+  cited_by_count: 225
+  venue: Artificial Intelligence Review
+  authors:
+  - Jurgita Černevičienė
+  - Audrius Kabašinskas
+  concepts:
+  - Computer science
+  - Artificial intelligence
+  - Financial services
+  - Finance
+  - Business
+  source_query: explainable artificial intelligence finance applications
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W3195625625
+  doi: https://doi.org/10.1007/s10796-021-10186-w
+  title: 'Artificial Intelligence and Business Value: a Literature Review'
+  year: 2021
+  cited_by_count: 939
+  venue: Information Systems Frontiers
+  authors:
+  - Ida Merete Enholm
+  - Emmanouil Papagiannidis
+  - Patrick Mikalef
+  - John Krogstie
+  concepts:
+  - Leverage (statistics)
+  - Knowledge management
+  - Business value
+  - Business intelligence
+  - Value (mathematics)
+  - Computer science
+  source_query: explainable artificial intelligence finance applications
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W3045742910
+  doi: https://doi.org/10.3390/ijfs8030045
+  title: 'Industry 4.0 in Finance: The Impact of Artificial Intelligence (AI) on Digital
+    Financial Inclusion'
+  year: 2020
+  cited_by_count: 550
+  venue: International Journal of Financial Studies
+  authors:
+  - David Mhlanga
+  concepts:
+  - Financial inclusion
+  - Mainstream
+  - Inclusion (mineral)
+  - Business
+  - Finance
+  - Financial services
+  source_query: explainable artificial intelligence finance applications
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W2939970150
+  doi: https://doi.org/10.2196/13930
+  title: 'Applications and Challenges of Implementing Artificial Intelligence in Medical
+    Education: Integrative Review'
+  year: 2019
+  cited_by_count: 731
+  venue: JMIR Medical Education
+  authors:
+  - Kai Siang Chan
+  - Nabil Zary
+  concepts:
+  - Engineering ethics
+  - Computer science
+  - Management science
+  - Data science
+  - Engineering
+  source_query: explainable artificial intelligence finance applications
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W4389437528
+  doi: https://doi.org/10.61969/jai.1337500
+  title: 'Education in the Era of Generative Artificial Intelligence (AI): Understanding
+    the Potential Benefits of ChatGPT in Promoting Teaching and Learning'
+  year: 2023
+  cited_by_count: 1679
+  venue: Journal of AI
+  authors:
+  - David Baidoo-Anu
+  - Leticia Owusu Ansah
+  concepts:
+  - Surprise
+  - Formative assessment
+  - Generative grammar
+  - Promotion (chess)
+  - Computer science
+  - Praxis
+  source_query: explainable artificial intelligence finance applications
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W4224990248
+  doi: https://doi.org/10.1086/718327
+  title: 'Artificial Intelligence and Jobs: Evidence from Online Vacancies'
+  year: 2022
+  cited_by_count: 949
+  venue: Journal of Labor Economics
+  authors:
+  - Daron Acemoğlu
+  - David Autor
+  - Jonathon Hazell
+  - Pascual Restrepo
+  concepts:
+  - Wage growth
+  - Labour economics
+  - Wage
+  - Aggregate (composite)
+  - Economics
+  - Substitution (logic)
+  source_query: explainable artificial intelligence finance applications
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W3034563984
+  doi: https://doi.org/10.1007/s42786-020-00020-3
+  title: 'Machine learning techniques for credit risk evaluation: a systematic literature
+    review'
+  year: 2020
+  cited_by_count: 218
+  venue: Journal of Banking and Financial Technology
+  authors:
+  - Siddharth Bhatore
+  - Lalit Mohan
+  - Y. Raghu Reddy
+  concepts:
+  - Credit risk
+  - Credit rating
+  - Loan
+  - Due diligence
+  - Credit score
+  - Actuarial science
+  source_query: machine learning credit risk literature review
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W2918821272
+  doi: https://doi.org/10.3390/risks7010029
+  title: 'Machine Learning in Banking Risk Management: A Literature Review'
+  year: 2019
+  cited_by_count: 456
+  venue: Risks
+  authors:
+  - Martin Leo
+  - Suneel Sharma
+  - K. Maddulety
+  concepts:
+  - Business
+  - Risk management
+  - Finance
+  source_query: machine learning credit risk literature review
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W4362663195
+  doi: https://doi.org/10.1016/j.cogr.2023.04.001
+  title: Artificial intelligence, machine learning and deep learning in advanced robotics,
+    a review
+  year: 2023
+  cited_by_count: 1069
+  venue: Cognitive Robotics
+  authors:
+  - Mohsen Soori
+  - Behrooz Arezoo
+  - Roza Dastres
+  concepts:
+  - Artificial intelligence
+  - Robotics
+  - Robot
+  - Computer science
+  - Applications of artificial intelligence
+  - Deep learning
+  source_query: machine learning credit risk literature review
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W3102100346
+  doi: https://doi.org/10.1016/j.inffus.2021.05.008
+  title: 'A review of uncertainty quantification in deep learning: Techniques, applications
+    and challenges'
+  year: 2021
+  cited_by_count: 2559
+  venue: Information Fusion
+  authors:
+  - Moloud Abdar
+  - Farhad Pourpanah
+  - Sadiq Hussain
+  - Dana Rezazadegan
+  - Li Liu
+  - Mohammad Ghavamzadeh
+  - Paul Fieguth
+  - Xiaochun Cao
+  concepts:
+  - Computer science
+  - Variety (cybernetics)
+  - Artificial intelligence
+  - Field (mathematics)
+  - Deep learning
+  - Machine learning
+  source_query: machine learning credit risk literature review
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W4283593236
+  doi: https://doi.org/10.3389/fbinf.2022.927312
+  title: A Review of Feature Selection Methods for Machine Learning-Based Disease
+    Risk Prediction
+  year: 2022
+  cited_by_count: 846
+  venue: Frontiers in Bioinformatics
+  authors:
+  - Nicholas Pudjihartono
+  - Tayaza Fadason
+  - Andreas W. Kempa-Liehr
+  - Justin M. O’Sullivan
+  concepts:
+  - Feature selection
+  - Machine learning
+  - Artificial intelligence
+  - Computer science
+  - Selection (genetic algorithm)
+  - Feature (linguistics)
+  source_query: machine learning credit risk literature review
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W3165319944
+  doi: https://doi.org/10.3390/s21113758
+  title: 'Machine Learning in Agriculture: A Comprehensive Updated Review'
+  year: 2021
+  cited_by_count: 846
+  venue: Sensors
+  authors:
+  - Lefteris Benos
+  - Aristotelis C. Tagarakis
+  - Georgios Dolias
+  - Remigio Berruto
+  - Dimitrios Katerıs
+  - Dionysis Bochtis
+  concepts:
+  - Artificial intelligence
+  - Agriculture
+  - Machine learning
+  - Variety (cybernetics)
+  - Precision agriculture
+  - Computer science
+  source_query: machine learning credit risk literature review
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W2742835787
+  doi: https://doi.org/10.1016/j.jmat.2017.08.002
+  title: Materials discovery and design using machine learning
+  year: 2017
+  cited_by_count: 1253
+  venue: Journal of Materiomics
+  authors:
+  - Yue Liu
+  - Tianlu Zhao
+  - Wangwei Ju
+  - Siqi Shi
+  concepts:
+  - Materials science
+  - Nanotechnology
+  - Systems engineering
+  - Construction engineering
+  - Engineering
+  source_query: machine learning credit risk literature review
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W2464234006
+  doi: https://doi.org/10.1080/21693277.2016.1192517
+  title: 'Machine learning in manufacturing: advantages, challenges, and applications'
+  year: 2016
+  cited_by_count: 1274
+  venue: Production & Manufacturing Research
+  authors:
+  - Thorsten Wuest
+  - D. R. Weimer
+  - Christopher Irgens
+  - Klaus‐Dieter Thoben
+  concepts:
+  - Computer science
+  - Pace
+  - Structuring
+  - Field (mathematics)
+  - Quality (philosophy)
+  - Usability
+  source_query: machine learning credit risk literature review
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W4389365236
+  doi: https://doi.org/10.3390/educsci13121216
+  title: 'Adaptive Learning Using Artificial Intelligence in e-Learning: A Literature
+    Review'
+  year: 2023
+  cited_by_count: 827
+  venue: Education Sciences
+  authors:
+  - Ilie Gligorea
+  - Marius Cioca
+  - Romana Oancea
+  - Andra-Teodora Gorski
+  - Hortensia Gorski
+  - Paul Tudorache
+  concepts:
+  - Transformative learning
+  - Computer science
+  - Artificial intelligence
+  - Adaptive learning
+  - Personalization
+  - Software deployment
+  source_query: machine learning credit risk literature review
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W2307376191
+  doi: https://doi.org/10.1109/tsmcc.2011.2170420
+  title: 'Machine Learning in Financial Crisis Prediction: A Survey'
+  year: 2011
+  cited_by_count: 329
+  venue: IEEE Transactions on Systems Man and Cybernetics Part C (Applications and
+    Reviews)
+  authors:
+  - Wei-Yang Lin
+  - Ya‐Han Hu
+  - Chih‐Fong Tsai
+  concepts:
+  - Bankruptcy
+  - Bankruptcy prediction
+  - Machine learning
+  - Artificial intelligence
+  - Computer science
+  - Financial crisis
+  source_query: machine learning credit risk literature review
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W3164952570
+  doi: https://doi.org/10.1109/access.2021.3083060
+  title: 'Machine Learning for Anomaly Detection: A Systematic Review'
+  year: 2021
+  cited_by_count: 712
+  venue: IEEE Access
+  authors:
+  - Ali Bou Nassif
+  - Manar Abu Talib
+  - Qassim Nasir
+  - Fatima Dakalbab
+  concepts:
+  - Anomaly detection
+  - Computer science
+  - Artificial intelligence
+  - Machine learning
+  source_query: machine learning credit risk literature review
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W2513922847
+  doi: https://doi.org/10.59327/ipcc/ar5-9789291691432
+  title: Climate Change 2014 - Synthesis Report
+  year: 2015
+  cited_by_count: 5320
+  venue: null
+  authors:
+  - Intergovernmental Panel on Climate Change
+  concepts:
+  - Climate change
+  - Vulnerability (computing)
+  - Environmental resource management
+  - Environmental science
+  - Adaptation (eye)
+  - Climatology
+  source_query: climate transition risk bank credit portfolio
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W2468565069
+  doi: https://doi.org/10.1016/j.gfs.2016.06.002
+  title: Reducing risks to food security from climate change
+  year: 2016
+  cited_by_count: 676
+  venue: Global Food Security
+  authors:
+  - Bruce Campbell
+  - Sonja Vermeulen
+  - Pramod Aggarwal
+  - Caitlin Corner-Dolloff
+  - Evan Girvetz
+  - Ana María Loboguerrero
+  - Julián Ramírez-Villegas
+  - Todd S. Rosenstock
+  concepts:
+  - Food security
+  - Climate change
+  - Natural resource economics
+  - Business
+  - Cropping
+  - Livestock
+  source_query: climate transition risk bank credit portfolio
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W208849816
+  doi: https://doi.org/10.1515/9780295741406-058
+  title: Stern Review on the Economics of Climate Change (2006)
+  year: 2017
+  cited_by_count: 1388
+  venue: University of Washington Press eBooks
+  authors:
+  - Nicholas Stern
+  concepts:
+  - Climate change
+  - Greenhouse gas
+  - Natural resource economics
+  - Action (physics)
+  - Stern
+  - Economics
+  source_query: climate transition risk bank credit portfolio
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W2998183603
+  doi: https://doi.org/10.1002/wcc.678
+  title: Low‐carbon transition risks for finance
+  year: 2020
+  cited_by_count: 438
+  venue: Wiley Interdisciplinary Reviews Climate Change
+  authors:
+  - Gregor Semieniuk
+  - Emanuele Campiglio
+  - Jean-François Mercure
+  - Ulrich Volz
+  - Neil R. Edwards
+  concepts:
+  - Economics
+  - Default
+  - Debt
+  - Asset (computer security)
+  - Consumption (sociology)
+  - Finance
+  source_query: climate transition risk bank credit portfolio
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W4286669989
+  doi: https://doi.org/10.1111/joes.12525
+  title: Climate‐related risks in financial assets
+  year: 2022
+  cited_by_count: 281
+  venue: Journal of Economic Surveys
+  authors:
+  - Emanuele Campiglio
+  - Louis Daumas
+  - Pierre Monnin
+  - Adrian von Jagow
+  concepts:
+  - Asset (computer security)
+  - Economics
+  - Climate change
+  - Climate Finance
+  - Finance
+  - Financial asset
+  source_query: climate transition risk bank credit portfolio
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W4312118455
+  doi: https://doi.org/10.1287/mnsc.2022.4636
+  title: Climate Change Concerns and the Performance of Green vs. Brown Stocks
+  year: 2022
+  cited_by_count: 615
+  venue: Management Science
+  authors:
+  - David Ardia
+  - Keven Bluteau
+  - Kris Boudt
+  - Koen Inghelbrecht
+  concepts:
+  - Climate change
+  - Economics
+  - Stock (firearms)
+  - Mulligan
+  - Business
+  - Geography
+  source_query: climate transition risk bank credit portfolio
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W2786858330
+  doi: https://doi.org/10.1016/j.agsy.2018.01.019
+  title: Climate risk management and rural poverty reduction
+  year: 2018
+  cited_by_count: 331
+  venue: Agricultural Systems
+  authors:
+  - James Hansen
+  - Jon Hellin
+  - Todd S. Rosenstock
+  - Eleanor Fisher
+  - Jill E. Cairns
+  - Clare Stirling
+  - Christine Lamanna
+  - Jacob van Etten
+  concepts:
+  - Business
+  - Livelihood
+  - Poverty
+  - Agricultural productivity
+  - Natural resource economics
+  - Climate risk
+  source_query: climate transition risk bank credit portfolio
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W4362724946
+  doi: https://doi.org/10.2139/ssrn.4411661
+  title: U.S. Banks’ Exposures to Climate Transition Risks
+  year: 2023
+  cited_by_count: 30
+  venue: SSRN Electronic Journal
+  authors:
+  - Hyeyoon Jung
+  - João A. C. Santos
+  - Lee Seltzer
+  concepts:
+  - Business
+  - Climate change
+  - Geology
+  - Oceanography
+  source_query: climate transition risk bank credit portfolio
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W2186601538
+  doi: https://doi.org/10.1017/cbo9781107415416.008
+  title: Integrated Risk and Uncertainty Assessment of Climate Change Response Policies
+  year: 2015
+  cited_by_count: 393
+  venue: Cambridge University Press eBooks
+  authors:
+  - Intergovernmental Panel on Climate Change
+  concepts:
+  - Framing (construction)
+  - Climate change
+  - Risk assessment
+  - Risk analysis (engineering)
+  - Environmental resource management
+  - Political science
+  source_query: climate transition risk bank credit portfolio
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W2988392657
+  doi: https://doi.org/10.1146/annurev-resource-110119-031134
+  title: Climate Change and the Financial System
+  year: 2020
+  cited_by_count: 298
+  venue: Annual Review of Resource Economics
+  authors:
+  - Irene Monasterolo
+  concepts:
+  - Climate change
+  - Climate Finance
+  - Business
+  - Risk management
+  - Financial risk
+  - Systemic risk
+  source_query: climate transition risk bank credit portfolio
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W4283728608
+  doi: https://doi.org/10.1016/j.irfa.2022.102271
+  title: Climate transition risk, profitability and stock prices
+  year: 2022
+  cited_by_count: 139
+  venue: International Review of Financial Analysis
+  authors:
+  - Juan C. Reboredo
+  - Andrea Ugolini
+  concepts:
+  - Profitability index
+  - Stock (firearms)
+  - Business
+  - Vulnerability (computing)
+  - Climate risk
+  - Climate change
+  source_query: climate transition risk bank credit portfolio
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W3020975734
+  doi: https://doi.org/10.1093/oxrep/graa015
+  title: Will COVID-19 fiscal recovery packages accelerate or retard progress on climate
+    change?
+  year: 2020
+  cited_by_count: 776
+  venue: Oxford Review of Economic Policy
+  authors:
+  - Cameron Hepburn
+  - Brian O’Callaghan
+  - Nicholas Stern
+  - Joseph E. Stiglitz
+  - Dimitri Zenghelis
+  concepts:
+  - Economics
+  - Economic recovery
+  - Greenhouse gas
+  - Investment (military)
+  - Climate change
+  - Capital expenditure
+  source_query: climate transition risk bank credit portfolio
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W3032523511
+  doi: https://doi.org/10.1186/s41180-020-00034-3
+  title: 'Transition towards green banking: role of financial regulators and financial
+    institutions'
+  year: 2020
+  cited_by_count: 355
+  venue: Asian Journal of Sustainability and Social Responsibility
+  authors:
+  - Hyoungkun Park
+  - Jong Dae Kim
+  concepts:
+  - Mandate
+  - Business
+  - Finance
+  - Private sector
+  - Financial system
+  - Climate change
+  source_query: climate transition risk bank credit portfolio
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W3125064881
+  doi: https://doi.org/10.1093/rof/rft014
+  title: 'The Impact of Public Guarantees on Bank Risk-Taking: Evidence from a Natural
+    Experiment'
+  year: 2013
+  cited_by_count: 275
+  venue: European Finance Review
+  authors:
+  - Reint Gropp
+  - Christian Gruendl
+  - Andre Guettler
+  concepts:
+  - Moral hazard
+  - Natural experiment
+  - Government (linguistics)
+  - Lawsuit
+  - Yield (engineering)
+  - Debt
+  source_query: climate transition risk bank credit portfolio
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W4328094166
+  doi: https://doi.org/10.1287/mnsc.2023.4685
+  title: Climate Change, Firm Performance, and Investor Surprises
+  year: 2023
+  cited_by_count: 583
+  venue: Management Science
+  authors:
+  - Nora Pankratz
+  - Rob Bauer
+  - Jeroen Derwall
+  concepts:
+  - Earnings
+  - Revenue
+  - Equity (law)
+  - Investment (military)
+  - Economics
+  - Order (exchange)
+  source_query: climate transition risk bank credit portfolio
+  discovered_at: '2026-08-11T14:17:08Z'
+  origin: auto
+- id: W4393097978
+  doi: https://doi.org/10.1111/1758-5899.13315
+  title: 'Climate‐related credit risk: Rethinking the credit risk framework'
+  year: 2024
+  cited_by_count: 25
+  venue: Global Policy
+  authors:
+  - Helena Redondo
+  - Elisa Aracil
+  concepts:
+  - Comparability
+  - Climate risk
+  - Loan
+  - Credit risk
+  - Business
+  - Climate change
+  source_query: climate transition risk bank credit portfolio
+  discovered_at: '2026-08-11T14:17:08Z'
   origin: auto

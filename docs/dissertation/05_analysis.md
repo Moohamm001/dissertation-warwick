@@ -20,6 +20,27 @@ experiments (§4.4) show that principled shrinkage and domain feature engineerin
 median nor the band. Every arrow points the same way: the constraint is informational, not
 algorithmic.
 
+The null also sits comfortably within the credit-scoring literature rather than against it.
+Dumitrescu et al. (2022), working with far larger samples than are available here, found that
+most of the advantage machine learning shows over logistic regression in credit scoring can be
+recovered by giving the logistic model non-linear decision-tree effects — that is, the gap is
+narrower than the benchmark culture suggests even when the data are ample. Lessmann et al. (2015)
+reach a compatible conclusion from their benchmark study: differences between competent
+classifiers are often small relative to the choice of metric and evaluation design. If the
+advantage is modest at scale, its disappearance at 50 events is not an anomaly to be explained
+away but the expected extension of a known pattern. The finding this dissertation adds is the
+*measurement* of where that pattern terminates: not "gradient boosting is no better", but "at
+this event count the question is beneath the resolution of the instrument, and here is how much
+data would raise the resolution".
+
+There is a further, domain-specific reason not to over-read the null. The SME-scoring literature
+reports that predictor sets for this segment are unstable across samples and periods (Ciampi et
+al., 2021), and that models frequently require re-specification rather than transfer (Altman et
+al., 2022). A comparison run on one lender's book, in one product category, in one origination
+window, is therefore poorly placed to settle a general question about model families even in
+principle — a limitation of scope that the sample size makes moot here, but that would remain
+after the sample size problem was solved.
+
 Two honest qualifications sharpen rather than weaken the null. First, the challenger ran
 untuned: the project plan had contemplated a modest randomised search with monotonic
 constraints, and the final protocol dropped both on the principled ground that model selection

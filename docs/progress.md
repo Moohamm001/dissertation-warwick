@@ -18,6 +18,28 @@ Updated as work lands; this is the answer to "what's going on in this project?".
 | Phase 6 — write-up + release | 🟨 **IN PROGRESS** — full first draft built (`docs/dissertation/`); polish + release gate remain |
 
 ## Done (most recent first)
+- **2026-08-11 — Supervisor feedback actioned: ROs + motivation in Ch1, writing improved, word
+  count to target.** Feedback was: *"To include RO and motivation in chapter 1 and improve the
+  writing across the chapters"* (next meeting 12 Aug, Coventry). Actions: **(1) Chapter 1
+  rewritten** — new §1.1 Motivation (green-lending growth grounded in climate-risk, demand-side
+  and policy literature; SME scoring difficulty; a professional-responsibility argument), §1.2
+  Problem statement now states the batch-deployment framing explicitly (per the supervisor's note
+  that batch application is the deployment unit), and **new §1.3 Research aim and objectives with
+  RO1–RO6**, each mapped to the chapter/section that discharges it and each written so a negative
+  result still satisfies it. **(2) Chapter 7 opens with §7.1 "Achievement of the research
+  objectives"** — an explicit RO-by-RO verdict (all six met, two via documented negatives).
+  **(3) New §2.2 "Green lending, SME credit, and machine-learned scoring"** plus a three-gap
+  statement (domain / scale / reporting) in the Ch2 summary. **(4) Writing improved across
+  chapters:** §3.1 now states the research design (quantitative, secondary-data, observational,
+  paired comparison under a pre-specified protocol); §5.2 situates the RQ1 null in the
+  credit-scoring literature rather than leaving it isolated; §6.2 is a new "Practical implications
+  for a lending desk" section (three operating rules); §6.3 explains why monitoring matters more
+  for a *green* book. **(5) Literature:** 8 new seed queries crawled (auto 1,181), **10 papers
+  curated (32 → 42)** as decisions M1–M4 in `methods_citations.md`; references 36 → 47 entries,
+  list re-sorted alphabetically. **Word count: core chapters + abstract 10,781 → 13,823**
+  (~14k target; docx total ≈ 15,200 including front matter, references and appendices). All
+  section cross-references re-verified after four renumberings (Ch2 +1 section, Ch6 +1, Ch7 +1);
+  49 tests pass; docx rebuilt from the WMG template.
 - **2026-07-17 — Polish loop: plain-language pass + contribution framing + Appendix E; round-3
   review launched.** Per user request to reduce hard vocabulary while keeping required technical
   terms: simplified ornate wording across all chapters (near-vacuous→"almost no information",

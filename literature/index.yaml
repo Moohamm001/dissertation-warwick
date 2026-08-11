@@ -674,3 +674,234 @@
   origin: curated
   decision: D19 calibration hierarchy
   curated_at: '2026-07-14T11:38:32Z'
+- id: W3128244637
+  doi: https://doi.org/10.1007/s11192-020-03856-0
+  title: 'Rethinking SME default prediction: a systematic literature review and future
+    perspectives'
+  year: 2021
+  cited_by_count: 138
+  venue: Scientometrics
+  authors:
+  - Francesco Ciampi
+  - Alessandro Giannozzi
+  - Giacomo Marzi
+  - Edward I. Altman
+  concepts:
+  - Systematic review
+  - Data science
+  - Computer science
+  - Business
+  - Political science
+  - MEDLINE
+  source_query: sustainable finance default prediction
+  origin: curated
+  decision: M2 SME default prediction review
+  curated_at: '2026-08-11T14:18:02Z'
+- id: W2981731882
+  doi: https://doi.org/10.1016/j.inffus.2019.12.012
+  title: 'Explainable Artificial Intelligence (XAI): Concepts, taxonomies, opportunities
+    and challenges toward responsible AI'
+  year: 2019
+  cited_by_count: 8892
+  venue: Information Fusion
+  authors:
+  - Alejandro Barredo Arrieta
+  - Natalia Díaz-Rodríguez
+  - Javier Del Ser
+  - Adrien Bennetot
+  - Siham Tabik
+  - Alberto Barbado
+  - Salvador García
+  - Sergio Gil-López
+  concepts:
+  - Computer science
+  - Artificial intelligence
+  - Taxonomy (biology)
+  - Field (mathematics)
+  - Software deployment
+  - Data science
+  source_query: SHAP explainability credit scoring
+  origin: curated
+  decision: M4 XAI concepts and taxonomies
+  curated_at: '2026-08-11T14:18:02Z'
+- id: W3200880768
+  doi: https://doi.org/10.3389/frai.2021.752558
+  title: 'SHAP and LIME: An Evaluation of Discriminative Power in Credit Risk'
+  year: 2021
+  cited_by_count: 286
+  venue: Frontiers in Artificial Intelligence
+  authors:
+  - Alex Gramegna
+  - Paolo Giudici
+  concepts:
+  - Discriminative model
+  - Boosting (machine learning)
+  - Computer science
+  - Gradient boosting
+  - Credit risk
+  - Predictive power
+  source_query: SHAP explainability credit scoring
+  origin: curated
+  decision: M3 SHAP/LIME discriminative power in credit risk
+  curated_at: '2026-08-11T14:18:02Z'
+- id: W3000463950
+  doi: https://doi.org/10.1007/s10614-020-10042-0
+  title: Explainable Machine Learning in Credit Risk Management
+  year: 2020
+  cited_by_count: 411
+  venue: Computational Economics
+  authors:
+  - Niklas Bussmann
+  - Paolo Giudici
+  - Dimitri Marinelli
+  - Jochen Papenbrock
+  concepts:
+  - Similarity (geometry)
+  - Credit risk
+  - Credit score
+  - Set (abstract data type)
+  - Computer science
+  - Risk management
+  source_query: SHAP explainability credit scoring
+  origin: curated
+  decision: M3 explainable ML in credit risk management
+  curated_at: '2026-08-11T14:18:02Z'
+- id: W3173725123
+  doi: https://doi.org/10.1016/j.ejor.2021.06.053
+  title: 'Machine learning for credit scoring: Improving logistic regression with
+    non-linear decision-tree effects'
+  year: 2021
+  cited_by_count: 384
+  venue: European Journal of Operational Research
+  authors:
+  - Elena Dumitrescu
+  - Sullivan Hué
+  - Christophe Hurlin
+  - Sessi Tokpavi
+  concepts:
+  - Logistic regression
+  - Interpretability
+  - Logistic model tree
+  - Random forest
+  - Decision tree
+  - Machine learning
+  source_query: evaluation metrics credit scoring imbalanced
+  origin: curated
+  decision: M3 ML vs logistic regression in credit scoring
+  curated_at: '2026-08-11T14:18:02Z'
+- id: W3154229503
+  doi: https://doi.org/10.1016/j.enpol.2021.112255
+  title: 'Demand for green finance: Resolving financing constraints on green innovation
+    in China'
+  year: 2021
+  cited_by_count: 1193
+  venue: Energy Policy
+  authors:
+  - Chin‐Hsien Yu
+  - Xiuqin Wu
+  - Dayong Zhang
+  - Shi Chen
+  - Jinsong Zhao
+  concepts:
+  - Finance
+  - Commission
+  - China
+  - Business
+  - Government (linguistics)
+  - European commission
+  source_query: green credit policy firm financing constraints
+  origin: curated
+  decision: M1 green-finance demand / financing constraints
+  curated_at: '2026-08-11T14:18:02Z'
+- id: W3174036238
+  doi: https://doi.org/10.1016/j.eneco.2021.105415
+  title: 'Green credit policy and firm performance: What we learn from China'
+  year: 2021
+  cited_by_count: 469
+  venue: Energy Economics
+  authors:
+  - Shouyu Yao
+  - Yuying Pan
+  - Ahmet Şensoy
+  - Gazi Salah Uddin
+  - Feiyang Cheng
+  concepts:
+  - China
+  - Business
+  - Investment (military)
+  - Industrial policy
+  - State ownership
+  - State owned
+  source_query: green credit policy firm financing constraints
+  origin: curated
+  decision: M1 green credit policy and firm outcomes
+  curated_at: '2026-08-11T14:18:02Z'
+- id: W3096808766
+  doi: https://doi.org/10.1016/j.dss.2020.113429
+  title: Bankruptcy prediction for SMEs using transactional data and two-stage multiobjective
+    feature selection
+  year: 2020
+  cited_by_count: 377
+  venue: Decision Support Systems
+  authors:
+  - Gang Kou
+  - Yong Xu
+  - Yi Peng
+  - Feng Shen
+  - Yang Chen
+  - Kun Soo Chang
+  - Shaomin Kou
+  concepts:
+  - Feature selection
+  - Interpretability
+  - Computer science
+  - Feature (linguistics)
+  - Bankruptcy
+  - Bankruptcy prediction
+  source_query: SME default prediction machine learning
+  origin: curated
+  decision: M2 SME bankruptcy prediction with alternative data
+  curated_at: '2026-08-11T14:18:02Z'
+- id: W4310112984
+  doi: https://doi.org/10.1080/00472778.2022.2135718
+  title: 'Revisiting SME default predictors: The Omega Score'
+  year: 2022
+  cited_by_count: 62
+  venue: Journal of Small Business Management
+  authors:
+  - Edward I. Altman
+  - Marco Balzano
+  - Alessandro Giannozzi
+  - Stjepan Srhoj
+  concepts:
+  - Omega
+  - Business
+  - Psychology
+  - Economics
+  - Actuarial science
+  - Financial economics
+  source_query: SME default prediction machine learning
+  origin: curated
+  decision: M2 SME default predictors (Omega Score)
+  curated_at: '2026-08-11T14:18:02Z'
+- id: W3151058494
+  doi: https://doi.org/10.1016/j.jfs.2021.100867
+  title: Climate risks and financial stability
+  year: 2021
+  cited_by_count: 605
+  venue: Journal of Financial Stability
+  authors:
+  - Stefano Battiston
+  - Yannis Dafermos
+  - Irene Monasterolo
+  concepts:
+  - Climate change
+  - Financial risk
+  - Financial econometrics
+  - Finance
+  - Financial analysis
+  - Financial modeling
+  source_query: climate transition risk bank credit portfolio
+  origin: curated
+  decision: M1 climate risk and financial stability
+  curated_at: '2026-08-11T14:18:02Z'

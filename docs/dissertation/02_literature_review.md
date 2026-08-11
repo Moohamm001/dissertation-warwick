@@ -5,21 +5,50 @@
 This review is organised by the methodological decisions the dissertation had to make, rather
 than by chronology. Each theme closes with the position adopted.
 
-A note on the domain literature first, because its thinness shapes the whole review: there is,
-to the best of this search (a curated crawl of ~1,000 candidate papers), **no direct
-green-loan default-prediction literature** to build on. The nearest anchors are ESG-credit-risk
-studies — ESG factors as drivers of firm credit risk (Bonacorsi et al., 2024) and Bayesian
-estimation of the relative impact of ESG factors on credit ratings (Agosto, Cerchiello and
-Giudici, 2023) —
-which establish that sustainability attributes carry credit-relevant signal but say nothing
-about default modelling *within* a funded green-loan book. This dissertation therefore leans on
-the general credit-scoring and imbalanced-learning literatures for method, and contributes to
-the green-lending literature chiefly by documenting what a real green-loan book permits. Every design decision in
-Chapters 3–4 is traceable to a specific source here; the mapping is maintained as an auditable
-artefact in the project repository (`docs/methods_citations.md`), and only verified,
-hand-curated papers are cited.
+One finding of the search itself shapes the whole review and is stated at the outset: across a
+curated crawl of more than a thousand candidate papers, there is **no direct green-loan
+default-prediction literature** to build on. The nearest anchors are ESG-credit-risk studies —
+ESG factors as drivers of firm credit risk (Bonacorsi et al., 2024) and Bayesian estimation of
+the relative impact of ESG factors on credit ratings (Agosto, Cerchiello and Giudici, 2023) —
+which establish that sustainability attributes carry credit-relevant signal but say nothing about
+default modelling *within* a funded green-loan book. The review therefore proceeds in two
+movements: §2.2 sets out the domain context (why green lending exists, why SME borrowers are hard
+to score, and what credit-scoring practice expects of a model), and §2.3–§2.9 supply the
+methodological components the dissertation actually uses. Every design decision in Chapters 3–4
+is traceable to a specific source here; the mapping is maintained as an auditable artefact in the
+project repository (`docs/methods_citations.md`), and only verified, hand-curated papers are
+cited.
 
-## 2.2 Learning from class-imbalanced data
+## 2.2 Green lending, SME credit, and machine-learned scoring
+
+Three strands of domain literature frame the problem. The first concerns why green lending
+exists at scale. Battiston et al. (2021) establish climate exposure as a financial-stability
+concern, giving lenders a prudential reason to identify and manage a green book separately; Yu et
+al. (2021) show the demand side is driven by financing constraints on green innovation; and Yao
+et al. (2021) document how green-credit policy reshapes the financing and performance of targeted
+firms. Together these explain the growth of the product category, but none of them models default
+*within* such a book — which is the gap this dissertation occupies.
+
+The second strand concerns the borrower. SME default prediction is a distinct and unsettled
+problem: Ciampi et al. (2021), in a systematic review of the field, describe a literature that
+has not converged on a canonical predictor set or method, with results sensitive to segment,
+country and period. Altman et al. (2022) revisit SME predictors directly and re-specify a scoring
+model for the segment, and Kou et al. (2020) resort to transactional data because the financial
+ratios that anchor corporate models are frequently missing for small firms. The features
+available in this dissertation's portfolio — revenue, monthly sales, time in business, credit
+score, loan purpose — sit squarely in that awkward middle ground: richer than nothing, thinner
+than audited accounts.
+
+The third strand concerns method in credit scoring specifically. Lessmann et al. (2015) benchmark
+a wide set of classifiers for credit scoring and argue for multiple decision-relevant metrics
+rather than a single accuracy figure. More pointedly for RQ1, Dumitrescu et al. (2021) find that
+the practical gains from machine learning in credit scoring can largely be recovered by adding
+non-linear decision-tree effects to a logistic regression — that is, that the interpretable
+baseline remains competitive when it is given a fair chance. Their finding is a strong prior for
+what this dissertation observes at 50 events, and it also motivates the choice of a regularised
+logistic regression as the served model rather than as a throwaway control.
+
+## 2.3 Learning from class-imbalanced data
 
 The survey literature (Haixiang et al., 2016) organises imbalance remedies into three families:
 data-level resampling, algorithm-level cost sensitivity, and ensemble hybrids. Among resamplers,
@@ -35,7 +64,7 @@ detection. The position adopted: class weighting as the default treatment, SMOTE
 the single resampling comparator, and no further resamplers — at 50 events, additional imbalance
 machinery adds variance, not information.
 
-## 2.3 Evaluation and validation under imbalance
+## 2.4 Evaluation and validation under imbalance
 
 Two well-established results discipline the evaluation design. First, accuracy and ROC-AUC are
 misleading under severe imbalance: Saito and Rehmsmeier (2015) show that the precision-recall
@@ -62,7 +91,7 @@ split-to-split variance that dominates at small n. The position adopted: 5×5 re
 CV, every data-dependent transformation (imputation, encoding, scaling, SMOTE) fitted strictly
 inside the training fold, and fold-percentile bands reported instead of point estimates.
 
-## 2.4 Small samples: events per variable and sample-size planning
+## 2.5 Small samples: events per variable and sample-size planning
 
 The events-per-variable (EPV) literature sets expectations for what 50 events can support.
 Peduzzi et al. (1996) established the rule-of-ten for logistic regression; Vittinghoff and
@@ -81,7 +110,7 @@ specifically for small-sample imbalanced problems. Altman (1968) grounds the dom
 feature engineering — financial ratios as bankruptcy predictors — used in the improvement
 experiments.
 
-## 2.5 Probability calibration and uncertainty quantification
+## 2.6 Probability calibration and uncertainty quantification
 
 Class-weighted training deliberately distorts predicted probabilities, so post-hoc calibration is
 standard practice: Platt scaling and isotonic regression are the canonical approaches, compared
@@ -101,13 +130,23 @@ minority pull in exactly opposite directions. For distribution-free uncertainty,
 dissertation implements it as an honesty check while showing why marginal coverage carries
 almost no information at 1.28% prevalence.
 
-## 2.6 Explainability and its regulatory context
+## 2.7 Explainability and its regulatory context
+
+Explainability has become a field in its own right, with a taxonomy of methods separating
+intrinsically interpretable models from post-hoc explanations of opaque ones (Arrieta et al.,
+2019). This project sits at the interpretable end by design — the served model is a linear one —
+but still requires per-decision explanations, because a lending desk and a declined applicant
+need reasons, not coefficients.
 
 SHAP values (Lundberg and Lee, 2017) provide additively decomposed, per-prediction attributions
 grounded in Shapley values; for linear models the decomposition is exact rather than
 approximated, which removes explanation-fidelity risk — the explanation is faithful to the model
 by construction, though §4.8 notes this says nothing about the stability of the model's own
-coefficients at low EPV. The regulatory motivation is real but frequently overstated: Wachter, Mittelstadt and
+coefficients at low EPV. Credit-specific evidence supports the choice: Bussmann et al. (2020)
+apply Shapley-value explanations to credit-risk models and show they yield decision-relevant,
+communicable accounts of individual scores, while Gramegna and Giudici (2021) compare SHAP and
+LIME on credit data and find SHAP the more discriminative of the two for separating risk
+profiles. The regulatory motivation is real but frequently overstated: Wachter, Mittelstadt and
 Floridi (2017) — the canonical legal analysis — show that a general "right to explanation" of
 automated decisions does not, in fact, exist in the GDPR, while articulating what decision
 subjects are plausibly owed: a legible account of the principal reasons. Per-applicant signed
@@ -115,7 +154,7 @@ reason codes of the kind this project ships are the right *shape* of artefact fo
 obligation, a point developed further in the path-to-production analysis (Chapter 6), without
 claiming jurisdiction-specific compliance.
 
-## 2.7 Model risk, monitoring, and deployment
+## 2.8 Model risk, monitoring, and deployment
 
 A model that performs in a notebook is not a deployed system. Alonso-Robisco and Carbó Martínez
 (2022) quantify model risk for machine-learning credit-default models specifically, showing that
@@ -126,7 +165,7 @@ population stability index (Yurdakul and Naranjo, 2020) — the credit industry'
 statistic — for distributional shift in scores and features. These sources ground the
 recommended (not implemented) monitoring design in Chapter 6.
 
-## 2.8 Survival analysis and censoring
+## 2.9 Survival analysis and censoring
 
 Right-censoring is the correct lens for a young loan book: loans still current at snapshot have
 simply not been observed long enough. The proportional-hazards framework (Cox, 1972) is the
@@ -134,7 +173,19 @@ natural recovery route for censored observations — *if* a trustworthy time-to-
 Chapter 4 shows that in this dataset it does not, converting the survival route into the second
 documented non-estimability result.
 
-## 2.9 Summary
+## 2.10 Summary
+
+Three gaps emerge from this review, and together they define the space this dissertation
+occupies. The first is a *domain* gap: green lending is well studied as a policy and
+financial-stability phenomenon (Battiston et al., 2021; Yu et al., 2021; Yao et al., 2021) and
+SME default prediction is well studied as a modelling problem (Ciampi et al., 2021; Altman et
+al., 2022), but the intersection — default modelling inside a funded green-loan book — is
+essentially unwritten. The second is a *scale* gap: the imbalance, calibration and explanation
+methods reviewed above were validated on samples with hundreds or thousands of minority cases,
+and their behaviour at fifty is asserted rather than demonstrated. The third is a *reporting*
+gap: the literature is written around positive results, so the question of what a practitioner
+should conclude — and refuse to conclude — when the data cannot separate the alternatives is
+rarely addressed head-on.
 
 The literature supplies well-understood components: imbalance treatments, leakage-safe
 validation, EPV-based expectations, calibration methods, exact linear SHAP, and deployment risk

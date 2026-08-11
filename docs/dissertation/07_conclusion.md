@@ -1,6 +1,44 @@
 # 7. Conclusion and future work
 
-## 7.1 Answers to the research questions
+## 7.1 Achievement of the research objectives
+
+All six objectives set out in §1.3 were met, though two were met by producing a negative result
+rather than a positive one — which is what they were written to allow.
+
+**RO1 (analytical envelope) — met.** The feasibility analysis fixed the event count at 50 under
+both candidate label schemes, quantified the censoring structure (72.8% of the dominant 2019
+cohort unresolved), mapped missingness, and applied the fairness entry-condition gate *before*
+any modelling: no industry or state cell reached ten events, so the planned group audit was
+converted into a documented non-estimability result rather than run on cells of two or three
+events.
+
+**RO2 (leakage-safe pipeline) — met.** Default-deny vetting admitted 17 of 166 columns; all
+imputation, encoding, scaling and resampling are fitted inside training folds; and an automated
+assertion fails the pipeline if a post-funding field becomes reachable, exercised by the test
+suite rather than trusted on inspection.
+
+**RO3 (does model choice matter?) — met, with a null.** Gradient boosting did not separate from
+the regularised logistic regression on any metric: every fold band overlapped, and the paired
+fold-level analysis agreed (baseline ahead in 14 of 25 shared folds, sign-test p ≈ 0.69). The
+objective was to *test* the question, not to win it, and the test was conclusive about its own
+inconclusiveness.
+
+**RO4 (trustworthiness of probabilities and explanations) — met.** Calibration was measured and
+found to trade marginal accuracy against confidence on the minority; conformal coverage was
+achieved but shown to be near-empty at this prevalence; explanations were produced, checked for
+coherence against the model's coefficients, and their cross-fold stability quantified. The
+subgroup half of the objective returned the second non-estimability verdict.
+
+**RO5 (defensible operating policy) — met.** The expected-cost threshold derives review-queue
+depth from a stated cost ratio, was bootstrapped against both a naive and an operationally
+realistic baseline, and is delivered in a working batch decision-support application with
+per-applicant reason codes.
+
+**RO6 (what production would require) — met.** The governance, monitoring and regulatory
+requirements are specified against the model-risk, drift and adverse-action literatures, and the
+data deficit is priced in events rather than described in adjectives.
+
+## 7.2 Answers to the research questions
 
 **RQ1 — Can a gradient-boosted model beat a regularised logistic regression beyond CI overlap at
 this prevalence?** No — and the design anticipated that the null, if it occurred, would be the
@@ -30,7 +68,7 @@ cell reaches ten events. The audit protocol is specified; passing its gate requi
 events or coarser groupings, and — since the data holds no protected characteristics — any audit
 on these fields remains a proxy audit.
 
-## 7.2 The central claim
+## 7.3 The central claim
 
 Under extreme class imbalance, careful method is not preparation for the contribution — it *is*
 the contribution. This is a positive stance, not an apology for a small dataset. Hand (2006)
@@ -64,7 +102,7 @@ the model-choice question becomes answerable. Knowing which claims a dataset can
 proving it, and quantifying what would change the answer — that is the durable result, and it is
 exactly the discipline a lender, a regulator, or an examiner should want.
 
-## 7.3 Future work: data first, then models
+## 7.4 Future work: data first, then models
 
 The projection of §4.4 orders the future-work list by what actually moves the needle.
 
@@ -81,7 +119,7 @@ The projection of §4.4 orders the future-work list by what actually moves the n
    prediction, minority-aware calibration objectives, and the temporal out-of-time validation
    that a multi-cohort book would finally permit.
 5. **Toward deployment**: the governance, monitoring and jurisdiction-specific regulatory work
-   scoped in §6.2, none of which is a modelling task.
+   scoped in §6.3, none of which is a modelling task.
 
 The dissertation closes where it began: 50 events is not a nuisance parameter to be engineered
 around but the central fact of the problem. A discipline that reports what those events can

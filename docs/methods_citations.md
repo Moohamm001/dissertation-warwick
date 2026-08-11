@@ -55,8 +55,21 @@ events) is separate and NOT addressed by any of D15–D17.*
 | **D22** | **Scepticism about classifier-technology progress** — dissertation synthesis | Hand 2006, *Classifier Technology and the Illusion of Progress*, Statistical Science — `W1973682096` **[CURATED]** | Canonical statement that marginal gains from sophisticated classifiers rarely survive real-world conditions — direct support for the "rigour is the contribution" thesis. |
 | **D23** | **Green/ESG credit-risk domain anchor** — dissertation §2 (domain context) | *ESG Factors and Firms' Credit Risk* 2024, J Climate Finance — `W4390886562` **[CURATED]**; Bayesian ESG credit ratings 2023, IJDSA — `W4382797868` **[CURATED]** | Nearest anchors for green-lending credit risk; the absence of a direct green-loan default literature is itself stated in the dissertation as a gap. |
 
+## Motivation & domain literature (added 2026-08-11 after supervisor feedback: "include RO and
+## motivation in chapter 1, improve the writing across the chapters")
+*These support the new §1.1 Motivation, §1.3 Research aim and objectives, and §2.2 domain
+section, and are cited in the analysis (§5.2), discussion (§6.2–§6.3) and Chapter 2
+explainability section. Curated 2026-08-11; curated total 32 → 42.*
+
+| # | Decision (where used) | Supporting paper(s) | Justification |
+|---|---|---|---|
+| **M1** | **Why green lending exists at scale** — §1.1, §2.2, §6.3 (monitoring rationale) | Battiston, Dafermos & Monasterolo 2021, *Climate risks and financial stability*, J. Financial Stability — `W3151058494`; Yu et al. 2021, *Demand for green finance*, Energy Policy — `W3154229503`; Yao et al. 2021, *Green credit policy and firm performance*, Energy Economics — `W3174036238` **[all CURATED]** | Establish the prudential, demand-side and policy drivers of green lending — the motivation the supervisor asked to see in Chapter 1 — and ground the claim that a green book's applicant mix can shift for policy reasons (monitoring). |
+| **M2** | **SME borrowers are hard to score** — §1.1, §2.2, §5.2 | Ciampi et al. 2021, *Rethinking SME default prediction*, Scientometrics — `W3128244637`; Altman et al. 2022, *Revisiting SME default predictors: the Omega Score*, JSBM — `W4310112984`; Kou et al. 2021, *Bankruptcy prediction for SMEs using transactional data*, DSS — `W3096808766` **[all CURATED]** | Document an unsettled predictor set for the SME segment; support both the motivation and the §5.2 caution against over-reading a single-book null. |
+| **M3** | **What credit-scoring practice expects** — §2.2, §5.2, §6.2 | Dumitrescu et al. 2022, *Machine learning for credit scoring: improving logistic regression with non-linear decision-tree effects*, EJOR — `W3173725123` **[CURATED]**; Lessmann et al. 2015 **[BIB]** | Directly relevant prior for RQ1: the ML-over-LR advantage in credit scoring is narrower than benchmark culture suggests even at scale, so its disappearance at 50 events extends a known pattern. |
+| **M4** | **Explainability method landscape and credit-specific evidence** — §2.7 | Arrieta et al. 2020, *XAI: concepts, taxonomies…*, Information Fusion — `W2981731882`; Bussmann et al. 2021, *Explainable machine learning in credit risk management*, Computational Economics — `W3000463950`; Gramegna & Giudici 2021, *SHAP and LIME: discriminative power in credit risk*, Frontiers in AI — `W3200880768` **[all CURATED]** | Situate the interpretable-model choice in the XAI taxonomy and supply credit-specific evidence that Shapley explanations are decision-relevant in this domain. |
+
 ## Decisions NOT yet citation-closed
-- **None.** All decisions D1–D23 are citation-closed as of 2026-07-14.
+- **None.** All decisions D1–D23 and M1–M4 are citation-closed as of 2026-08-11.
 - *(D10–D14 closed 2026-06-29: 6 papers crawled from OpenAlex and promoted to `literature/index.yaml`,
   curated total 11 → 17. The `improve` / `survival` / `decide` experiments are no longer provisional.)*
 - *(D15–D17 closed 2026-07-10: 4 papers approved and promoted, curated total 17 → 21.

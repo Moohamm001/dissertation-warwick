@@ -71,3 +71,14 @@ queries:
     - "approximate statistical tests comparing supervised classification learning" # D21 Dietterich
     - "classifier technology and the illusion of progress"               # D22 Hand
     - "calibration hierarchy of risk prediction models"                  # D19 Van Calster
+  # Added 2026-08-11 (supervisor feedback): motivation + research-objective grounding for
+  # Chapter 1, and domain depth for Chapter 2 (green lending, SME credit, XAI in finance).
+  motivation_domain:
+    - "green finance market growth policy bank lending"       # M1 motivation
+    - "green credit policy firm financing constraints"        # M1 motivation
+    - "small business lending credit risk determinants"       # M2 SME credit
+    - "SME default prediction machine learning"               # M2 SME credit
+    - "credit scoring practice industry review"               # M3 practice
+    - "explainable artificial intelligence finance applications"  # M4 XAI finance
+    - "machine learning credit risk literature review"        # M3 practice
+    - "climate transition risk bank credit portfolio"         # M1 motivation
