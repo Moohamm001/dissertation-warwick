@@ -19,8 +19,11 @@ __pycache__
 .pytest_cache
 *.egg-info
 
-# Build outputs and generated material (regenerated inside the container if needed)
-artefacts/
+# Build outputs and generated material (regenerated inside the container if needed).
+# The fitted model is the exception: it is what the container serves, and shipping it means the
+# image needs no dataset at all.
+artefacts/*
+!artefacts/scorer.joblib
 reports/
 docs/
 tests/

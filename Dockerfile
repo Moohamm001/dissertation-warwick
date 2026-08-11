@@ -17,9 +17,11 @@ WORKDIR /app
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Application source only; data and build outputs are excluded by .dockerignore.
+# Application source, the feature catalogue, and the fitted model. Everything else - above all
+# the lending book - is excluded by .dockerignore, so the image serves without any dataset.
 COPY emerald_ai/ ./emerald_ai/
 COPY data/governance/ ./data/governance/
+COPY artefacts/scorer.joblib ./artefacts/scorer.joblib
 
 # Run as an unprivileged user, and give it a writable place for the fitted-model cache.
 RUN useradd --create-home --uid 10001 emerald \

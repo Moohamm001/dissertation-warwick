@@ -30,9 +30,44 @@ properties so the guarantee cannot silently regress.
 What the artefact *does* expose is **aggregate** information about the portfolio: the direction
 and size of each coefficient, the typical range of each feature, and the category levels present
 in the book. That is the normal disclosure surface of any deployed scoring model, but it is a
-disclosure, and §3 below is where to decide whether it is acceptable to publish.
+disclosure, and §4 below is where to decide whether it is acceptable to publish.
 
-## 2. Deploying
+## 2. Deploying to Render (step by step)
+
+Deployment uses the **Docker runtime deliberately**. The repository still tracks the lending
+book, so a plain Python runtime would clone it onto the server; building an image applies
+`.dockerignore`, which excludes it. The build context was measured: **211 KB** in total
+(package 171 KB, feature catalogue 13 KB, model artefact 26.5 KB, requirements 0.7 KB), with the
+`.xlsx` excluded from both locations it exists in.
+
+1. **Refresh the artefact** on the machine that has the data, and push it:
+
+   ```powershell
+   python -m emerald_ai build-artefact
+   git add artefacts/scorer.joblib
+   git commit -m "Refresh deployed model artefact"
+   git push
+   ```
+
+2. **Create the service.** On Render: *New → Blueprint*, point it at the GitHub repository, and
+   it will read `render.yaml` (Docker runtime, free plan, health check on `/health`).
+
+3. **Decide the access model** in the Render dashboard before the first deploy finishes:
+   - leave `EMERALD_API_KEY` unset for a fully open demo, or
+   - set it to a value and share that key with the examiners, which keeps `/api/*` closed to
+     anyone else while the UI and `/health` stay reachable.
+
+4. **Verify** once the deploy is live:
+
+   ```powershell
+   curl https://<your-service>.onrender.com/health
+   ```
+
+   A healthy service returns HTTP 200 with `"ready": true` and the operating point. The free
+   plan sleeps when idle, so the first request after a pause takes a few seconds to wake; the
+   model itself loads from the artefact in about 0.02 s.
+
+## 3. Deploying elsewhere
 
 **Container (any host that runs images):**
 
@@ -43,10 +78,10 @@ docker compose up --build          # local
 The compose file mounts the dataset read-only for local use; a remote deployment should omit
 that mount entirely and rely on the committed artefact.
 
-**Render (blueprint provided):** `render.yaml` builds from `requirements.txt`, starts
-`python -m emerald_ai serve --host 0.0.0.0 --port $PORT`, and health-checks `/health`. Any
-comparable host (Railway, Fly.io, Azure App Service, a university VM) works the same way; the
-only requirements are Python 3.12, the dependencies, and the artefact.
+**Any other host** (Railway, Fly.io, Azure App Service, Google Cloud Run, a university VM) works
+the same way: build the image from the same `Dockerfile`, or run `python -m emerald_ai serve`
+with the package, the feature catalogue and the artefact present. The CLI reads `PORT` and
+`HOST` from the environment, so platforms that inject a port need no extra configuration.
 
 **Environment variables:**
 
@@ -55,7 +90,7 @@ only requirements are Python 3.12, the dependencies, and the artefact.
 | `EMERALD_API_KEY` | When set, `/api/*` requires a matching `X-API-Key` header. The UI and `/health` stay reachable. Unset means open. |
 | `EMERALD_RATE_LIMIT` | Requests per client IP per minute (default 60; `0` disables). In-process and per-instance. |
 
-## 3. Decisions to take before publishing a URL
+## 4. Decisions to take before publishing a URL
 
 These are judgements for the researcher and supervisor, not defaults this repository can set.
 
@@ -76,7 +111,7 @@ These are judgements for the researcher and supervisor, not defaults this reposi
    decline; its probabilities are unreliable on the minority class; and it was fitted on 50
    events from one lender in one origination window.
 
-## 4. What this deployment still is not
+## 5. What this deployment still is not
 
 The service is a hardened proof of concept, not a production system. Beyond the model's own
 statistical limits (Chapter 6), the deployment lacks secrets management, TLS termination and a

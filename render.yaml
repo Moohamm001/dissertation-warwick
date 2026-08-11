@@ -1,23 +1,31 @@
-# Render.com blueprint for the public demo.
+# Render blueprint for the public demo.
 #
-# The lending book is NOT deployed. Build the artefact locally, where the data lives:
-#     python -m emerald_ai build-artefact      # -> artefacts/scorer.joblib (~26 KB)
-# then commit or upload that file. The service runs from it alone: no dataset on the server,
-# no row-level data in the artefact.
+# Docker runtime is used deliberately, not for convenience: the repository still contains the
+# lending book, and .dockerignore excludes it from the build context. A Python runtime would
+# clone the whole repository onto the server, dataset included. Building an image means the
+# deployed filesystem contains the package, the feature catalogue and the ~26 KB model artefact,
+# and no borrower records at all.
+#
+# Before deploying, refresh the artefact on the machine that has the data:
+#     python -m emerald_ai build-artefact     # -> artefacts/scorer.joblib
+#     git add artefacts/scorer.joblib && git commit && git push
 services:
   - type: web
     name: emerald-ai
-    runtime: python
+    runtime: docker
+    dockerfilePath: ./Dockerfile
     plan: free
-    buildCommand: pip install -r requirements.txt
-    startCommand: python -m emerald_ai serve --host 0.0.0.0 --port $PORT
     healthCheckPath: /health
     envVars:
-      - key: PYTHON_VERSION
-        value: "3.12"
+      # The container binds this port; the CLI reads PORT from the environment.
+      - key: PORT
+        value: "8000"
+      - key: HOST
+        value: "0.0.0.0"
       # Requests per client IP per minute (0 disables the in-process limiter).
       - key: EMERALD_RATE_LIMIT
         value: "60"
-      # Set a value here to require an X-API-Key header on /api/*; the UI and /health stay open.
+      # Set a value in the Render dashboard to require an X-API-Key header on /api/*.
+      # The UI and /health stay reachable either way. Leave unset for a fully open demo.
       - key: EMERALD_API_KEY
         sync: false

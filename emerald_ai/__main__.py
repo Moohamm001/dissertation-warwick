@@ -6,6 +6,7 @@ Commands:
 from __future__ import annotations
 
 import argparse
+import os
 import sys
 
 
@@ -29,8 +30,10 @@ def main(argv: list[str] | None = None) -> int:
     ba = sub.add_parser("build-artefact", help="Fit and write the deployable model artefact (no dataset needed to serve it)")
     ba.add_argument("--out", default=None, help="destination .joblib (default: artefacts/scorer.joblib)")
     serve_p = sub.add_parser("serve", help="Phase 5 decision-support demo (FastAPI + minimal UI)")
-    serve_p.add_argument("--host", default="127.0.0.1")
-    serve_p.add_argument("--port", type=int, default=8000)
+    # Hosted platforms (Render, Railway, Fly, Heroku, Cloud Run) inject the listening port and
+    # expect the process to bind 0.0.0.0, so both default to the environment when it is set.
+    serve_p.add_argument("--host", default=os.getenv("HOST", "127.0.0.1"))
+    serve_p.add_argument("--port", type=int, default=int(os.getenv("PORT", "8000")))
     sf = sub.add_parser("score-file", help="Batch-score a CSV/XLSX of applicants -> *_scored.csv")
     sf.add_argument("input", help="path to a CSV/XLSX of applicants")
     sf.add_argument("-o", "--output", default=None, help="output CSV path (default: <input>_scored.csv)")

@@ -13,8 +13,12 @@ literature/.cache/
 _*.txt
 _*.json
 
-# Fitted-model cache (runtime artefact, rebuilt on demand)
-artefacts/
+# Fitted-model cache (runtime artefact, rebuilt on demand).
+# The deployable artefact is the exception: a hosted service is built from this repository and
+# must not carry the dataset, so the ~26 KB model (coefficients and metadata, no row-level data)
+# is tracked deliberately. Rebuild with: python -m emerald_ai build-artefact
+artefacts/*
+!artefacts/scorer.joblib
 
 # Regenerable dissertation build outputs (source is the *.md chapters + build.py)
 docs/dissertation/dissertation.md
