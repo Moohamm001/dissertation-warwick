@@ -12,14 +12,14 @@ is ≈ 0.0128.
 
 The Phase 1 analysis established three facts that govern everything downstream. First, the event
 count is 50 under *both* candidate label schemes (§3.3): no labelling choice mitigates small-N.
-Second, censoring is severe and cohort-dependent — 72.8% of the dominant 2019 cohort is
-unresolved (`current`) — justifying the censoring-safe primary label.
+Second, censoring is severe and cohort-dependent: 72.8% of the dominant 2019 cohort is
+unresolved (`current`), which justifies the censoring-safe primary label.
 
 ![Censoring by origination year](../../reports/figures/censoring_by_year.png)
 
 Third, the fairness go/no-go gate failed comprehensively: under the ≥10-events-per-cell
 criterion, **0 of 27 industries and 0 of 51 states are estimable**. The best-populated cells
-illustrate how far short the data falls — construction, the industry cell with the most events,
+illustrate how far short the data falls: construction, the industry cell with the most events,
 holds 9; the largest state cells (California, North Carolina) hold 5 each. This converted the
 planned fairness audit into the documented non-estimability result reported in §4.7.
 
@@ -40,13 +40,13 @@ events-per-variable literature predicts at EPV ≈ 3.8 (Peduzzi et al., 1996; Ri
 This is reported as the finding RQ1 anticipated, not a failure: overlapping bands are stated as
 overlapping.
 
-A caveat on the verdict's scope: XGBoost runs untuned (§3.6 gives the principled reason — model
+A caveat on the verdict's scope: XGBoost runs untuned (§3.6 gives the principled reason: model
 selection on ~10 positives per inner fold is itself noise), so the defensible statement is that
 the comparison is *unpowered to detect* a winner, not that none exists; §5.2 develops this,
 including the detection bound that makes tuning gains equally unverifiable here.
 
 Two secondary observations carry forward. All four configurations sit roughly eight times above
-the 0.013 prevalence floor — the features carry genuine signal (verified independently below) —
+the 0.013 prevalence floor (the features carry genuine signal, verified independently below),
 and logistic regression holds materially higher confidence on the minority class
 (within-minority ECE 0.305 vs 0.845), which motivated both the choice of the served model and
 RQ2's calibration investigation.
@@ -54,7 +54,7 @@ RQ2's calibration investigation.
 ![Fold-band comparison against the prevalence floor](../../reports/figures/story3_prauc.png)
 
 **The signal is real (evidence-of-learning checks).** These checks report *pooled out-of-fold*
-PR-AUC — a single statistic over all OOF predictions, systematically lower than the fold-median
+PR-AUC: a single statistic over all OOF predictions, systematically lower than the fold-median
 0.117 quoted above because pooling removes the optimistic half of fold variance; the two bases
 are stated wherever they appear. Against 100 label-permutation reruns of
 the full out-of-fold pipeline, the real model's pooled OOF PR-AUC of 0.095 exceeds every null
@@ -62,24 +62,24 @@ run (null mean 0.014, null maximum 0.034; p = 0.010). Across five CV seeds, PR-A
 and recall@top-decile at 0.604 ± 0.027. The learning curve plateaus by 75% of the data (0.096 at
 75% vs 0.095 at 100%), consistent with a dataset too small to reward additional capacity. The
 full model (PR-AUC 0.095) also clearly outperforms its best single feature: `Revenue` alone
-scores 0.065, while `Credit Score` alone (0.0104) falls *below* the dummy floor (0.0128) — a
+scores 0.065, while `Credit Score` alone (0.0104) falls *below* the dummy floor (0.0128): a
 robust negative finding for the variable a credit dataset is nominally built around, though §5.5
 identifies funded-book range restriction as an unexcluded alternative explanation.
 
 **Robustness to cleaning.** Re-running the bake-off on raw versus cleaned data moves no
 conclusion: the largest PR-AUC change across configurations is +0.014 (XGBoost + SMOTE), the
-no-winner verdict is unchanged, and `Credit Score` remains at 0.0104 under both — its weakness is
+no-winner verdict is unchanged, and `Credit Score` remains at 0.0104 under both; its weakness is
 a property of the feature, not of the 0-coded rows.
 
 **One operational headline survives the uncertainty:** reviewing the riskiest decile catches on
-the order of 60% of all defaults (fold band [0.36, 0.90]) — the cumulative-gains result that
+the order of 60% of all defaults (fold band [0.36, 0.90]), the cumulative-gains result that
 makes the decision layer of §4.6 worth building.
 
 ![Cumulative gains](../../reports/figures/story4_gains.png)
 
 ## 4.4 RQ1 follow-up: can the model be improved, and what would it take?
 
-**Experiment 1 — respecting the EPV budget.** L1-sparse and elastic-net logistic regression,
+**Experiment 1: respecting the EPV budget.** L1-sparse and elastic-net logistic regression,
 with and without domain affordability ratios (loan-to-revenue, loan-to-sales, revenue-to-sales;
 Altman, 1968), against the L2 baseline. Note the basis change: these configurations use the 10
 base numeric features only (hence the 0.122 baseline median, not the 17-feature bake-off's
@@ -92,15 +92,15 @@ base numeric features only (hence the 0.122 baseline median, not the 17-feature 
 | LR L1-sparse + affordability ratios | 0.121 | 0.194 |
 | LR elastic-net + affordability ratios | 0.123 | 0.192 |
 
-Neither the median nor — more importantly — the uncertainty band moves. **This is the expected
+Neither the median nor, more importantly, the uncertainty band moves. **This is the expected
 null**: the fold band is dominated by sampling variance, which no model choice on the same 50
 events can remove.
 
-**Experiment 2 — the events projection.** Subsampling both classes at fixed prevalence (three
-event counts — 25, 38, 50 — at three draws each) and fitting the standard `width ∝ 1/√events`
+**Experiment 2: the events projection.** Subsampling both classes at fixed prevalence (three
+event counts of 25, 38 and 50, at three draws each) and fitting the standard `width ∝ 1/√events`
 law projects that **on the order of 4–5× the current events (roughly 200–250) would be needed to
 halve the uncertainty band**. The basis is disclosed plainly: three points whose widths are
-non-monotone (0.215, 0.238, 0.155 — the middle point sits above the fitted curve), so the
+non-monotone (0.215, 0.238, 0.155; the middle point sits above the fitted curve), so the
 projection is an order-of-magnitude planning figure derived from a theoretically motivated law,
 not a precise requirement; under the exact 1/√events law the analytic answer is 4× = 200
 events. (The 50-event width here, 0.155, comes from the three-draw subsampling design and is not
@@ -109,7 +109,7 @@ depend on the fit: the lever for a materially better model is data acquisition, 
 
 ![Events projection](../../reports/figures/improve_projection.png)
 
-## 4.5 RQ2: calibration — marginal and minority objectives conflict
+## 4.5 RQ2: the conflict between marginal and minority calibration
 
 Class-weighted training inflates predicted probabilities: the raw model's Brier score of 0.122
 is an order of magnitude worse than the prevalence-only predictor (≈ 0.0127), even though the
@@ -121,11 +121,11 @@ model ranks well. Post-hoc calibration was therefore mandatory. The result:
 | Platt | 0.0122 [0.0092, 0.0156] | 0.969 [0.964, 0.974] |
 | isotonic | 0.0128 [0.0099, 0.0161] | 0.942 [0.921, 0.958] |
 
-Platt scaling repairs the marginal Brier score (0.122 → 0.012, at the base-rate level) — and
+Platt scaling repairs the marginal Brier score (0.122 → 0.012, at the base-rate level), and
 simultaneously **nearly triples the event-level calibration error** (0.347 → 0.969, CIs
 disjoint). Interpreting this honestly requires the metric's definition (§3.6): computed on
 events only, within-minority ECE reduces to the mean confidence shortfall on actual defaults,
-so what the table measures is a *structural* trade-off — any recalibration that pulls
+so what the table measures is a *structural* trade-off: any recalibration that pulls
 probabilities toward a 1.28% base rate must, for a model with imperfect discrimination, collapse
 confidence on the rare positives. The conflict is therefore inherent to low-prevalence
 recalibration rather than a surprising empirical accident; the contribution of RQ2 is measuring
@@ -138,7 +138,7 @@ layer (§4.6) selects its threshold empirically rather than trusting the probabi
 ![Reliability curves](../../reports/figures/calib_reliability.png)
 
 **Split-conformal prediction** achieves essentially exact marginal coverage (0.900 observed at
-nominal 0.90, sd 0.017; 0.951 at 0.95) — and the mean prediction-set sizes (1.15 and 1.43) show
+nominal 0.90, sd 0.017; 0.951 at 0.95), and the mean prediction-set sizes (1.15 and 1.43) show
 why this guarantee carries almost no information here: a set containing only the majority class satisfies
 marginal coverage at 1.28% prevalence. The result is reported as the honest transparency
 artefact the protocol pre-specified it as, demonstrating that a formally attractive guarantee
@@ -147,8 +147,8 @@ can be substantively empty at extreme imbalance.
 ## 4.6 The decision layer: what 50 events does support
 
 The expected-cost policy (§3.10) turns the ranking into a review queue. Across cost ratios, the
-policy behaves as decision theory requires — as a missed default becomes costlier, the threshold
-falls, the queue grows, and recall climbs:
+policy behaves as decision theory requires: as a missed default becomes costlier, the threshold
+falls, the queue grows, and recall climbs.
 
 | R | Threshold | Flagged | Defaults caught | Recall | Cost saved vs 0.5 cut |
 |---|---|---|---|---|---|
@@ -159,7 +159,7 @@ falls, the queue grows, and recall climbs:
 | 100 | 0.426 | 816 | 41/50 | 0.82 | 14.9% |
 
 The saving column is not monotone in R (6.1% at R = 50, 14.9% at R = 100) because it is a ratio
-to a baseline whose own quality moves with R — the non-monotonicity belongs to the 0.5-cut
+to a baseline whose own quality moves with R: the non-monotonicity belongs to the 0.5-cut
 denominator, not to the policy, whose absolute cost is monotone.
 
 At the illustrative R = 20, the cost-optimal policy flags 319 applications (versus 605 under a
@@ -168,18 +168,18 @@ out-of-fold rows (500 resamples) puts the saving at **19.0% [7.9, 32.8]**. The p
 and is stated: the threshold is **re-selected inside every resample**, so the interval
 propagates threshold-selection uncertainty rather than treating the chosen cut as fixed.
 Because selection and evaluation share each resample, the interval's *location* retains
-in-sample optimism — the true saving may lie below the quoted bounds; the interval is evidence
+in-sample optimism: the true saving may lie below the quoted bounds; the interval is evidence
 that the saving is unlikely to be zero, not a guarantee of its size. Against the operationally
-natural baseline — the top-decile rule the demo itself serves — the advantage at R = 20 is far
+natural baseline, the top-decile rule the demo itself serves, the advantage at R = 20 is far
 more modest: **3.9%** on the full data, bootstrap **6.8% [1.2, 19.4]** under the same
 per-resample re-selection (and the same location caveat, which bites harder when the lower
 bound is 1.2). Most of the headline saving therefore reflects how bad the 0.5 cut is on
 inflated probabilities; the honest summary is that the decile rule is already close to
-cost-optimal at moderate R — the expected-cost machinery's demonstrated advantage over it is
+cost-optimal at moderate R: the expected-cost machinery's demonstrated advantage over it is
 small, and its real contribution is *deriving* the queue depth from stated costs rather than
 fixing it by convention. Two further caveats are part of the result: R is the desk's parameter,
 not the analyst's (hence a sensitivity curve, not a single threshold), and the improvement is
-to *decisions*, not discrimination — PR-AUC is untouched.
+to *decisions*, not discrimination: PR-AUC is untouched.
 
 ![Expected-cost curve](../../reports/figures/decision_cost_curve.png)
 
@@ -192,7 +192,7 @@ of an audit, and reporting one would be less responsible than reporting none. Tw
 this verdict are stated rather than implied. First, it is granularity-specific: coarser
 partitions (e.g. a handful of industry sectors or census regions, ~12 events per cell) or
 hierarchical estimation with honest pooling could clear the gate, at the price of averaging away
-exactly the group distinctions an audit exists to detect — a trade-off flagged as future work,
+exactly the group distinctions an audit exists to detect: a trade-off flagged as future work,
 not resolved here. Second, the dataset contains no protected characteristics; industry and
 state are proxies, so even a fully estimable audit on these fields would be a proxy audit. The
 protocol's contribution is the gate itself (§3.9): the audit *design* is specified, the data
@@ -201,14 +201,14 @@ in Chapter 7.
 
 **Survival modelling of the censored book is non-estimable.** The 10,124 censored `current`
 loans motivated a time-to-event feasibility check before any Cox model was fitted. The dataset
-offers two candidate duration measures — calendar (`End − Start`) and term-based
-(`Closed Max Term × Term Complete %`) — and they **correlate at −0.02**: they cannot both be
+offers two candidate duration measures, calendar (`End − Start`) and term-based
+(`Closed Max Term × Term Complete %`), and they **correlate at −0.02**: they cannot both be
 measuring elapsed loan life, and in fact neither is. 89.9% of `paidOff` loans sit below 90%
 term-complete (a genuinely paid-off loan should be near 100%), and 75.6% of `current` loans show
-a calendar span under one month — implausible for 2015–2019 originations observed at a ~2020
+a calendar span under one month: implausible for 2015–2019 originations observed at a ~2020
 snapshot, indicating that `End` records an administrative booking date rather than maturity or
 default. **No survival model was fitted**: estimating hazards on a meaningless time axis would
-produce meaningless numbers. A single reliable field — a default date or last-payment date per loan —
+produce meaningless numbers. A single reliable field, a default date or last-payment date per loan,
 would reverse this verdict.
 
 These two results are deliberately reported *as results*. Both follow the same discipline: state
@@ -232,31 +232,31 @@ ranking:
 ![SHAP global importance](../../reports/figures/shap_global.png)
 
 Three findings answer RQ3's first half affirmatively, with one honest boundary. **Coherence:**
-global SHAP importance correlates 0.61 with the model's absolute coefficients — for a linear
+global SHAP importance correlates 0.61 with the model's absolute coefficients: for a linear
 model, SHAP importance is the coefficient weighted by each feature's spread, so
 positive-but-imperfect correlation is the mathematically expected behaviour, and the
 explanations are faithful to the model by construction rather than post-hoc storytelling. The
 boundary: faithfulness to the model does not certify the model's coefficients themselves, which
-at EPV ≈ 3.8 carry sampling instability (§2.5) — and `Revenue` and `Average Monthly Sales` are
+at EPV ≈ 3.8 carry sampling instability (§2.5), and `Revenue` and `Average Monthly Sales` are
 correlated, so linear attribution divides credit between them in a way that is partly arbitrary.
 A cross-fold stability check was therefore run (`reports/followup_checks.md`): recomputing the
 global importance ranking independently in each of five folds gives a mean pairwise Spearman
 correlation of **0.89** (minimum 0.80); `Revenue` sits in the top three in **100%** of folds and
 `Average Monthly Sales` in 80%, while the affordability cluster holds outright rank 1 in only
 60% of folds. The global *ordering* is therefore not a seed artefact, but the defensible unit
-of explanation remains the affordability *cluster* rather than a single champion feature — and
+of explanation remains the affordability *cluster* rather than a single champion feature, and
 per-applicant codes on borderline cases still inherit the coefficient noise EPV predicts. **Corroboration:** `Revenue` ranks first, consistent with the
 single-feature baselines (§4.3) where it was the only feature clearing the floor unaided, and
-`Credit Score`'s low rank matches its below-floor solo performance — the explanation layer and
+`Credit Score`'s low rank matches its below-floor solo performance: the explanation layer and
 the evaluation layer tell the same story about the same data. **Decision legibility:** each
 prediction decomposes into signed, named contributions rendered as plain-English reason codes
-("Monthly revenue — raises risk") in the served application, the artefact shape appropriate to an
+("Monthly revenue: raises risk") in the served application, the artefact shape appropriate to an
 adverse-action account (Wachter et al., 2017), with the jurisdictional caveats discussed in
 Chapter 6.
 
 ![Local explanation, high-risk case](../../reports/figures/shap_local_high-risk.png)
 
-RQ3's second half — where group-level fairness claims become non-estimable — is answered in full
+RQ3's second half, where group-level fairness claims become non-estimable, is answered in full
 by §4.7: at this event count, at every cell of the audit's chosen granularity.
 
 ## 4.9 Summary

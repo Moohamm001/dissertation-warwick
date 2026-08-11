@@ -2,7 +2,7 @@
 
 ## Appendix A: Ethics training evidence
 
-[Insert evidence of completing all required ethics training — certificate screenshot(s).]
+[Insert evidence of completing all required ethics training: certificate screenshot(s).]
 
 ## Appendix B: Ethical approval / waiver confirmation
 

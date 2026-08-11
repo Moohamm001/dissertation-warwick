@@ -5,7 +5,7 @@ thin: funded books are young, defaults are rare, and the resulting datasets are 
 imbalanced. This dissertation builds and honestly evaluates a delinquency-detection model for a
 portfolio of 14,135 funded green loans containing only 50 delinquent events (0.36% of the raw
 book; 1.28% under the censoring-safe primary label), and asks what such a dataset permits a
-lender to claim — and what it forbids.
+lender to claim, and what it forbids.
 
 Three research questions are addressed under a pre-specified, leakage-audited protocol
 (default-deny feature vetting retained 17 of 166 columns; all resampling and encoding confined to
@@ -20,7 +20,7 @@ defaults rises from 0.35 to 0.97): at this prevalence, marginal calibration and 
 the minority are structurally conflicting objectives, and recalibration resolves the conflict
 in the majority's favour. Third, exact linear
 SHAP explanations are faithful and decision-legible, identifying the affordability signals
-(monthly revenue and sales) — not credit score — as the dominant risk cluster, an ordering shown
+(monthly revenue and sales), not credit score, as the dominant risk cluster, an ordering shown
 to be stable across folds; however, group-conditional fairness auditing is empirically
 non-estimable at the audit's granularity (no industry or state cell reaches ten events), as is
 survival modelling of the 10,124 right-censored loans (the two candidate duration measures
