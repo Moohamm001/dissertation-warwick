@@ -68,7 +68,7 @@ python -m emerald_ai explain          # Ch.4 §4.8  -> reports/explainability.md
 python -m emerald_ai followup-checks  # Ch.5 §5.2/§5.5, Ch.4 §4.8 -> reports/followup_checks.md
 python -m emerald_ai figures          # visual story -> reports/visual_story.md
 
-python -m pytest -q                   # 49 tests
+python -m pytest -q                   # 53 tests
 
 python -m emerald_ai serve            # Ch.3 §3.11 demo -> http://127.0.0.1:8000
 ```
@@ -92,12 +92,34 @@ its ranked table and highlighted top-decile; (ii) the single-application panel s
 score and top-3 reason codes; (iii) a rejected malformed upload showing the clean 400 error
 response rather than a raw traceback.]*
 
-API surface: `GET /` (UI), `POST /api/score` (single applicant), `POST /api/score-batch`
-(pasted CSV), `POST /api/score-upload` (file upload). Hardening: structured request logging (no
-applicant field values logged), upload validation (extension allowlist, 10 MB cap, parse and
-column checks returning HTTP 400), a global exception handler (generic HTTP 500, no traceback
-leakage), and optional static API-key auth on `/api/*` via the `EMERALD_API_KEY` environment
-variable (default-open for examination use).
+API surface: `GET /` (UI), `GET /health` (readiness probe), `POST /api/score` (single
+applicant), `POST /api/score-batch` (pasted CSV), `POST /api/score-upload` (file upload).
+Hardening: structured request logging (no applicant field values logged), upload validation
+(extension allowlist, 10 MB cap, parse and column checks returning HTTP 400), a global exception
+handler (generic HTTP 500, no traceback leakage), and optional static API-key auth on `/api/*`
+via the `EMERALD_API_KEY` environment variable (default-open for examination use).
+
+**Deployment.** The service ships as a container (`Dockerfile`, `docker-compose.yml`):
+
+```powershell
+docker compose up --build        # -> http://127.0.0.1:8000
+```
+
+| Property | Implementation |
+|---|---|
+| Dataset kept out of the image | `.dockerignore` excludes `*.xlsx`; the book is mounted read-only at run time |
+| Immediate restarts | fitted model cached to `artefacts/scorer.joblib`; measured 20.3 s cold fit vs 0.02 s cached load |
+| Stale-model safety | cache keyed by code path and seed; ignored (and refitted) when either changes |
+| Readiness probing | `GET /health`, unauthenticated and non-blocking: HTTP 503 with `ready:false` during the first fit, then 200 with the operating point |
+| Least privilege | container runs as uid 10001 with write access only to the cache directory |
+
+A sample healthy response:
+
+```json
+{"status": "ok", "model_loaded": true, "ready": true, "cache_present": true,
+ "auth_required": false, "operating_threshold": 0.6165, "catch_rate": 0.62,
+ "training_rows": 3898, "training_events": 50}
+```
 
 ## Appendix F: Supplementary figures
 

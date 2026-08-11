@@ -13,6 +13,9 @@ literature/.cache/
 _*.txt
 _*.json
 
+# Fitted-model cache (runtime artefact, rebuilt on demand)
+artefacts/
+
 # Regenerable dissertation build outputs (source is the *.md chapters + build.py)
 docs/dissertation/dissertation.md
 docs/dissertation/dissertation.docx

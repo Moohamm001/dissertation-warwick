@@ -139,9 +139,58 @@ def _build_fields(df: pd.DataFrame) -> list[FieldSpec]:
     return fields
 
 
+def _cache_key() -> str:
+    """Identity of a cached artefact: cache format, global seed, and the served model."""
+    return f"v{C.MODEL_CACHE_VERSION}|seed={C.SEED}|logreg+class_weight|paidoff_only"
+
+
+def _load_cached_scorer() -> Scorer | None:
+    """Return a previously fitted scorer if one exists and was built by this code path."""
+    if not C.MODEL_CACHE.exists():
+        return None
+    try:
+        import joblib
+        blob = joblib.load(C.MODEL_CACHE)
+        if blob.get("key") != _cache_key():
+            logger.info("model cache ignored: built for %r, need %r", blob.get("key"), _cache_key())
+            return None
+        logger.info("model cache hit: %s", C.MODEL_CACHE)
+        return blob["scorer"]
+    except Exception as exc:  # noqa: BLE001 - a corrupt cache must never stop the service
+        logger.warning("model cache unreadable (%s); retraining", exc)
+        return None
+
+
+def _save_cached_scorer(scorer: Scorer) -> None:
+    try:
+        import joblib
+        C.ARTEFACT_DIR.mkdir(parents=True, exist_ok=True)
+        joblib.dump({"key": _cache_key(), "scorer": scorer}, C.MODEL_CACHE)
+        logger.info("model cached -> %s", C.MODEL_CACHE)
+    except Exception as exc:  # noqa: BLE001 - caching is an optimisation, not a requirement
+        logger.warning("could not write model cache: %s", exc)
+
+
 @lru_cache(maxsize=1)
 def get_scorer() -> Scorer:
-    """Train the frozen model once on all cleaned data and cache it (process-lifetime singleton)."""
+    """Return the frozen model, from the on-disk cache when possible, otherwise by fitting it.
+
+    Fitting takes roughly 25 seconds (it also runs the out-of-fold pass that sets the operating
+    point), which a restarted container should not repeat. The fitted object is cached to disk
+    and reused whenever the cache was produced by the same code path and seed.
+    """
+    cached = _load_cached_scorer()
+    if cached is not None:
+        return cached
+
+    logger.info("no usable model cache; fitting the model")
+    scorer = _fit_scorer()
+    _save_cached_scorer(scorer)
+    return scorer
+
+
+def _fit_scorer() -> Scorer:
+    """Train the frozen model on all cleaned data and set its operating point."""
     df = D.build_target(D.load_raw(), "paidoff_only").reset_index(drop=True)
     y = df["y"].to_numpy()
 
@@ -445,6 +494,32 @@ def create_app():
             "n_riskiest_decile": int(scored["in_riskiest_decile"].sum()),
             "rows": shown[cols].to_dict(orient="records"),
         }
+
+    @app.get("/health")
+    def health() -> JSONResponse:
+        """Liveness/readiness probe for a container orchestrator or load balancer.
+
+        Deliberately unauthenticated and non-blocking: it reports whether the model is already
+        loaded rather than triggering a fit, so a probe never waits on training. ``ready`` is
+        false only while the first fit is still in progress.
+        """
+        loaded = get_scorer.cache_info().currsize > 0
+        body = {
+            "status": "ok",
+            "model_loaded": loaded,
+            "ready": loaded,
+            "cache_present": C.MODEL_CACHE.exists(),
+            "auth_required": os.getenv("EMERALD_API_KEY") is not None,
+        }
+        if loaded:
+            s = get_scorer()
+            body |= {
+                "operating_threshold": round(s.threshold, 4),
+                "catch_rate": round(s.catch_rate, 4),
+                "training_rows": s.n_rows,
+                "training_events": s.n_events,
+            }
+        return JSONResponse(body, status_code=200 if loaded else 503)
 
     @app.get("/", response_class=HTMLResponse)
     def index() -> str:

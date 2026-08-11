@@ -163,9 +163,25 @@ chapter (abstract → conclusion → references → appendices), compiled to `.d
 traceable to a generated report in `reports/`; citations come only from the curated
 `literature/index.yaml`.
 
+**Step 8d — Deploy it (container).**
+```powershell
+docker compose up --build      # -> http://127.0.0.1:8000
+```
+The service is packaged for deployment rather than only for a local run:
+
+| Concern | How it is handled |
+|---|---|
+| **Data stays out of the image** | The lending book is **never copied into the image** (`.dockerignore` excludes `*.xlsx`); it is mounted read-only at run time. A pushed image therefore carries no borrower records. |
+| **Fast restarts** | The fitted model is cached to `artefacts/scorer.joblib`, so a restarted container serves in **~0.02 s instead of refitting for ~20 s**. The cache records the code path and seed it was built with, and is ignored if either changes. |
+| **Health probing** | `GET /health` is unauthenticated and non-blocking: it reports `ready:false` with HTTP 503 while the first fit runs, then 200 with the operating point (`threshold`, `catch_rate`, `training_rows`, `training_events`). The Dockerfile's `HEALTHCHECK` uses it with a 90 s start period. |
+| **Least privilege** | The image runs as an unprivileged user (`uid 10001`), with a writable directory only for the model cache. |
+| **Access control** | Set `EMERALD_API_KEY` (see `docker-compose.yml`) to require an `X-API-Key` header on `/api/*`; `/` and `/health` stay reachable. |
+
+Without Docker, the same service runs directly with `python -m emerald_ai serve`.
+
 **Step 9 — Verify everything.**
 ```powershell
-python -m pytest -q              # 49 tests: leakage guard, metrics, bot isolation, demo/batch (incl. auth/error-handling), improve, survival, decision policy, follow-up checks
+python -m pytest -q              # 53 tests: leakage guard, metrics, bot isolation, demo/batch (incl. auth/error-handling), improve, survival, decision policy, follow-up checks
 ```
 
 ## What's here
@@ -192,7 +208,7 @@ python -m pytest -q              # 49 tests: leakage guard, metrics, bot isolati
 | `data/sample_applicants.csv` | **Generated.** 50 privacy-safe synthetic applicants (column-wise resample) for batch testing. |
 | `research_bot/` | Small OpenAlex crawler (lit-review aid). `discovery.py` (queries), `state.py` (brain), `seeds.yaml`. |
 | `literature/` | The literature brain: `index.yaml` (curated) + `auto_index.yaml` (**generated**, auto-discovered). |
-| `tests/` | 49 tests: leakage guard, metric panel, bot isolation, demo/batch (incl. upload validation + API-key auth), improve, survival, decision policy. |
+| `tests/` | 53 tests: leakage guard, metric panel, bot isolation, demo/batch (incl. upload validation + API-key auth), improve, survival, decision policy. |
 | `All_Funded_2019_Green Loan.xlsx` | Raw dataset (14,135 × 166). |
 
 ## Literature bot

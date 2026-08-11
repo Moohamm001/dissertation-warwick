@@ -48,6 +48,14 @@ TIB_MIN_MONTHS = 0           # negative time-in-business is impossible -> NaN
 MAX_UPLOAD_MB = 10                                  # reject uploads larger than this
 ALLOWED_UPLOAD_EXT = (".csv", ".xlsx", ".xls")      # reject anything else before parsing
 
+# --- Deployment ------------------------------------------------------------
+# A fitted model is cached here so a restarted container serves immediately instead of
+# retraining (~25 s). The cache records the code/seed it was built with and is rebuilt when
+# either changes; it is a runtime artefact, never a source file.
+ARTEFACT_DIR = PROJECT_ROOT / "artefacts"
+MODEL_CACHE = ARTEFACT_DIR / "scorer.joblib"
+MODEL_CACHE_VERSION = "1"    # bump to invalidate every cached artefact
+
 
 def ensure_dirs() -> None:
     """Create output directories if absent. Safe to call repeatedly."""

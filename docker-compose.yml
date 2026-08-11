@@ -1,0 +1,23 @@
+# Run the decision-support service with one command:
+#     docker compose up --build
+# then open http://127.0.0.1:8000
+#
+# The dataset stays on the host and is mounted read-only; the fitted-model cache is a named
+# volume, so a restart serves immediately instead of retraining.
+services:
+  emerald:
+    build: .
+    image: emerald-ai
+    ports:
+      - "8000:8000"
+    volumes:
+      - "./All_Funded_2019_Green Loan.xlsx:/app/All_Funded_2019_Green Loan.xlsx:ro"
+      - emerald-artefacts:/app/artefacts
+    environment:
+      # Set a key to require an X-API-Key header on /api/*. Leave unset for local/examiner use.
+      # EMERALD_API_KEY: "change-me"
+      PYTHONUNBUFFERED: "1"
+    restart: unless-stopped
+
+volumes:
+  emerald-artefacts:

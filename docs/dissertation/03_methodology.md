@@ -186,12 +186,28 @@ input validation with clean 4xx/5xx JSON errors, and optional API-key access con
 user interface states explicitly that the model ranks applications for review and does not
 approve or decline. The engineering and its limits are analysed in Chapter 6.
 
+**Deployment.** The service is packaged as a container rather than left as a local script, so
+that the artefact a lender would run is the artefact that was tested. Four decisions in that
+packaging follow from the earlier chapters rather than from convention. First, **the lending
+book never enters the image**: the dataset is excluded from the build context and mounted
+read-only at run time, so an image that reaches a registry carries no borrower records, which is
+the practical form of the data-handling position taken in §6.3. Second, **the fitted model is
+cached to disk**. Fitting takes about 20 seconds because it also runs the out-of-fold pass that
+sets the operating point; a restarted container instead loads the cached artefact in about
+0.02 seconds. The cache is keyed by the code path and random seed that produced it and is
+discarded when either changes, so a stale model cannot be served silently. Third, an
+unauthenticated, non-blocking **health endpoint** (`/health`) reports readiness and the current
+operating point: it returns HTTP 503 while the first fit is still running and 200 afterwards,
+which lets an orchestrator distinguish "starting" from "broken" without triggering a fit of its
+own. Fourth, the container runs as an **unprivileged user** with write access only to the model
+cache. What this packaging does *not* provide, and why, is set out in §6.3.
+
 ## 3.12 Summary
 
 Each stage is a CLI verb over the same audited pipeline (`eda`, `bakeoff`, `evidence`,
 `calibrate`, `explain`, `improve`, `survival-check`, `decide`, `sensitivity`, `serve`); all
 randomness flows from the single global seed; generated reports and figures are committed
-alongside the code; and the test suite (49 tests) covers the leakage guard, the metric panel,
+alongside the code; and the test suite (53 tests) covers the leakage guard, the metric panel,
 the decision policy, and the serving contract including its error paths. The repository is the
 dissertation's evidentiary record: any figure that cannot be regenerated from it does not appear
 in this document.

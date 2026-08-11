@@ -234,3 +234,52 @@ def test_unhandled_error_returns_clean_json_no_traceback(monkeypatch):
     assert r.status_code == 500
     assert r.json() == {"detail": "internal error"}
     assert "secret" not in r.text and "RuntimeError" not in r.text and "Traceback" not in r.text
+
+
+# --------------------------------------------------------------------------- deployment
+def test_health_reports_ready_and_operating_point():
+    """The probe must be unauthenticated, non-blocking, and describe the served model."""
+    S.get_scorer()                                   # ensure the model is loaded
+    client = TestClient(S.create_app())
+    r = client.get("/health")
+    assert r.status_code == 200
+    j = r.json()
+    assert j["status"] == "ok" and j["model_loaded"] and j["ready"]
+    sc = S.get_scorer()
+    assert j["operating_threshold"] == round(sc.threshold, 4)
+    assert j["training_rows"] == sc.n_rows and j["training_events"] == sc.n_events
+
+
+def test_health_is_not_behind_the_api_key(monkeypatch):
+    """A probe must keep working when API-key auth is switched on."""
+    monkeypatch.setenv("EMERALD_API_KEY", "s3cret")
+    client = TestClient(S.create_app())
+    r = client.get("/health")
+    assert r.status_code == 200
+    assert r.json()["auth_required"] is True
+    # while /api/* is gated
+    assert client.post("/api/score", json={"Revenue": 800}).status_code == 401
+
+
+def test_model_cache_round_trip(tmp_path, monkeypatch):
+    """A cached artefact is reused; one built by a different code path is ignored, not trusted."""
+    monkeypatch.setattr(C, "ARTEFACT_DIR", tmp_path)
+    monkeypatch.setattr(C, "MODEL_CACHE", tmp_path / "scorer.joblib")
+
+    assert S._load_cached_scorer() is None            # nothing cached yet
+    sc = S.get_scorer()
+    S._save_cached_scorer(sc)
+    assert (tmp_path / "scorer.joblib").exists()
+
+    again = S._load_cached_scorer()
+    assert again is not None
+    assert again.threshold == sc.threshold and again.n_events == sc.n_events
+
+    monkeypatch.setattr(C, "MODEL_CACHE_VERSION", "999")   # cache from another version
+    assert S._load_cached_scorer() is None
+
+
+def test_corrupt_model_cache_does_not_break_startup(tmp_path, monkeypatch):
+    monkeypatch.setattr(C, "MODEL_CACHE", tmp_path / "scorer.joblib")
+    (tmp_path / "scorer.joblib").write_bytes(b"not a joblib file")
+    assert S._load_cached_scorer() is None             # falls back to fitting, never raises

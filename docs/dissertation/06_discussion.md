@@ -51,7 +51,17 @@ application was hardened to a defensible proof-of-concept standard: structured r
 that records scoring events without applicant field values, boundary validation returning clean
 4xx errors for malformed uploads, a global handler preventing internal traceback leakage, and
 optional API-key access control (default-open for examination use, explicitly not
-production-grade authentication). Beyond the code, the path-to-production analysis
+production-grade authentication). It is also packaged for deployment rather than for a laptop:
+a container image that excludes the lending book, a disk-cached model so restarts are immediate,
+a health endpoint that separates "starting" from "broken", and an unprivileged runtime user
+(§3.11). Naming what that packaging still does not include is more useful than listing what it
+does: there is no secrets management (the API key is an environment variable, not a managed
+credential), no TLS termination or rate limiting, no image scanning or signed build provenance,
+no orchestration manifest with resource limits and rollback, no persistent request log or audit
+trail beyond stdout, and no continuous-integration gate enforcing the test suite on every
+change. Each is standard practice a lender's platform team would require, and none is a
+modelling problem; they are listed here so that the gap between this artefact and a deployed
+service is legible rather than implied. Beyond the code, the path-to-production analysis
 (`docs/path_to_production.md`) grounds three requirements in the literature. *Governance*: model
 risk management for ML credit models (Alonso-Robisco and Carbó Martínez, 2022) would require
 independent validation sign-off, model documentation travelling with the artefact, and change

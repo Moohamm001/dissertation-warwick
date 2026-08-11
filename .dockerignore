@@ -1,0 +1,30 @@
+# The lending book must never enter a container image (real borrower records, 12 MB).
+# It is mounted read-only at run time instead - see the Dockerfile header and README.
+*.xlsx
+*.xls
+data/*.xlsx
+data/*.csv
+
+# Version control and IDE
+.git
+.gitignore
+.github
+.claude
+.venv
+venv
+
+# Python bytecode and test caches
+__pycache__
+*.py[cod]
+.pytest_cache
+*.egg-info
+
+# Build outputs and generated material (regenerated inside the container if needed)
+artefacts/
+reports/
+docs/
+tests/
+literature/
+research_bot/
+*.md
+!requirements.txt
