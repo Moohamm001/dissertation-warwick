@@ -1,0 +1,23 @@
+# Render.com blueprint for the public demo.
+#
+# The lending book is NOT deployed. Build the artefact locally, where the data lives:
+#     python -m emerald_ai build-artefact      # -> artefacts/scorer.joblib (~26 KB)
+# then commit or upload that file. The service runs from it alone: no dataset on the server,
+# no row-level data in the artefact.
+services:
+  - type: web
+    name: emerald-ai
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python -m emerald_ai serve --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.12"
+      # Requests per client IP per minute (0 disables the in-process limiter).
+      - key: EMERALD_RATE_LIMIT
+        value: "60"
+      # Set a value here to require an X-API-Key header on /api/*; the UI and /health stay open.
+      - key: EMERALD_API_KEY
+        sync: false

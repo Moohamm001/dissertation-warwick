@@ -21,8 +21,10 @@ import logging
 import os
 import secrets
 import warnings
+from contextlib import asynccontextmanager
 from dataclasses import dataclass, field
 from functools import lru_cache
+from pathlib import Path
 
 import numpy as np
 import pandas as pd
@@ -137,6 +139,34 @@ def _build_fields(df: pd.DataFrame) -> list[FieldSpec]:
             default = str(counts.index[0]) if len(counts) else ""
             fields.append(FieldSpec(c, "categorical", default, options))
     return fields
+
+
+# Per-process rate-limit state: {client ip: (minute window, hits)}. See _rate_limit below.
+_RATE_STATE: dict[str, tuple[int, int]] = {}
+
+
+def build_artefact(path=None) -> dict:
+    """Fit the model and write the deployable artefact, for a machine that HAS the dataset.
+
+    The artefact is what a public deployment ships: model coefficients, the fitted preprocessor,
+    the operating point and the form metadata - about 26 KB, with no row-level data. A server
+    that carries only this file can serve every endpoint, so the lending book never has to leave
+    the analyst's machine.
+    """
+    dest = Path(path) if path else C.MODEL_CACHE
+    get_scorer.cache_clear()
+    scorer = _fit_scorer()
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    import joblib
+    joblib.dump({"key": _cache_key(), "scorer": scorer}, dest)
+    return {
+        "path": str(dest),
+        "size_kb": round(dest.stat().st_size / 1024, 1),
+        "threshold": round(scorer.threshold, 4),
+        "catch_rate": round(scorer.catch_rate, 4),
+        "training_rows": scorer.n_rows,
+        "training_events": scorer.n_events,
+    }
 
 
 def _cache_key() -> str:
@@ -468,9 +498,26 @@ def _require_api_key(x_api_key: str | None = Header(default=None)) -> None:
 
 
 # --------------------------------------------------------------------------- web layer
+@asynccontextmanager
+async def _lifespan(app):
+    """Load the model when the process starts, not on the first request.
+
+    A deployed service should be ready before it receives traffic; without this the first visitor
+    would wait for the artefact load (or a full fit) and a probe would report 503. A failure is
+    logged rather than raised, so /health can report the problem instead of the boot crashing.
+    """
+    try:
+        get_scorer()
+        logger.info("model warm: service ready")
+    except Exception:  # noqa: BLE001 - surfaced through /health
+        logger.error("model could not be loaded at startup", exc_info=True)
+    yield
+
+
 def create_app():
     """Build the FastAPI app (routes over the cached scorer)."""
-    app = FastAPI(title="EMERALD-AI — decision-support demo", docs_url="/docs")
+    app = FastAPI(title="EMERALD-AI — decision-support demo", docs_url="/docs",
+                  lifespan=_lifespan)
     MAX_TABLE_ROWS = 200  # cap rows returned to the browser; the summary still spans the whole file
 
     @app.exception_handler(Exception)
@@ -494,6 +541,31 @@ def create_app():
             "n_riskiest_decile": int(scored["in_riskiest_decile"].sum()),
             "rows": shown[cols].to_dict(orient="records"),
         }
+
+    @app.middleware("http")
+    async def _rate_limit(request: Request, call_next):
+        """Small fixed-window limit per client IP, for public deployments.
+
+        In-memory and therefore per-process: it protects a single instance from casual abuse and
+        accidental loops, and is not a substitute for a gateway limiter (see the deployment
+        notes). Disabled by setting EMERALD_RATE_LIMIT=0.
+        """
+        limit = int(os.getenv("EMERALD_RATE_LIMIT", "60"))
+        if limit <= 0 or request.url.path == "/health":
+            return await call_next(request)
+        import time
+        now = int(time.time() // 60)
+        ip = (request.client.host if request.client else "?")
+        window, hits = _RATE_STATE.get(ip, (now, 0))
+        if window != now:
+            window, hits = now, 0
+        hits += 1
+        _RATE_STATE[ip] = (window, hits)
+        if hits > limit:
+            logger.warning("rate limit hit for %s (%d requests this minute)", ip, hits)
+            return JSONResponse({"detail": "too many requests, please retry shortly"},
+                                status_code=429)
+        return await call_next(request)
 
     @app.get("/health")
     def health() -> JSONResponse:

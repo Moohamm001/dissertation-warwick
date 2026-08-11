@@ -26,6 +26,8 @@ def main(argv: list[str] | None = None) -> int:
     sub.add_parser("survival-check", help="Feasibility: can the censored loans support a survival model?")
     sub.add_parser("decide", help="Cost-sensitive decision policy: cost-optimal review threshold")
     sub.add_parser("followup-checks", help="Review follow-ups: paired RQ1 test, reason-code stability, population diagnostic")
+    ba = sub.add_parser("build-artefact", help="Fit and write the deployable model artefact (no dataset needed to serve it)")
+    ba.add_argument("--out", default=None, help="destination .joblib (default: artefacts/scorer.joblib)")
     serve_p = sub.add_parser("serve", help="Phase 5 decision-support demo (FastAPI + minimal UI)")
     serve_p.add_argument("--host", default="127.0.0.1")
     serve_p.add_argument("--port", type=int, default=8000)
@@ -137,6 +139,17 @@ def main(argv: list[str] | None = None) -> int:
 
         path = followup.build_report()
         print(f"[emerald_ai] follow-up checks written -> {path}")
+        return 0
+
+    if args.command == "build-artefact":
+        from . import serve
+
+        info = serve.build_artefact(args.out)
+        print(f"[emerald_ai] artefact written -> {info['path']} ({info['size_kb']} KB)")
+        print(f"[emerald_ai] operating point P>={info['threshold']} "
+              f"(catch-rate {100*info['catch_rate']:.0f}% of {info['training_events']} events, "
+              f"{info['training_rows']} rows)")
+        print("[emerald_ai] this file is all a server needs: no dataset, no row-level data")
         return 0
 
     if args.command == "serve":

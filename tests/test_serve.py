@@ -283,3 +283,43 @@ def test_corrupt_model_cache_does_not_break_startup(tmp_path, monkeypatch):
     monkeypatch.setattr(C, "MODEL_CACHE", tmp_path / "scorer.joblib")
     (tmp_path / "scorer.joblib").write_bytes(b"not a joblib file")
     assert S._load_cached_scorer() is None             # falls back to fitting, never raises
+
+
+def test_startup_warms_the_model_so_health_is_ready_immediately():
+    """A public deployment must be ready before traffic arrives, not on the first request."""
+    S.get_scorer.cache_clear()
+    with TestClient(S.create_app()) as client:      # context manager fires startup handlers
+        r = client.get("/health")
+        assert r.status_code == 200 and r.json()["ready"] is True
+
+
+def test_rate_limit_returns_429_and_exempts_health(monkeypatch):
+    monkeypatch.setenv("EMERALD_RATE_LIMIT", "3")
+    S._RATE_STATE.clear()
+    client = TestClient(S.create_app())
+    codes = [client.post("/api/score", json={"Revenue": 800}).status_code for _ in range(5)]
+    assert codes[:3] == [200, 200, 200] and codes[3:] == [429, 429]
+    assert client.get("/health").status_code == 200      # probes are never rate limited
+
+
+def test_rate_limit_can_be_disabled(monkeypatch):
+    monkeypatch.setenv("EMERALD_RATE_LIMIT", "0")
+    S._RATE_STATE.clear()
+    client = TestClient(S.create_app())
+    assert all(client.post("/api/score", json={"Revenue": 800}).status_code == 200 for _ in range(4))
+
+
+def test_build_artefact_writes_a_servable_file_without_row_level_data(tmp_path):
+    """The deployable artefact must be small, self-sufficient, and free of record-level data."""
+    import joblib, numpy as np
+
+    out = tmp_path / "scorer.joblib"
+    info = S.build_artefact(str(out))
+    assert out.exists() and info["training_events"] == 50
+    assert info["size_kb"] < 200                      # metadata and coefficients only
+
+    scorer = joblib.load(out)["scorer"]
+    assert scorer.model.coef_.shape[1] == len(scorer.feat_names)
+    # nothing inside the artefact is big enough to hold the 3,898 training rows
+    for obj in (scorer.train_mean, scorer.model.coef_):
+        assert isinstance(obj, np.ndarray) and obj.size < 200

@@ -68,7 +68,7 @@ python -m emerald_ai explain          # Ch.4 §4.8  -> reports/explainability.md
 python -m emerald_ai followup-checks  # Ch.5 §5.2/§5.5, Ch.4 §4.8 -> reports/followup_checks.md
 python -m emerald_ai figures          # visual story -> reports/visual_story.md
 
-python -m pytest -q                   # 53 tests
+python -m pytest -q                   # 57 tests
 
 python -m emerald_ai serve            # Ch.3 §3.11 demo -> http://127.0.0.1:8000
 ```
