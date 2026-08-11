@@ -25,7 +25,13 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 TITLE = "Explainable Machine-Learning Credit Scoring for Green Loans under Extreme Class Imbalance"
 COURSE = "Applied Artificial Intelligence"
-SUBMITTED = "July 2026"
+SUBMITTED = "September 2026"
+
+# Candidate details. These are written into the pro-forma and title page on every build, so they
+# must live here rather than being typed into the .docx - the build overwrites the front matter.
+STUDENT_NAME = "Tatphong Kruerattanakul"
+STUDENT_ID = "5700836"
+AUTHOR_LINE = "TATPHONG KRUERATTANAKUL, MSc Applied Artificial Intelligence"
 TEMPLATE_PATH = HERE / "24-25_wmg_ft_msc_dissertation_template.docx"
 
 # Front matter is built explicitly; the body loop renders chapters 01..99 (00_abstract is folded
@@ -137,6 +143,7 @@ def _strip_heading_outline(doc) -> None:
     ``Heading N`` (outline level N-1), so the arrows come back. The level must be explicitly
     overridden to 9, which is Word's value for body text.
     """
+    from docx.enum.style import WD_STYLE_TYPE
     from docx.oxml import OxmlElement
 
     def force_body_level(pPr):
@@ -146,10 +153,16 @@ def _strip_heading_outline(doc) -> None:
         el.set(_qn("w:val"), "9")          # 9 = body text, i.e. no outline level
         pPr.append(el)
 
-    for level in range(1, 10):
+    names = [f"Heading {n}" for n in range(1, 10)]
+    # The template's front-matter styles are based on Heading 1/2, so they inherit an outline
+    # level (and therefore a collapse control) unless it is overridden here as well.
+    names += ["Alt Heading 1", "Alt Heading 2", "Title", "TOC Heading"]
+    for name in names:
         try:
-            st = doc.styles[f"Heading {level}"]
+            st = doc.styles[name]
         except KeyError:
+            continue
+        if st.type != WD_STYLE_TYPE.PARAGRAPH:
             continue
         pPr = st.element.find(_qn("w:pPr"))
         if pPr is None:
@@ -165,6 +178,61 @@ def _strip_heading_outline(doc) -> None:
             pPr = OxmlElement("w:pPr")
             p._p.insert(0, pPr)
         force_body_level(pPr)
+
+
+# Custom heading styles. Word enforces its own semantics on the *built-in* Heading 1-4 styles:
+# whatever outline level the file specifies, Word restores the built-in one when the document is
+# opened and saved, which brings the collapse/expand arrows back. Custom styles based on Normal
+# are left alone, so the headings below are rendered with these instead. The TOC fields collect
+# by style name, so the contents page is unaffected.
+HEADING_STYLES = {
+    1: ("Chapter Heading", 16, True),
+    2: ("Section Heading", 13, True),
+    3: ("Subsection Heading", 12, True),
+    4: ("Minor Heading", 11, False),
+}
+
+
+def _make_heading_styles(doc) -> None:
+    """Create the custom heading styles (based on Normal, explicitly outline level 9)."""
+    from docx.enum.style import WD_STYLE_TYPE
+    from docx.enum.text import WD_ALIGN_PARAGRAPH
+    from docx.oxml import OxmlElement
+    from docx.shared import Pt, RGBColor
+
+    for level, (name, size, bold) in HEADING_STYLES.items():
+        try:
+            st = doc.styles[name]
+        except KeyError:
+            st = doc.styles.add_style(name, WD_STYLE_TYPE.PARAGRAPH)
+        st.base_style = doc.styles["Normal"]
+        st.quick_style = True
+        st.font.size = Pt(size)
+        st.font.bold = bold
+        st.font.italic = not bold and level == 4
+        st.font.color.rgb = RGBColor(0x2E, 0x74, 0xB5)      # the template's heading blue
+        pf = st.paragraph_format
+        pf.alignment = WD_ALIGN_PARAGRAPH.LEFT
+        pf.space_before = Pt(14 if level == 1 else 10)
+        pf.space_after = Pt(4)
+        pf.keep_with_next = True
+        pPr = st.element.get_or_add_pPr()
+        for ol in pPr.findall(_qn("w:outlineLvl")):
+            pPr.remove(ol)
+        el = OxmlElement("w:outlineLvl")
+        el.set(_qn("w:val"), "9")                            # body text: no collapse control
+        pPr.append(el)
+
+
+def _add_heading(doc, text: str, level: int):
+    """Add a heading using the custom styles, falling back to built-ins if they are missing."""
+    name = HEADING_STYLES.get(min(level, 4), (None,))[0]
+    if name:
+        try:
+            return doc.add_paragraph(text, style=name)
+        except KeyError:
+            pass
+    return doc.add_heading(text, level=min(level, 4))
 
 
 def _enable_update_fields(doc) -> None:
@@ -341,8 +409,8 @@ def _front_matter(doc) -> None:
 
     # 1. Project Submission Pro-Forma
     _bold_title(doc, "Project Submission Pro-Forma", 15, style=FRONT_HEADING_STYLE)
-    para("Student name:  ………………………………………………………………………")
-    para("Student ID:  …………………………………………………………………………")
+    para(f"Student name:  {STUDENT_NAME}")
+    para(f"Student ID:  {STUDENT_ID}")
     para()
     para("I wish the dissertation to be considered for the following course:")
     para("MSc in Applied Artificial Intelligence")
@@ -370,7 +438,7 @@ def _front_matter(doc) -> None:
     para()
     para("by", center=True)
     para()
-    para("Name Surname, qualifications obtained", center=True)
+    para(AUTHOR_LINE, center=True)
     para()
     para(f"Dissertation submitted in partial fulfilment for the Degree of Master of Science in "
          f"{COURSE}", center=True)
@@ -407,7 +475,10 @@ def _front_matter(doc) -> None:
     # 6. Table of contents
     _bold_title(doc, "Table of Contents", 15, style=FRONT_HEADING_STYLE)
     _field(doc.add_paragraph(),
-           'TOC \\t "Heading 1,1,Heading 2,2,Heading 3,3" \\h \\z \\u',
+           # \t collects by style name; \u must NOT be present, because it would ask Word to
+           # collect by applied outline level, which is deliberately set to body text (9) so
+           # that no collapse controls are drawn.
+           'TOC \\t "Chapter Heading,1,Section Heading,2,Subsection Heading,3" \\h \\z',
            cached="Right-click and Update Field to populate the table of contents.")
     doc.add_page_break()
 
@@ -476,7 +547,7 @@ def _render_chapter(doc, chapter: Path) -> None:
             level = len(line) - len(line.lstrip("#"))
             text = line.lstrip("# ").strip()
             last_heading = text
-            doc.add_heading(text, level=min(level, 4))
+            _add_heading(doc, text, level)
             i += 1; continue
 
         stripped = line.strip()
@@ -529,6 +600,7 @@ def build_with_docx(out_path: Path) -> None:
     FRONT_HEADING_STYLE = FRONT_TITLE_STYLE = None
     doc = Document()
     _apply_professional_styles(doc)
+    _make_heading_styles(doc)
     _assemble(doc)
     doc.save(out_path)
 
@@ -555,6 +627,7 @@ def build_from_template(out_path: Path) -> None:
     _clear_body(doc)
     _strip_heading_numbering(doc)
     _strip_heading_outline(doc)                 # style definitions, before content exists
+    _make_heading_styles(doc)                   # custom, non-built-in heading styles
     FRONT_HEADING_STYLE, FRONT_TITLE_STYLE = "Alt Heading 1", "Title"
     _assemble(doc)
     _strip_heading_outline(doc)                 # again, to stamp the heading paragraphs
