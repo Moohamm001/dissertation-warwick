@@ -104,6 +104,69 @@ def _set_page_numbering(section, fmt: str, start: int | None = None) -> None:
     sectPr.append(el)
 
 
+def _strip_heading_numbering(doc) -> None:
+    """Remove the template's automatic multilevel numbering from the Heading styles.
+
+    The WMG template binds Heading 1-4 to a numbered list, so Word prepends its own "1.1" to a
+    heading whose text already reads "1.1 Motivation" (producing "1.1 1.1 Motivation" in the
+    document and the contents page, plus a list marker on every heading). The chapter numbers
+    are authored in the Markdown source and every cross-reference in the text refers to them, so
+    the authored numbers are kept and Word's automatic numbering is removed.
+    """
+    for level in range(1, 10):
+        try:
+            st = doc.styles[f"Heading {level}"]
+        except KeyError:
+            continue
+        pPr = st.element.find(_qn("w:pPr"))
+        if pPr is None:
+            continue
+        for numPr in pPr.findall(_qn("w:numPr")):
+            pPr.remove(numPr)
+
+
+def _strip_heading_outline(doc) -> None:
+    """Remove the outline level from the Heading styles.
+
+    Word draws a collapse/expand triangle ("dropdown") beside every paragraph that carries an
+    outline level, and shows the same tree in the Navigation pane. The contents page is
+    unaffected because the TOC fields are built with the ``\\t`` switch (collect by style name)
+    rather than ``\\o`` (collect by outline level) - see ``_front_matter``.
+
+    Deleting the element is not enough: Word falls back to the built-in definition of
+    ``Heading N`` (outline level N-1), so the arrows come back. The level must be explicitly
+    overridden to 9, which is Word's value for body text.
+    """
+    from docx.oxml import OxmlElement
+
+    def force_body_level(pPr):
+        for ol in pPr.findall(_qn("w:outlineLvl")):
+            pPr.remove(ol)
+        el = OxmlElement("w:outlineLvl")
+        el.set(_qn("w:val"), "9")          # 9 = body text, i.e. no outline level
+        pPr.append(el)
+
+    for level in range(1, 10):
+        try:
+            st = doc.styles[f"Heading {level}"]
+        except KeyError:
+            continue
+        pPr = st.element.find(_qn("w:pPr"))
+        if pPr is None:
+            pPr = OxmlElement("w:pPr")
+            st.element.insert(0, pPr)
+        force_body_level(pPr)
+
+    for p in doc.paragraphs:
+        if not p.style.name.startswith("Heading"):
+            continue
+        pPr = p._p.find(_qn("w:pPr"))
+        if pPr is None:
+            pPr = OxmlElement("w:pPr")
+            p._p.insert(0, pPr)
+        force_body_level(pPr)
+
+
 def _enable_update_fields(doc) -> None:
     """Ask Word to update all fields (TOC, lists, page numbers) when the document is opened."""
     from docx.oxml import OxmlElement
@@ -184,11 +247,19 @@ def _list_para(doc, raw: str, ordered: bool = False, idx: int = 1):
         return p
     except KeyError:
         pass
+    # The WMG template has no List Bullet/Number styles, so the marker is written literally.
+    # A hanging indent (not a tab) keeps the wrapped lines aligned under the text, which is why
+    # the marker is followed by a single space rather than a tab stop.
+    from docx.shared import Cm, Pt
     try:
         p = doc.add_paragraph(style="List Paragraph")
     except KeyError:
         p = doc.add_paragraph()
-    _add_inline(p, (f"{idx}.\t" if ordered else "•\t") + raw)
+    pf = p.paragraph_format
+    pf.left_indent = Cm(1.0)
+    pf.first_line_indent = Cm(-0.5)
+    pf.space_after = Pt(3)
+    _add_inline(p, (f"{idx}. " if ordered else "• ") + raw)
     return p
 
 
@@ -335,7 +406,8 @@ def _front_matter(doc) -> None:
 
     # 6. Table of contents
     _bold_title(doc, "Table of Contents", 15, style=FRONT_HEADING_STYLE)
-    _field(doc.add_paragraph(), 'TOC \\o "1-3" \\h \\z \\u',
+    _field(doc.add_paragraph(),
+           'TOC \\t "Heading 1,1,Heading 2,2,Heading 3,3" \\h \\z \\u',
            cached="Right-click and Update Field to populate the table of contents.")
     doc.add_page_break()
 
@@ -481,8 +553,11 @@ def build_from_template(out_path: Path) -> None:
 
     doc = Document(str(TEMPLATE_PATH))
     _clear_body(doc)
+    _strip_heading_numbering(doc)
+    _strip_heading_outline(doc)                 # style definitions, before content exists
     FRONT_HEADING_STYLE, FRONT_TITLE_STYLE = "Alt Heading 1", "Title"
     _assemble(doc)
+    _strip_heading_outline(doc)                 # again, to stamp the heading paragraphs
     doc.save(out_path)
 
 
