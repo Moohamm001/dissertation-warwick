@@ -181,7 +181,7 @@ Without Docker, the same service runs directly with `python -m emerald_ai serve`
 
 **Step 9 — Verify everything.**
 ```powershell
-python -m pytest -q              # 57 tests: leakage guard, metrics, bot isolation, demo/batch (incl. auth/error-handling), improve, survival, decision policy, follow-up checks
+python -m pytest -q              # 59 tests: leakage guard, metrics, bot isolation, demo/batch (incl. auth/error-handling), improve, survival, decision policy, follow-up checks
 ```
 
 ## What's here
@@ -208,7 +208,7 @@ python -m pytest -q              # 57 tests: leakage guard, metrics, bot isolati
 | `data/sample_applicants.csv` | **Generated.** 50 privacy-safe synthetic applicants (column-wise resample) for batch testing. |
 | `research_bot/` | Small OpenAlex crawler (lit-review aid). `discovery.py` (queries), `state.py` (brain), `seeds.yaml`. |
 | `literature/` | The literature brain: `index.yaml` (curated) + `auto_index.yaml` (**generated**, auto-discovered). |
-| `tests/` | 57 tests: leakage guard, metric panel, bot isolation, demo/batch (incl. upload validation + API-key auth), improve, survival, decision policy. |
+| `tests/` | 59 tests: leakage guard, metric panel, bot isolation, demo/batch (incl. upload validation + API-key auth), improve, survival, decision policy. |
 | `All_Funded_2019_Green Loan.xlsx` | Raw dataset (14,135 × 166). |
 
 ## Literature bot

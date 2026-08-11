@@ -31,3 +31,4 @@ literature/
 research_bot/
 *.md
 !requirements.txt
+!requirements-serve.txt

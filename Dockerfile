@@ -13,9 +13,11 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
 
 WORKDIR /app
 
-# Dependencies first, so a source change does not invalidate the (slow) wheel layer.
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+# Serving dependencies only: the container scores with a fitted artefact and never trains, so
+# xgboost, imbalanced-learn, matplotlib, shap and mapie are deliberately absent. Dependencies are
+# installed before the source is copied so a code change does not invalidate the wheel layer.
+COPY requirements-serve.txt .
+RUN pip install --no-cache-dir -r requirements-serve.txt
 
 # Application source, the feature catalogue, and the fitted model. Everything else - above all
 # the lending book - is excluded by .dockerignore, so the image serves without any dataset.

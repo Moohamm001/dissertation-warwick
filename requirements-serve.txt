@@ -1,0 +1,17 @@
+# Runtime dependencies for the SERVING container only.
+#
+# The service loads a fitted artefact and scores with it; it never trains, so the modelling and
+# reporting stack (xgboost, imbalanced-learn, matplotlib, seaborn, shap, mapie) is not installed
+# in the image. This was measured, not assumed: with the artefact present, the serving path
+# loads none of those packages, and the endpoints were exercised with imbalanced-learn and
+# xgboost made unimportable.
+#
+# Use requirements.txt for analysis, training and reproducing the dissertation.
+pandas>=2.0
+numpy>=1.24
+scikit-learn>=1.3        # the fitted pipeline is unpickled with it
+joblib>=1.3              # loads the model artefact
+openpyxl>=3.1            # .xlsx uploads in the batch panel
+fastapi>=0.110
+uvicorn>=0.27
+python-multipart>=0.0.9  # multipart file upload

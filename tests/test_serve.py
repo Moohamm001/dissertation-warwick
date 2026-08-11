@@ -323,3 +323,36 @@ def test_build_artefact_writes_a_servable_file_without_row_level_data(tmp_path):
     # nothing inside the artefact is big enough to hold the 3,898 training rows
     for obj in (scorer.train_mean, scorer.model.coef_):
         assert isinstance(obj, np.ndarray) and obj.size < 200
+
+
+def test_service_starts_without_the_training_extras(monkeypatch):
+    """A serving container installs requirements-serve.txt, which omits imbalanced-learn and
+    xgboost. Importing them at module scope would break the deploy, so the serving path must not
+    touch them when a fitted artefact is available."""
+    import builtins, sys
+
+    real_import = builtins.__import__
+
+    def guard(name, *a, **k):
+        if name.split(".")[0] in {"imblearn", "xgboost"}:
+            raise ModuleNotFoundError(f"No module named '{name}' (simulated serving container)")
+        return real_import(name, *a, **k)
+
+    for m in [m for m in sys.modules if m.split(".")[0] in {"imblearn", "xgboost"}]:
+        monkeypatch.delitem(sys.modules, m, raising=False)
+    monkeypatch.setattr(builtins, "__import__", guard)
+
+    with TestClient(S.create_app()) as client:
+        assert client.get("/health").json()["ready"] is True
+        assert client.post("/api/score", json={"Revenue": 9000}).status_code == 200
+        assert client.get("/").status_code == 200
+
+
+def test_serving_requirements_cover_what_the_service_imports():
+    """requirements-serve.txt must list every distribution the serving path needs."""
+    from pathlib import Path
+
+    text = Path("requirements-serve.txt").read_text(encoding="utf-8").lower()
+    for pkg in ("pandas", "numpy", "scikit-learn", "joblib", "openpyxl",
+                "fastapi", "uvicorn", "python-multipart"):
+        assert pkg in text, f"{pkg} missing from requirements-serve.txt"

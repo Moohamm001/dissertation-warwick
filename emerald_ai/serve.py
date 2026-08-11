@@ -45,7 +45,11 @@ from . import data as D
 from . import feature_audit as FA
 from . import metrics as M
 from . import preprocess as P
-from .experiments import _make_model, oof_predictions
+# NOTE: emerald_ai.experiments is imported lazily inside _fit_scorer(), not here. It pulls in
+# imbalanced-learn and xgboost, which the bake-off needs but a serving container does not: when
+# a fitted artefact is present the service never fits, so a deployment image can omit those
+# packages entirely. Importing them at module scope would make the service fail to start
+# without them.
 
 # Cap dropdown size for very high-cardinality categoricals (e.g. Loan Purpose has 154 levels).
 # Rare levels are grouped by the preprocessor's ``min_frequency`` anyway, so the long tail is
@@ -220,7 +224,13 @@ def get_scorer() -> Scorer:
 
 
 def _fit_scorer() -> Scorer:
-    """Train the frozen model on all cleaned data and set its operating point."""
+    """Train the frozen model on all cleaned data and set its operating point.
+
+    Requires the dataset and the modelling extras (imbalanced-learn, xgboost); a serving
+    container that ships a fitted artefact never reaches this path.
+    """
+    from .experiments import _make_model, oof_predictions
+
     df = D.build_target(D.load_raw(), "paidoff_only").reset_index(drop=True)
     y = df["y"].to_numpy()
 
