@@ -2,23 +2,58 @@
 
 ## Appendix A: Ethics training evidence
 
-[Insert evidence of completing all required ethics training: certificate screenshot(s).]
+The University requires evidence that the researcher has completed the mandatory research-ethics
+and research-integrity training before data analysis begins.
+
+*[Insert the completion certificate(s) here: the Moodle/WMG research-integrity module completion
+record showing the candidate's name, the module title and the completion date. A screenshot of
+the completion page or the emailed certificate is sufficient.]*
+
+| Requirement | Evidence to attach |
+|---|---|
+| Research integrity / ethics module | Completion certificate or Moodle transcript entry |
+| Data-protection (GDPR) awareness, where required by the course | Completion record |
+| Date completed | Must precede the start of data analysis |
 
 ## Appendix B: Ethical approval / waiver confirmation
 
-**Ethical basis of the study.** This project analyses a pre-existing, anonymised commercial
-lending dataset (14,135 funded green-loan records). It involves no human participants, no
-recruitment, no intervention, and no collection of new data. The dataset contains no direct
-personal identifiers: the modelling features are firmographic and financial (credit score,
-revenue, sales, time in business, industry, state), and no name, address, contact detail, or
-account identifier is used at any stage. The leakage audit (Chapter 3, Appendix C) further
-restricts the model to 17 pre-funding attributes. On this basis the study falls within the scope
-normally granted a low-risk secondary-data-analysis waiver under the University's research-ethics
-framework.
+### B.1 Ethical basis of the study
 
-**Confirmation.** [Insert the University/WMG ethical-approval reference number, or the confirming
-email/waiver decision for a secondary-data project, by replacing this highlighted text. If a
-formal waiver was issued, attach the confirmation here.]
+This project analyses a pre-existing, anonymised commercial lending dataset (14,135 funded
+green-loan records). It involves no human participants, no recruitment, no intervention, and no
+collection of new data. The dataset contains no direct personal identifiers: the modelling
+features are firmographic and financial (credit score, revenue, sales, time in business,
+industry, state), and no name, address, contact detail, or account identifier is used at any
+stage. The leakage audit (Chapter 3, Appendix C) further restricts the model to 17 pre-funding
+attributes. On this basis the study falls within the scope normally granted a low-risk
+secondary-data-analysis waiver under the University's research-ethics framework.
+
+### B.2 Ethics self-assessment
+
+| Question | Response |
+|---|---|
+| Does the research involve human participants? | No. The study analyses records of completed commercial loan agreements. |
+| Is new data collected from individuals? | No. The dataset is a pre-existing export supplied for research use. |
+| Does the data contain personal identifiers? | No direct identifiers. Records describe businesses, not named individuals, and no name, address, contact detail or account number is used. |
+| Is any special-category data processed? | No. No data on health, ethnicity, religion, political opinion, biometrics or sexual orientation is present or inferred. |
+| Could individuals be re-identified? | Re-identification is not attempted and no output is published at record level. All reported results are aggregate; the deployed model contains no row-level data (Appendix E). |
+| Is consent required? | Not applicable: no participants are involved and the data was supplied by the data controller for this purpose. |
+| Where is the data stored? | On the researcher's institutionally managed device only. It is excluded from the public code repository's deployment artefacts and from the container image (`.dockerignore`). |
+| How long is it retained? | For the duration of the assessment period, after which the local copy is deleted in line with University guidance. |
+| Are there risks to the data provider? | The commercial sensitivity of the portfolio is respected: the lender is not named, and no record-level output is published. |
+| Does the work carry societal risk? | The model ranks applications for human review and does not approve or decline. Its limitations, including unreliable minority-class probabilities and the non-estimability of a fairness audit, are stated explicitly (Chapters 4 and 6) precisely to prevent inappropriate reliance. |
+
+### B.3 Confirmation
+
+*[Insert the University/WMG ethical-approval reference number, or the confirming email or waiver
+decision for a secondary-data project, in the space below. If the project was assessed as
+exempt, attach that confirmation.]*
+
+| Item | Value |
+|---|---|
+| Ethical approval / waiver reference | *[to be inserted]* |
+| Date of decision | *[to be inserted]* |
+| Approving body | *[e.g. WMG Research Ethics Committee]* |
 
 ## Appendix C: The permitted feature set
 
@@ -86,11 +121,54 @@ review queue is the primary interface: an uploaded CSV/Excel file is ranked by r
 riskiest within-batch decile is flagged for review; the single-application panel provides
 per-decision SHAP reason codes and what-if analysis on the plain-English feature form.
 
-*[Insert three screenshots captured from the running application on the submission machine
-(`python -m emerald_ai serve`, then open http://127.0.0.1:8000): (i) the batch review queue with
-its ranked table and highlighted top-decile; (ii) the single-application panel showing the risk
-score and top-3 reason codes; (iii) a rejected malformed upload showing the clean 400 error
-response rather than a raw traceback.]*
+The transcript below is the actual output of a session against the running service, reproducible
+with `python -m emerald_ai serve`. Screenshots of the same four interactions are inserted after
+it.
+
+**(i) Readiness probe.** `GET /health`, unauthenticated, reports the served operating point:
+
+```json
+{"status": "ok", "model_loaded": true, "ready": true, "cache_present": true,
+ "auth_required": false, "operating_threshold": 0.6165, "catch_rate": 0.62,
+ "training_rows": 3898, "training_events": 50}
+```
+
+**(ii) Single application (the explain panel).** An applicant with a thin file and high revenue
+scores 99.28%, above the review threshold, with the three signed reasons a reviewer would act on:
+
+```
+percent = 99.28   in_riskiest_decile = True   threshold = 0.6165
+  Monthly revenue    raises risk   (value 9,000)
+  Deal type          raises risk   (value new)
+  Returning borrower raises risk   (value 0)
+```
+
+**(iii) Batch review queue (the primary interface).** Twelve applications uploaded as a file;
+the service ranks them and flags the riskiest decile of that batch (two applications) for review:
+
+| rank | id | percent | in queue | top reasons |
+|---|---|---|---|---|
+| 1 | app_0004 | 93.54 | yes | ↑ Monthly revenue, ↓ Days since last enquiry, ↑ Monthly sales |
+| 2 | app_0000 | 62.25 | yes | ↑ Monthly revenue, ↑ Monthly sales, ↓ Applied online |
+| 3 | app_0006 | 38.43 | no | ↓ Monthly revenue, ↑ Monthly sales, ↑ Origination channel |
+| 4 | app_0011 | 37.45 | no | ↓ Monthly revenue, ↑ Monthly sales, ↑ Origination channel |
+| 5 | app_0009 | 29.23 | no | ↑ Monthly sales, ↑ Origination channel, ↑ Deal type |
+
+**(iv) Rejected uploads.** Both failure paths return a clean, explanatory HTTP 400 rather than a
+stack trace:
+
+```
+POST /api/score-upload  (book.pdf)
+  400  {"detail": "unsupported file type; expected one of ('.csv', '.xlsx', '.xls')"}
+
+POST /api/score-upload  (a CSV with no permitted columns)
+  400  {"detail": "no recognised applicant columns found in the uploaded data"}
+```
+
+*[Insert screenshots of the same four interactions, captured on the submission machine with
+`python -m emerald_ai serve` at http://127.0.0.1:8000: the batch review queue with its ranked
+table and highlighted queue rows; the single-application panel with its score and reason codes;
+and the error message shown by the interface when a malformed file is uploaded.]*
 
 API surface: `GET /` (UI), `GET /health` (readiness probe), `POST /api/score` (single
 applicant), `POST /api/score-batch` (pasted CSV), `POST /api/score-upload` (file upload).
