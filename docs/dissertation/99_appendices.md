@@ -103,7 +103,7 @@ python -m emerald_ai explain          # Ch.4 §4.8  -> reports/explainability.md
 python -m emerald_ai followup-checks  # Ch.5 §5.2/§5.5, Ch.4 §4.8 -> reports/followup_checks.md
 python -m emerald_ai figures          # visual story -> reports/visual_story.md
 
-python -m pytest -q                   # 59 tests
+python -m pytest -q                   # 64 tests
 
 python -m emerald_ai serve            # Ch.3 §3.11 demo -> http://127.0.0.1:8000
 ```
@@ -169,6 +169,17 @@ POST /api/score-upload  (a CSV with no permitted columns)
 `python -m emerald_ai serve` at http://127.0.0.1:8000: the batch review queue with its ranked
 table and highlighted queue rows; the single-application panel with its score and reason codes;
 and the error message shown by the interface when a malformed file is uploaded.]*
+
+The interface carries three tabs. **Score applications** is the working surface described
+above. **How to use this** is written for a non-technical reviewer: what the tool does and
+refuses to do, a three-step walkthrough of a day's batch, a glossary of what each number on the
+screen means, and the five limitations a user must know before relying on it (few observed
+defaults, funded-book selection, unverified fairness, explanations that describe the score rather
+than the borrower, and the instruction never to use the screen to explain a decline). Putting
+those caveats in the product rather than only in this document is deliberate: the person who acts
+on a score is not the person who reads the dissertation. **API reference** documents the
+endpoints for integrators, with authentication, the rate limit, the error contract and worked
+request/response examples; an always-current OpenAPI schema is served at `/docs`.
 
 API surface: `GET /` (UI), `GET /health` (readiness probe), `POST /api/score` (single
 applicant), `POST /api/score-batch` (pasted CSV), `POST /api/score-upload` (file upload).

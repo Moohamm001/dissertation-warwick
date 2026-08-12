@@ -207,7 +207,7 @@ cache. What this packaging does *not* provide, and why, is set out in §6.3.
 Each stage is a CLI verb over the same audited pipeline (`eda`, `bakeoff`, `evidence`,
 `calibrate`, `explain`, `improve`, `survival-check`, `decide`, `sensitivity`, `serve`); all
 randomness flows from the single global seed; generated reports and figures are committed
-alongside the code; and the test suite (59 tests) covers the leakage guard, the metric panel,
+alongside the code; and the test suite (64 tests) covers the leakage guard, the metric panel,
 the decision policy, and the serving contract including its error paths. The repository is the
 dissertation's evidentiary record: any figure that cannot be regenerated from it does not appear
 in this document.

@@ -356,3 +356,55 @@ def test_serving_requirements_cover_what_the_service_imports():
     for pkg in ("pandas", "numpy", "scikit-learn", "joblib", "openpyxl",
                 "fastapi", "uvicorn", "python-multipart"):
         assert pkg in text, f"{pkg} missing from requirements-serve.txt"
+
+
+# --------------------------------------------------------------------------- help + API docs
+def test_page_has_score_help_and_api_tabs():
+    """Non-technical users need guidance in the product, not only in the dissertation."""
+    with TestClient(S.create_app()) as client:
+        html = client.get("/").text
+    for probe in ("tab-score", "tab-help", "tab-api",
+                  "panel-score", "panel-help", "panel-api"):
+        assert f'id="{probe}"' in html, f"{probe} missing from the page"
+    # only the scoring panel is visible on load
+    assert 'aria-labelledby="tab-help" hidden' in html
+    assert 'aria-labelledby="tab-api" hidden' in html
+
+
+def test_help_tab_states_the_limits_a_lay_user_must_know():
+    """The guidance must repeat the dissertation's caveats, not oversell the tool."""
+    with TestClient(S.create_app()) as client:
+        html = client.get("/").text
+    assert "do not use the percentage as a probability" in html.lower()
+    assert "50 loans that went wrong" in html          # the sample-size caveat
+    assert "turned down are not in the data" in html   # funded-book selection
+    assert "Fairness across groups has not been verified" in html
+    assert "declined" in html                          # adverse-action warning
+
+
+def test_page_placeholders_are_all_substituted():
+    """A stray {token} in the template would render as literal braces to the user."""
+    import re
+    with TestClient(S.create_app()) as client:
+        html = client.get("/").text
+    assert not re.findall(r"\{[a-z_]+\}", html)
+    sc = S.get_scorer()
+    assert f"{round(100 * sc.catch_rate)}%" in html    # real catch-rate reached the copy
+
+
+def test_openapi_schema_documents_every_public_endpoint():
+    app = S.create_app()
+    schema = app.openapi()
+    assert schema["info"]["title"] == "EMERALD-AI decision-support API"
+    assert "does not approve or decline" in schema["info"]["description"]
+    for path in ("/health", "/api/score", "/api/score-batch", "/api/score-upload"):
+        assert path in schema["paths"], f"{path} missing from the OpenAPI schema"
+    ops = [op for p in schema["paths"].values() for op in p.values()]
+    assert all(op.get("summary") for op in ops), "every operation needs a summary"
+    assert all(op.get("tags") for op in ops), "every operation needs a tag"
+
+
+def test_interactive_docs_are_served():
+    with TestClient(S.create_app()) as client:
+        assert client.get("/docs").status_code == 200
+        assert client.get("/openapi.json").status_code == 200

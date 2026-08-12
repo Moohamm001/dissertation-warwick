@@ -113,6 +113,11 @@ The batch panel accepts a **CSV or Excel** upload — including the raw
 used; the other 140+ columns and the outcome label are ignored). Scoring is vectorised, so the full
 14,135-row book ranks in ~1s; the summary spans the whole file and the table shows the riskiest 200.
 
+The interface has three tabs: **Score applications** (batch queue + single-application panel),
+**How to use this** (a plain-language guide for non-technical reviewers, including the limitations
+they must know), and **API reference** (endpoints, auth, rate limit, error contract, worked
+examples). An interactive OpenAPI schema is at `/docs`.
+
 **Hardening (2026-07-10):** the app now logs every request/scoring event, returns a clean `400`/`500`
 JSON error instead of a raw traceback for malformed uploads, and optionally gates `/api/*` behind a
 static key — set `EMERALD_API_KEY` before starting `serve` to require an `X-API-Key` header (unset =
@@ -181,7 +186,7 @@ Without Docker, the same service runs directly with `python -m emerald_ai serve`
 
 **Step 9 — Verify everything.**
 ```powershell
-python -m pytest -q              # 59 tests: leakage guard, metrics, bot isolation, demo/batch (incl. auth/error-handling), improve, survival, decision policy, follow-up checks
+python -m pytest -q              # 64 tests: leakage guard, metrics, bot isolation, demo/batch (incl. auth/error-handling), improve, survival, decision policy, follow-up checks
 ```
 
 ## What's here
@@ -208,7 +213,7 @@ python -m pytest -q              # 59 tests: leakage guard, metrics, bot isolati
 | `data/sample_applicants.csv` | **Generated.** 50 privacy-safe synthetic applicants (column-wise resample) for batch testing. |
 | `research_bot/` | Small OpenAlex crawler (lit-review aid). `discovery.py` (queries), `state.py` (brain), `seeds.yaml`. |
 | `literature/` | The literature brain: `index.yaml` (curated) + `auto_index.yaml` (**generated**, auto-discovered). |
-| `tests/` | 59 tests: leakage guard, metric panel, bot isolation, demo/batch (incl. upload validation + API-key auth), improve, survival, decision policy. |
+| `tests/` | 64 tests: leakage guard, metric panel, bot isolation, demo/batch (incl. upload validation + API-key auth), improve, survival, decision policy. |
 | `All_Funded_2019_Green Loan.xlsx` | Raw dataset (14,135 × 166). |
 
 ## Literature bot

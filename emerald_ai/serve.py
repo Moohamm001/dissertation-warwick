@@ -526,8 +526,30 @@ async def _lifespan(app):
 
 def create_app():
     """Build the FastAPI app (routes over the cached scorer)."""
-    app = FastAPI(title="EMERALD-AI — decision-support demo", docs_url="/docs",
-                  lifespan=_lifespan)
+    app = FastAPI(
+        title="EMERALD-AI decision-support API",
+        version="1.0",
+        docs_url="/docs",
+        lifespan=_lifespan,
+        description=(
+            "Ranks green-loan applications by delinquency risk so that a lending desk can review "
+            "the riskiest first. **The service ranks for review; it does not approve or decline.**"
+            "\n\n"
+            "**Scores are for ordering, not probabilities.** The model was fitted on 50 delinquent "
+            "events in 14,135 loans, and its probabilities are unreliable on the minority class, so "
+            "`percent` should be treated as a ranking key rather than a likelihood of default.\n\n"
+            "**Authentication.** Optional: if the server sets `EMERALD_API_KEY`, every `/api/*` "
+            "call needs a matching `X-API-Key` header. `/` and `/health` are always reachable.\n\n"
+            "**Rate limit.** 60 requests per client per minute by default "
+            "(`EMERALD_RATE_LIMIT`); `/health` is exempt. Exceeding it returns 429.\n\n"
+            "**Errors.** 400 unusable input, 401 bad key, 429 rate limited, 500 unexpected fault. "
+            "All return `{\"detail\": \"...\"}` and never a stack trace."
+        ),
+        openapi_tags=[
+            {"name": "service", "description": "Health and readiness."},
+            {"name": "scoring", "description": "Score one application or a whole batch."},
+        ],
+    )
     MAX_TABLE_ROWS = 200  # cap rows returned to the browser; the summary still spans the whole file
 
     @app.exception_handler(Exception)
@@ -577,7 +599,7 @@ def create_app():
                                 status_code=429)
         return await call_next(request)
 
-    @app.get("/health")
+    @app.get("/health", tags=["service"], summary="Readiness probe")
     def health() -> JSONResponse:
         """Liveness/readiness probe for a container orchestrator or load balancer.
 
@@ -603,16 +625,18 @@ def create_app():
             }
         return JSONResponse(body, status_code=200 if loaded else 503)
 
-    @app.get("/", response_class=HTMLResponse)
+    @app.get("/", response_class=HTMLResponse, tags=["service"], include_in_schema=False)
     def index() -> str:
         return _render_page(get_scorer())
 
-    @app.post("/api/score", dependencies=[Depends(_require_api_key)])
+    @app.post("/api/score", tags=["scoring"], dependencies=[Depends(_require_api_key)],
+              summary="Score one application")
     def api_score(payload: dict = Body(...)) -> JSONResponse:
         logger.info("scored single applicant")
         return JSONResponse(score_applicant(get_scorer(), payload))
 
-    @app.post("/api/score-batch", dependencies=[Depends(_require_api_key)])
+    @app.post("/api/score-batch", tags=["scoring"], dependencies=[Depends(_require_api_key)],
+              summary="Score a batch supplied as CSV text")
     def api_score_batch(payload: dict = Body(...)) -> JSONResponse:
         """Score a pasted CSV (``{"csv": "...text..."}``) → ranked JSON records + summary."""
         text = payload.get("csv", "")
@@ -626,7 +650,8 @@ def create_app():
         logger.info("scoring pasted batch: %d rows", len(df))
         return JSONResponse(_batch_payload(df))
 
-    @app.post("/api/score-upload", dependencies=[Depends(_require_api_key)])
+    @app.post("/api/score-upload", tags=["scoring"], dependencies=[Depends(_require_api_key)],
+              summary="Score an uploaded CSV or Excel file")
     async def api_score_upload(file: UploadFile = File(...)) -> JSONResponse:
         """Score an uploaded CSV **or Excel** file — including the raw ``All_Funded_*.xlsx`` dataset.
 
@@ -778,6 +803,40 @@ _PAGE = """<!doctype html>
  table.bt tr.flag{{background:var(--risk-soft)}} table.bt tr.flag:hover{{background:#fde8e8}}
  table.bt tr.flag td:first-child{{font-weight:700;color:var(--risk-ink)}}
  footer{{text-align:center;color:var(--faint);font-size:11.5px;padding:30px 0 36px}}
+ /* tabs */
+ .tabs{{display:flex;gap:6px;margin-top:18px;flex-wrap:wrap}}
+ .tabs button{{appearance:none;cursor:pointer;font-family:inherit;font-size:13px;font-weight:600;
+   padding:7px 15px;border-radius:999px;border:1px solid rgba(255,255,255,.28);
+   background:rgba(255,255,255,.10);color:#fff;transition:background .15s,border-color .15s}}
+ .tabs button:hover{{background:rgba(255,255,255,.18)}}
+ .tabs button[aria-selected="true"]{{background:#fff;color:var(--brand-ink);border-color:#fff}}
+ .panel[hidden]{{display:none}}
+ /* help + api content */
+ .steps{{counter-reset:s;display:grid;gap:14px;margin:16px 0 0}}
+ .step{{display:grid;grid-template-columns:28px 1fr;gap:13px;align-items:start}}
+ .step .sn{{counter-increment:s;width:28px;height:28px;border-radius:50%;background:var(--brand-ink);
+   color:#fff;display:grid;place-items:center;font-size:13px;font-weight:700}}
+ .step .sn::before{{content:counter(s)}}
+ .step h4{{margin:2px 0 3px;font-size:14.5px}}
+ .step p{{margin:0;font-size:13.5px;color:var(--muted)}}
+ .qa{{border-top:1px solid var(--line);padding:13px 0}}
+ .qa:first-of-type{{border-top:0}}
+ .qa h4{{margin:0 0 5px;font-size:14px}}
+ .qa p{{margin:0;font-size:13.5px;color:var(--muted)}}
+ .kv{{display:grid;grid-template-columns:auto 1fr;gap:9px 14px;font-size:13.5px;margin:12px 0 0}}
+ .kv dt{{font-weight:600}} .kv dd{{margin:0;color:var(--muted)}}
+ .warnbox{{background:var(--risk-soft);border:1px solid #fecaca;border-radius:11px;
+   padding:13px 15px;margin:16px 0 0;font-size:13.5px;color:var(--risk-ink)}}
+ .warnbox b{{font-weight:700}}
+ .ep{{border:1px solid var(--line);border-radius:12px;padding:14px 15px;margin-top:12px;background:#fbfdff}}
+ .ep .sig{{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13px;font-weight:600}}
+ .ep .verb{{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.06em;
+   padding:2px 7px;border-radius:5px;margin-right:7px;background:var(--brand-ink);color:#fff}}
+ .ep .verb.get{{background:var(--ok-ink)}}
+ .ep p{{margin:7px 0 0;font-size:13.5px;color:var(--muted)}}
+ pre.code{{background:#0f172a;color:#e2e8f0;border-radius:9px;padding:11px 13px;overflow-x:auto;
+   font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;line-height:1.5;margin:10px 0 0}}
+ pre.code .c{{color:#7dd3a0}}
 </style></head><body>
 <header><div class="wrap">
   <div class="brand">
@@ -787,9 +846,15 @@ _PAGE = """<!doctype html>
   <p>The model <b>ranks a batch of applications</b> and routes the riskiest decile to human review —
     it does not approve or decline. Single-application scoring is available below for explanation
     and what-if analysis.</p>
+  <div class="tabs" role="tablist">
+    <button role="tab" id="tab-score" aria-controls="panel-score" aria-selected="true">Score applications</button>
+    <button role="tab" id="tab-help" aria-controls="panel-help" aria-selected="false">How to use this</button>
+    <button role="tab" id="tab-api" aria-controls="panel-api" aria-selected="false">API reference</button>
+  </div>
 </div></header>
 
 <div class="wrap">
+<div class="panel" id="panel-score" role="tabpanel" aria-labelledby="tab-score">
 <section class="card">
   <div class="sechead"><span class="num">1</span><h2>Batch review queue</h2></div>
   <p class="lead">The operational use case. Upload the day's applications as a <b>CSV or Excel</b>
@@ -849,11 +914,206 @@ _PAGE = """<!doctype html>
     </div>
   </div>
 </main>
+</div><!-- /panel-score -->
+
+<div class="panel" id="panel-help" role="tabpanel" aria-labelledby="tab-help" hidden>
+<section class="card">
+  <div class="sechead"><span class="num">?</span><h2>What this tool does</h2></div>
+  <p class="lead">This tool <b>puts a pile of loan applications in order of risk</b> so that the
+    riskiest ones get looked at first. That is all it does. It never approves anyone, never
+    declines anyone, and never replaces a credit decision. Think of it as the colleague who reads
+    the whole pile overnight and leaves the ones worth your attention on top.</p>
+  <div class="warnbox">
+    <b>Please do not use the percentage as a probability.</b> A score of 80% does not mean
+    "80 out of 100 of these borrowers will default". The number is reliable for <b>ordering</b>
+    applications, not for stating how likely any single default is. Use it to decide
+    <i>who to look at first</i>, never to justify a decision on its own.
+  </div>
+</section>
+
+<section class="card">
+  <div class="sechead"><span class="num">1</span><h2>Reviewing a day's applications</h2></div>
+  <div class="steps">
+    <div class="step"><div class="sn"></div><div>
+      <h4>Export your applications to a spreadsheet</h4>
+      <p>A CSV or Excel file, one application per row. Extra columns are ignored, so an ordinary
+        export works — no need to tidy it up first. If you include a column called <b>id</b>,
+        it is carried through so you can match rows back to your system.</p></div></div>
+    <div class="step"><div class="sn"></div><div>
+      <h4>Upload it on the "Score applications" tab</h4>
+      <p>Choose the file and press <b>Rank applications</b>. Scoring the whole file takes about a
+        second.</p></div></div>
+    <div class="step"><div class="sn"></div><div>
+      <h4>Work down the review queue</h4>
+      <p>The table comes back ordered from riskiest to safest, and the top 10% of that upload is
+        highlighted as the <b>review queue</b>. Historically, reviewing that top 10% is where
+        roughly {catch_pct}% of all eventual defaults were found.</p></div></div>
+  </div>
+</section>
+
+<section class="card">
+  <div class="sechead"><span class="num">2</span><h2>Reading the results</h2></div>
+  <dl class="kv">
+    <dt>Percentage</dt>
+    <dd>A risk <i>ranking</i> score. Higher means "look at this one sooner". Compare applications
+      with each other; do not read it as a chance of default.</dd>
+    <dt>Review queue</dt>
+    <dd>The riskiest 10% <b>of the file you just uploaded</b>. Upload 200 applications and 20 are
+      flagged; upload 20 and 2 are flagged.</dd>
+    <dt>Top reasons</dt>
+    <dd>The three things that pushed this application's score up or down the most. An arrow up
+      means that value raised the risk score, down means it lowered it. This is the answer to
+      "why is this one near the top?"</dd>
+    <dt>Riskiest decile flag</dt>
+    <dd>On the single-application panel only: whether this applicant would fall in the riskiest
+      10% of the <i>historical</i> book. It is a fixed reference point, unlike the queue above,
+      which depends on the file you uploaded.</dd>
+  </dl>
+</section>
+
+<section class="card">
+  <div class="sechead"><span class="num">3</span><h2>What you should know before relying on it</h2></div>
+  <div class="qa">
+    <h4>It learned from very few actual defaults</h4>
+    <p>The whole model is built on 50 loans that went wrong out of 14,135. That is enough to sort
+      applications usefully, and not enough to say precisely how risky any one applicant is.</p>
+  </div>
+  <div class="qa">
+    <h4>It has only seen loans that were approved</h4>
+    <p>Applications your organisation turned down are not in the data, so the tool ranks
+      <i>within</i> the kind of application you normally fund. It cannot tell you about applicants
+      unlike those.</p>
+  </div>
+  <div class="qa">
+    <h4>Fairness across groups has not been verified</h4>
+    <p>Checking whether the model treats industries or regions even-handedly needs far more
+      defaults per group than exist here. That check was attempted and could not be completed, so
+      no claim of fairness is made in either direction.</p>
+  </div>
+  <div class="qa">
+    <h4>The reasons explain the score, not the borrower</h4>
+    <p>They tell you what drove this score in this model. They are a starting point for a
+      conversation or a file review, not evidence about the business itself.</p>
+  </div>
+  <div class="qa">
+    <h4>It should not be used to tell someone why they were declined</h4>
+    <p>If a decision has to be explained to an applicant, that explanation must come from your
+      own credit policy and a human reviewer, not from this screen.</p>
+  </div>
+</section>
+</div><!-- /panel-help -->
+
+<div class="panel" id="panel-api" role="tabpanel" aria-labelledby="tab-api" hidden>
+<section class="card">
+  <div class="sechead"><span class="num">&lt;/&gt;</span><h2>API reference</h2></div>
+  <p class="lead">Every screen in this tool is a thin layer over these endpoints, so anything the
+    interface can do can be scripted. An interactive, always-current schema is served at
+    <a href="/docs">/docs</a>.</p>
+  <dl class="kv">
+    <dt>Base URL</dt><dd>The address you are reading this page from.</dd>
+    <dt>Authentication</dt>
+    <dd>Optional. If the server sets <code>EMERALD_API_KEY</code>, every <code>/api/*</code> call
+      needs a matching <code>X-API-Key</code> header; <code>/</code> and <code>/health</code>
+      stay open. Without that variable the API is unauthenticated.</dd>
+    <dt>Rate limit</dt>
+    <dd>60 requests per client per minute by default (<code>EMERALD_RATE_LIMIT</code>);
+      <code>/health</code> is exempt. Exceeding it returns <b>429</b>.</dd>
+    <dt>Errors</dt>
+    <dd><b>400</b> unreadable or unusable input · <b>401</b> missing/incorrect key ·
+      <b>429</b> rate limited · <b>500</b> unexpected fault. All return
+      <code>{{"detail": "..."}}</code> and never a stack trace.</dd>
+  </dl>
+</section>
+
+<section class="card">
+  <div class="sechead"><span class="num alt">→</span><h2>Endpoints</h2></div>
+
+  <div class="ep">
+    <div class="sig"><span class="verb get">GET</span>/health</div>
+    <p>Readiness probe. Unauthenticated and non-blocking: returns <b>503</b> while the model is
+      still loading and <b>200</b> once it can serve.</p>
+    <pre class="code">{{"status":"ok","model_loaded":true,"ready":true,
+ "operating_threshold":{threshold},"catch_rate":0.62,
+ "training_rows":{n_rows},"training_events":{n_events}}}</pre>
+  </div>
+
+  <div class="ep">
+    <div class="sig"><span class="verb">POST</span>/api/score</div>
+    <p>Score one application. Send any subset of the permitted fields; anything omitted falls back
+      to that field's training median, so a partial payload still scores.</p>
+    <pre class="code"><span class="c"># request</span>
+{{"Revenue": 9000, "Credit Score": 620, "Time In Business": 12}}
+
+<span class="c"># response</span>
+{{"probability":0.9928,"percent":99.28,"band":"riskiest decile",
+ "in_riskiest_decile":true,"threshold":{threshold},
+ "reasons":[{{"feature":"Revenue","label":"Monthly revenue",
+             "value":"9,000","contribution":1.83,
+             "direction":"increases risk","verdict":"raises risk"}}]}}</pre>
+  </div>
+
+  <div class="ep">
+    <div class="sig"><span class="verb">POST</span>/api/score-upload</div>
+    <p>Score a whole file (<code>multipart/form-data</code>, field name <code>file</code>).
+      Accepts <code>.csv</code>, <code>.xlsx</code>, <code>.xls</code> up to 10&nbsp;MB. Rows come
+      back ranked, riskiest first, with the top decile of the upload flagged.</p>
+    <pre class="code">curl -X POST https://HOST/api/score-upload \
+  -H "X-API-Key: $KEY" \
+  -F "file=@applications.csv"
+
+<span class="c"># response (table truncated to the riskiest 200 rows)</span>
+{{"n":12,"shown":12,"n_review_queue":2,"n_riskiest_decile":2,
+ "rows":[{{"rank":1,"id":"app_0004","percent":93.54,
+          "review_queue":true,"top_reasons":"↑ Monthly revenue, ..."}}]}}</pre>
+  </div>
+
+  <div class="ep">
+    <div class="sig"><span class="verb">POST</span>/api/score-batch</div>
+    <p>Same as the upload endpoint, but the file is sent as CSV text in JSON —
+      <code>{{"csv": "id,Revenue\\na,800\\n"}}</code> — for callers that already hold the data in
+      memory. The response is identical.</p>
+  </div>
+</section>
+
+<section class="card">
+  <div class="sechead"><span class="num alt">!</span><h2>Notes for integrators</h2></div>
+  <div class="qa">
+    <h4>Only pre-funding fields are read</h4>
+    <p>Seventeen application-time fields are permitted; every other column in your file is ignored,
+      including any outcome column. Sending extra data cannot influence the score.</p>
+  </div>
+  <div class="qa">
+    <h4>The queue flag is relative to your upload</h4>
+    <p><code>review_queue</code> marks the riskiest 10% of the rows you sent.
+      <code>in_riskiest_decile</code> compares against the fixed historical threshold
+      (P&nbsp;&ge;&nbsp;{threshold}). Use the first for routing work, the second for a stable
+      reference.</p>
+  </div>
+  <div class="qa">
+    <h4>Scores are for ranking</h4>
+    <p>The probabilities are not calibrated on the rare default cases. Treat <code>percent</code>
+      as an ordering key; do not surface it to applicants or use it as a probability in downstream
+      pricing.</p>
+  </div>
+</section>
+</div><!-- /panel-api -->
+
 <footer>EMERALD-AI · proof-of-concept decision support · the model ranks for review, it does not decide</footer>
 </div>
 
 <script>
 const $=id=>document.getElementById(id);
+// tabs
+for(const t of document.querySelectorAll('[role="tab"]')){{
+  t.addEventListener('click',()=>{{
+    for(const o of document.querySelectorAll('[role="tab"]')){{
+      const on=o===t;
+      o.setAttribute('aria-selected',on?'true':'false');
+      $(o.getAttribute('aria-controls')).hidden=!on;
+    }}
+    window.scrollTo({{top:0,behavior:'smooth'}});
+  }});
+}}
 const f=$('f');
 f.addEventListener('submit',async e=>{{
   e.preventDefault();
