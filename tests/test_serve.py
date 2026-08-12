@@ -369,10 +369,9 @@ def test_page_has_score_help_and_api_sections_in_a_side_rail():
     # only the scoring panel is visible on load
     assert 'aria-labelledby="tab-help" hidden' in html
     assert 'aria-labelledby="tab-api" hidden' in html
-    # navigation lives in the side rail, with the model's key facts beside it
+    # navigation lives in the side rail
     assert '<nav class="side">' in html
     assert "grid-template-columns:210px" in html      # side rail, then content
-    assert "Training rows" in html and "Review threshold" in html
 
 
 def test_help_tab_states_the_limits_a_lay_user_must_know():

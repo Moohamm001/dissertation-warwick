@@ -822,6 +822,7 @@ _PAGE = """<!doctype html>
  .side-label{{font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
    color:var(--faint);padding:11px 13px 6px;border-bottom:1px solid var(--line)}}
  .side [role="tablist"]{{display:flex;flex-direction:column}}
+ .side [role="tablist"] button:last-child{{border-bottom:0}}
  @media(max-width:820px){{ .side [role="tablist"]{{flex-direction:row;flex-wrap:wrap}} }}
  .side button{{appearance:none;cursor:pointer;font-family:inherit;font-size:13.5px;text-align:left;
    padding:9px 13px;border:0;border-bottom:1px solid var(--line);background:var(--surface);
@@ -833,11 +834,6 @@ _PAGE = """<!doctype html>
  @media(max-width:820px){{ .side button[aria-selected="true"]{{border-left-color:transparent;
    border-bottom-color:var(--brand)}} }}
  .side button:focus-visible{{outline:2px solid var(--brand);outline-offset:-2px}}
- .side-facts{{margin:0;padding:10px 13px 12px;display:grid;grid-template-columns:1fr auto;
-   gap:5px 10px;font-size:12px}}
- .side-facts dt{{color:var(--muted)}}
- .side-facts dd{{margin:0;text-align:right;font-weight:600;font-variant-numeric:tabular-nums}}
- @media(max-width:820px){{ .side-facts{{grid-template-columns:repeat(2,1fr auto)}} }}
  .panel[hidden]{{display:none}}
  /* help + api content */
  .steps{{counter-reset:s;display:grid;gap:14px;margin:16px 0 0}}
@@ -883,14 +879,6 @@ _PAGE = """<!doctype html>
     <button role="tab" id="tab-help" aria-controls="panel-help" aria-selected="false">How to use this</button>
     <button role="tab" id="tab-api" aria-controls="panel-api" aria-selected="false">API reference</button>
   </div>
-  <div class="side-label">Model</div>
-  <dl class="side-facts">
-    <dt>Training rows</dt><dd>{n_rows:,}</dd>
-    <dt>Delinquent events</dt><dd>{n_events}</dd>
-    <dt>Prevalence</dt><dd>{prevalence}%</dd>
-    <dt>Review threshold</dt><dd>P &ge; {threshold}</dd>
-    <dt>Catch rate</dt><dd>{catch_pct}% of defaults</dd>
-  </dl>
 </nav>
 
 <div class="content">
