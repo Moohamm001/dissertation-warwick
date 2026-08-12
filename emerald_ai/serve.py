@@ -696,13 +696,18 @@ _PAGE = """<!doctype html>
 <title>EMERALD-AI — credit decision support</title>
 <style>
  :root{{
-   --bg:#eef2f6; --surface:#ffffff; --ink:#0f172a; --muted:#64748b; --faint:#94a3b8;
-   --line:#e7ecf2; --brand:#059669; --brand2:#10b981; --brand-deep:#064e3b; --brand-ink:#065f46;
-   --risk:#dc2626; --risk-soft:#fef2f2; --risk-ink:#991b1b;
-   --ok:#2563eb; --ok-soft:#eff6ff; --ok-ink:#1e40af;
-   --ring:rgba(16,185,129,.28);
-   --sh-sm:0 1px 2px rgba(15,23,42,.05); --sh:0 6px 22px rgba(15,23,42,.07);
-   --r:16px; --r-sm:11px;
+   /* Restrained, work-tool palette: warm neutrals with a single slate-blue accent.
+      Green is kept for the mark alone; red and amber carry meaning, not decoration. */
+   --bg:#f4f4f1; --surface:#ffffff; --ink:#22261f; --muted:#5d635a; --faint:#8b9086;
+   --line:#dcdcd4; --line-strong:#c6c7bd;
+   --brand:#3c5a6e; --brand2:#4a6b80; --brand-deep:#2c4354; --brand-ink:#2c4354;
+   --mark:#4a7c59;
+   --risk:#9d4a42; --risk-soft:#f7edeb; --risk-ink:#7d3a33;
+   --ok:#3c5a6e; --ok-soft:#eef1f3; --ok-ink:#33505f;
+   --tint:#f0f0ea;
+   --ring:rgba(60,90,110,.22);
+   --sh-sm:none; --sh:none;
+   --r:6px; --r-sm:5px;
  }}
  *{{box-sizing:border-box}}
  html{{-webkit-text-size-adjust:100%}}
@@ -711,11 +716,11 @@ _PAGE = """<!doctype html>
  a{{color:var(--brand)}}
  .wrap{{max-width:1080px;margin:0 auto;padding:0 20px}}
  /* header */
- header{{background:linear-gradient(135deg,var(--brand-deep),var(--brand-ink));color:#fff;
-   padding:30px 0 26px;box-shadow:var(--sh)}}
+ header{{background:var(--brand-deep);color:#fff;
+   padding:26px 0 22px;border-bottom:1px solid var(--brand-deep)}}
  .brand{{display:flex;align-items:center;gap:12px}}
- .logo{{width:38px;height:38px;border-radius:11px;background:linear-gradient(135deg,var(--brand2),var(--brand));
-   display:grid;place-items:center;box-shadow:0 4px 14px rgba(5,150,105,.45);flex:0 0 auto}}
+ .logo{{width:34px;height:34px;border-radius:5px;background:var(--mark);
+   display:grid;place-items:center;flex:0 0 auto}}
  .logo svg{{width:22px;height:22px}}
  header h1{{margin:0;font-size:20px;font-weight:700;letter-spacing:-.02em}}
  header .tag{{font-size:12px;opacity:.8;margin-top:1px}}
@@ -724,12 +729,12 @@ _PAGE = """<!doctype html>
  /* layout */
  section,main{{margin-top:22px}}
  .card{{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);
-   padding:22px;box-shadow:var(--sh-sm);transition:box-shadow .2s ease}}
- .card:hover{{box-shadow:var(--sh)}}
+   padding:20px}}
+
  .sechead{{display:flex;align-items:center;gap:11px;margin:0 0 6px}}
  .num{{width:26px;height:26px;border-radius:8px;background:var(--brand-ink);color:#fff;font-size:13px;
    font-weight:700;display:grid;place-items:center;flex:0 0 auto}}
- .num.alt{{background:#e2e8f0;color:var(--muted)}}
+ .num.alt{{background:var(--tint);color:var(--muted)}}
  h2{{font-size:16px;margin:0;font-weight:700;letter-spacing:-.01em}}
  .lead{{font-size:13px;color:var(--muted);margin:6px 0 0;max-width:780px}}
  .lead b{{color:var(--ink);font-weight:600}}
@@ -739,74 +744,74 @@ _PAGE = """<!doctype html>
  .grid{{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin-top:18px}}
  .fld{{display:flex;flex-direction:column;gap:5px}}
  .fld span{{font-size:11px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}}
- input,select{{padding:9px 11px;border:1px solid var(--line);border-radius:10px;font-size:14px;
-   background:#fbfdff;color:var(--ink);font-family:inherit;transition:border-color .15s,box-shadow .15s}}
- input:focus,select:focus{{outline:none;border-color:var(--brand2);box-shadow:0 0 0 3px var(--ring);background:#fff}}
+ input,select{{padding:8px 10px;border:1px solid var(--line-strong);border-radius:var(--r-sm);font-size:14px;
+   background:var(--surface);color:var(--ink);font-family:inherit}}
+ input:focus,select:focus{{outline:2px solid var(--brand);outline-offset:1px;border-color:var(--brand)}}
  .hint{{color:var(--faint);font-size:10.5px;font-style:normal;letter-spacing:.01em}}
  /* buttons */
  .btn{{appearance:none;border:0;cursor:pointer;font-family:inherit;font-weight:600;font-size:14px;
-   border-radius:11px;padding:12px 20px;color:#fff;background:linear-gradient(135deg,var(--brand2),var(--brand));
-   box-shadow:0 4px 14px rgba(5,150,105,.32);transition:transform .12s,box-shadow .2s,filter .2s}}
- .btn:hover{{filter:brightness(1.04);box-shadow:0 6px 18px rgba(5,150,105,.4)}}
- .btn:active{{transform:translateY(1px)}}
+   border-radius:var(--r-sm);padding:10px 18px;color:#fff;background:var(--brand);
+   transition:background .15s}}
+ .btn:hover{{background:var(--brand-deep)}}
+ .btn:focus-visible{{outline:2px solid var(--ink);outline-offset:2px}}
  .btn.block{{width:100%;margin-top:18px}}
  .meta{{font-size:12.5px;color:var(--muted);margin-top:12px}}
  .meta b{{color:var(--ink);font-weight:600}}
- code{{background:#eef6f1;color:var(--brand-ink);padding:1.5px 6px;border-radius:6px;
+ code{{background:var(--tint);color:var(--brand-ink);padding:1.5px 6px;border-radius:6px;
    font-size:12px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}}
  /* result panel */
  #out{{display:none}}
  .scorewrap{{display:flex;align-items:baseline;gap:12px;margin:6px 0 2px;flex-wrap:wrap}}
  .score{{font-size:48px;font-weight:800;letter-spacing:-.03em;font-variant-numeric:tabular-nums;line-height:1}}
  .caption{{font-size:11px;font-weight:600;color:var(--faint);text-transform:uppercase;letter-spacing:.06em}}
- .pill{{display:inline-flex;align-items:center;gap:6px;padding:6px 13px;border-radius:999px;
+ .pill{{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:3px;
    font-size:12px;font-weight:700;letter-spacing:.01em}}
- .pill.risk{{background:var(--risk-soft);color:var(--risk-ink);border:1px solid #fecaca}}
+ .pill.risk{{background:var(--risk-soft);color:var(--risk-ink);border:1px solid var(--risk-soft)}}
  .pill.ok{{background:var(--ok-soft);color:var(--ok-ink);border:1px solid #bfdbfe}}
  .dot{{width:7px;height:7px;border-radius:50%}} .pill.risk .dot{{background:var(--risk)}} .pill.ok .dot{{background:var(--ok)}}
  .subhead{{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin:20px 0 9px}}
  .reason{{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:11px 13px;
-   border-radius:11px;margin-top:8px;font-size:13.5px;background:#f8fafc;border:1px solid var(--line)}}
- .reason.up{{background:var(--risk-soft);border-color:#fde0e0}} .reason.down{{background:var(--ok-soft);border-color:#dbeafe}}
+   border-radius:var(--r-sm);margin-top:8px;font-size:13.5px;background:var(--tint);border:1px solid var(--line)}}
+ .reason.up{{background:var(--risk-soft);border-color:#e6d3cf}} .reason.down{{background:var(--ok-soft);border-color:#d6dde1}}
  .reason b{{font-weight:600}} .reason small{{color:var(--faint)}}
  .tag-dir{{font-size:11.5px;font-weight:700;white-space:nowrap}}
  .up .tag-dir{{color:var(--risk-ink)}} .down .tag-dir{{color:var(--ok-ink)}}
  .disc{{font-size:11.5px;color:var(--faint);margin-top:18px;border-top:1px solid var(--line);padding-top:12px;line-height:1.55}}
- .legend{{margin-top:16px;background:#f0fdf8;border:1px solid #bbf7d0;border-radius:12px;padding:14px 16px}}
+ .legend{{margin-top:16px;background:var(--tint);border:1px solid var(--line);border-radius:var(--r-sm);padding:14px 16px}}
  .legend-h{{font-size:12px;font-weight:700;color:var(--brand-ink);text-transform:uppercase;letter-spacing:.04em;margin-bottom:8px}}
  .legend ul{{margin:0;padding-left:18px}} .legend li{{font-size:12.5px;color:var(--ink);margin:5px 0;line-height:1.5}}
  .legend-f{{margin-top:9px;font-size:12.5px;font-weight:600;color:var(--brand-ink)}}
- .action{{margin:12px 0 2px;font-size:13px;color:var(--ink);background:#f8fafc;border:1px solid var(--line);border-radius:10px;padding:10px 13px;line-height:1.5}}
+ .action{{margin:12px 0 2px;font-size:13px;color:var(--ink);background:var(--tint);border:1px solid var(--line);border-radius:var(--r-sm);padding:10px 13px;line-height:1.5}}
  .empty{{display:grid;place-items:center;text-align:center;padding:30px 14px;color:var(--faint)}}
  .empty svg{{width:40px;height:40px;opacity:.5;margin-bottom:8px}}
  /* batch */
  .dropzone{{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:16px;padding:16px;
-   border:1.5px dashed #cbd5e1;border-radius:13px;background:#f8fafc;transition:border-color .15s,background .15s}}
- .dropzone:hover{{border-color:var(--brand2);background:#f0fdf8}}
+   border:1px dashed var(--line-strong);border-radius:var(--r-sm);background:var(--tint);transition:border-color .15s,background .15s}}
+ .dropzone:hover{{border-color:var(--brand);background:var(--ok-soft)}}
  input[type=file]{{font-size:13px;color:var(--muted);background:transparent;border:0;padding:0;flex:1 1 200px}}
  input[type=file]::file-selector-button{{font-family:inherit;font-weight:600;font-size:13px;cursor:pointer;
-   margin-right:12px;padding:8px 15px;border:0;border-radius:9px;color:var(--brand-ink);
-   background:#d1fae5;transition:background .15s}}
+   margin-right:12px;padding:7px 13px;border:1px solid var(--line-strong);border-radius:var(--r-sm);color:var(--brand-ink);
+   background:var(--line);transition:background .15s}}
  input[type=file]::file-selector-button:hover{{background:#a7f3d0}}
  #batchsummary{{margin-top:14px}}
  .summary-card{{display:flex;gap:18px;flex-wrap:wrap;margin-top:14px}}
- .stat{{background:#f8fafc;border:1px solid var(--line);border-radius:12px;padding:12px 16px;min-width:120px}}
+ .stat{{background:var(--tint);border:1px solid var(--line);border-radius:var(--r-sm);padding:12px 16px;min-width:120px}}
  .stat .v{{font-size:24px;font-weight:800;letter-spacing:-.02em;font-variant-numeric:tabular-nums}}
  .stat.flag .v{{color:var(--risk)}}
  .stat .l{{font-size:11px;color:var(--muted);margin-top:2px}}
- .tablewrap{{overflow-x:auto;margin-top:16px;border:1px solid var(--line);border-radius:12px}}
+ .tablewrap{{overflow-x:auto;margin-top:16px;border:1px solid var(--line);border-radius:var(--r-sm)}}
  table.bt{{border-collapse:collapse;font-size:12.5px;width:100%}}
  table.bt th,table.bt td{{padding:9px 13px;text-align:left;white-space:nowrap;border-bottom:1px solid var(--line)}}
- table.bt th{{background:#f8fafc;color:var(--muted);font-weight:600;text-transform:uppercase;font-size:10.5px;letter-spacing:.04em}}
+ table.bt th{{background:var(--tint);color:var(--muted);font-weight:600;text-transform:uppercase;font-size:10.5px;letter-spacing:.04em}}
  table.bt tbody tr:last-child td{{border-bottom:0}}
- table.bt tbody tr:hover{{background:#fafcff}}
- table.bt tr.flag{{background:var(--risk-soft)}} table.bt tr.flag:hover{{background:#fde8e8}}
+ table.bt tbody tr:hover{{background:var(--tint)}}
+ table.bt tr.flag{{background:var(--risk-soft)}} table.bt tr.flag:hover{{background:#f1e2df}}
  table.bt tr.flag td:first-child{{font-weight:700;color:var(--risk-ink)}}
  footer{{text-align:center;color:var(--faint);font-size:11.5px;padding:30px 0 36px}}
  /* tabs */
  .tabs{{display:flex;gap:6px;margin-top:18px;flex-wrap:wrap}}
  .tabs button{{appearance:none;cursor:pointer;font-family:inherit;font-size:13px;font-weight:600;
-   padding:7px 15px;border-radius:999px;border:1px solid rgba(255,255,255,.28);
+   padding:6px 14px;border-radius:3px;border:1px solid rgba(255,255,255,.30);
    background:rgba(255,255,255,.10);color:#fff;transition:background .15s,border-color .15s}}
  .tabs button:hover{{background:rgba(255,255,255,.18)}}
  .tabs button[aria-selected="true"]{{background:#fff;color:var(--brand-ink);border-color:#fff}}
@@ -825,22 +830,22 @@ _PAGE = """<!doctype html>
  .qa p{{margin:0;font-size:13.5px;color:var(--muted)}}
  .kv{{display:grid;grid-template-columns:auto 1fr;gap:9px 14px;font-size:13.5px;margin:12px 0 0}}
  .kv dt{{font-weight:600}} .kv dd{{margin:0;color:var(--muted)}}
- .warnbox{{background:var(--risk-soft);border:1px solid #fecaca;border-radius:11px;
+ .warnbox{{background:var(--risk-soft);border:1px solid #e0c9c4;border-radius:var(--r-sm);
    padding:13px 15px;margin:16px 0 0;font-size:13.5px;color:var(--risk-ink)}}
  .warnbox b{{font-weight:700}}
- .ep{{border:1px solid var(--line);border-radius:12px;padding:14px 15px;margin-top:12px;background:#fbfdff}}
+ .ep{{border:1px solid var(--line);border-radius:var(--r-sm);padding:14px 15px;margin-top:12px;background:var(--tint)}}
  .ep .sig{{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13px;font-weight:600}}
  .ep .verb{{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.06em;
    padding:2px 7px;border-radius:5px;margin-right:7px;background:var(--brand-ink);color:#fff}}
  .ep .verb.get{{background:var(--ok-ink)}}
  .ep p{{margin:7px 0 0;font-size:13.5px;color:var(--muted)}}
- pre.code{{background:#0f172a;color:#e2e8f0;border-radius:9px;padding:11px 13px;overflow-x:auto;
+ pre.code{{background:#26302b;color:#dfe4dc;border-radius:var(--r-sm);padding:11px 13px;overflow-x:auto;
    font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;line-height:1.5;margin:10px 0 0}}
  pre.code .c{{color:#7dd3a0}}
 </style></head><body>
 <header><div class="wrap">
   <div class="brand">
-    <div class="logo"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21c5-2 8-6 8-12V4l-8 2-8-2v5c0 6 3 10 8 12z" fill="#fff" opacity=".95"/><path d="M12 17V8M9 11l3-3 3 3" stroke="#059669" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div class="logo"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21c5-2 8-6 8-12V4l-8 2-8-2v5c0 6 3 10 8 12z" fill="#fff" opacity=".95"/><path d="M12 17V8M9 11l3-3 3 3" stroke="#4a7c59" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
     <div><h1>EMERALD-AI</h1><div class="tag">green-loan credit decision support</div></div>
   </div>
   <p>The model <b>ranks a batch of applications</b> and routes the riskiest decile to human review —

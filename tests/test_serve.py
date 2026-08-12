@@ -408,3 +408,14 @@ def test_interactive_docs_are_served():
     with TestClient(S.create_app()) as client:
         assert client.get("/docs").status_code == 200
         assert client.get("/openapi.json").status_code == 200
+
+
+def test_interface_uses_the_restrained_palette():
+    """The interface should read as a work tool: flat surfaces, one accent, no gradients."""
+    import re
+    with TestClient(S.create_app()) as client:
+        css = client.get("/").text
+    assert "linear-gradient" not in css, "flat surfaces only"
+    assert not re.findall(r"box-shadow:0 \d+px", css), "no glow shadows"
+    # green is reserved for the mark; the working accent is the slate blue
+    assert "--mark:#4a7c59" in css and "--brand:#3c5a6e" in css
