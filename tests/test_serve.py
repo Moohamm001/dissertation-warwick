@@ -359,7 +359,7 @@ def test_serving_requirements_cover_what_the_service_imports():
 
 
 # --------------------------------------------------------------------------- help + API docs
-def test_page_has_score_help_and_api_tabs():
+def test_page_has_score_help_and_api_sections_in_a_side_rail():
     """Non-technical users need guidance in the product, not only in the dissertation."""
     with TestClient(S.create_app()) as client:
         html = client.get("/").text
@@ -369,6 +369,10 @@ def test_page_has_score_help_and_api_tabs():
     # only the scoring panel is visible on load
     assert 'aria-labelledby="tab-help" hidden' in html
     assert 'aria-labelledby="tab-api" hidden' in html
+    # navigation lives in the side rail, with the model's key facts beside it
+    assert '<nav class="side">' in html
+    assert "grid-template-columns:210px" in html      # side rail, then content
+    assert "Training rows" in html and "Review threshold" in html
 
 
 def test_help_tab_states_the_limits_a_lay_user_must_know():

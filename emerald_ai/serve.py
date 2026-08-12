@@ -707,11 +707,11 @@ _PAGE = """<!doctype html>
    --tint:#f0f0ea;
    --ring:rgba(60,90,110,.22);
    --sh-sm:none; --sh:none;
-   --r:6px; --r-sm:5px;
+   --r:3px; --r-sm:3px;
  }}
  *{{box-sizing:border-box}}
  html{{-webkit-text-size-adjust:100%}}
- body{{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;
+ body{{font-family:"Helvetica Neue",Helvetica,Arial,"Segoe UI",sans-serif;
    margin:0;background:var(--bg);color:var(--ink);line-height:1.5;-webkit-font-smoothing:antialiased}}
  a{{color:var(--brand)}}
  .wrap{{max-width:1080px;margin:0 auto;padding:0 20px}}
@@ -729,14 +729,16 @@ _PAGE = """<!doctype html>
  /* layout */
  section,main{{margin-top:22px}}
  .card{{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);
-   padding:20px}}
+   padding:16px}}
 
- .sechead{{display:flex;align-items:center;gap:11px;margin:0 0 6px}}
- .num{{width:26px;height:26px;border-radius:8px;background:var(--brand-ink);color:#fff;font-size:13px;
+ /* heading bar spanning the full width of the panel */
+ .sechead{{display:flex;align-items:center;gap:9px;margin:-16px -16px 13px;padding:9px 16px;
+   background:var(--tint);border-bottom:1px solid var(--line)}}
+ .num{{width:20px;height:20px;border-radius:2px;background:var(--brand-ink);color:#fff;font-size:11px;
    font-weight:700;display:grid;place-items:center;flex:0 0 auto}}
- .num.alt{{background:var(--tint);color:var(--muted)}}
- h2{{font-size:16px;margin:0;font-weight:700;letter-spacing:-.01em}}
- .lead{{font-size:13px;color:var(--muted);margin:6px 0 0;max-width:780px}}
+ .num.alt{{background:var(--line-strong);color:var(--surface)}}
+ h2{{font-size:14px;margin:0;font-weight:700;letter-spacing:0}}
+ .lead{{font-size:13px;color:var(--muted);margin:0 0 0;max-width:780px}}
  .lead b{{color:var(--ink);font-weight:600}}
  main{{display:grid;grid-template-columns:1.35fr 1fr;gap:22px;align-items:start}}
  @media(max-width:840px){{main{{grid-template-columns:1fr}}}}
@@ -804,17 +806,38 @@ _PAGE = """<!doctype html>
  table.bt th,table.bt td{{padding:9px 13px;text-align:left;white-space:nowrap;border-bottom:1px solid var(--line)}}
  table.bt th{{background:var(--tint);color:var(--muted);font-weight:600;text-transform:uppercase;font-size:10.5px;letter-spacing:.04em}}
  table.bt tbody tr:last-child td{{border-bottom:0}}
- table.bt tbody tr:hover{{background:var(--tint)}}
+ table.bt tbody tr:nth-child(even){{background:var(--tint)}}
+ table.bt tbody tr:hover{{background:var(--ok-soft)}}
  table.bt tr.flag{{background:var(--risk-soft)}} table.bt tr.flag:hover{{background:#f1e2df}}
  table.bt tr.flag td:first-child{{font-weight:700;color:var(--risk-ink)}}
  footer{{text-align:center;color:var(--faint);font-size:11.5px;padding:30px 0 36px}}
- /* tabs */
- .tabs{{display:flex;gap:6px;margin-top:18px;flex-wrap:wrap}}
- .tabs button{{appearance:none;cursor:pointer;font-family:inherit;font-size:13px;font-weight:600;
-   padding:6px 14px;border-radius:3px;border:1px solid rgba(255,255,255,.30);
-   background:rgba(255,255,255,.10);color:#fff;transition:background .15s,border-color .15s}}
- .tabs button:hover{{background:rgba(255,255,255,.18)}}
- .tabs button[aria-selected="true"]{{background:#fff;color:var(--brand-ink);border-color:#fff}}
+ /* two-column shell: a fixed side rail, content to the right */
+ .layout{{display:grid;grid-template-columns:210px minmax(0,1fr);gap:22px;align-items:start;
+   padding-top:22px}}
+ @media(max-width:820px){{ .layout{{grid-template-columns:1fr;gap:14px}} }}
+ .content{{min-width:0}}
+ .side{{position:sticky;top:22px;background:var(--surface);border:1px solid var(--line);
+   border-radius:var(--r-sm)}}
+ @media(max-width:820px){{ .side{{position:static}} }}
+ .side-label{{font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+   color:var(--faint);padding:11px 13px 6px;border-bottom:1px solid var(--line)}}
+ .side [role="tablist"]{{display:flex;flex-direction:column}}
+ @media(max-width:820px){{ .side [role="tablist"]{{flex-direction:row;flex-wrap:wrap}} }}
+ .side button{{appearance:none;cursor:pointer;font-family:inherit;font-size:13.5px;text-align:left;
+   padding:9px 13px;border:0;border-bottom:1px solid var(--line);background:var(--surface);
+   color:var(--ink);border-left:3px solid transparent;transition:background .12s}}
+ @media(max-width:820px){{ .side button{{flex:1 1 auto;border-left:0;border-bottom:2px solid transparent}} }}
+ .side button:hover{{background:var(--tint)}}
+ .side button[aria-selected="true"]{{background:var(--tint);border-left-color:var(--brand);
+   font-weight:600;color:var(--brand-ink)}}
+ @media(max-width:820px){{ .side button[aria-selected="true"]{{border-left-color:transparent;
+   border-bottom-color:var(--brand)}} }}
+ .side button:focus-visible{{outline:2px solid var(--brand);outline-offset:-2px}}
+ .side-facts{{margin:0;padding:10px 13px 12px;display:grid;grid-template-columns:1fr auto;
+   gap:5px 10px;font-size:12px}}
+ .side-facts dt{{color:var(--muted)}}
+ .side-facts dd{{margin:0;text-align:right;font-weight:600;font-variant-numeric:tabular-nums}}
+ @media(max-width:820px){{ .side-facts{{grid-template-columns:repeat(2,1fr auto)}} }}
  .panel[hidden]{{display:none}}
  /* help + api content */
  .steps{{counter-reset:s;display:grid;gap:14px;margin:16px 0 0}}
@@ -849,16 +872,28 @@ _PAGE = """<!doctype html>
     <div><h1>EMERALD-AI</h1><div class="tag">green-loan credit decision support</div></div>
   </div>
   <p>The model <b>ranks a batch of applications</b> and routes the riskiest decile to human review —
-    it does not approve or decline. Single-application scoring is available below for explanation
-    and what-if analysis.</p>
-  <div class="tabs" role="tablist">
+    it does not approve or decline.</p>
+</div></header>
+
+<div class="wrap layout">
+<nav class="side">
+  <div class="side-label">Sections</div>
+  <div role="tablist">
     <button role="tab" id="tab-score" aria-controls="panel-score" aria-selected="true">Score applications</button>
     <button role="tab" id="tab-help" aria-controls="panel-help" aria-selected="false">How to use this</button>
     <button role="tab" id="tab-api" aria-controls="panel-api" aria-selected="false">API reference</button>
   </div>
-</div></header>
+  <div class="side-label">Model</div>
+  <dl class="side-facts">
+    <dt>Training rows</dt><dd>{n_rows:,}</dd>
+    <dt>Delinquent events</dt><dd>{n_events}</dd>
+    <dt>Prevalence</dt><dd>{prevalence}%</dd>
+    <dt>Review threshold</dt><dd>P &ge; {threshold}</dd>
+    <dt>Catch rate</dt><dd>{catch_pct}% of defaults</dd>
+  </dl>
+</nav>
 
-<div class="wrap">
+<div class="content">
 <div class="panel" id="panel-score" role="tabpanel" aria-labelledby="tab-score">
 <section class="card">
   <div class="sechead"><span class="num">1</span><h2>Batch review queue</h2></div>
@@ -1104,6 +1139,7 @@ _PAGE = """<!doctype html>
 </div><!-- /panel-api -->
 
 <footer>EMERALD-AI · proof-of-concept decision support · the model ranks for review, it does not decide</footer>
+</div><!-- /content -->
 </div>
 
 <script>
