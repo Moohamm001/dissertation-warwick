@@ -67,11 +67,12 @@ machinery adds variance, not information.
 
 Two well-established results discipline the evaluation design. First, accuracy and ROC-AUC are
 misleading under severe imbalance: Saito and Rehmsmeier (2015) show that the precision-recall
-curve shows minority-detection performance that ROC analysis makes look better than it is, and Hossin and Sulaiman
-(2015) catalogue the metric families and their failure modes. Benchmarking practice in credit
-scoring specifically (Lessmann et al., 2015) reinforces the need for multiple
-decision-relevant metrics. Accordingly, accuracy is banned from the metric panel; PR-AUC and
-recall at the top decile are primary.
+curve exposes minority-detection performance that ROC analysis makes look better than it is,
+because the ROC curve's false-positive axis is dominated by a majority class that is orders of
+magnitude larger than the minority. Benchmarking practice in credit scoring specifically
+(Lessmann et al., 2015) reinforces the need for several decision-relevant metrics rather than a
+single headline figure. Accordingly, accuracy is banned from the metric panel; PR-AUC and recall
+at the top decile are primary.
 
 A third result disciplines model *comparison* specifically: estimates from cross-validation
 folds are correlated because folds share training data, so naive significance tests over folds

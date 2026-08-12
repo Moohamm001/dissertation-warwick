@@ -107,26 +107,6 @@
   origin: curated
   decision: D3 PR-vs-ROC
   curated_at: '2026-06-10T12:19:19Z'
-- id: W2330219538
-  doi: https://doi.org/10.5121/ijdkp.2015.5201
-  title: A Review on Evaluation Metrics for Data Classification Evaluations
-  year: 2015
-  cited_by_count: 2661
-  venue: International Journal of Data Mining & Knowledge Management Process
-  authors:
-  - Md Ekrim Hossin
-  - Sulaiman M.N
-  concepts:
-  - Discriminator
-  - Computer science
-  - Classifier (UML)
-  - Optimal distinctiveness theory
-  - Machine learning
-  - Artificial intelligence
-  source_query: precision recall curve imbalanced classification evaluation
-  origin: curated
-  decision: D3 metrics
-  curated_at: '2026-06-10T12:19:19Z'
 - id: W1981552604
   doi: https://doi.org/10.1214/09-ss054
   title: A survey of cross-validation procedures for model selection

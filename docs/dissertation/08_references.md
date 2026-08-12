@@ -1,7 +1,7 @@
 # References
 
 *All citations are drawn from the project's hand-curated literature index
-(`literature/index.yaml`, 32 entries) or the proposal bibliography; no auto-discovered,
+(`literature/index.yaml`, 41 entries) or the proposal bibliography; no auto-discovered,
 unvetted source is cited. Entries marked [BIB] originate in the proposal bibliography.*
 
 Agosto, A., Cerchiello, P. and Giudici, P. (2023) 'Bayesian learning models to measure the
@@ -80,10 +80,6 @@ class-imbalanced data: review of methods and applications', *Expert Systems with
 
 Hand, D.J. (2006) 'Classifier technology and the illusion of progress', *Statistical Science*,
 21(1), pp. 1–14.
-
-Hossin, M. and Sulaiman, M.N. (2015) 'A review on evaluation metrics for data classification
-evaluations', *International Journal of Data Mining & Knowledge Management Process*, 5(2),
-pp. 1–11. doi:10.5121/ijdkp.2015.5201.
 
 Kapoor, S. and Narayanan, A. (2023) 'Leakage and the reproducibility crisis in
 machine-learning-based science', *Patterns*, 4(9). doi:10.1016/j.patter.2023.100804.
