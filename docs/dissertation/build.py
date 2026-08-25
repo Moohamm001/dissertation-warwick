@@ -34,9 +34,10 @@ STUDENT_ID = "5700836"
 AUTHOR_LINE = "TATPHONG KRUERATTANAKUL, MSc Applied Artificial Intelligence"
 TEMPLATE_PATH = HERE / "24-25_wmg_ft_msc_dissertation_template.docx"
 # The WMG mark, extracted from the template's own media (word/media/image1.jpeg) so the
-# document carries the same asset the template supplies rather than a look-alike.
+# document carries the same asset the template supplies rather than a look-alike. The template
+# places it once, at the head of the title page, and this build does the same.
 LOGO_PATH = HERE / "assets" / "wmg_logo.jpeg"
-LOGO_WIDTH_IN = 2.6          # the template prints it at 3.86in; smaller suits a title page
+LOGO_WIDTH_IN = 3.86         # the width the template prints it at
 
 # Front matter is built explicitly; the body loop renders chapters 01..99 (00_abstract is folded
 # into the front matter, so it is excluded there).
@@ -424,7 +425,6 @@ def _front_matter(doc) -> None:
         return p
 
     # 1. Project Submission Pro-Forma
-    _add_logo(doc, 2.1)
     _bold_title(doc, "Project Submission Pro-Forma", 15, style=FRONT_HEADING_STYLE)
     para(f"Student name:  {STUDENT_NAME}")
     para(f"Student ID:  {STUDENT_ID}")
