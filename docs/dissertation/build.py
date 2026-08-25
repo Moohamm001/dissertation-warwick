@@ -33,6 +33,10 @@ STUDENT_NAME = "Tatphong Kruerattanakul"
 STUDENT_ID = "5700836"
 AUTHOR_LINE = "TATPHONG KRUERATTANAKUL, MSc Applied Artificial Intelligence"
 TEMPLATE_PATH = HERE / "24-25_wmg_ft_msc_dissertation_template.docx"
+# The WMG mark, extracted from the template's own media (word/media/image1.jpeg) so the
+# document carries the same asset the template supplies rather than a look-alike.
+LOGO_PATH = HERE / "assets" / "wmg_logo.jpeg"
+LOGO_WIDTH_IN = 2.6          # the template prints it at 3.86in; smaller suits a title page
 
 # Front matter is built explicitly; the body loop renders chapters 01..99 (00_abstract is folded
 # into the front matter, so it is excluded there).
@@ -393,6 +397,18 @@ def _bold_title(doc, text: str, size: int = 16, center: bool = False, style: str
     return p
 
 
+def _add_logo(doc, width_in: float = LOGO_WIDTH_IN) -> None:
+    """Place the WMG mark, centred. Silently skipped if the asset is missing, so a checkout
+    without it still builds."""
+    from docx.enum.text import WD_ALIGN_PARAGRAPH
+    from docx.shared import Inches
+    if not LOGO_PATH.exists():
+        print(f"  [warn] logo not found: {LOGO_PATH}", file=sys.stderr)
+        return
+    doc.add_picture(str(LOGO_PATH), width=Inches(width_in))
+    doc.paragraphs[-1].alignment = WD_ALIGN_PARAGRAPH.CENTER
+
+
 def _front_matter(doc) -> None:
     from docx.enum.text import WD_ALIGN_PARAGRAPH
     from docx.shared import Pt
@@ -408,6 +424,7 @@ def _front_matter(doc) -> None:
         return p
 
     # 1. Project Submission Pro-Forma
+    _add_logo(doc, 2.1)
     _bold_title(doc, "Project Submission Pro-Forma", 15, style=FRONT_HEADING_STYLE)
     para(f"Student name:  {STUDENT_NAME}")
     para(f"Student ID:  {STUDENT_ID}")
@@ -432,7 +449,9 @@ def _front_matter(doc) -> None:
     doc.add_page_break()
 
     # 2. Title page
-    for _ in range(3):
+    para()
+    _add_logo(doc)
+    for _ in range(2):
         para()
     _bold_title(doc, TITLE, 20, center=True, style=FRONT_TITLE_STYLE)
     para()
