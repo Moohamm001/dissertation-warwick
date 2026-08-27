@@ -424,26 +424,50 @@ def _front_matter(doc) -> None:
                 r.font.size = Pt(size)
         return p
 
-    # 1. Project Submission Pro-Forma
+    # 1. Project Submission Pro-Forma - wording and checklist follow the WMG template
+    from docx.enum.text import WD_COLOR_INDEX
+    from docx.shared import Cm
+
+    def tick(text, checked=True):
+        """A checklist line as the template sets it: a box, then the item."""
+        pp = doc.add_paragraph()
+        pp.paragraph_format.left_indent = Cm(0.6)
+        pp.paragraph_format.space_after = Pt(2)
+        pp.add_run(("☒ " if checked else "☐ ") + text)
+        return pp
+
     _bold_title(doc, "Project Submission Pro-Forma", 15, style=FRONT_HEADING_STYLE)
     para(f"Student name:  {STUDENT_NAME}")
     para(f"Student ID:  {STUDENT_ID}")
     para()
-    para("I wish the dissertation to be considered for the following course:")
-    para("MSc in Applied Artificial Intelligence")
+    para("I wish the dissertation to be considered for the course (select one only):")
+    tick(f"MSc in {COURSE}")
     para()
-    para("I confirm that I have included in my dissertation:", bold=True)
-    for item in ("An abstract of the work completed",
-                 "A declaration of my contribution to the work and its suitability for the degree",
-                 "A table of contents",
-                 "A list of figures and tables"):
-        _list_para(doc, item, ordered=False)
+    para("I confirm that I have included in my dissertation:")
+    tick("An abstract of the work completed")
+    tick("A declaration of my contribution to the work and its suitability for the degree")
+    tick("A table of contents")
+    tick("A list of figures & tables (if applicable)")
+    tick("A glossary of terms (where appropriate)", checked=False)
+    tick("A clear statement of my project objectives")
+    tick("A full reference list (the Harvard referencing style is recommended for WMG)")
+    tick("An appendix containing email confirmation of ethical approval or waiver", checked=False)
     para()
-    para("If receiving ethical approval, the ethical approval number for this research is: "
-         "[to be inserted]. If ethical approval was not required, this is confirmed in Appendix B.")
+
+    # Ethical-approval line: the parts the candidate must complete are highlighted, as they are
+    # in the template, so nothing is submitted with a placeholder left in by accident.
+    pe = doc.add_paragraph()
+    pe.add_run("If receiving ethical approval, the ethical approval number for this research is: ")
+    pe.add_run("insert reference number by replacing this highlighted text"
+               ).font.highlight_color = WD_COLOR_INDEX.YELLOW
+    pe.add_run(". If ethical approval was waived, then please write ")
+    pe.add_run("‘Ethical Approval Waived’"
+               ).font.highlight_color = WD_COLOR_INDEX.YELLOW
+    pe.add_run(". Remember to include your email confirmation of ethical approval or waiver in "
+               "the Appendix of your submission (Appendix B).")
     para()
-    para("I consent to ongoing storage of this dissertation and potential access by third parties "
-         "(e.g. for staff/student training purposes).")
+    tick("I consent to ongoing storage of this dissertation and potential access by third "
+         "parties (e.g. for staff/student training purposes)")
     para()
     para("Signed: …………………………………………….          Date: ………………..")
     doc.add_page_break()
