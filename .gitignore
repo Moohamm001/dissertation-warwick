@@ -35,3 +35,14 @@ CLAUDE.md
 # OS
 Thumbs.db
 .DS_Store
+
+# ---------------------------------------------------------------------------
+# Never publish: the lender's data, the dissertation itself, and anything
+# carrying the candidate's personal details. All of these live locally only.
+# ---------------------------------------------------------------------------
+All_Funded_2019_Green Loan.xlsx
+*.xlsx
+proposal_draft.docx
+docs/dissertation/
+docs/supervision_brief_*.md
+~$*
